@@ -981,16 +981,7 @@ namespace InvoicePDF
             uint cWidth = 0;
             foreach (char c in cArray)
             {
-                /*
-                 * HACK WARNING !
-                 * 
-                 * The fontname 'T4' is Courier in this instance, all other instances of a font are assumed to be Times Roman.
-                 * All courier printable characters have a relative width of 600.
-                 * A better implementation of this method would need to use the actual font type name (as opposed to the name
-                 * specified in the PDF) and then get the width from a specific lookup table.
-                 * The font widths for each character can be found by looking for a *.afm file and manually creating the array
-                 * from the specified widths
-                 */
+               
 
                 if (FontName == "T4")
                 {

@@ -10,12 +10,20 @@ using System.Windows;
 using tiles;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using FAFOS.Forms;
 
 
 namespace FAFOS
 {
     public partial class View : Form
     {
+
+
+        Login loginform = new Login();
+
+
+
+
         private double screenWidth;
         private double screenHeight;
         MapsForm maps;
@@ -49,100 +57,142 @@ namespace FAFOS
         {
             InitializeComponent();
 
-            services = new ContractService[30];
-            orders = new WorkOrder[30];
+            loginform.LoggedIn += loginform_LoggedIn;
 
+            loginform.Show();
 
-            pnlLogin.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width / 2 - Convert.ToInt32(pnlLogin.Size.Width) / 2,
-                System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height / 2 - Convert.ToInt32(pnlLogin.Size.Height) / 2);
+        }
 
-            notificationPanel.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(notificationPanel.Size.Width)-20,
-               notificationPanel.Location.Y);
+        void loginform_LoggedIn(object sender, EventArgs e)
+        {
 
-            pnlUser.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(pnlUser.Size.Width) - 15,
-              pnlUser.Location.Y);
+            //TODO: Better fix for login unloading, I'm lazy
+            loginform.Hide();
+            //end todo
 
+            userid = loginform.userid;
 
-            this.quote.Enter += new System.EventHandler(Tile_Enter);
-            this.editQuote.Enter += new System.EventHandler(Tile_Enter);
-            this.salesOrder.Enter += new System.EventHandler(Tile_Enter);
-            this.editSalesOrder.Enter += new System.EventHandler(Tile_Enter);
-            this.convertSalesOrder.Enter += new System.EventHandler(Tile_Enter);
-            this.invoice.Enter += new System.EventHandler(Tile_Enter);
-            this.inventory.Enter += new System.EventHandler(Tile_Enter);
-            this.purchaseRecord.Enter += new System.EventHandler(Tile_Enter);
-            this.payment.Enter += new System.EventHandler(Tile_Enter);
-            this.itinerary.Enter += new System.EventHandler(Tile_Enter);
-            this.inspection.Enter += new System.EventHandler(Tile_Enter);
+            LoadAll();
+        }
 
-            this.addClient.Enter += new System.EventHandler(Tile_Enter);
-            this.editClient.Enter += new System.EventHandler(Tile_Enter);
-            this.addContract.Enter += new System.EventHandler(Tile_Enter);
-            this.editContract.Enter += new System.EventHandler(Tile_Enter);
-
-            this.statement.Enter += new System.EventHandler(Tile_Enter);
-            this.jobReport.Enter += new System.EventHandler(Tile_Enter);
-            this.royaltyFee.Enter += new System.EventHandler(Tile_Enter);
-            this.revenueReport.Enter += new System.EventHandler(Tile_Enter);
-          //  this.allRevenue.Enter += new System.EventHandler(Tile_Enter);
+        public void LoadAll()
+        {
 
             user = new Users();
 
-            screenWidth = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width;
-            screenHeight = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height; 
-            this.Size = new System.Drawing.Size((int)screenWidth, (int)screenHeight);
+            this.Exit_btn.Focus();
+            quote.Visible = true;
+            editQuote.Visible = true;
+            salesOrder.Visible = true;
+            editSalesOrder.Visible = true;
+            convertSalesOrder.Visible = true;
+            invoice.Visible = true;
+            inventory.Visible = true;
+            purchaseRecord.Visible = true;
+            payment.Visible = true;
+            itinerary.Visible = true;
+            inspection.Visible = true;
 
-            this.quote.tileTimer_Interval = 40;
-            this.quote.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.editQuote.tileTimer_Interval = 40;
-            this.editQuote.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.salesOrder.tileTimer_Interval = 40;
-            this.salesOrder.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.editSalesOrder.tileTimer_Interval = 40;
-            this.editSalesOrder.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.convertSalesOrder.tileTimer_Interval = 40;
-            this.convertSalesOrder.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.invoice.tileTimer_Interval = 40;
-            this.invoice.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.inventory.tileTimer_Interval = 40;
-            this.inventory.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.purchaseRecord.tileTimer_Interval = 40;
-            this.purchaseRecord.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.payment.tileTimer_Interval = 40;
-            this.payment.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.itinerary.tileTimer_Interval = 40;
-            this.itinerary.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.inspection.tileTimer_Interval = 40;
-            this.inspection.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
+            addClient.Visible = true;
+            addContract.Visible = true;
+            editClient.Visible = true;
+            editContract.Visible = true;
 
-            this.addClient.tileTimer_Interval = 40;
-            this.addClient.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.editClient.tileTimer_Interval = 40;
-            this.editClient.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.addContract.tileTimer_Interval = 40;
-            this.addContract.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.editContract.tileTimer_Interval = 40;
-            this.editContract.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
+            statement.Visible = true;
+            jobReport.Visible = true;
+            revenueReport.Visible = true;
+            royaltyFee.Visible = true;
+            if (!user.checkAdmin(userid))
+                royaltyFee.Visible = false;
+            //   allRevenue.Visible = true;
 
-            this.statement.tileTimer_Interval = 40;
-            this.statement.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.royaltyFee.tileTimer_Interval = 40;
-            this.royaltyFee.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.jobReport.tileTimer_Interval = 40;
-            this.jobReport.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.revenueReport.tileTimer_Interval = 40;
-            this.revenueReport.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-          //  this.allRevenue.tileTimer_Interval = 40;
-          //  this.allRevenue.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
+            syncAndroid.Visible = true;
+            syncHQ.Visible = true;
 
-            FireAlertLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 350,40);
-            SEdgeLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 250,
-                System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 100);
-            Exit_btn.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 430,
-                System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 160);
+            label5.Visible = true;
+            label6.Visible = true;
+            label7.Visible = true;
+            label8.Visible = true;
+            label9.Visible = true;
 
-            
+            Logout_btn.Visible = true;
+            userSettings.Visible = true;
+            lblUserInfo.Visible = true;
+            notificationPanel.Visible = true;
+            profilePic.Visible = true;
+            pnlUser.Visible = true;
+
+
+            try
+            {
+                piclist = MUser.LoadImages();
+            }
+            catch (Exception)
+            {
+
+                piclist.Add(FAFOS.Properties.Resources.DefaultProPic);
+                MUser.SaveImages(piclist);
+            }
+
+            this.profilePic.BackgroundImage = piclist[MUser.GetPicID(userid.ToString())];// FAFOS.Properties.Resources.Shades;
+            this.profilePic.BackgroundImageLayout = ImageLayout.Stretch;
+
+
+            lblUserInfo.Text = "Welcome\n " + user.getName(userid);
+
+
+            quote.tileLocation = quote.Location;
+            editQuote.tileLocation = editQuote.Location;
+            salesOrder.tileLocation = salesOrder.Location;
+            convertSalesOrder.tileLocation = convertSalesOrder.Location;
+            editSalesOrder.tileLocation = editSalesOrder.Location;
+
+            invoice.tileLocation = invoice.Location;
+            inventory.tileLocation = inventory.Location;
+            purchaseRecord.tileLocation = purchaseRecord.Location;
+            payment.tileLocation = payment.Location;
+            itinerary.tileLocation = itinerary.Location;
+            inspection.tileLocation = inspection.Location;
+
+            addClient.tileLocation = addClient.Location;
+            editClient.tileLocation = editClient.Location;
+            addContract.tileLocation = addContract.Location;
+            editContract.tileLocation = editContract.Location;
+
+            statement.tileLocation = statement.Location;
+            jobReport.tileLocation = jobReport.Location;
+            revenueReport.tileLocation = revenueReport.Location;
+            royaltyFee.tileLocation = royaltyFee.Location;
+            //   allRevenue.tileLocation = allRevenue.Location;
+
+            string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
+
+            quote.setMovie(path + "\\Resources\\Quote1.swf");
+            editQuote.setMovie(path + "\\Resources\\EditQuote.swf");
+            salesOrder.setMovie(path + "\\Resources\\CreateSalesOrder1.swf");
+            editSalesOrder.setMovie(path + "\\Resources\\EditSalesOrder1.swf");
+            convertSalesOrder.setMovie(path + "\\Resources\\ConvertSalesOrder1.swf");
+            invoice.setMovie(path + "\\Resources\\Invoice1.swf");
+            inventory.setMovie(path + "\\Resources\\Inventory1.swf");
+            purchaseRecord.setMovie(path + "\\Resources\\PurchaseRecord.swf");
+            payment.setMovie(path + "\\Resources\\payment1.swf");
+            itinerary.setMovie(path + "\\Resources\\itinerary1.swf");
+            inspection.setMovie(path + "\\Resources\\Inspection.swf");
+
+            addClient.setMovie(path + "\\Resources\\addClient1.swf");
+            addContract.setMovie(path + "\\Resources\\addContract1.swf");
+            editClient.setMovie(path + "\\Resources\\editClient1.swf");
+            editContract.setMovie(path + "\\Resources\\editContract1.swf");
+
+            statement.setMovie(path + "\\Resources\\Statements.swf");
+            jobReport.setMovie(path + "\\Resources\\JobReports.swf");
+            revenueReport.setMovie(path + "\\Resources\\RevenueReports.swf");
+            royaltyFee.setMovie(path + "\\Resources\\RoyaltyFee.swf");
+            //  allRevenue.setMovie(path + "\\Resources\\TotalRevenue.swf");
+
+            Notifications();
         }
+
 
         public void Notifications()
         {
@@ -419,7 +469,9 @@ namespace FAFOS
         private void View_Load(object sender, EventArgs e)
         {
 
-            this.txtUsername.Focus();
+            //this.txtUsername.Focus();
+            
+
          }
 
         private void Exit_btn_Click(object sender, EventArgs e)
@@ -428,6 +480,7 @@ namespace FAFOS
             
         }
 
+        /*
         private void Login_btn_Click(object sender, EventArgs e)
         {
 
@@ -476,6 +529,9 @@ namespace FAFOS
                 lblPassword.Visible = false;
                 txtPassword.Visible = false;
                 Login_btn.Visible = false;
+                
+
+
                 Logout_btn.Visible = true;
                 userSettings.Visible = true;
                 lblUserInfo.Visible = true;
@@ -591,6 +647,7 @@ namespace FAFOS
                 return false;
             }
         }
+        */ 
 
 
         private bool UserAuthenticated(string p, string p_2)
@@ -639,6 +696,7 @@ namespace FAFOS
             label9.Visible = false;
             pnlUser.Visible = false;
 
+            /*
             lblUsername.Visible = true;
             txtUsername.Visible = true;
             lblPassword.Visible = true;
@@ -647,14 +705,17 @@ namespace FAFOS
 
 
             Login_btn.Visible = true;
+            */ 
             Logout_btn.Visible = false;
             userSettings.Visible = false;
             lblUserInfo.Visible = false;
             profilePic.Visible = false;
             notificationPanel.Visible = false;
             lblUserInfo.Text = "";
+            /*
             txtUsername.Text = "";
             txtPassword.Text="";
+            */ 
             userid = 0;
 
         }

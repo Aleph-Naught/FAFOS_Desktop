@@ -35,11 +35,6 @@
             this.salesOrder = new tiles.tile();
             this.inventory = new tiles.tile();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.Login_btn = new System.Windows.Forms.Button();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.lblPassword = new System.Windows.Forms.Label();
             this.lblUserInfo = new System.Windows.Forms.Label();
             this.Logout_btn = new System.Windows.Forms.Button();
             this.FireAlertLogo = new System.Windows.Forms.PictureBox();
@@ -74,12 +69,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.syncHQ = new System.Windows.Forms.Button();
             this.syncAndroid = new System.Windows.Forms.Button();
-            this.pnlLogin = new System.Windows.Forms.Panel();
             this.pnlUser = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
-            this.pnlLogin.SuspendLayout();
             this.pnlUser.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -186,67 +179,9 @@
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(97, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(672, 38);
+            this.label2.Size = new System.Drawing.Size(547, 32);
             this.label2.TabIndex = 17;
             this.label2.Text = "FAFOS Operational Management System";
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(17, 30);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
-            this.txtUsername.MinimumSize = new System.Drawing.Size(220, 30);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(220, 30);
-            this.txtUsername.TabIndex = 20;
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(13, 6);
-            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(93, 20);
-            this.lblUsername.TabIndex = 19;
-            this.lblUsername.Text = "Username";
-            // 
-            // Login_btn
-            // 
-            this.Login_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.Login_btn.FlatAppearance.BorderSize = 0;
-            this.Login_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Login_btn.ForeColor = System.Drawing.Color.White;
-            this.Login_btn.Location = new System.Drawing.Point(134, 151);
-            this.Login_btn.Margin = new System.Windows.Forms.Padding(4);
-            this.Login_btn.Name = "Login_btn";
-            this.Login_btn.Size = new System.Drawing.Size(100, 50);
-            this.Login_btn.TabIndex = 18;
-            this.Login_btn.Text = "Login";
-            this.Login_btn.UseVisualStyleBackColor = false;
-            this.Login_btn.Click += new System.EventHandler(this.Login_btn_Click);
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(17, 98);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(217, 30);
-            this.txtPassword.TabIndex = 22;
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(13, 74);
-            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(90, 20);
-            this.lblPassword.TabIndex = 21;
-            this.lblPassword.Text = "Password";
             // 
             // lblUserInfo
             // 
@@ -490,7 +425,7 @@
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 183);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 17);
+            this.label3.Size = new System.Drawing.Size(95, 14);
             this.label3.TabIndex = 3;
             this.label3.Text = "Payments Due:";
             // 
@@ -500,7 +435,7 @@
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 51);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 17);
+            this.label4.Size = new System.Drawing.Size(62, 14);
             this.label4.TabIndex = 2;
             this.label4.Text = "Services:";
             // 
@@ -510,7 +445,7 @@
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(11, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 23);
+            this.label1.Size = new System.Drawing.Size(143, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Day Notifications";
             // 
@@ -640,7 +575,7 @@
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(103, 210);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 23);
+            this.label5.Size = new System.Drawing.Size(85, 18);
             this.label5.TabIndex = 45;
             this.label5.Text = "Operations";
             this.label5.Visible = false;
@@ -651,7 +586,7 @@
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(369, 210);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(108, 23);
+            this.label6.Size = new System.Drawing.Size(87, 18);
             this.label6.TabIndex = 46;
             this.label6.Text = "Documents";
             this.label6.Visible = false;
@@ -662,7 +597,7 @@
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(640, 210);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 23);
+            this.label7.Size = new System.Drawing.Size(56, 18);
             this.label7.TabIndex = 47;
             this.label7.Text = "Clients";
             this.label7.Visible = false;
@@ -673,7 +608,7 @@
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(900, 210);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 23);
+            this.label8.Size = new System.Drawing.Size(63, 18);
             this.label8.TabIndex = 48;
             this.label8.Text = "Reports";
             this.label8.Visible = false;
@@ -732,7 +667,7 @@
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(110, 676);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(127, 23);
+            this.label9.Size = new System.Drawing.Size(100, 18);
             this.label9.TabIndex = 52;
             this.label9.Text = "Sync Options";
             this.label9.Visible = false;
@@ -769,18 +704,6 @@
             this.syncAndroid.UseVisualStyleBackColor = false;
             this.syncAndroid.Visible = false;
             // 
-            // pnlLogin
-            // 
-            this.pnlLogin.Controls.Add(this.Login_btn);
-            this.pnlLogin.Controls.Add(this.lblUsername);
-            this.pnlLogin.Controls.Add(this.txtUsername);
-            this.pnlLogin.Controls.Add(this.lblPassword);
-            this.pnlLogin.Controls.Add(this.txtPassword);
-            this.pnlLogin.Location = new System.Drawing.Point(627, 432);
-            this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(274, 219);
-            this.pnlLogin.TabIndex = 55;
-            // 
             // pnlUser
             // 
             this.pnlUser.Controls.Add(this.userSettings);
@@ -794,15 +717,11 @@
             // 
             // View
             // 
-            this.AcceptButton = this.Login_btn;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1452, 912);
-            this.ControlBox = false;
             this.Controls.Add(this.pnlUser);
-            this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.syncAndroid);
             this.Controls.Add(this.syncHQ);
             this.Controls.Add(this.label9);
@@ -834,20 +753,17 @@
             this.Controls.Add(this.invoice);
             this.Controls.Add(this.quote);
             this.Controls.Add(this.Exit_btn);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "View";
             this.Text = "FAFOS System";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.View_Load);
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).EndInit();
             this.notificationPanel.ResumeLayout(false);
             this.notificationPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).EndInit();
-            this.pnlLogin.ResumeLayout(false);
-            this.pnlLogin.PerformLayout();
             this.pnlUser.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -862,11 +778,6 @@
         private tiles.tile salesOrder;
         private tiles.tile inventory;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.Button Login_btn;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblUserInfo;
         private System.Windows.Forms.Button Logout_btn;
         private System.Windows.Forms.Label SEdgeLogo;
@@ -901,7 +812,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button syncHQ;
         private System.Windows.Forms.Button syncAndroid;
-        private System.Windows.Forms.Panel pnlLogin;
         private System.Windows.Forms.Panel pnlUser;
 
     }

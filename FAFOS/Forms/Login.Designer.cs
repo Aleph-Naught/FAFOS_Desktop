@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.pnlLogin = new System.Windows.Forms.Panel();
             this.Login_btn = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
@@ -63,6 +64,7 @@
             this.Login_btn.TabIndex = 18;
             this.Login_btn.Text = "Login";
             this.Login_btn.UseVisualStyleBackColor = false;
+            this.Login_btn.Click += new System.EventHandler(this.Login_btn_Click);
             // 
             // lblUsername
             // 
@@ -82,7 +84,7 @@
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.MinimumSize = new System.Drawing.Size(220, 30);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(220, 30);
+            this.txtUsername.Size = new System.Drawing.Size(220, 26);
             this.txtUsername.TabIndex = 20;
             // 
             // lblPassword
@@ -112,8 +114,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.pnlLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.TopMost = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
             this.ResumeLayout(false);

@@ -87,13 +87,13 @@ namespace FAFOS.CustomMarkers
       {
          base.GetObjectData(info, context);
 
-         // TODO: Radius, IsFilled
+       
       }
 
       protected GMapMarkerCircle(SerializationInfo info, StreamingContext context)
          : base(info, context)
       {
-         // TODO: Radius, IsFilled
+         
       }
 
       #endregion
