@@ -38,6 +38,7 @@ namespace FAFOS.Forms
         }
 
         public event EventHandler LoggedIn;
+        public event EventHandler LogInClosed;
 
         //Functions---------------------------------------------------------------------
         public Login()
@@ -66,9 +67,6 @@ namespace FAFOS.Forms
                 {
                     if (UserAuthenticated(txtUsername.Text, txtPassword.Text))
                     {
-                        Authenticated = true;
-                        //lblUserInfo.Text = "Welcome\n " + user.getName(userid);
-                        //TODO: Reimplement in MainForm ^^^
 
                         return true;
                     }
@@ -101,16 +99,19 @@ namespace FAFOS.Forms
             if (user.check(p, p_2))
             {
                 userid = user.getId(p);
+                Authenticated = true;
                 return true;
             }
             return false;
         }
 
- 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            //TODO: This causes a weird graphical bug, try it
+            if (!Authenticated)
+                Application.Exit();
         }
+
 
     }
 }

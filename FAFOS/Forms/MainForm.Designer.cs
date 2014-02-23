@@ -266,6 +266,7 @@
             this.itinerary.Visible = false;
             this.itinerary.XScale = 0;
             this.itinerary.YScale = 0;
+            this.itinerary.Click += new System.EventHandler(this.Tile_Enter);
             // 
             // addClient
             // 
@@ -756,7 +757,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximizeBox = false;
             this.Name = "View";
             this.Text = "FAFOS System";
             this.Load += new System.EventHandler(this.View_Load);

@@ -22,8 +22,6 @@ namespace FAFOS
         Login loginform = new Login();
 
 
-
-
         private double screenWidth;
         private double screenHeight;
         MapsForm maps;
@@ -59,18 +57,15 @@ namespace FAFOS
 
             loginform.LoggedIn += loginform_LoggedIn;
 
-            loginform.Show();
-
         }
+
+        
 
         void loginform_LoggedIn(object sender, EventArgs e)
         {
 
-            //TODO: Better fix for login unloading, I'm lazy
-            loginform.Hide();
-            //end todo
-
             userid = loginform.userid;
+            loginform.Close();
 
             LoadAll();
         }
@@ -470,7 +465,8 @@ namespace FAFOS
         {
 
             //this.txtUsername.Focus();
-            
+
+            loginform.ShowDialog();
 
          }
 
