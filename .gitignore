@@ -8,6 +8,7 @@
 *.bmp
 *.psd
 *.jpg
+*.csproj
 
 # User-specific files
 *.suo

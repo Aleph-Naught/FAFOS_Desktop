@@ -186,7 +186,7 @@
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(97, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(547, 32);
+            this.label2.Size = new System.Drawing.Size(672, 38);
             this.label2.TabIndex = 17;
             this.label2.Text = "FAFOS Operational Management System";
             // 
@@ -207,7 +207,7 @@
             this.lblUsername.Location = new System.Drawing.Point(13, 6);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(77, 16);
+            this.lblUsername.Size = new System.Drawing.Size(93, 20);
             this.lblUsername.TabIndex = 19;
             this.lblUsername.Text = "Username";
             // 
@@ -234,7 +234,7 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(217, 26);
+            this.txtPassword.Size = new System.Drawing.Size(217, 30);
             this.txtPassword.TabIndex = 22;
             // 
             // lblPassword
@@ -244,7 +244,7 @@
             this.lblPassword.Location = new System.Drawing.Point(13, 74);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(75, 16);
+            this.lblPassword.Size = new System.Drawing.Size(90, 20);
             this.lblPassword.TabIndex = 21;
             this.lblPassword.Text = "Password";
             // 
@@ -490,7 +490,7 @@
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 183);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 14);
+            this.label3.Size = new System.Drawing.Size(117, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Payments Due:";
             // 
@@ -500,7 +500,7 @@
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 51);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 14);
+            this.label4.Size = new System.Drawing.Size(77, 17);
             this.label4.TabIndex = 2;
             this.label4.Text = "Services:";
             // 
@@ -510,7 +510,7 @@
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(11, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 18);
+            this.label1.Size = new System.Drawing.Size(175, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Day Notifications";
             // 
@@ -640,7 +640,7 @@
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(103, 210);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 18);
+            this.label5.Size = new System.Drawing.Size(107, 23);
             this.label5.TabIndex = 45;
             this.label5.Text = "Operations";
             this.label5.Visible = false;
@@ -651,7 +651,7 @@
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(369, 210);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 18);
+            this.label6.Size = new System.Drawing.Size(108, 23);
             this.label6.TabIndex = 46;
             this.label6.Text = "Documents";
             this.label6.Visible = false;
@@ -662,7 +662,7 @@
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(640, 210);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 18);
+            this.label7.Size = new System.Drawing.Size(69, 23);
             this.label7.TabIndex = 47;
             this.label7.Text = "Clients";
             this.label7.Visible = false;
@@ -673,7 +673,7 @@
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(900, 210);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 18);
+            this.label8.Size = new System.Drawing.Size(80, 23);
             this.label8.TabIndex = 48;
             this.label8.Text = "Reports";
             this.label8.Visible = false;
@@ -732,7 +732,7 @@
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(110, 676);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 18);
+            this.label9.Size = new System.Drawing.Size(127, 23);
             this.label9.TabIndex = 52;
             this.label9.Text = "Sync Options";
             this.label9.Visible = false;
@@ -795,6 +795,7 @@
             // View
             // 
             this.AcceptButton = this.Login_btn;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
@@ -833,12 +834,13 @@
             this.Controls.Add(this.invoice);
             this.Controls.Add(this.quote);
             this.Controls.Add(this.Exit_btn);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "View";
             this.Text = "FAFOS System";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.View_Load);
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).EndInit();
             this.notificationPanel.ResumeLayout(false);
