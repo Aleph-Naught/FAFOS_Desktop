@@ -22,15 +22,6 @@ namespace FAFOS
             picID = ProPicID;
 
 
-            this.Back_Button.MouseEnter += new EventHandler(button1_MouseEnter);
-            this.Back_Button.MouseLeave += new EventHandler(button1_MouseLeave);
-            this.Back_Button.Location = new Point(15, 15);
-            Back_Button.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.Back2));
-            Back_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            Back_Button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-
-
-
             //this.Size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
             my_controller = new UserController(this,idOfUser,picID);
 
@@ -47,9 +38,6 @@ namespace FAFOS
             foreach (Control c in this.Controls)
                 c.TextChanged += new EventHandler(somethingChanged);
             #endregion
-
-            if (UserID == 1) primUsrLabel.Visible = true;
-            noChanges = true;
 
         }
 /************************************* Sets *****************************/
@@ -96,21 +84,7 @@ namespace FAFOS
             CityBox.SelectedValue = values[18];
             
         }
-        void button1_MouseLeave(object sender, EventArgs e)
-        {
-            this.Back_Button.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.Back2));
-            this.Back_Button.Location = new Point(15, 15);
-            this.Back_Button.Size = new Size(45, 45);
-            this.Back_Button.ImageAlign = ContentAlignment.MiddleCenter;
-        }
 
-        void button1_MouseEnter(object sender, EventArgs e)
-        {
-            this.Back_Button.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.BackOver));
-            this.Back_Button.Location = new Point(15, 15);
-            this.Back_Button.Size = new Size(45, 45);
-            this.Back_Button.ImageAlign = ContentAlignment.MiddleCenter;
-        }
         public void InitializeCombos(String countryID, String ProvID, String CityID)
         {
             DataTable country = MCountry.GetList();
