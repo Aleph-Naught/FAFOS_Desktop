@@ -754,7 +754,7 @@
             this.Controls.Add(this.invoice);
             this.Controls.Add(this.quote);
             this.Controls.Add(this.Exit_btn);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "View";
