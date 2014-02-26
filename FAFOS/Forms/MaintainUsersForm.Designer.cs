@@ -92,6 +92,7 @@
             this.Back_Button.TabIndex = 33;
             this.Back_Button.Text = "Exit";
             this.Back_Button.UseVisualStyleBackColor = true;
+            this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
             // 
             // PicBox
             // 
@@ -562,7 +563,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(517, 513);
+            this.ClientSize = new System.Drawing.Size(505, 501);
             this.ControlBox = false;
             this.Controls.Add(this.UserPicLabel);
             this.Controls.Add(this.SaveButton);
@@ -574,13 +575,11 @@
             this.Controls.Add(this.PicBox);
             this.Controls.Add(this.Back_Button);
             this.Controls.Add(this.groupBox3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Location = new System.Drawing.Point(10, 200);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MaintainUsersForm";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.ShowInTaskbar = false;
             this.Text = "MaintainUsers";
-            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.PicBox)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

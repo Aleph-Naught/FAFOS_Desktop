@@ -18,6 +18,8 @@ namespace FAFOS.Forms
 
         Form currentPage;
 
+        MaintainUsersForm userSettings;
+
         //Functions------------------------------------------------------
         public Main()
         {
@@ -27,7 +29,14 @@ namespace FAFOS.Forms
 
             this.toolStripStatusLabel1.Text = "Logged in as _____";
 
+
         }
+
+        void closeSettings(object sender, EventArgs e)
+        {
+            userSettings = null;
+        }
+
 
         void loginform_LoggedIn(object sender, EventArgs e)
         {
@@ -146,6 +155,21 @@ namespace FAFOS.Forms
         private void createQuoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //TODO: figure this out
+        }
+
+        private void userSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (userSettings != null)
+            {
+                userSettings.BringToFront();
+            }
+            else
+            {
+                userSettings = new MaintainUsersForm(userid, MUser.GetPicID(userid.ToString()));
+                userSettings.Show();
+                userSettings.settingsClosed += closeSettings;
+            }
         }
  
 
