@@ -574,7 +574,7 @@
             this.Controls.Add(this.PicBox);
             this.Controls.Add(this.Back_Button);
             this.Controls.Add(this.groupBox3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(10, 200);
             this.Name = "MaintainUsersForm";
             this.ShowIcon = false;
