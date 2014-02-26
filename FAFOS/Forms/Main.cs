@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace FAFOS.Forms
 {
-    public partial class MainPrototype : Form
+    public partial class Main : Form
     {
         //Members--------------------------------------------------------
         int userid;
@@ -19,7 +19,7 @@ namespace FAFOS.Forms
         Form currentPage;
 
         //Functions------------------------------------------------------
-        public MainPrototype()
+        public Main()
         {
             InitializeComponent();
 
