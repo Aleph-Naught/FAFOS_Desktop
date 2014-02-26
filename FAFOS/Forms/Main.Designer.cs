@@ -30,9 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.userLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dayItineraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inspectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,7 +68,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.userSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -80,18 +81,18 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.userLabel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 739);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1184, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // userLabel
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            this.userLabel.Name = "userLabel";
+            this.userLabel.Size = new System.Drawing.Size(118, 17);
+            this.userLabel.Text = "toolStripStatusLabel1";
             // 
             // menuStrip1
             // 
@@ -110,10 +111,18 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.userSettingsToolStripMenuItem});
+            this.userSettingsToolStripMenuItem,
+            this.logoutToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
+            // 
+            // userSettingsToolStripMenuItem
+            // 
+            this.userSettingsToolStripMenuItem.Name = "userSettingsToolStripMenuItem";
+            this.userSettingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.userSettingsToolStripMenuItem.Text = "User Settings";
+            this.userSettingsToolStripMenuItem.Click += new System.EventHandler(this.userSettingsToolStripMenuItem_Click);
             // 
             // operationsToolStripMenuItem
             // 
@@ -294,13 +303,17 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.notificationPanel);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.splitContainer1.Size = new System.Drawing.Size(1184, 715);
             this.splitContainer1.SplitterDistance = 198;
             this.splitContainer1.TabIndex = 3;
             // 
             // notificationPanel
             // 
-            this.notificationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.notificationPanel.BackColor = System.Drawing.SystemColors.Control;
             this.notificationPanel.Controls.Add(this.panel1);
             this.notificationPanel.Controls.Add(this.paymentNotification);
             this.notificationPanel.Controls.Add(this.serviceNotification);
@@ -413,12 +426,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Day Notifications";
             // 
-            // userSettingsToolStripMenuItem
+            // logoutToolStripMenuItem
             // 
-            this.userSettingsToolStripMenuItem.Name = "userSettingsToolStripMenuItem";
-            this.userSettingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.userSettingsToolStripMenuItem.Text = "User Settings";
-            this.userSettingsToolStripMenuItem.Click += new System.EventHandler(this.userSettingsToolStripMenuItem_Click);
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -455,7 +468,7 @@
         #endregion
 
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel userLabel;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem operationsToolStripMenuItem;
@@ -493,5 +506,6 @@
         private System.Windows.Forms.ToolStripMenuItem revenueReportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem royaltyFeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userSettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
     }
 }

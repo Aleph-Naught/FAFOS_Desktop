@@ -12,6 +12,7 @@ namespace FAFOS.Forms
     public partial class Main : Form
     {
         //Members--------------------------------------------------------
+        Users user;
         int userid;
 
         Login loginform = new Login();
@@ -27,8 +28,7 @@ namespace FAFOS.Forms
 
             loginform.LoggedIn += loginform_LoggedIn;
 
-            this.toolStripStatusLabel1.Text = "Logged in as _____";
-
+            user = new Users();
 
         }
 
@@ -41,6 +41,8 @@ namespace FAFOS.Forms
         void loginform_LoggedIn(object sender, EventArgs e)
         {
 
+            this.Show();
+
             userid = loginform.userid;
             loginform.Close();
 
@@ -49,6 +51,10 @@ namespace FAFOS.Forms
             embeddedForm.TopLevel = false;
             splitContainer1.Panel2.Controls.Add(embeddedForm);
             embeddedForm.Show();
+
+            this.userLabel.Text = "Logged in as " + user.getName(userid);
+
+
 
         }
 
@@ -97,7 +103,7 @@ namespace FAFOS.Forms
 
         private void syncHQ_Click(object sender, EventArgs e)
         {
-            //TODO: None of the sync buttons work
+            //TODO: None of the sync buttons work ROFL, this never got implemented in the first place
         }
 
         private void MainPrototype_Load(object sender, EventArgs e)
@@ -170,6 +176,14 @@ namespace FAFOS.Forms
                 userSettings.Show();
                 userSettings.settingsClosed += closeSettings;
             }
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            loginform = new Login();
+            loginform.LoggedIn += loginform_LoggedIn;
+            loginform.ShowDialog();
         }
  
 
