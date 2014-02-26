@@ -14,6 +14,9 @@ namespace FAFOS
         UserController my_controller;
         int UserID, picID;
         public bool noChanges;
+
+        public event EventHandler settingsClosed;
+
 /************************************* Contructor *****************************/
         public MaintainUsersForm(int idOfUser, int ProPicID)
         {
@@ -247,5 +250,11 @@ namespace FAFOS
             noChanges = false;
             errProv.Clear();
         }
+
+        private void Back_Button_Click(object sender, EventArgs e)
+        {
+            settingsClosed(sender, e);
+        }
+
     }
 }
