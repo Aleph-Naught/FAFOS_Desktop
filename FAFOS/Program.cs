@@ -22,7 +22,7 @@ namespace FAFOS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FAFOS.Forms.MainPrototype());
+            Application.Run(new FAFOS.Forms.Main());
         }
     }
         struct IpStatus
