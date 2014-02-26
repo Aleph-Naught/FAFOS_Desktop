@@ -53,10 +53,22 @@ namespace FAFOS
 
         public View()
         {
+            //InitializeComponent();
+
+            //loginform.LoggedIn += loginform_LoggedIn;
+
+        }
+
+        public View(int id) 
+        {
+
+            userid = id;
+
             InitializeComponent();
 
-            loginform.LoggedIn += loginform_LoggedIn;
+            LoadAll();
 
+            
         }
 
         
@@ -466,7 +478,7 @@ namespace FAFOS
 
             //this.txtUsername.Focus();
 
-            loginform.ShowDialog();
+            //loginform.ShowDialog();
 
          }
 
