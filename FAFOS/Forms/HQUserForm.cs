@@ -189,6 +189,11 @@ namespace FAFOS
             FranchiseGridView.Rows[0].Cells["zoneID"].Value = OpRegionCombo.SelectedValue.ToString();
             CheckFranchiseBtn();
         }
+        private void exit_clicked(object sender, FormClosingEventArgs e)
+        {
+            my_controller.HQExitBtnClick();
+        }
+
 /********************************** Other **********************************/
         public void CheckFranchiseBtn()
         {
@@ -198,6 +203,5 @@ namespace FAFOS
             else
                 addFranButton.Visible = false;
         }
-
     }
 }

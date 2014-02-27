@@ -567,7 +567,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(512, 517);
+
+            this.ClientSize = new System.Drawing.Size(497, 493);
+            this.ControlBox = false;
+
             this.Controls.Add(this.UserPicLabel);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.groupBox2);
@@ -582,6 +585,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MaintainUsersForm";
+
+            this.ShowIcon = false;
+
             this.Text = "MaintainUsers";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MaintainUsersForm_FormClosed);
             this.Load += new System.EventHandler(this.MaintainUsersForm_Load);

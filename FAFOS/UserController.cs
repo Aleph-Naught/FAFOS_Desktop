@@ -108,7 +108,6 @@ namespace FAFOS
                 _adminForm.PopulateBAddrsGridView(MFranchise.GetBAddrs());
                 _adminForm.noChanges = true;
                 _adminForm.Show();
-                _userForm.ToggleAdminButton();
             }
             else
             {
@@ -116,7 +115,6 @@ namespace FAFOS
                 {
                     _adminForm.Close();
                     _adminForm = null;
-                    _userForm.ToggleAdminButton();
                 }
                 else
                 {
@@ -124,7 +122,6 @@ namespace FAFOS
                     {
                         _adminForm.Close();
                         _adminForm = null;
-                        _userForm.ToggleAdminButton();
                     }
                     else
                         return;
@@ -139,13 +136,11 @@ namespace FAFOS
             {
                 _hqForm = new HQUserForm(this, _userForm.GetWindowMidRight());
                 _hqForm.Show();
-                _userForm.ToggleHQButton();
             }
             else
             {
                 _hqForm.Close();
                 _hqForm = null;
-                _userForm.ToggleHQButton();
             }
         }
         public void SaveButton_Click(object sender, EventArgs e)
@@ -278,7 +273,25 @@ namespace FAFOS
         }
         public void SaveBtn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are u sure you want to Save admin changes?", "Confirm Save", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("Are you sure you want to save changes?", "Confirm Save", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                if (_adminForm.isOkToClose())
+                {
+                    MFranchise.SetAll(_adminForm.getFields(), _adminForm.GetUserView(), _adminForm.GetBAddrView());
+                    _adminForm.noChanges = true;
+                }
+                else
+                {
+                    MessageBox.Show("unable to save, check for errors");
+                    return;
+                }
+            }
+            else
+                return;
+        }
+        public void adminExitBtnClick()
+        {
+            if (MessageBox.Show("Are you sure you want to save changes?", "Confirm Save", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 if (_adminForm.isOkToClose())
                 {
@@ -313,9 +326,27 @@ namespace FAFOS
         }        
         public void HQSaveBtn_Click(object sender, EventArgs e)
         {
-            DataTable dt = _hqForm.GetFranchiseView();
-            foreach (DataRow r in dt.Rows)
-                MFranchise.SetHQ(r);
+
+           if (MessageBox.Show("Are you sure you want to Save changes?", "Confirm Save", MessageBoxButtons.OKCancel) == DialogResult.OK)
+           {
+                    DataTable dt = _hqForm.GetFranchiseView();
+                    foreach (DataRow r in dt.Rows)
+                        MFranchise.SetHQ(r);
+            }
+            else
+                return;
+
+        }
+        public void HQExitBtnClick()
+        {
+           if (MessageBox.Show("Are you sure you want to Save changes?", "Confirm Save", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                    DataTable dt = _hqForm.GetFranchiseView();
+                    foreach (DataRow r in dt.Rows)
+                        MFranchise.SetHQ(r);
+            }
+            else
+                return;
         }
         public void DeleteRegionBtn_Click(object sender, EventArgs e)
         {

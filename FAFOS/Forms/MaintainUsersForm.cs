@@ -125,33 +125,8 @@ namespace FAFOS
             CityBox.ValueMember = city.Columns[0].ToString();
 
         }
-        public void ToggleAdminButton()
-        {
-            if (AdminButton.BackColor == Color.FromArgb(250, 23, 49))
-            {
-                AdminButton.BackColor = Color.Black;
-                return;
-            }
+       
 
-            if (AdminButton.BackColor == Color.Black)
-            {
-                AdminButton.BackColor = Color.FromArgb(250, 23, 49);
-                return;
-            }
-        }
-        public void ToggleHQButton()
-        {
-            if (HQButton.BackColor == Color.FromArgb(250, 23, 49))
-            {
-                HQButton.BackColor = Color.Black;
-                return;
-            }
-            if (HQButton.BackColor == Color.Black)
-            {
-                HQButton.BackColor = Color.FromArgb(250, 23, 49);
-                return;
-            }
-        }
 /************************************* Gets *****************************/
         public String[] GetFields()
         {
