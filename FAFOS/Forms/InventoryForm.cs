@@ -11,7 +11,7 @@ using System.Reflection;
 
 namespace FAFOS
 {
-    public partial class InventoryForm : FAFOS.Background
+    public partial class InventoryForm : Form
     {
         InventoryController my_controller;
         int userid;
@@ -39,7 +39,7 @@ namespace FAFOS
             //User label
             user = new Users();
             userid = id;
-            setup(userid.ToString(), "FAFOS Inventory");
+            //setup(userid.ToString(), "FAFOS Inventory");
 
         }
 
@@ -279,6 +279,11 @@ namespace FAFOS
         public String getServicePrice()
         {
             return servicepricetextbox.Text;
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
         }
        
      

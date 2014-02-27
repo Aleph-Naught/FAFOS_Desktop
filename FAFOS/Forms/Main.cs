@@ -124,10 +124,14 @@ namespace FAFOS.Forms
         private void inspectionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             currentPage.Close();
+
             InspectionForm embeddedForm = new InspectionForm(userid.ToString());
             currentPage = embeddedForm;
             embeddedForm.TopLevel = false;
             splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
             embeddedForm.Show();
 
         }
@@ -135,10 +139,14 @@ namespace FAFOS.Forms
         private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             currentPage.Close();
+
             InventoryForm embeddedForm = new InventoryForm(userid);
             currentPage = embeddedForm;
             embeddedForm.TopLevel = false;
             splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
             embeddedForm.Show();
         }
 

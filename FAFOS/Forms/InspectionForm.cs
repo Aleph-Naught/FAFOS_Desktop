@@ -16,7 +16,7 @@ using InvoicePDF;
 
 namespace FAFOS
 {
-    public partial class InspectionForm : Background
+    public partial class InspectionForm : Form
     {
         Thread listenThread;
         TCPModel _TCPModel = null;
@@ -24,12 +24,15 @@ namespace FAFOS
         string userid;
         public InspectionForm(string id)
         {
+
+            //TODO: Generating Reports doesn't actually work on my machine -Nick
+
             InitializeComponent();
             userid = id;
-            setup(userid, "FAFOS Inspection Form");
+            //setup(userid, "FAFOS Inspection Form");
 
-            panel1.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width / 2 - Convert.ToInt32(panel1.Size.Width) / 2,
-            System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height / 2 - Convert.ToInt32(panel1.Size.Height) / 2);
+            //panel1.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width / 2 - Convert.ToInt32(panel1.Size.Width) / 2,
+            //System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height / 2 - Convert.ToInt32(panel1.Size.Height) / 2);
 
             DataTable dt = new ServiceAddress().getAddresses();
             addressBox.DataSource = dt;
@@ -426,6 +429,11 @@ namespace FAFOS
             {
                 MessageBox.Show("Could not display the document because " + ex.ToString());
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
 
 
