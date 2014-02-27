@@ -12,7 +12,7 @@ using InvoicePDF;
 
 namespace FAFOS
 {
-    public partial class InvoiceForm : FAFOS.Background
+    public partial class InvoiceForm : Form
     {
         InvoiceController my_controller;
         Term t;
@@ -42,7 +42,7 @@ namespace FAFOS
 
             //User label
             userid = id;
-            setup(userid.ToString(), "FAFOS Invoice Form");
+            //setup(userid.ToString(), "FAFOS Invoice Form");
 
 
             DataTable dt = new SalesOrder().getDone(userid.ToString()).Tables[0];
@@ -81,7 +81,7 @@ namespace FAFOS
         }
         private void View_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         public String GetMsg()

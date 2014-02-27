@@ -46,10 +46,14 @@ namespace FAFOS.Forms
             userid = loginform.userid;
             loginform.Close();
 
+
             InvoiceForm embeddedForm = new InvoiceForm(userid);
             currentPage = embeddedForm;
             embeddedForm.TopLevel = false;
             splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
             embeddedForm.Show();
 
             this.userLabel.Text = "Logged in as " + user.getName(userid);
