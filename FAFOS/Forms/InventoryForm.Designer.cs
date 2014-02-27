@@ -89,6 +89,7 @@
             this.productsdgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.productsdgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.productsdgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.productsdgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.productsdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productsdgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -127,7 +128,6 @@
             this.number.Name = "number";
             this.number.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.number.Width = 54;
             // 
             // productID
             // 
@@ -137,7 +137,6 @@
             this.productID.ReadOnly = true;
             this.productID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.productID.Visible = false;
-            this.productID.Width = 40;
             // 
             // productName
             // 
@@ -146,7 +145,6 @@
             this.productName.Name = "productName";
             this.productName.ReadOnly = true;
             this.productName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.productName.Width = 107;
             // 
             // productDescription
             // 
@@ -154,7 +152,6 @@
             this.productDescription.HeaderText = "Description";
             this.productDescription.Name = "productDescription";
             this.productDescription.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.productDescription.Width = 107;
             // 
             // Cost
             // 
@@ -163,7 +160,6 @@
             this.Cost.Name = "Cost";
             this.Cost.ReadOnly = true;
             this.Cost.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Cost.Width = 107;
             // 
             // retailPrice
             // 
@@ -171,7 +167,6 @@
             this.retailPrice.HeaderText = "Price";
             this.retailPrice.Name = "retailPrice";
             this.retailPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.retailPrice.Width = 107;
             // 
             // productQuantity
             // 
@@ -179,7 +174,6 @@
             this.productQuantity.HeaderText = "Quantity";
             this.productQuantity.Name = "productQuantity";
             this.productQuantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.productQuantity.Width = 107;
             // 
             // CategoryName
             // 
@@ -189,7 +183,6 @@
             this.CategoryName.Name = "CategoryName";
             this.CategoryName.ReadOnly = true;
             this.CategoryName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.CategoryName.Width = 80;
             // 
             // SupplierName
             // 
@@ -199,7 +192,6 @@
             this.SupplierName.Name = "SupplierName";
             this.SupplierName.ReadOnly = true;
             this.SupplierName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.SupplierName.Width = 80;
             // 
             // deleteproduct
             // 
@@ -208,7 +200,6 @@
             this.deleteproduct.Name = "deleteproduct";
             this.deleteproduct.Text = "Delete";
             this.deleteproduct.UseColumnTextForButtonValue = true;
-            this.deleteproduct.Width = 54;
             // 
             // Save_btn
             // 
