@@ -256,5 +256,15 @@ namespace FAFOS
             settingsClosed(sender, e);
         }
 
+        private void MaintainUsersForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MaintainUsersForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            settingsClosed(sender, e);
+        }
+
     }
 }

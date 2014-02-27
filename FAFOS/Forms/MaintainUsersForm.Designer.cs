@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintainUsersForm));
             this.Back_Button = new System.Windows.Forms.Button();
             this.PicBox = new System.Windows.Forms.PictureBox();
             this.UploadPicButton = new System.Windows.Forms.Button();
@@ -566,8 +567,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(501, 497);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(512, 517);
             this.Controls.Add(this.UserPicLabel);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.groupBox2);
@@ -579,10 +579,12 @@
             this.Controls.Add(this.Back_Button);
             this.Controls.Add(this.groupBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MaintainUsersForm";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.Text = "MaintainUsers";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MaintainUsersForm_FormClosed);
+            this.Load += new System.EventHandler(this.MaintainUsersForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PicBox)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
