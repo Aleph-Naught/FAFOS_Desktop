@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
             this.UserGridView = new System.Windows.Forms.DataGridView();
             this.usrName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usrIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,14 +71,6 @@
             // 
             this.UserGridView.AllowUserToAddRows = false;
             this.UserGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UserGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.UserGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UserGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.usrName,
@@ -99,14 +87,6 @@
             this.UserGridView.Location = new System.Drawing.Point(13, 150);
             this.UserGridView.Margin = new System.Windows.Forms.Padding(4);
             this.UserGridView.Name = "UserGridView";
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UserGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
             this.UserGridView.Size = new System.Drawing.Size(653, 128);
             this.UserGridView.TabIndex = 38;
             this.UserGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserGridView_CellValueChanged);
@@ -277,14 +257,6 @@
             // 
             this.BAddrGridView.AllowUserToAddRows = false;
             this.BAddrGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BAddrGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
             this.BAddrGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BAddrGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.locID,
@@ -297,14 +269,6 @@
             this.BAddrGridView.Location = new System.Drawing.Point(21, 327);
             this.BAddrGridView.Margin = new System.Windows.Forms.Padding(4);
             this.BAddrGridView.Name = "BAddrGridView";
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BAddrGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle32;
             this.BAddrGridView.Size = new System.Drawing.Size(645, 128);
             this.BAddrGridView.TabIndex = 48;
             this.BAddrGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.BAddrGridView_CellValueChanged);
@@ -410,7 +374,6 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(684, 504);
-            this.ControlBox = false;
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.FiscalPicker);
             this.Controls.Add(this.AddAddrButton);
@@ -433,6 +396,7 @@
             this.Name = "AdminUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Edit Franchise Details";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExitBtnClicked);
             ((System.ComponentModel.ISupportInitialize)(this.UserGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BAddrGridView)).EndInit();
             this.ResumeLayout(false);

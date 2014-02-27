@@ -566,7 +566,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(501, 497);
+            this.ClientSize = new System.Drawing.Size(497, 493);
             this.ControlBox = false;
             this.Controls.Add(this.UserPicLabel);
             this.Controls.Add(this.SaveButton);
@@ -581,7 +581,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MaintainUsersForm";
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.Text = "MaintainUsers";
             ((System.ComponentModel.ISupportInitialize)(this.PicBox)).EndInit();
             this.groupBox2.ResumeLayout(false);

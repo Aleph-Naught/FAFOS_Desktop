@@ -254,6 +254,10 @@ namespace FAFOS
             noChanges = false;
         }
 
+        private void ExitBtnClicked(object sender, FormClosingEventArgs e)
+        {
+            my_controller.adminExitBtnClick();
+        }
         private void BAddrGridView_DataError(object sender, DataGridViewDataErrorEventArgs e) {}
 /********************************** Other **********************************/
         public bool isOkToClose()
