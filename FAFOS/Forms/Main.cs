@@ -203,6 +203,20 @@ namespace FAFOS.Forms
 
             embeddedForm.Show();
         }
+
+        private void royaltyFeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentPage.Close();
+
+            RoyaltyFeeCollection embeddedForm = new RoyaltyFeeCollection(userid.ToString());
+            currentPage = embeddedForm;
+            embeddedForm.TopLevel = false;
+            splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
+            embeddedForm.Show();
+        }
  
 
     }
