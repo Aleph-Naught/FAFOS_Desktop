@@ -32,7 +32,7 @@ namespace FAFOS
             quote.fillData(new Quote().get(quote.getId()), new QuoteItems().get(quote.getId()));
         }
 
-        public void quote(int type)
+        public QuoteForm quote(int type)
         {
             this.type = type;
             QuoteForm newQuote = new QuoteForm(this, franchiseeUserId, type);
@@ -41,7 +41,7 @@ namespace FAFOS
             newQuote.fillServiceAddressList(new ServiceAddress().get().Tables[0]);
             if (type == 2)
                 newQuote.fillQuoteIDs(new Quote().getInProgress(franchiseeUserId));
-            newQuote.Show();
+            return newQuote;
         }
 
         public void createQuote(object sender, EventArgs e)

@@ -173,6 +173,15 @@ namespace FAFOS.Forms
         private void createQuoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //TODO: figure this out
+            QuoteController qc = new QuoteController(userid.ToString());
+
+            currentPage.Close();
+            QuoteForm embeddedForm = qc.quote(1);
+            currentPage = embeddedForm;
+            embeddedForm.TopLevel = false;
+            splitContainer1.Panel2.Controls.Add(embeddedForm);
+            embeddedForm.Show();
+          
         }
 
         private void userSettingsToolStripMenuItem_Click(object sender, EventArgs e)
