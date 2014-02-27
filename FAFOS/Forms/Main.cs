@@ -189,6 +189,20 @@ namespace FAFOS.Forms
             loginform.LoggedIn += loginform_LoggedIn;
             loginform.ShowDialog();
         }
+
+        private void invoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentPage.Close();
+
+            InvoiceForm embeddedForm = new InvoiceForm(userid);
+            currentPage = embeddedForm;
+            embeddedForm.TopLevel = false;
+            splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
+            embeddedForm.Show();
+        }
  
 
     }
