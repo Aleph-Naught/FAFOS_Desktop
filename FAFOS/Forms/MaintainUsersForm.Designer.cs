@@ -86,7 +86,7 @@
             this.Back_Button.BackColor = System.Drawing.Color.White;
             this.Back_Button.FlatAppearance.BorderSize = 0;
             this.Back_Button.Location = new System.Drawing.Point(417, 479);
-            this.Back_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Back_Button.Margin = new System.Windows.Forms.Padding(5);
             this.Back_Button.Name = "Back_Button";
             this.Back_Button.Size = new System.Drawing.Size(75, 23);
             this.Back_Button.TabIndex = 33;
@@ -265,6 +265,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.AutoSize = true;
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.addrTextBox);
             this.groupBox2.Controls.Add(this.CountryBox);
@@ -515,6 +516,7 @@
             this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.ForeColor = System.Drawing.Color.Black;
             this.SaveButton.Location = new System.Drawing.Point(337, 479);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(5);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 55;
@@ -562,8 +564,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(505, 501);
+            this.ClientSize = new System.Drawing.Size(501, 497);
             this.ControlBox = false;
             this.Controls.Add(this.UserPicLabel);
             this.Controls.Add(this.SaveButton);
