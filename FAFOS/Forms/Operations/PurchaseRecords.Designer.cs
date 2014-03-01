@@ -116,7 +116,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.purchaseRecordsdgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.purchaseRecordsdgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.purchaseRecordsdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.purchaseRecordsdgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.orderItemID,

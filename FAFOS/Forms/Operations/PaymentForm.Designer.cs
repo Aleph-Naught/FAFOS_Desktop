@@ -183,9 +183,9 @@
             this.label14.Location = new System.Drawing.Point(7, 9);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(205, 46);
+            this.label14.Size = new System.Drawing.Size(267, 46);
             this.label14.TabIndex = 112;
-            this.label14.Text = "Inventory";
+            this.label14.Text = "Pay Invoices";
             // 
             // label5
             // 
