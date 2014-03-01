@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 namespace FAFOS
 {
-    public partial class PurchaseRecord: FAFOS.Background
+    public partial class PurchaseRecord: Form
     {
         InventoryController my_controller;
         Users user;
@@ -29,7 +29,7 @@ namespace FAFOS
             user = new Users();
             userid = id;
            // lblUserInfo.Text = "Logged in:\n " + user.getName(Convert.ToInt32(userid));
-            setup(userid.ToString(), "FAFOS Purchase Records");
+            //setup(userid.ToString(), "FAFOS Purchase Records");
 
          
         }

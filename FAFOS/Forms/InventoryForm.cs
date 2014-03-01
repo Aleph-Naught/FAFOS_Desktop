@@ -13,6 +13,8 @@ namespace FAFOS
 {
     public partial class InventoryForm : Form
     {
+        //TODO: Scaling of the tables don't work currently, it's gonna take some monkeying with panels
+
         InventoryController my_controller;
         int userid;
         Users user;

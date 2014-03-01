@@ -49,16 +49,18 @@
             this.lineTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblsupplier = new System.Windows.Forms.Label();
             this.comboSupplier = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.purchaseRecordsdgv)).BeginInit();
             this.SuspendLayout();
             // 
             // SavePurchase_btn
             // 
+            this.SavePurchase_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SavePurchase_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.SavePurchase_btn.FlatAppearance.BorderSize = 0;
             this.SavePurchase_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SavePurchase_btn.ForeColor = System.Drawing.Color.White;
-            this.SavePurchase_btn.Location = new System.Drawing.Point(741, 440);
+            this.SavePurchase_btn.Location = new System.Drawing.Point(607, 347);
             this.SavePurchase_btn.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
             this.SavePurchase_btn.Name = "SavePurchase_btn";
             this.SavePurchase_btn.Size = new System.Drawing.Size(153, 62);
@@ -68,37 +70,41 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(794, 387);
+            this.txtTotal.Location = new System.Drawing.Point(660, 294);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(100, 27);
+            this.txtTotal.Size = new System.Drawing.Size(100, 23);
             this.txtTotal.TabIndex = 103;
             // 
             // lblTotal
             // 
+            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(737, 390);
+            this.lblTotal.Location = new System.Drawing.Point(603, 297);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(51, 20);
+            this.lblTotal.Size = new System.Drawing.Size(42, 16);
             this.lblTotal.TabIndex = 102;
             this.lblTotal.Text = "Total";
             // 
             // date
             // 
+            this.date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date.Location = new System.Drawing.Point(687, 176);
+            this.date.Location = new System.Drawing.Point(553, 83);
             this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(207, 27);
+            this.date.Size = new System.Drawing.Size(207, 23);
             this.date.TabIndex = 96;
             // 
             // lblDate
             // 
+            this.lblDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(552, 180);
+            this.lblDate.Location = new System.Drawing.Point(418, 87);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(129, 20);
+            this.lblDate.Size = new System.Drawing.Size(106, 16);
             this.lblDate.TabIndex = 95;
             this.lblDate.Text = "Purchase Date";
             // 
@@ -106,6 +112,9 @@
             // 
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.purchaseRecordsdgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.purchaseRecordsdgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.purchaseRecordsdgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.purchaseRecordsdgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.purchaseRecordsdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -116,7 +125,7 @@
             this.cost,
             this.Qty,
             this.lineTotal});
-            this.purchaseRecordsdgv.Location = new System.Drawing.Point(146, 216);
+            this.purchaseRecordsdgv.Location = new System.Drawing.Point(12, 123);
             this.purchaseRecordsdgv.Name = "purchaseRecordsdgv";
             this.purchaseRecordsdgv.Size = new System.Drawing.Size(748, 150);
             this.purchaseRecordsdgv.TabIndex = 90;
@@ -175,26 +184,38 @@
             // 
             this.lblsupplier.AutoSize = true;
             this.lblsupplier.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsupplier.Location = new System.Drawing.Point(143, 180);
+            this.lblsupplier.Location = new System.Drawing.Point(9, 87);
             this.lblsupplier.Name = "lblsupplier";
-            this.lblsupplier.Size = new System.Drawing.Size(79, 20);
+            this.lblsupplier.Size = new System.Drawing.Size(65, 16);
             this.lblsupplier.TabIndex = 108;
             this.lblsupplier.Text = "Supplier";
             // 
             // comboSupplier
             // 
             this.comboSupplier.FormattingEnabled = true;
-            this.comboSupplier.Location = new System.Drawing.Point(228, 176);
+            this.comboSupplier.Location = new System.Drawing.Point(94, 83);
             this.comboSupplier.Name = "comboSupplier";
-            this.comboSupplier.Size = new System.Drawing.Size(121, 30);
+            this.comboSupplier.Size = new System.Drawing.Size(121, 25);
             this.comboSupplier.TabIndex = 109;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(7, 9);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(383, 46);
+            this.label5.TabIndex = 110;
+            this.label5.Text = "Record Purchases";
             // 
             // PurchaseRecord
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1452, 912);
+            this.ClientSize = new System.Drawing.Size(818, 442);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.comboSupplier);
             this.Controls.Add(this.lblsupplier);
             this.Controls.Add(this.txtTotal);
@@ -204,18 +225,10 @@
             this.Controls.Add(this.purchaseRecordsdgv);
             this.Controls.Add(this.SavePurchase_btn);
             this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Location = new System.Drawing.Point(0, 0);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "PurchaseRecord";
             this.Text = "PurchaseRecords";
-            this.Controls.SetChildIndex(this.SavePurchase_btn, 0);
-            this.Controls.SetChildIndex(this.purchaseRecordsdgv, 0);
-            this.Controls.SetChildIndex(this.lblDate, 0);
-            this.Controls.SetChildIndex(this.date, 0);
-            this.Controls.SetChildIndex(this.lblTotal, 0);
-            this.Controls.SetChildIndex(this.txtTotal, 0);
-            this.Controls.SetChildIndex(this.lblsupplier, 0);
-            this.Controls.SetChildIndex(this.comboSupplier, 0);
             ((System.ComponentModel.ISupportInitialize)(this.purchaseRecordsdgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -238,5 +251,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn lineTotal;
+        private System.Windows.Forms.Label label5;
     }
 }

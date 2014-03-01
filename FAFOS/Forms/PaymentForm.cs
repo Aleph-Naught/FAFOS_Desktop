@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace FAFOS
 {
-    public partial class PaymentForm : FAFOS.Background
+    public partial class PaymentForm : Form
     {
         private int userid;
         Users user;
@@ -23,7 +23,7 @@ namespace FAFOS
             //User label
             userid = id;
             user = new Users();
-            setup(userid.ToString(), "FAFOS Payment Form");
+            //setup(userid.ToString(), "FAFOS Payment Form");
 
 
             payment = new Payment();
@@ -182,5 +182,6 @@ namespace FAFOS
                 MessageBox.Show("The payment amount must be greater than 0.");
             }
         }
+
     }
 }

@@ -157,6 +157,9 @@ namespace FAFOS.Forms
             currentPage = embeddedForm;
             embeddedForm.TopLevel = false;
             splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
             embeddedForm.Show();
         }
 
@@ -167,12 +170,15 @@ namespace FAFOS.Forms
             currentPage = embeddedForm;
             embeddedForm.TopLevel = false;
             splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
             embeddedForm.Show();
         }
 
         private void createQuoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //TODO: figure this out
+
             QuoteController qc = new QuoteController(userid.ToString());
 
             currentPage.Close();
@@ -180,6 +186,9 @@ namespace FAFOS.Forms
             currentPage = embeddedForm;
             embeddedForm.TopLevel = false;
             splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
             embeddedForm.Show();
           
         }

@@ -77,6 +77,7 @@
             this.serviceSearch = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.productsdgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicesdgv)).BeginInit();
             this.SuspendLayout();
@@ -111,7 +112,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.productsdgv.DefaultCellStyle = dataGridViewCellStyle2;
-            this.productsdgv.Location = new System.Drawing.Point(32, 72);
+            this.productsdgv.Location = new System.Drawing.Point(32, 113);
             this.productsdgv.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.productsdgv.MultiSelect = false;
             this.productsdgv.Name = "productsdgv";
@@ -208,7 +209,7 @@
             this.Save_btn.FlatAppearance.BorderSize = 0;
             this.Save_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Save_btn.ForeColor = System.Drawing.Color.White;
-            this.Save_btn.Location = new System.Drawing.Point(710, 633);
+            this.Save_btn.Location = new System.Drawing.Point(710, 712);
             this.Save_btn.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Save_btn.Name = "Save_btn";
             this.Save_btn.Size = new System.Drawing.Size(166, 52);
@@ -220,7 +221,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 41);
+            this.label1.Location = new System.Drawing.Point(26, 82);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 18);
@@ -243,7 +244,7 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.deleteService});
-            this.servicesdgv.Location = new System.Drawing.Point(32, 368);
+            this.servicesdgv.Location = new System.Drawing.Point(35, 427);
             this.servicesdgv.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.servicesdgv.Name = "servicesdgv";
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -303,7 +304,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(29, 341);
+            this.label2.Location = new System.Drawing.Point(29, 381);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 18);
@@ -315,7 +316,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(889, 40);
+            this.label3.Location = new System.Drawing.Point(889, 81);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 18);
@@ -327,7 +328,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.label4.Location = new System.Drawing.Point(889, 75);
+            this.label4.Location = new System.Drawing.Point(889, 116);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 16);
@@ -339,7 +340,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.label5.Location = new System.Drawing.Point(888, 119);
+            this.label5.Location = new System.Drawing.Point(888, 160);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 16);
@@ -351,7 +352,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.label6.Location = new System.Drawing.Point(889, 162);
+            this.label6.Location = new System.Drawing.Point(889, 203);
             this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 16);
@@ -363,7 +364,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.label9.Location = new System.Drawing.Point(889, 204);
+            this.label9.Location = new System.Drawing.Point(889, 245);
             this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 16);
@@ -375,7 +376,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.label10.Location = new System.Drawing.Point(889, 244);
+            this.label10.Location = new System.Drawing.Point(889, 285);
             this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 16);
@@ -385,7 +386,7 @@
             // productnametextBox
             // 
             this.productnametextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.productnametextBox.Location = new System.Drawing.Point(1028, 72);
+            this.productnametextBox.Location = new System.Drawing.Point(1028, 113);
             this.productnametextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.productnametextBox.Name = "productnametextBox";
             this.productnametextBox.Size = new System.Drawing.Size(259, 23);
@@ -394,7 +395,7 @@
             // productdescriptiontextBox
             // 
             this.productdescriptiontextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.productdescriptiontextBox.Location = new System.Drawing.Point(1028, 116);
+            this.productdescriptiontextBox.Location = new System.Drawing.Point(1028, 157);
             this.productdescriptiontextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.productdescriptiontextBox.Name = "productdescriptiontextBox";
             this.productdescriptiontextBox.Size = new System.Drawing.Size(259, 23);
@@ -403,7 +404,7 @@
             // productpricetextBox
             // 
             this.productpricetextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.productpricetextBox.Location = new System.Drawing.Point(1028, 159);
+            this.productpricetextBox.Location = new System.Drawing.Point(1028, 200);
             this.productpricetextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.productpricetextBox.Name = "productpricetextBox";
             this.productpricetextBox.Size = new System.Drawing.Size(149, 23);
@@ -414,7 +415,7 @@
             this.category.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.category.FormattingEnabled = true;
-            this.category.Location = new System.Drawing.Point(1028, 201);
+            this.category.Location = new System.Drawing.Point(1028, 242);
             this.category.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.category.Name = "category";
             this.category.Size = new System.Drawing.Size(259, 24);
@@ -425,7 +426,7 @@
             this.supplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.supplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.supplier.FormattingEnabled = true;
-            this.supplier.Location = new System.Drawing.Point(1028, 244);
+            this.supplier.Location = new System.Drawing.Point(1028, 285);
             this.supplier.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.supplier.Name = "supplier";
             this.supplier.Size = new System.Drawing.Size(259, 24);
@@ -438,7 +439,7 @@
             this.AddProduct_btn.FlatAppearance.BorderSize = 0;
             this.AddProduct_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddProduct_btn.ForeColor = System.Drawing.Color.White;
-            this.AddProduct_btn.Location = new System.Drawing.Point(1110, 278);
+            this.AddProduct_btn.Location = new System.Drawing.Point(1110, 319);
             this.AddProduct_btn.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.AddProduct_btn.Name = "AddProduct_btn";
             this.AddProduct_btn.Size = new System.Drawing.Size(177, 47);
@@ -453,7 +454,7 @@
             this.AddService_btn.FlatAppearance.BorderSize = 0;
             this.AddService_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddService_btn.ForeColor = System.Drawing.Color.White;
-            this.AddService_btn.Location = new System.Drawing.Point(1110, 527);
+            this.AddService_btn.Location = new System.Drawing.Point(1110, 567);
             this.AddService_btn.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.AddService_btn.Name = "AddService_btn";
             this.AddService_btn.Size = new System.Drawing.Size(177, 46);
@@ -464,7 +465,7 @@
             // servicepricetextbox
             // 
             this.servicepricetextbox.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.servicepricetextbox.Location = new System.Drawing.Point(1028, 463);
+            this.servicepricetextbox.Location = new System.Drawing.Point(1028, 503);
             this.servicepricetextbox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.servicepricetextbox.Name = "servicepricetextbox";
             this.servicepricetextbox.Size = new System.Drawing.Size(149, 23);
@@ -473,7 +474,7 @@
             // servicedescriptiontextbox
             // 
             this.servicedescriptiontextbox.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.servicedescriptiontextbox.Location = new System.Drawing.Point(1028, 426);
+            this.servicedescriptiontextbox.Location = new System.Drawing.Point(1028, 466);
             this.servicedescriptiontextbox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.servicedescriptiontextbox.Name = "servicedescriptiontextbox";
             this.servicedescriptiontextbox.Size = new System.Drawing.Size(259, 23);
@@ -482,7 +483,7 @@
             // servicenametextbox
             // 
             this.servicenametextbox.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.servicenametextbox.Location = new System.Drawing.Point(1028, 387);
+            this.servicenametextbox.Location = new System.Drawing.Point(1028, 427);
             this.servicenametextbox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.servicenametextbox.Name = "servicenametextbox";
             this.servicenametextbox.Size = new System.Drawing.Size(259, 23);
@@ -493,7 +494,7 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.label13.Location = new System.Drawing.Point(888, 470);
+            this.label13.Location = new System.Drawing.Point(888, 510);
             this.label13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(43, 16);
@@ -505,7 +506,7 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.label12.Location = new System.Drawing.Point(888, 429);
+            this.label12.Location = new System.Drawing.Point(888, 469);
             this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(86, 16);
@@ -517,7 +518,7 @@
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.label11.Location = new System.Drawing.Point(889, 387);
+            this.label11.Location = new System.Drawing.Point(889, 427);
             this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(47, 16);
@@ -529,7 +530,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(888, 341);
+            this.label8.Location = new System.Drawing.Point(888, 381);
             this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(105, 18);
@@ -542,7 +543,7 @@
             this.productsearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.productsearch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productsearch.FormattingEnabled = true;
-            this.productsearch.Location = new System.Drawing.Point(688, 40);
+            this.productsearch.Location = new System.Drawing.Point(688, 81);
             this.productsearch.Name = "productsearch";
             this.productsearch.Size = new System.Drawing.Size(188, 19);
             this.productsearch.TabIndex = 65;
@@ -553,7 +554,7 @@
             this.serviceSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.serviceSearch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.serviceSearch.FormattingEnabled = true;
-            this.serviceSearch.Location = new System.Drawing.Point(688, 340);
+            this.serviceSearch.Location = new System.Drawing.Point(688, 380);
             this.serviceSearch.Name = "serviceSearch";
             this.serviceSearch.Size = new System.Drawing.Size(188, 19);
             this.serviceSearch.TabIndex = 66;
@@ -562,7 +563,7 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(635, 39);
+            this.label7.Location = new System.Drawing.Point(635, 80);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 16);
             this.label7.TabIndex = 67;
@@ -572,19 +573,31 @@
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(635, 340);
+            this.label16.Location = new System.Drawing.Point(635, 380);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(41, 16);
             this.label16.TabIndex = 68;
             this.label16.Text = "Find:";
             this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(7, 9);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(205, 46);
+            this.label14.TabIndex = 111;
+            this.label14.Text = "Inventory";
+            // 
             // InventoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1329, 701);
+            this.ClientSize = new System.Drawing.Size(1329, 780);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.serviceSearch);
@@ -678,6 +691,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewButtonColumn deleteService;
+        private System.Windows.Forms.Label label14;
    
     }
 }
