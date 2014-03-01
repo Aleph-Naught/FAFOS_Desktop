@@ -69,6 +69,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -111,6 +112,7 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homeToolStripMenuItem,
             this.userSettingsToolStripMenuItem,
             this.logoutToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -120,14 +122,14 @@
             // userSettingsToolStripMenuItem
             // 
             this.userSettingsToolStripMenuItem.Name = "userSettingsToolStripMenuItem";
-            this.userSettingsToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.userSettingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.userSettingsToolStripMenuItem.Text = "User Settings";
             this.userSettingsToolStripMenuItem.Click += new System.EventHandler(this.userSettingsToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -243,25 +245,25 @@
             // addClientToolStripMenuItem
             // 
             this.addClientToolStripMenuItem.Name = "addClientToolStripMenuItem";
-            this.addClientToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addClientToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.addClientToolStripMenuItem.Text = "Add Client";
             // 
             // addContractToolStripMenuItem
             // 
             this.addContractToolStripMenuItem.Name = "addContractToolStripMenuItem";
-            this.addContractToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addContractToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.addContractToolStripMenuItem.Text = "Add Contract";
             // 
             // editClientToolStripMenuItem
             // 
             this.editClientToolStripMenuItem.Name = "editClientToolStripMenuItem";
-            this.editClientToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editClientToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.editClientToolStripMenuItem.Text = "Edit Client";
             // 
             // editContractToolStripMenuItem
             // 
             this.editContractToolStripMenuItem.Name = "editContractToolStripMenuItem";
-            this.editContractToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editContractToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.editContractToolStripMenuItem.Text = "Edit Contract";
             // 
             // reportsToolStripMenuItem
@@ -434,6 +436,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Day Notifications";
             // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -508,5 +517,6 @@
         private System.Windows.Forms.ToolStripMenuItem royaltyFeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userSettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
     }
 }
