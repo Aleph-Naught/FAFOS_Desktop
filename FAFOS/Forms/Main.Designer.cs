@@ -82,7 +82,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.userLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 739);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 740);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1184, 22);
             this.statusStrip1.TabIndex = 0;
@@ -245,6 +245,7 @@
             this.addClientToolStripMenuItem.Name = "addClientToolStripMenuItem";
             this.addClientToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addClientToolStripMenuItem.Text = "Add Client";
+            this.addClientToolStripMenuItem.Click += new System.EventHandler(this.addClientToolStripMenuItem_Click);
             // 
             // addContractToolStripMenuItem
             // 
@@ -315,7 +316,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.splitContainer1.Size = new System.Drawing.Size(1184, 715);
+            this.splitContainer1.Size = new System.Drawing.Size(1184, 716);
             this.splitContainer1.SplitterDistance = 198;
             this.splitContainer1.TabIndex = 3;
             // 
@@ -331,7 +332,7 @@
             this.notificationPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.notificationPanel.Location = new System.Drawing.Point(0, 0);
             this.notificationPanel.Name = "notificationPanel";
-            this.notificationPanel.Size = new System.Drawing.Size(196, 713);
+            this.notificationPanel.Size = new System.Drawing.Size(196, 714);
             this.notificationPanel.TabIndex = 37;
             // 
             // panel1
@@ -340,7 +341,7 @@
             this.panel1.Controls.Add(this.syncAndroid);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 500);
+            this.panel1.Location = new System.Drawing.Point(0, 501);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(196, 213);
             this.panel1.TabIndex = 58;
@@ -350,7 +351,7 @@
             this.syncHQ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.syncHQ.FlatAppearance.BorderSize = 0;
             this.syncHQ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.syncHQ.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.syncHQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncHQ.ForeColor = System.Drawing.Color.White;
             this.syncHQ.Location = new System.Drawing.Point(25, 70);
             this.syncHQ.Margin = new System.Windows.Forms.Padding(4);
@@ -366,7 +367,7 @@
             this.syncAndroid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.syncAndroid.FlatAppearance.BorderSize = 0;
             this.syncAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.syncAndroid.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.syncAndroid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncAndroid.ForeColor = System.Drawing.Color.White;
             this.syncAndroid.Location = new System.Drawing.Point(25, 129);
             this.syncAndroid.Margin = new System.Windows.Forms.Padding(4);
@@ -407,30 +408,30 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 183);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 14);
+            this.label3.Size = new System.Drawing.Size(90, 15);
             this.label3.TabIndex = 3;
             this.label3.Text = "Payments Due:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 51);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 14);
+            this.label4.Size = new System.Drawing.Size(56, 15);
             this.label4.TabIndex = 2;
             this.label4.Text = "Services:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(11, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 18);
+            this.label1.Size = new System.Drawing.Size(128, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Day Notifications";
             // 
@@ -439,7 +440,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.ClientSize = new System.Drawing.Size(1184, 762);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);

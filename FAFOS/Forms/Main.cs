@@ -203,6 +203,21 @@ namespace FAFOS.Forms
 
             embeddedForm.Show();
         }
+
+        private void addClientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentPage.Close();
+
+            MaintainClientController control = new MaintainClientController();
+            AddEditClientForm embeddedForm = control.New_client_button_Click(userid);
+            currentPage = embeddedForm;
+            embeddedForm.TopLevel = false;
+            splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
+            embeddedForm.Show();
+        }
  
 
     }

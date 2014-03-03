@@ -32,15 +32,14 @@ namespace FAFOS
 
 /************************* Main Form Events ****************************************************/
  
-        public void New_client_button_Click(tile sender, int id)
+        public AddEditClientForm New_client_button_Click(int id)
         {
             userID = id;
             NewClient();
-            _mainForm = (View)sender.FindForm();
 
             _clientForm = new AddEditClientForm(this, false, userID);
             _clientForm.Activate();
-            _clientForm.Show();
+            return _clientForm;
         }
 
         public void Edit_Client_Button_Click(tile sender, int id)

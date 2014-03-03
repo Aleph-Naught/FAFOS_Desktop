@@ -419,7 +419,7 @@ namespace FAFOS
                 }
                 else if (T.Name == "addClient")
                 {
-                    c.New_client_button_Click(T, userid);
+                    //c.New_client_button_Click(T, userid);
                 }
                 else if (T.Name == "editClient")
                 {
