@@ -61,7 +61,7 @@
             this.Login_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Login_btn.Name = "Login_btn";
             this.Login_btn.Size = new System.Drawing.Size(100, 50);
-            this.Login_btn.TabIndex = 18;
+            this.Login_btn.TabIndex = 3;
             this.Login_btn.Text = "Login";
             this.Login_btn.UseVisualStyleBackColor = false;
             this.Login_btn.Click += new System.EventHandler(this.Login_btn_Click);
@@ -85,7 +85,7 @@
             this.txtUsername.MinimumSize = new System.Drawing.Size(220, 30);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(220, 26);
-            this.txtUsername.TabIndex = 20;
+            this.txtUsername.TabIndex = 1;
             // 
             // lblPassword
             // 
@@ -106,7 +106,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(217, 26);
-            this.txtPassword.TabIndex = 22;
+            this.txtPassword.TabIndex = 2;
             // 
             // Login
             // 
