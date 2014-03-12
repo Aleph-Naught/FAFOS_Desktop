@@ -131,17 +131,15 @@
     <Compile Include="Forms\AddEditSrvAddrForm.Designer.cs">
       <DependentUpon>AddEditSrvAddrForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminUserForm.cs" />
+    <Compile Include="Forms\AdminUserForm.Designer.cs">
+      <DependentUpon>AdminUserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\UserSettings\AdminUserForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\UserSettings\AdminUserForm.Designer.cs">
-      <DependentUpon>AdminUserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Background.cs">
       <SubType>Form</SubType>
@@ -149,11 +147,13 @@
     <Compile Include="Forms\Background.Designer.cs">
       <DependentUpon>Background.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UserSettings\HQUserForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\UserSettings\HQUserForm.Designer.cs">
+    <Compile Include="Forms\HQUserForm.cs" />
+    <Compile Include="Forms\HQUserForm.Designer.cs">
       <DependentUpon>HQUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MaintainUsersForm.cs" />
+    <Compile Include="Forms\MaintainUsersForm.Designer.cs">
+      <DependentUpon>MaintainUsersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Operations\InspectionForm.cs">
       <SubType>Form</SubType>
@@ -190,12 +190,6 @@
     </Compile>
     <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\UserSettings\MaintainUsersForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\UserSettings\MaintainUsersForm.Designer.cs">
-      <DependentUpon>MaintainUsersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MapsForm.cs">
       <SubType>Form</SubType>
@@ -396,17 +390,20 @@
     <EmbeddedResource Include="Forms\AddEditSrvAddrForm.resx">
       <DependentUpon>AddEditSrvAddrForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\adminUserForm.resx">
+      <DependentUpon>AdminUserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserSettings\adminUserForm.resx">
-      <DependentUpon>AdminUserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Background.resx">
       <DependentUpon>Background.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserSettings\HQUserForm.resx">
+    <EmbeddedResource Include="Forms\HQUserForm.resx">
       <DependentUpon>HQUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MaintainUsersForm.resx">
+      <DependentUpon>MaintainUsersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Operations\InspectionForm.resx">
       <DependentUpon>InspectionForm.cs</DependentUpon>
@@ -425,9 +422,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserSettings\MaintainUsersForm.resx">
-      <DependentUpon>MaintainUsersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MapsForm.resx">
       <DependentUpon>MapsForm.cs</DependentUpon>
