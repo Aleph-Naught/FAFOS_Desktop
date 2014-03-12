@@ -47,7 +47,7 @@ namespace FAFOS.Forms
             loginform.Close();
 
 
-            InvoiceForm embeddedForm = new InvoiceForm(userid);
+            HomePage embeddedForm = new HomePage(userid.ToString());
             currentPage = embeddedForm;
             embeddedForm.TopLevel = false;
             splitContainer1.Panel2.Controls.Add(embeddedForm);
@@ -221,6 +221,20 @@ namespace FAFOS.Forms
             currentPage.Close();
 
             InvoiceForm embeddedForm = new InvoiceForm(userid);
+            currentPage = embeddedForm;
+            embeddedForm.TopLevel = false;
+            splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
+            embeddedForm.Show();
+        }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentPage.Close();
+
+            HomePage embeddedForm = new HomePage(userid.ToString());
             currentPage = embeddedForm;
             embeddedForm.TopLevel = false;
             splitContainer1.Panel2.Controls.Add(embeddedForm);
