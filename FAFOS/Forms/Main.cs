@@ -259,8 +259,52 @@ namespace FAFOS.Forms
 
             embeddedForm.Show();
         }
- 
 
+        private void editClientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentPage.Close();
+
+            MaintainClientController control = new MaintainClientController();
+            AddEditClientForm embeddedForm = control.New_client_button_Click(userid);
+            currentPage = embeddedForm;
+            embeddedForm.TopLevel = false;
+            splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
+            embeddedForm.Show();
+        }
+
+        private void addContractToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentPage.Close();
+
+            MaintainClientController control = new MaintainClientController();
+            AddEditContractForm embeddedForm = control.Add_contract_Button_Click(userid);
+            currentPage = embeddedForm;
+            embeddedForm.TopLevel = false;
+            splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
+            embeddedForm.Show();
+        }
+
+        private void editContractToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentPage.Close();
+
+            MaintainClientController control = new MaintainClientController();
+            AddEditContractForm embeddedForm = control.Edit_contract_Button_Click(userid);
+            currentPage = embeddedForm;
+            embeddedForm.TopLevel = false;
+            splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
+            embeddedForm.Show();
+        }
+ 
     }
 }
 

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace FAFOS
 {
-    public partial class AddEditContractForm : FAFOS.Background
+    public partial class AddEditContractForm : Form
     {
         MaintainClientController my_controller;
         bool isEdit; 
@@ -82,7 +82,7 @@ namespace FAFOS
             //User label
             userid = id;
             user = new Users();
-            setup(userid.ToString(), "FAFOS Contract Form");
+            //setup(userid.ToString(), "FAFOS Contract Form");
            // lblUserInfo.Text = "Logged in:\n " + user.getName(id);
          //   lblUserInfo.Location = new Point(Screen.PrimaryScreen.Bounds.Right - 100, 10);
 

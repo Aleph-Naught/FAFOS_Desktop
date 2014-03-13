@@ -423,15 +423,15 @@ namespace FAFOS
                 }
                 else if (T.Name == "editClient")
                 {
-                    c.Edit_Client_Button_Click(T, userid);
+                    //c.Edit_Client_Button_Click(T, userid);
                 }
                 else if (T.Name == "addContract")
                 {
-                    c.Add_contract_Button_Click(T, userid);
+                    //c.Add_contract_Button_Click(T, userid);
                 }
                 else if (T.Name == "editContract")
                 {
-                    c.Edit_contract_Button_Click(T, userid);
+                    //c.Edit_contract_Button_Click(T, userid);
                 }
                 else if (T.Name == "statement")
                 {

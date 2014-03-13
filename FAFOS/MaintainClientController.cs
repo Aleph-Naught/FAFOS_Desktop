@@ -42,31 +42,48 @@ namespace FAFOS
             return _clientForm;
         }
 
-        public void Edit_Client_Button_Click(tile sender, int id)
+        public AddEditClientForm Edit_Client_Button_Click(int id)
         {
-            _mainForm = (View)sender.FindForm();
-            _clientForm = new AddEditClientForm(this, true,id);
+            //_mainForm = (View)sender.FindForm();
+            //_clientForm = new AddEditClientForm(this, true,id);
+            //_clientForm.Activate();
+            //_clientForm.Show();
+            userID = id;
+
+            _clientForm = new AddEditClientForm(this, true, userID);
             _clientForm.Activate();
-            _clientForm.Show();
+            return _clientForm;
+
         }
 
-        public void Add_contract_Button_Click(tile sender, int id)
+        public AddEditContractForm Add_contract_Button_Click(int id)
         {
-            _mainForm = (View)sender.FindForm();
+            //_mainForm = (View)sender.FindForm();
+            //userID = id;
+            //NewContract();
+            //_contractForm = new AddEditContractForm(this, false, userID, _contract.FindID());
+            //_contractForm.Activate();
+            //_contractForm.Show();
+
             userID = id;
             NewContract();
+
             _contractForm = new AddEditContractForm(this, false, userID, _contract.FindID());
             _contractForm.Activate();
-            _contractForm.Show(); 
-
-
+            return _contractForm;
         }
-        public void Edit_contract_Button_Click(tile sender, int id)
+        public AddEditContractForm Edit_contract_Button_Click(int id)
         {
-            _mainForm = (View)sender.FindForm();
+            //_mainForm = (View)sender.FindForm();
+            //userID = id;
+            //_contractForm = new AddEditContractForm(this, true, userID, "0");
+            //_contractForm.Show();
+
             userID = id;
+
             _contractForm = new AddEditContractForm(this, true, userID, "0");
-            _contractForm.Show();
+            _contractForm.Activate();
+            return _contractForm;
         }
 
 /************************* Add Edit Client Form Events *****************************************/

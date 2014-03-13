@@ -50,5 +50,10 @@ namespace FAFOS.Forms
 
             lblUserInfo.Text = user.getName(Convert.ToInt32(userid));
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
