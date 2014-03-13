@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace FAFOS
 {
-    public partial class AddEditClientForm : FAFOS.Background
+    public partial class AddEditClientForm : Form
     {
         MaintainClientController my_controller;
         bool isEdit;
@@ -102,7 +102,7 @@ namespace FAFOS
             //User label
             user = new Users();
             userid = id;
-            setup(userid.ToString(), "FAFOS Client Form");
+            
 
         }
 
@@ -288,6 +288,11 @@ namespace FAFOS
         public void SetContractButton(String ContractName)
         {
             contract_Button.Text = ContractName;
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
        /* void button1_MouseLeave(object sender, EventArgs e)
