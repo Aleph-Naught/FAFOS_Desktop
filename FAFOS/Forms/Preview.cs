@@ -21,7 +21,7 @@ namespace FAFOS
             InitializeComponent();
             try
             {
-                axAcroPDF1.LoadFile(file);
+                webBrowser1.Navigate(file);
             }
             catch (Exception e)
             {
