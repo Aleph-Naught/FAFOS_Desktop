@@ -20,7 +20,7 @@ using System.Collections;
 
 namespace FAFOS
 {
-    public partial class MapsForm : FAFOS.Background
+    public partial class MapsForm : Form
     {
 
 
@@ -49,6 +49,8 @@ namespace FAFOS
         ContractService[] service;
         bool prefetch;
 
+        public delegate void AsyncMapLoadCaller();
+
         public MapsForm(int id, object orders, object services)
         {
             InitializeComponent();
@@ -56,7 +58,7 @@ namespace FAFOS
 
             //User label
             userid = id;
-            setup(userid.ToString(), "FAFOS Day Itinerary");
+            //setup(userid.ToString(), "FAFOS Day Itinerary");
 
             //Tables
             DataTable dt = new SalesOrder().getWorkOrders(userid);
@@ -71,9 +73,20 @@ namespace FAFOS
 
 
             //Load the map
-            LoadMap();
+
+            AsyncMapLoadCaller asyncMapLoad = new AsyncMapLoadCaller(LoadMap);
+            asyncMapLoad.BeginInvoke(new AsyncCallback(TaskCompleted),null);
+
+            //LoadMap();
 
         }
+
+        public void TaskCompleted(IAsyncResult R)
+        {
+            generate_btn.BeginInvoke((Action)
+                (() => generate_btn.Enabled = true));
+        }
+
 
 
 
@@ -668,6 +681,8 @@ namespace FAFOS
                     currentMarker.Position = pos1.Value;
                 }
             }
+
+            /*
             GMapRoute rte = new GMapRoute("name");
 
             GDirections _dir;
@@ -681,6 +696,7 @@ namespace FAFOS
             }
 
             routes.Routes.Add(rte);
+             */ 
         }
 
         private void preload()
@@ -793,6 +809,7 @@ namespace FAFOS
 
         private void MapsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            /*
             if (prefetch)
             {
                 for (int i = 0; i < order.Length; i++)
@@ -846,6 +863,7 @@ namespace FAFOS
 
 
             }
+            */ 
 
         }
 
