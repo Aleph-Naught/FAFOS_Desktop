@@ -9,13 +9,13 @@ using System.Windows.Forms;
 
 namespace FAFOS
 {
-    public partial class QuoteForm : Background
+    public partial class QuoteForm : Form
     {
         public QuoteForm(QuoteController my_controller, String id, int type)
         {
             InitializeComponent();
 
-            setup(id, "FAFOS Quote Form");
+            //setup(id, "FAFOS Quote Form");
 
             this.dgvSalesOrder.CellEndEdit += new DataGridViewCellEventHandler(my_controller.dgvSalesOrder_CellValueChanged);
             this.dgvSalesOrder.CellValueChanged += new DataGridViewCellEventHandler(my_controller.dgvSalesOrder_CellValueChanged);

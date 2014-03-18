@@ -259,6 +259,22 @@ namespace FAFOS.Forms
 
             embeddedForm.Show();
         }
+
+        private void editQuoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuoteController qc = new QuoteController(userid.ToString());
+
+            currentPage.Close();
+            // type 2 = edit
+            QuoteForm embeddedForm = qc.quote(2);
+            currentPage = embeddedForm;
+            embeddedForm.TopLevel = false;
+            splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
+            embeddedForm.Show();
+        }
  
 
     }
