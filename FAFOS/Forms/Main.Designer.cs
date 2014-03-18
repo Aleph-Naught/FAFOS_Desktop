@@ -297,6 +297,7 @@ namespace FAFOS.Forms
             this.jobReportsToolStripMenuItem.Name = "jobReportsToolStripMenuItem";
             this.jobReportsToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.jobReportsToolStripMenuItem.Text = "Job Reports";
+            this.jobReportsToolStripMenuItem.Click += new System.EventHandler(this.jobReportsToolStripMenuItem_Click);
             // 
             // revenueReportsToolStripMenuItem
             // 

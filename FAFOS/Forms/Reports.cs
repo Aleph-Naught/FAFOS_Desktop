@@ -11,15 +11,15 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace FAFOS.Forms
 {
-    public partial class Reports : Background
+    public partial class Reports : Form
     {
         String userid;
-        String balanceS;
+        //String balanceS;
         public Reports(ReportsController my_controller, String id, int type)
         {
             InitializeComponent();
             userid=id;
-            setup(id, "FAFOS Report");
+            //setup(id, "FAFOS Report");
             this.ddlPickReport.SelectedIndexChanged += new EventHandler(my_controller.prepareReport);
 
             
@@ -29,7 +29,7 @@ namespace FAFOS.Forms
 
         public void fillData(DataTable dt)
         {
-            balanceS = dt.Rows[0][1].ToString();
+            //balanceS = dt.Rows[0][1].ToString();
             dgvReport.DataSource = dt;
             chartReport.DataSource = dt;
             chartReport.Series[0].YValueMembers = "Revenue";
@@ -106,7 +106,7 @@ namespace FAFOS.Forms
             return dtpEndDate.Value.ToString("yyyyMMdd HH:mm:ss"); ;
         }
 
-        private void generate_btn_Click(object sender, EventArgs e)
+        /*private void generate_btn_Click(object sender, EventArgs e)
         {
             XmlDocument xmldoc;// = new XmlDocument();
             xmldoc=new XmlDocument();
@@ -167,6 +167,6 @@ namespace FAFOS.Forms
             }
             MessageBox.Show("It has successfully generated and sent this month's royalty fee.", "FAFOS Message Box");
 
-        }
+        }*/
     }
 }
