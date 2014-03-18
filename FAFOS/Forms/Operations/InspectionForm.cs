@@ -25,7 +25,6 @@ namespace FAFOS
         public InspectionForm(string id)
         {
 
-            //TODO: Generating Reports doesn't actually work on my machine -Nick
 
             InitializeComponent();
             userid = id;
