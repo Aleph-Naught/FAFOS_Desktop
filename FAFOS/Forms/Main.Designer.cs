@@ -297,13 +297,13 @@ namespace FAFOS.Forms
             this.jobReportsToolStripMenuItem.Name = "jobReportsToolStripMenuItem";
             this.jobReportsToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.jobReportsToolStripMenuItem.Text = "Job Reports";
-            this.jobReportsToolStripMenuItem.Click += new System.EventHandler(this.jobReportsToolStripMenuItem_Click);
             // 
             // revenueReportsToolStripMenuItem
             // 
             this.revenueReportsToolStripMenuItem.Name = "revenueReportsToolStripMenuItem";
             this.revenueReportsToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.revenueReportsToolStripMenuItem.Text = "Revenue Reports";
+            this.revenueReportsToolStripMenuItem.Click += new System.EventHandler(this.revenueReportsToolStripMenuItem_Click);
             // 
             // royaltyFeeToolStripMenuItem
             // 
