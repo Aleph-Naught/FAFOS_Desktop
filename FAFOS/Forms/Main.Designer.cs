@@ -290,6 +290,7 @@ namespace FAFOS.Forms
             this.financialStatementsToolStripMenuItem.Name = "financialStatementsToolStripMenuItem";
             this.financialStatementsToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.financialStatementsToolStripMenuItem.Text = "Financial Statements";
+            this.financialStatementsToolStripMenuItem.Click += new System.EventHandler(this.financialStatementsToolStripMenuItem_Click);
             // 
             // jobReportsToolStripMenuItem
             // 

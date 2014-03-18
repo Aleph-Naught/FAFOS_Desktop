@@ -12,7 +12,7 @@ using InvoicePDF;
 
 namespace FAFOS
 {
-    public partial class Statements : FAFOS.Background
+    public partial class Statements : Form
     {
         int userid;
 
@@ -21,10 +21,10 @@ namespace FAFOS
             InitializeComponent();
 
             userid = id;
-            setup(userid.ToString(), "FAFOS Statement");
+            //setup(userid.ToString(), "FAFOS Statement");
 
-            pnlStatement.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width/2-Convert.ToInt32(pnlStatement.Size.Width)/2,
-                System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height / 2 - Convert.ToInt32(pnlStatement.Size.Height) / 2);
+           // pnlStatement.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width/2-Convert.ToInt32(pnlStatement.Size.Width)/2,
+              //  System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height / 2 - Convert.ToInt32(pnlStatement.Size.Height) / 2);
 
 
             string [] clients = new Invoice().getOutstandingClients();
@@ -45,15 +45,16 @@ namespace FAFOS
 
         private void btnStatement_Click(object sender, EventArgs e)
         {
-           
+            string uri = "";
             if (cbClients.Text != "")
             {
 
-                generateStatement();
+                uri = generateStatement();
                // MessageBox.Show(cbClients.Text + " -/ " + cbClients.SelectedValue);
 
-                Preview testDialog = new Preview(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
-                + "\\Resources\\Statement_"+cbClients.SelectedValue+".pdf");
+                //Preview testDialog = new Preview(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
+               // + "\\Resources\\Statement_"+cbClients.SelectedValue+".pdf");
+                Preview testDialog = new Preview(uri);
                  testDialog.ShowDialog(this);
             }
           
@@ -61,7 +62,7 @@ namespace FAFOS
         }
 
         
-        private void generateStatement()
+        private string generateStatement()
         {
             try
             {
@@ -100,7 +101,7 @@ namespace FAFOS
 
                 //Create a utility object
                 Utility pdfUtility = new Utility();
-                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\Statement_"+cbClients.SelectedValue+".pdf";
+                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "Resources\\Statement_"+cbClients.SelectedValue+".pdf";
 
                 //Open a file specifying the file name as the output pdf file
                 //String FilePath = @"C:\Users\Hassan\Desktop\Preview.pdf";
@@ -325,10 +326,13 @@ namespace FAFOS
                 file.Write(pdfUtility.GetTrailer(catalogDict.objectNum, infoDict.objectNum, out size), 0, size);
                 file.Close();
 
+                return FilePath;
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Could not display the document because " + ex.ToString());
+                return null;
             }
         }
     }

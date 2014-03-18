@@ -273,6 +273,20 @@ namespace FAFOS.Forms
 
             embeddedForm.Show();
         }
+
+        private void financialStatementsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentPage.Close();
+
+            Statements embeddedForm = new Statements(userid);
+            currentPage = embeddedForm;
+            embeddedForm.TopLevel = false;
+            splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
+            embeddedForm.Show();
+        }
  
 
     }
