@@ -9,12 +9,12 @@ using System.Windows.Forms;
 
 namespace FAFOS
 {
-    public partial class Sales_Order : Background
+    public partial class Sales_Order : Form
     {
         public Sales_Order(SalesOrderController my_controller, String id, int type)
         {
             InitializeComponent();
-            setup(id, "FAFOS Sales Order Form");
+            //setup(id, "FAFOS Sales Order Form");
 
             //this.btnCancel.Click += new System.EventHandler(my_controller.cancelSalesOrder);
             this.dgvSalesOrder.CellEndEdit += new DataGridViewCellEventHandler(my_controller.dgvSalesOrder_CellValueChanged);

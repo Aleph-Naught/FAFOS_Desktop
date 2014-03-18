@@ -32,7 +32,7 @@ namespace FAFOS
             newSalesOrder.fillData(new Quote().get(newSalesOrder.getId()), false, new QuoteItems().get(newSalesOrder.getId()));
         }
 
-        public void salesOrder(int type)//object sender, EventArgs e)
+        public Sales_Order salesOrder(int type)//object sender, EventArgs e)
         {
             // _view = (Sales_Order)((Button)sender).FindForm();
             // _view.Hide();
@@ -45,7 +45,8 @@ namespace FAFOS
                 newSalesOrder.fillSalesOrdersIDs(new Quote().getInProgress(franchiseeUserId));
             else if (type == 3)
                 newSalesOrder.fillSalesOrdersIDs(new SalesOrder().getInProgress(franchiseeUserId));
-            newSalesOrder.Show();
+
+            return newSalesOrder;
         }
 
         public void createSalesOrder(object sender, EventArgs e)

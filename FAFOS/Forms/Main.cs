@@ -275,6 +275,22 @@ namespace FAFOS.Forms
 
             embeddedForm.Show();
         }
+
+        private void createSalesOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SalesOrderController control = new SalesOrderController(userid.ToString());
+
+            currentPage.Close();
+
+            // type 1 = create
+            Sales_Order embeddedForm = control.salesOrder(1);
+            embeddedForm.TopLevel = false;
+            splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill;
+
+            embeddedForm.Show();
+        }
  
 
     }

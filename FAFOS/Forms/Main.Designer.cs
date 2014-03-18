@@ -219,6 +219,7 @@ namespace FAFOS.Forms
             this.createSalesOrderToolStripMenuItem.Name = "createSalesOrderToolStripMenuItem";
             this.createSalesOrderToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.createSalesOrderToolStripMenuItem.Text = "Create Sales Order";
+            this.createSalesOrderToolStripMenuItem.Click += new System.EventHandler(this.createSalesOrderToolStripMenuItem_Click);
             // 
             // convertToSalesOrderToolStripMenuItem
             // 
