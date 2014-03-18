@@ -55,6 +55,7 @@
             this.dtpStartDate.Size = new System.Drawing.Size(200, 20);
             this.dtpStartDate.TabIndex = 39;
             this.dtpStartDate.Value = new System.DateTime(2013, 1, 1, 0, 0, 0, 0);
+            this.dtpStartDate.ValueChanged += new System.EventHandler(this.dtpStartDate_ValueChanged);
             // 
             // dtpEndDate
             // 
@@ -63,6 +64,7 @@
             this.dtpEndDate.Size = new System.Drawing.Size(200, 20);
             this.dtpEndDate.TabIndex = 40;
             this.dtpEndDate.Value = new System.DateTime(2017, 12, 31, 0, 0, 0, 0);
+            this.dtpEndDate.ValueChanged += new System.EventHandler(this.dtpEndDate_ValueChanged);
             // 
             // ddlPickReport
             // 
@@ -121,8 +123,12 @@
             // chartReport
             // 
             this.chartReport.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.chartReport.BackColor = System.Drawing.SystemColors.Control;
+            this.chartReport.BorderlineColor = System.Drawing.SystemColors.Control;
             chartArea2.Name = "ChartArea1";
             this.chartReport.ChartAreas.Add(chartArea2);
+            legend2.BackColor = System.Drawing.Color.White;
+            legend2.BorderColor = System.Drawing.Color.Black;
             legend2.Name = "Legend1";
             this.chartReport.Legends.Add(legend2);
             this.chartReport.Location = new System.Drawing.Point(410, 149);
@@ -145,14 +151,15 @@
             this.generate_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.generate_btn.FlatAppearance.BorderSize = 0;
             this.generate_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.generate_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generate_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.generate_btn.ForeColor = System.Drawing.Color.White;
-            this.generate_btn.Location = new System.Drawing.Point(762, 94);
+            this.generate_btn.Location = new System.Drawing.Point(759, 90);
             this.generate_btn.Name = "generate_btn";
             this.generate_btn.Size = new System.Drawing.Size(136, 41);
             this.generate_btn.TabIndex = 53;
             this.generate_btn.Text = "Generate Royalty Fee for Month";
             this.generate_btn.UseVisualStyleBackColor = false;
+            this.generate_btn.Click += new System.EventHandler(this.generate_btn_Click);
             // 
             // label5
             // 

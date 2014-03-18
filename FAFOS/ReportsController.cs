@@ -31,5 +31,11 @@ namespace FAFOS
             Reports report = (Reports)((ComboBox)sender).FindForm();
             report.fillData(new FAFOS.Invoice().getReports(((ComboBox)sender).SelectedIndex, report.getStartDate(), report.getEndDate()));
         }
+
+        public void dateBoundsChanged(ComboBox typeBox)
+        {
+            Reports report = (Reports)typeBox.FindForm();
+            report.fillData(new FAFOS.Invoice().getReports(typeBox.SelectedIndex, report.getStartDate(), report.getEndDate()));
+        }
     }
 }

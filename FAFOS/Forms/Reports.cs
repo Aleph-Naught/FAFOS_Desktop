@@ -14,13 +14,17 @@ namespace FAFOS.Forms
     public partial class Reports : Form
     {
         String userid;
-        //String balanceS;
+        String balanceS;
+        ReportsController controller;
         public Reports(ReportsController my_controller, String id, int type)
         {
             InitializeComponent();
             userid=id;
+            controller = my_controller;
             //setup(id, "FAFOS Report");
             this.ddlPickReport.SelectedIndexChanged += new EventHandler(my_controller.prepareReport);
+           // this.dtpStartDate.ValueChanged += new EventHandler(my_controller.prepareReport);
+          //  this.dtpEndDate.ValueChanged += new EventHandler(my_controller.prepareReport);
 
             
             chartReport.ChartAreas[0].AxisY.Minimum = 0;
@@ -29,7 +33,13 @@ namespace FAFOS.Forms
 
         public void fillData(DataTable dt)
         {
-            //balanceS = dt.Rows[0][1].ToString();
+            try
+            {
+                balanceS = dt.Rows[0][1].ToString();
+            }
+            catch (IndexOutOfRangeException e) {
+                balanceS = "0";
+            }
             dgvReport.DataSource = dt;
             chartReport.DataSource = dt;
             chartReport.Series[0].YValueMembers = "Revenue";
@@ -106,7 +116,7 @@ namespace FAFOS.Forms
             return dtpEndDate.Value.ToString("yyyyMMdd HH:mm:ss"); ;
         }
 
-        /*private void generate_btn_Click(object sender, EventArgs e)
+        private void generate_btn_Click(object sender, EventArgs e)
         {
             XmlDocument xmldoc;// = new XmlDocument();
             xmldoc=new XmlDocument();
@@ -158,15 +168,26 @@ namespace FAFOS.Forms
             //let's try to save the XML document in a file: C:\pavel.xml
             try
             {
-            xmldoc.Save(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
-                   + "\\Resources\\royaltyFee_" + new Users().getFranchiseeId(userid) + ".xml"); //I've chosen the c:\ for the resulting file pavel.xml
+                String filename = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
+                   + "\\Resources\\royaltyFee_" + new Users().getFranchiseeId(userid) + ".xml";
+            xmldoc.Save(filename); //I've chosen the c:\ for the resulting file pavel.xml
             }
             catch (Exception)
             {
            // Console.WriteLine(e.Message);
             }
-            MessageBox.Show("It has successfully generated and sent this month's royalty fee.", "FAFOS Message Box");
+            MessageBox.Show("Royalty Fee Document Generated", "Success");
 
-        }*/
+        }
+
+        private void dtpStartDate_ValueChanged(object sender, EventArgs e)
+        {
+            controller.dateBoundsChanged(ddlPickReport);
+        }
+
+        private void dtpEndDate_ValueChanged(object sender, EventArgs e)
+        {
+            controller.dateBoundsChanged(ddlPickReport);
+        }
     }
 }
