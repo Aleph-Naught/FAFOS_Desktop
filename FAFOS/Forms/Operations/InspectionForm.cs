@@ -109,10 +109,11 @@ namespace FAFOS
 
             }
 
-            String address = new ServiceAddress().get(addressBox.SelectedValue.ToString());
 
-            Preview testDialog = new Preview(uri);
-            testDialog.ShowDialog(this);
+            //Preview testDialog = new Preview(uri);
+            //testDialog.ShowDialog(this);
+
+            pdfPreview.Navigate(uri);
 
           //  clientThread.Abort();
            // listenThread.Abort();
