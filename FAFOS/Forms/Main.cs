@@ -116,6 +116,11 @@ namespace FAFOS.Forms
             loginform.ShowDialog();
         }
 
+        private void dayItineraryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentPage.Close();
+            //TODO: Implement this
+        }
 
         private void inspectionToolStripMenuItem_Click(object sender, EventArgs e)
         {

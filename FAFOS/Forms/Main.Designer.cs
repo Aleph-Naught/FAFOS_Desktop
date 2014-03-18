@@ -37,6 +37,7 @@ namespace FAFOS.Forms
             this.userSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dayItineraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inspectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recordPurchaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -121,27 +122,28 @@ namespace FAFOS.Forms
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.homeToolStripMenuItem.Text = "Home";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // userSettingsToolStripMenuItem
             // 
             this.userSettingsToolStripMenuItem.Name = "userSettingsToolStripMenuItem";
-            this.userSettingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.userSettingsToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.userSettingsToolStripMenuItem.Text = "User Settings";
             this.userSettingsToolStripMenuItem.Click += new System.EventHandler(this.userSettingsToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // operationsToolStripMenuItem
             // 
             this.operationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dayItineraryToolStripMenuItem,
             this.inspectionToolStripMenuItem,
             this.inventoryToolStripMenuItem,
             this.recordPurchaseToolStripMenuItem,
@@ -149,6 +151,13 @@ namespace FAFOS.Forms
             this.operationsToolStripMenuItem.Name = "operationsToolStripMenuItem";
             this.operationsToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.operationsToolStripMenuItem.Text = "Operations";
+            // 
+            // dayItineraryToolStripMenuItem
+            // 
+            this.dayItineraryToolStripMenuItem.Name = "dayItineraryToolStripMenuItem";
+            this.dayItineraryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.dayItineraryToolStripMenuItem.Text = "Day Itinerary";
+            this.dayItineraryToolStripMenuItem.Click += new System.EventHandler(this.dayItineraryToolStripMenuItem_Click);
             // 
             // inspectionToolStripMenuItem
             // 
@@ -243,26 +252,26 @@ namespace FAFOS.Forms
             // addClientToolStripMenuItem
             // 
             this.addClientToolStripMenuItem.Name = "addClientToolStripMenuItem";
-            this.addClientToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.addClientToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addClientToolStripMenuItem.Text = "Add Client";
             this.addClientToolStripMenuItem.Click += new System.EventHandler(this.addClientToolStripMenuItem_Click);
             // 
             // addContractToolStripMenuItem
             // 
             this.addContractToolStripMenuItem.Name = "addContractToolStripMenuItem";
-            this.addContractToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.addContractToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addContractToolStripMenuItem.Text = "Add Contract";
             // 
             // editClientToolStripMenuItem
             // 
             this.editClientToolStripMenuItem.Name = "editClientToolStripMenuItem";
-            this.editClientToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.editClientToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.editClientToolStripMenuItem.Text = "Edit Client";
             // 
             // editContractToolStripMenuItem
             // 
             this.editContractToolStripMenuItem.Name = "editContractToolStripMenuItem";
-            this.editContractToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.editContractToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.editContractToolStripMenuItem.Text = "Edit Contract";
             // 
             // reportsToolStripMenuItem
@@ -488,6 +497,7 @@ namespace FAFOS.Forms
         private System.Windows.Forms.Button syncHQ;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem dayItineraryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inspectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem recordPurchaseToolStripMenuItem;

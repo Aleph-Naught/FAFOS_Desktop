@@ -164,8 +164,6 @@ namespace FAFOS
                 payId = pay.set("'" + DateTime.Today.Date.ToString() + "','" + txtType.Text + "'," +
                             txtAmount.Text + ",'" + txtRemarks.Text + "'," +
                             new ClientContract().getClient(new SalesOrder().getSAddress(new Invoice().getSalesOrderID(txtInvoice.SelectedValue.ToString()).ToString())));
-                //TODO: Something in here is screwed ^^ I don't want to even start looking for it. Something to do with invoices that have no previous payments on them
-
 
                 pay.setIP(txtInvoice.SelectedValue.ToString() + "," + payId);
 

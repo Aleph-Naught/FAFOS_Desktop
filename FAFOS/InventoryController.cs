@@ -66,19 +66,14 @@ namespace FAFOS
         public void Delete_Product_btn_Click(object sender, EventArgs e)
         {
             DataGridView dataGridView = _view.getProductdgv();
-
             if (dataGridView.CurrentCell.ColumnIndex == 9)
             {
                 if (MessageBox.Show("Do you want to delete this row ?", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     try
                     {
-
-                        franchisee_inventory.deleteProduct(dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[1].Value.ToString());
                         dataGridView.Rows.RemoveAt(dataGridView.SelectedCells[0].OwningRow.Index);
-                        
-                        //TODO: This is not deleting the right row
-
+                        franchisee_inventory.deleteProduct(dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[1].Value.ToString());
                         fillProductcombo();
                     }
                     catch
