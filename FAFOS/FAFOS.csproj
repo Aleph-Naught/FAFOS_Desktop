@@ -131,7 +131,9 @@
     <Compile Include="Forms\AddEditSrvAddrForm.Designer.cs">
       <DependentUpon>AddEditSrvAddrForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdminUserForm.cs" />
+    <Compile Include="Forms\AdminUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\AdminUserForm.Designer.cs">
       <DependentUpon>AdminUserForm.cs</DependentUpon>
     </Compile>
@@ -147,7 +149,9 @@
     <Compile Include="Forms\Background.Designer.cs">
       <DependentUpon>Background.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HQUserForm.cs" />
+    <Compile Include="Forms\HQUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\HQUserForm.Designer.cs">
       <DependentUpon>HQUserForm.cs</DependentUpon>
     </Compile>

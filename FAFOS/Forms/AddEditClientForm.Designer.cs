@@ -77,7 +77,7 @@
             this.Ok_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Ok_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ok_Button.ForeColor = System.Drawing.Color.Black;
-            this.Ok_Button.Location = new System.Drawing.Point(699, 554);
+            this.Ok_Button.Location = new System.Drawing.Point(657, 452);
             this.Ok_Button.Margin = new System.Windows.Forms.Padding(4);
             this.Ok_Button.Name = "Ok_Button";
             this.Ok_Button.Size = new System.Drawing.Size(75, 23);
@@ -353,7 +353,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(349, 69);
+            this.label14.Location = new System.Drawing.Point(307, 18);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(50, 13);
@@ -368,7 +368,7 @@
             this.delete_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete_Button.ForeColor = System.Drawing.Color.White;
-            this.delete_Button.Location = new System.Drawing.Point(547, 86);
+            this.delete_Button.Location = new System.Drawing.Point(505, 35);
             this.delete_Button.Margin = new System.Windows.Forms.Padding(4);
             this.delete_Button.Name = "delete_Button";
             this.delete_Button.Size = new System.Drawing.Size(187, 42);
@@ -395,7 +395,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(764, 204);
+            this.groupBox1.Size = new System.Drawing.Size(764, 102);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Info";
@@ -421,7 +421,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(764, 175);
+            this.groupBox2.Size = new System.Drawing.Size(764, 73);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Address Information";
@@ -443,7 +443,7 @@
             this.contract_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.contract_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.contract_Button.ForeColor = System.Drawing.Color.White;
-            this.contract_Button.Location = new System.Drawing.Point(352, 86);
+            this.contract_Button.Location = new System.Drawing.Point(310, 35);
             this.contract_Button.Margin = new System.Windows.Forms.Padding(4);
             this.contract_Button.Name = "contract_Button";
             this.contract_Button.Size = new System.Drawing.Size(187, 42);
@@ -469,7 +469,7 @@
             // 
             this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelBtn.Location = new System.Drawing.Point(617, 554);
+            this.cancelBtn.Location = new System.Drawing.Point(575, 452);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 41;
@@ -485,7 +485,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.cancelBtn;
-            this.ClientSize = new System.Drawing.Size(1420, 882);
+            this.ClientSize = new System.Drawing.Size(1378, 780);
             this.ControlBox = false;
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.typeTextBox);
