@@ -202,24 +202,28 @@ namespace FAFOS.Forms
             this.editQuoteToolStripMenuItem.Name = "editQuoteToolStripMenuItem";
             this.editQuoteToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.editQuoteToolStripMenuItem.Text = "Edit Quote";
+            this.editQuoteToolStripMenuItem.Click += new System.EventHandler(this.editQuoteToolStripMenuItem_Click);
             // 
             // createSalesOrderToolStripMenuItem
             // 
             this.createSalesOrderToolStripMenuItem.Name = "createSalesOrderToolStripMenuItem";
             this.createSalesOrderToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.createSalesOrderToolStripMenuItem.Text = "Create Sales Order";
+            this.createSalesOrderToolStripMenuItem.Click += new System.EventHandler(this.createSalesOrderToolStripMenuItem_Click);
             // 
             // convertToSalesOrderToolStripMenuItem
             // 
             this.convertToSalesOrderToolStripMenuItem.Name = "convertToSalesOrderToolStripMenuItem";
             this.convertToSalesOrderToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.convertToSalesOrderToolStripMenuItem.Text = "Convert to Sales Order";
+            this.convertToSalesOrderToolStripMenuItem.Click += new System.EventHandler(this.convertToSalesOrderToolStripMenuItem_Click);
             // 
             // editSalesOrderToolStripMenuItem
             // 
             this.editSalesOrderToolStripMenuItem.Name = "editSalesOrderToolStripMenuItem";
             this.editSalesOrderToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.editSalesOrderToolStripMenuItem.Text = "Edit Sales Order";
+            this.editSalesOrderToolStripMenuItem.Click += new System.EventHandler(this.editSalesOrderToolStripMenuItem_Click);
             // 
             // invoiceToolStripMenuItem
             // 
