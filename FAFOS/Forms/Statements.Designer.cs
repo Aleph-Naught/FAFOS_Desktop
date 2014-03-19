@@ -41,7 +41,7 @@
             this.cbClients.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbClients.FormattingEnabled = true;
             this.cbClients.Location = new System.Drawing.Point(10, 38);
-            this.cbClients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbClients.Margin = new System.Windows.Forms.Padding(2);
             this.cbClients.Name = "cbClients";
             this.cbClients.Size = new System.Drawing.Size(176, 26);
             this.cbClients.TabIndex = 39;
@@ -51,8 +51,8 @@
             this.pnlStatement.Controls.Add(this.label1);
             this.pnlStatement.Controls.Add(this.btnStatement);
             this.pnlStatement.Controls.Add(this.cbClients);
-            this.pnlStatement.Location = new System.Drawing.Point(209, 152);
-            this.pnlStatement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlStatement.Location = new System.Drawing.Point(15, 79);
+            this.pnlStatement.Margin = new System.Windows.Forms.Padding(2);
             this.pnlStatement.Name = "pnlStatement";
             this.pnlStatement.Size = new System.Drawing.Size(397, 101);
             this.pnlStatement.TabIndex = 41;
@@ -76,7 +76,7 @@
             this.btnStatement.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatement.ForeColor = System.Drawing.Color.White;
             this.btnStatement.Location = new System.Drawing.Point(282, 25);
-            this.btnStatement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatement.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatement.Name = "btnStatement";
             this.btnStatement.Size = new System.Drawing.Size(94, 50);
             this.btnStatement.TabIndex = 42;
@@ -87,11 +87,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F);
             this.label5.Location = new System.Drawing.Point(7, 9);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(392, 46);
+            this.label5.Size = new System.Drawing.Size(429, 46);
             this.label5.TabIndex = 53;
             this.label5.Text = "Financial Statements";
             // 
@@ -104,7 +104,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pnlStatement);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Statements";
             this.Text = "Statements";
             this.pnlStatement.ResumeLayout(false);

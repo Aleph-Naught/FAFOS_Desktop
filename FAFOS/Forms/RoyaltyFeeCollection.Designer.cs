@@ -47,8 +47,8 @@
             // 
             this.franchiseeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.franchiseeBox.FormattingEnabled = true;
-            this.franchiseeBox.Location = new System.Drawing.Point(69, 138);
-            this.franchiseeBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.franchiseeBox.Location = new System.Drawing.Point(15, 111);
+            this.franchiseeBox.Margin = new System.Windows.Forms.Padding(2);
             this.franchiseeBox.Name = "franchiseeBox";
             this.franchiseeBox.Size = new System.Drawing.Size(222, 25);
             this.franchiseeBox.TabIndex = 39;
@@ -57,7 +57,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(66, 105);
+            this.label8.Location = new System.Drawing.Point(12, 78);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(125, 17);
             this.label8.TabIndex = 47;
@@ -68,7 +68,10 @@
             this.royalteeFees.AccessibleDescription = "";
             this.royalteeFees.AllowUserToAddRows = false;
             this.royalteeFees.AllowUserToDeleteRows = false;
-            this.royalteeFees.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.royalteeFees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.royalteeFees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.royalteeFees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.royalteeFees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -76,12 +79,12 @@
             this.Month,
             this.Percentage,
             this.BalanceOwed});
-            this.royalteeFees.Location = new System.Drawing.Point(111, 198);
-            this.royalteeFees.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.royalteeFees.Location = new System.Drawing.Point(11, 152);
+            this.royalteeFees.Margin = new System.Windows.Forms.Padding(2);
             this.royalteeFees.Name = "royalteeFees";
             this.royalteeFees.ReadOnly = true;
             this.royalteeFees.RowTemplate.Height = 24;
-            this.royalteeFees.Size = new System.Drawing.Size(655, 352);
+            this.royalteeFees.Size = new System.Drawing.Size(980, 422);
             this.royalteeFees.TabIndex = 48;
             this.royalteeFees.Visible = false;
             // 
@@ -91,7 +94,6 @@
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
-            this.ID.Width = 80;
             // 
             // Date
             // 
@@ -99,7 +101,6 @@
             this.Date.HeaderText = "Issued Date";
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
-            this.Date.Width = 120;
             // 
             // Month
             // 
@@ -107,7 +108,6 @@
             this.Month.HeaderText = "Month";
             this.Month.Name = "Month";
             this.Month.ReadOnly = true;
-            this.Month.Width = 120;
             // 
             // Percentage
             // 
@@ -115,7 +115,6 @@
             this.Percentage.HeaderText = "Royalty Fee %";
             this.Percentage.Name = "Percentage";
             this.Percentage.ReadOnly = true;
-            this.Percentage.Width = 140;
             // 
             // BalanceOwed
             // 
@@ -123,13 +122,12 @@
             this.BalanceOwed.HeaderText = "Balance Owed";
             this.BalanceOwed.Name = "BalanceOwed";
             this.BalanceOwed.ReadOnly = true;
-            this.BalanceOwed.Width = 150;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(397, 105);
+            this.label1.Location = new System.Drawing.Point(272, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 17);
             this.label1.TabIndex = 50;
@@ -141,8 +139,8 @@
             this.yearBox.FormattingEnabled = true;
             this.yearBox.Items.AddRange(new object[] {
             "2013"});
-            this.yearBox.Location = new System.Drawing.Point(400, 138);
-            this.yearBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.yearBox.Location = new System.Drawing.Point(275, 111);
+            this.yearBox.Margin = new System.Windows.Forms.Padding(2);
             this.yearBox.Name = "yearBox";
             this.yearBox.Size = new System.Drawing.Size(108, 25);
             this.yearBox.TabIndex = 49;
@@ -154,7 +152,7 @@
             this.show_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.show_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.show_btn.ForeColor = System.Drawing.Color.White;
-            this.show_btn.Location = new System.Drawing.Point(630, 122);
+            this.show_btn.Location = new System.Drawing.Point(418, 102);
             this.show_btn.Name = "show_btn";
             this.show_btn.Size = new System.Drawing.Size(136, 41);
             this.show_btn.TabIndex = 51;
@@ -165,11 +163,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F);
             this.label5.Location = new System.Drawing.Point(7, 9);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(253, 46);
+            this.label5.Size = new System.Drawing.Size(270, 46);
             this.label5.TabIndex = 52;
             this.label5.Text = "Royalty Fees";
             // 
@@ -187,7 +185,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.franchiseeBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RoyaltyFeeCollection";
             this.Text = "RoyalteeFeeCollection";
             this.Load += new System.EventHandler(this.RoyaltyFeeCollection_Load);
