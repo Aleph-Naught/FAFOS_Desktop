@@ -128,7 +128,6 @@
             // 
             // pdfPreview
             // 
-            this.pdfPreview.AllowNavigation = false;
             this.pdfPreview.AllowWebBrowserDrop = false;
             this.pdfPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 

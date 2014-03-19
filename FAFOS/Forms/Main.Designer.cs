@@ -362,6 +362,7 @@ namespace FAFOS.Forms
             this.syncHQ.TabIndex = 56;
             this.syncHQ.Text = "Sync Reports to HQ";
             this.syncHQ.UseVisualStyleBackColor = false;
+            this.syncHQ.Visible = false;
             this.syncHQ.Click += new System.EventHandler(this.syncHQ_Click);
             // 
             // syncAndroid
@@ -369,7 +370,7 @@ namespace FAFOS.Forms
             this.syncAndroid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.syncAndroid.FlatAppearance.BorderSize = 0;
             this.syncAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.syncAndroid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.syncAndroid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.syncAndroid.ForeColor = System.Drawing.Color.White;
             this.syncAndroid.Location = new System.Drawing.Point(25, 129);
             this.syncAndroid.Margin = new System.Windows.Forms.Padding(4);
@@ -378,7 +379,7 @@ namespace FAFOS.Forms
             this.syncAndroid.TabIndex = 57;
             this.syncAndroid.Text = "Sync Contracts to Android";
             this.syncAndroid.UseVisualStyleBackColor = false;
-            this.syncAndroid.Click += new System.EventHandler(this.syncAndroid_Click);
+            this.syncAndroid.Visible = false;
             // 
             // label9
             // 
@@ -389,6 +390,7 @@ namespace FAFOS.Forms
             this.label9.Size = new System.Drawing.Size(100, 18);
             this.label9.TabIndex = 55;
             this.label9.Text = "Sync Options";
+            this.label9.Visible = false;
             // 
             // paymentNotification
             // 

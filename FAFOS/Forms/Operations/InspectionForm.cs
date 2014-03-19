@@ -50,7 +50,8 @@ namespace FAFOS
         public void ListenForClients()
         {
             // Create a model to listen from clients
-            _TCPModel = new TCPModel(3000);
+
+            _TCPModel = new TCPModel(Int32.Parse("8888"));
 
 //            while (true)
          //   {
@@ -63,6 +64,7 @@ namespace FAFOS
                 clientThread.Start(TCPsocket);
            // }
         }
+
         public void Communications(object socket)
         {
             Socket TCP_socket = (Socket)socket;
@@ -347,8 +349,20 @@ namespace FAFOS
 
                 string url = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
                    + "\\Resources\\inspection.xml";
-                XmlDocument doc = new System.Xml.XmlDocument();
-                doc.Load(url);
+
+                XmlDocument doc;
+
+                try
+                {
+                    doc = new System.Xml.XmlDocument();
+                    doc.Load(url);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("An error occurred or no inspection data exists");
+                    return null;
+                }
+                
                 XmlElement docElement = doc.DocumentElement;
 
                 // loop through all childNodes

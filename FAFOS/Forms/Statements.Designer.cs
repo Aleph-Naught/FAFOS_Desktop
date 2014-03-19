@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnStatement = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.pnlStatement.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             this.pnlStatement.Location = new System.Drawing.Point(15, 79);
             this.pnlStatement.Margin = new System.Windows.Forms.Padding(2);
             this.pnlStatement.Name = "pnlStatement";
-            this.pnlStatement.Size = new System.Drawing.Size(397, 101);
+            this.pnlStatement.Size = new System.Drawing.Size(220, 194);
             this.pnlStatement.TabIndex = 41;
             // 
             // label1
@@ -75,7 +76,7 @@
             this.btnStatement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStatement.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatement.ForeColor = System.Drawing.Color.White;
-            this.btnStatement.Location = new System.Drawing.Point(282, 25);
+            this.btnStatement.Location = new System.Drawing.Point(92, 84);
             this.btnStatement.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatement.Name = "btnStatement";
             this.btnStatement.Size = new System.Drawing.Size(94, 50);
@@ -95,12 +96,24 @@
             this.label5.TabIndex = 53;
             this.label5.Text = "Financial Statements";
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.webBrowser1.Location = new System.Drawing.Point(261, 79);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(707, 499);
+            this.webBrowser1.TabIndex = 54;
+            // 
             // Statements
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1022, 602);
+            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pnlStatement);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -121,5 +134,6 @@
         private System.Windows.Forms.Button btnStatement;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
