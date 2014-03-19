@@ -33,41 +33,49 @@ namespace FAFOS
 
         private void RoyaltyFeeCollection_Load(object sender, EventArgs e)
         {
-            int[] ids = new Franchisee().getTotal();
-            for (int h = 0; h <ids.Length ; h++)
+            try
             {
-
-                String[] data = new String[6];
-                string url = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
-                    + "\\Resources\\royaltyFee_" + ids[h] + ".xml";
-                XmlDocument doc = new System.Xml.XmlDocument();
-                doc.Load(url);
-                XmlElement docElement = doc.DocumentElement;
-                int i = 0;
-                /// loop through all childNodes
-                foreach (XmlNode childNode in docElement.ChildNodes)
+                int[] ids = new Franchisee().getTotal();
+                for (int h = 0; h < ids.Length; h++)
                 {
-                    if (childNode.HasChildNodes)
+
+                    String[] data = new String[6];
+                    string url = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
+                        + "\\Resources\\royaltyFee_" + ids[h] + ".xml";
+                    XmlDocument doc = new System.Xml.XmlDocument();
+                    doc.Load(url);
+                    XmlElement docElement = doc.DocumentElement;
+                    int i = 0;
+                    /// loop through all childNodes
+                    foreach (XmlNode childNode in docElement.ChildNodes)
                     {
-                        foreach (XmlNode c in childNode.ChildNodes)
+                        if (childNode.HasChildNodes)
                         {
-                            data[i] = c.InnerText;
-                            //Console.WriteLine(c.Name + ": " + c.InnerText);
+                            foreach (XmlNode c in childNode.ChildNodes)
+                            {
+                                data[i] = c.InnerText;
+                                //Console.WriteLine(c.Name + ": " + c.InnerText);
+                                i++;
+                            }
+                        }
+                        else
+                        {
+                            //Console.WriteLine(childNode.Name + ": " + childNode.InnerText);
+                            data[i] = childNode.InnerText;
                             i++;
                         }
                     }
-                    else
-                    {
-                        //Console.WriteLine(childNode.Name + ": " + childNode.InnerText);
-                        data[i] = childNode.InnerText;
-                        i++;
-                    }
-                }
 
-               
-                if (!r.check(data[0], data[3] + "-" + data[2] + "-" + data[1]))
-                    r.set(data);
+
+                    if (!r.check(data[0], data[3] + "-" + data[2] + "-" + data[1]))
+                        r.set(data);
+                }
             }
+            catch (System.IO.FileNotFoundException f)
+            {
+                MessageBox.Show("Royalty Fee document not found, using data from database", "Warning");
+            }
+
             
         }
 
