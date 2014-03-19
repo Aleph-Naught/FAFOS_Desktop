@@ -132,6 +132,9 @@ namespace FAFOS
             {
                 NewContract();
                 _contractForm = new AddEditContractForm(this, false, userID, _contract.FindID());
+                _contractForm.ControlBox = true;
+                _contractForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+                _contractForm.Text = "Contracts";
                 _contractForm.ClientLinked(_clientForm.GetName());
                 _contract.SetClient(_client.FindID());
                 _contractForm.ShowDialog();
@@ -316,6 +319,9 @@ namespace FAFOS
         {
             NewClient();
             _clientForm = new AddEditClientForm(this, false, userID);
+            _clientForm.ControlBox = true;
+            _clientForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            _clientForm.Text = "Clients";
             _clientForm.Activate();
             _clientForm.DisableContract(_contractForm.GetContractText());
             _clientForm.ShowDialog();

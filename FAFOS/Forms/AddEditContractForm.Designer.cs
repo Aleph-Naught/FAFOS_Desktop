@@ -302,9 +302,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(31, 55);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 37);
+            this.label5.Size = new System.Drawing.Size(155, 37);
             this.label5.TabIndex = 43;
-            this.label5.Text = "Clients";
+            this.label5.Text = "Contracts";
             // 
             // AddEditContractForm
             // 
