@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace FAFOS
 {
-    public partial class RoyaltyFeeCollection : Background
+    public partial class RoyaltyFeeCollection : Form
     {
         RoyaltyFee r;
         String userid;
@@ -20,7 +20,7 @@ namespace FAFOS
 
             //User label
             userid = id;
-            setup(userid, "FAFOS Royalty Fee Collection");
+            //setup(userid, "FAFOS Royalty Fee Collection");
              r = new RoyaltyFee();
 
              franchiseeBox.DataSource = new Franchisee().getAll();

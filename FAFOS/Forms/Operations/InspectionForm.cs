@@ -94,16 +94,24 @@ namespace FAFOS
 
         private void generate_btn_Click(object sender, EventArgs e)
         {
+
+            //string uri = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
+            //  + "\\Resources\\" + inspectionType.Text + "_" + DateTime.Today.ToShortDateString() + ".pdf";
+
+            string uri ="";
+
             if (inspectionType.Text == "Extinguisher Report")
             {
                 
 
-                generateExtinguisher();
+                uri = generateExtinguisher();
 
 
             }
-            Preview testDialog = new Preview(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
-              + "\\Resources\\"+inspectionType.Text+"_" + DateTime.Today.ToShortDateString() + ".pdf");
+
+            String address = new ServiceAddress().get(addressBox.SelectedValue.ToString());
+
+            Preview testDialog = new Preview(uri);
             testDialog.ShowDialog(this);
 
           //  clientThread.Abort();
@@ -111,7 +119,7 @@ namespace FAFOS
             
 
         }
-        private void generateExtinguisher()
+        private string generateExtinguisher()
         {
             try
             {
@@ -153,7 +161,7 @@ namespace FAFOS
 
                 //Create a utility object
                 Utility pdfUtility = new Utility();
-                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + inspectionType.Text + "_"+DateTime.Today.ToShortDateString()+".pdf";
+                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "Resources\\" + inspectionType.Text + "_" + DateTime.Now.ToString("dd-MM-yyyy-hh-mm-ss") + ".pdf";
 
                 //Open a file specifying the file name as the output pdf file
                 //String FilePath = @"C:\Users\Hassan\Desktop\Preview.pdf";
@@ -424,10 +432,13 @@ namespace FAFOS
                 file.Write(pdfUtility.GetTrailer(catalogDict.objectNum, infoDict.objectNum, out size), 0, size);
                 file.Close();
 
+                return FilePath;
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Could not display the document because " + ex.ToString());
+                return null;
             }
         }
 

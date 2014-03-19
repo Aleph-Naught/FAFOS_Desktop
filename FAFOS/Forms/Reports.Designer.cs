@@ -41,27 +41,30 @@
             this.dgvReport = new System.Windows.Forms.DataGridView();
             this.chartReport = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.generate_btn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartReport)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtpStartDate
             // 
-            this.dtpStartDate.Location = new System.Drawing.Point(392, 196);
-            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpStartDate.Location = new System.Drawing.Point(202, 23);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(265, 22);
+            this.dtpStartDate.Size = new System.Drawing.Size(200, 20);
             this.dtpStartDate.TabIndex = 39;
             this.dtpStartDate.Value = new System.DateTime(2013, 1, 1, 0, 0, 0, 0);
+            this.dtpStartDate.ValueChanged += new System.EventHandler(this.dtpStartDate_ValueChanged);
             // 
             // dtpEndDate
             // 
-            this.dtpEndDate.Location = new System.Drawing.Point(667, 196);
-            this.dtpEndDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpEndDate.Location = new System.Drawing.Point(422, 24);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(265, 22);
+            this.dtpEndDate.Size = new System.Drawing.Size(200, 20);
             this.dtpEndDate.TabIndex = 40;
             this.dtpEndDate.Value = new System.DateTime(2017, 12, 31, 0, 0, 0, 0);
+            this.dtpEndDate.ValueChanged += new System.EventHandler(this.dtpEndDate_ValueChanged);
             // 
             // ddlPickReport
             // 
@@ -73,39 +76,35 @@
             "Revenue by Month",
             "Revenue by Quarter",
             "Revenue by Year"});
-            this.ddlPickReport.Location = new System.Drawing.Point(149, 196);
-            this.ddlPickReport.Margin = new System.Windows.Forms.Padding(4);
+            this.ddlPickReport.Location = new System.Drawing.Point(4, 23);
             this.ddlPickReport.Name = "ddlPickReport";
-            this.ddlPickReport.Size = new System.Drawing.Size(233, 24);
+            this.ddlPickReport.Size = new System.Drawing.Size(176, 21);
             this.ddlPickReport.TabIndex = 41;
             // 
             // lblPickReport
             // 
             this.lblPickReport.AutoSize = true;
-            this.lblPickReport.Location = new System.Drawing.Point(149, 172);
-            this.lblPickReport.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPickReport.Location = new System.Drawing.Point(1, 4);
             this.lblPickReport.Name = "lblPickReport";
-            this.lblPickReport.Size = new System.Drawing.Size(81, 17);
+            this.lblPickReport.Size = new System.Drawing.Size(63, 13);
             this.lblPickReport.TabIndex = 42;
             this.lblPickReport.Text = "Pick Report";
             // 
             // lblStartDate
             // 
             this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Location = new System.Drawing.Point(392, 172);
-            this.lblStartDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStartDate.Location = new System.Drawing.Point(199, 4);
             this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(72, 17);
+            this.lblStartDate.Size = new System.Drawing.Size(55, 13);
             this.lblStartDate.TabIndex = 43;
             this.lblStartDate.Text = "Start Date";
             // 
             // lblEndDate
             // 
             this.lblEndDate.AutoSize = true;
-            this.lblEndDate.Location = new System.Drawing.Point(667, 172);
-            this.lblEndDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEndDate.Location = new System.Drawing.Point(419, 4);
             this.lblEndDate.Name = "lblEndDate";
-            this.lblEndDate.Size = new System.Drawing.Size(67, 17);
+            this.lblEndDate.Size = new System.Drawing.Size(52, 13);
             this.lblEndDate.TabIndex = 44;
             this.lblEndDate.Text = "End Date";
             // 
@@ -113,22 +112,26 @@
             // 
             this.dgvReport.AllowUserToAddRows = false;
             this.dgvReport.AllowUserToDeleteRows = false;
+            this.dgvReport.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReport.Location = new System.Drawing.Point(97, 245);
-            this.dgvReport.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvReport.Location = new System.Drawing.Point(15, 149);
             this.dgvReport.Name = "dgvReport";
             this.dgvReport.ReadOnly = true;
-            this.dgvReport.Size = new System.Drawing.Size(347, 495);
+            this.dgvReport.Size = new System.Drawing.Size(345, 451);
             this.dgvReport.TabIndex = 45;
             // 
             // chartReport
             // 
+            this.chartReport.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.chartReport.BackColor = System.Drawing.SystemColors.Control;
+            this.chartReport.BorderlineColor = System.Drawing.SystemColors.Control;
             chartArea2.Name = "ChartArea1";
             this.chartReport.ChartAreas.Add(chartArea2);
+            legend2.BackColor = System.Drawing.Color.White;
+            legend2.BorderColor = System.Drawing.Color.Black;
             legend2.Name = "Legend1";
             this.chartReport.Legends.Add(legend2);
-            this.chartReport.Location = new System.Drawing.Point(455, 245);
-            this.chartReport.Margin = new System.Windows.Forms.Padding(4);
+            this.chartReport.Location = new System.Drawing.Point(410, 149);
             this.chartReport.Name = "chartReport";
             series3.ChartArea = "ChartArea1";
             series3.Legend = "Legend1";
@@ -139,7 +142,7 @@
             series4.Name = "Threshold";
             this.chartReport.Series.Add(series3);
             this.chartReport.Series.Add(series4);
-            this.chartReport.Size = new System.Drawing.Size(800, 555);
+            this.chartReport.Size = new System.Drawing.Size(600, 451);
             this.chartReport.TabIndex = 46;
             this.chartReport.Text = "chart1";
             // 
@@ -148,46 +151,58 @@
             this.generate_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.generate_btn.FlatAppearance.BorderSize = 0;
             this.generate_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.generate_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generate_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.generate_btn.ForeColor = System.Drawing.Color.White;
-            this.generate_btn.Location = new System.Drawing.Point(1017, 172);
-            this.generate_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.generate_btn.Location = new System.Drawing.Point(759, 90);
             this.generate_btn.Name = "generate_btn";
-            this.generate_btn.Size = new System.Drawing.Size(182, 50);
+            this.generate_btn.Size = new System.Drawing.Size(136, 41);
             this.generate_btn.TabIndex = 53;
             this.generate_btn.Text = "Generate Royalty Fee for Month";
             this.generate_btn.UseVisualStyleBackColor = false;
             this.generate_btn.Click += new System.EventHandler(this.generate_btn_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(7, 9);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(329, 46);
+            this.label5.TabIndex = 56;
+            this.label5.Text = "Revenue Reports";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblEndDate);
+            this.panel1.Controls.Add(this.lblStartDate);
+            this.panel1.Controls.Add(this.lblPickReport);
+            this.panel1.Controls.Add(this.ddlPickReport);
+            this.panel1.Controls.Add(this.dtpEndDate);
+            this.panel1.Controls.Add(this.dtpStartDate);
+            this.panel1.Location = new System.Drawing.Point(12, 79);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(635, 54);
+            this.panel1.TabIndex = 57;
+            // 
             // Reports
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1452, 815);
+            this.ClientSize = new System.Drawing.Size(1022, 602);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.generate_btn);
             this.Controls.Add(this.chartReport);
             this.Controls.Add(this.dgvReport);
-            this.Controls.Add(this.lblEndDate);
-            this.Controls.Add(this.lblStartDate);
-            this.Controls.Add(this.lblPickReport);
-            this.Controls.Add(this.ddlPickReport);
-            this.Controls.Add(this.dtpEndDate);
-            this.Controls.Add(this.dtpStartDate);
-            this.Location = new System.Drawing.Point(0, 0);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Reports";
             this.Text = "Reports";
-            this.Controls.SetChildIndex(this.dtpStartDate, 0);
-            this.Controls.SetChildIndex(this.dtpEndDate, 0);
-            this.Controls.SetChildIndex(this.ddlPickReport, 0);
-            this.Controls.SetChildIndex(this.lblPickReport, 0);
-            this.Controls.SetChildIndex(this.lblStartDate, 0);
-            this.Controls.SetChildIndex(this.lblEndDate, 0);
-            this.Controls.SetChildIndex(this.dgvReport, 0);
-            this.Controls.SetChildIndex(this.chartReport, 0);
-            this.Controls.SetChildIndex(this.generate_btn, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartReport)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,5 +219,7 @@
         private System.Windows.Forms.DataGridView dgvReport;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartReport;
         private System.Windows.Forms.Button generate_btn;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel1;
     }
 }

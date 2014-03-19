@@ -260,6 +260,54 @@ namespace FAFOS.Forms
             embeddedForm.Show();
         }
 
+
+        private void royaltyFeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentPage.Close();
+
+            RoyaltyFeeCollection embeddedForm = new RoyaltyFeeCollection(userid.ToString());
+            currentPage = embeddedForm;
+            embeddedForm.TopLevel = false;
+            splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
+            embeddedForm.Show();
+        }
+
+        private void financialStatementsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentPage.Close();
+
+            Statements embeddedForm = new Statements(userid);
+            currentPage = embeddedForm;
+            embeddedForm.TopLevel = false;
+            splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
+            embeddedForm.Show();
+        }
+
+        
+
+        private void revenueReportsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentPage.Close();
+
+            ReportsController cont = new ReportsController(userid.ToString());
+            Reports embeddedForm = new Reports(cont, userid.ToString(), 0);
+            currentPage = embeddedForm;
+            embeddedForm.TopLevel = false;
+            splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
+            embeddedForm.Show();
+        }
+ 
+
+
         private void editClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             currentPage.Close();
