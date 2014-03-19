@@ -353,7 +353,7 @@ namespace FAFOS.Forms
             this.syncHQ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.syncHQ.FlatAppearance.BorderSize = 0;
             this.syncHQ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.syncHQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.syncHQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.syncHQ.ForeColor = System.Drawing.Color.White;
             this.syncHQ.Location = new System.Drawing.Point(25, 70);
             this.syncHQ.Margin = new System.Windows.Forms.Padding(4);

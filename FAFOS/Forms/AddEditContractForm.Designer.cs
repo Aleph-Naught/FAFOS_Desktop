@@ -299,10 +299,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F);
             this.label5.Location = new System.Drawing.Point(7, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(192, 46);
+            this.label5.Size = new System.Drawing.Size(214, 46);
             this.label5.TabIndex = 43;
             this.label5.Text = "Contracts";
             // 

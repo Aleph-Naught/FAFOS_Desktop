@@ -472,10 +472,10 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F);
             this.label15.Location = new System.Drawing.Point(7, 9);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(142, 46);
+            this.label15.Size = new System.Drawing.Size(156, 46);
             this.label15.TabIndex = 42;
             this.label15.Text = "Clients";
             // 
