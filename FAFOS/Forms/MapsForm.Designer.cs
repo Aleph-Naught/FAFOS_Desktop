@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainMap = new GMap.NET.WindowsForms.GMapControl();
             this.label8 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -37,7 +37,6 @@
             this.lblUserInfo = new System.Windows.Forms.Label();
             this.saveRoute = new System.Windows.Forms.Button();
             this.workOrderTable = new System.Windows.Forms.DataGridView();
-            this.servicesTable = new System.Windows.Forms.DataGridView();
             this.orderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.issuedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrderAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +44,7 @@
             this.OrderProvince = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrderCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Done = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.servicesTable = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,12 +54,21 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.workOrderTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicesTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainMap
             // 
+            this.MainMap.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MainMap.Bearing = 0F;
             this.MainMap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MainMap.CanDragMap = true;
@@ -67,7 +76,8 @@
             this.MainMap.GrayScaleMode = false;
             this.MainMap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.MainMap.LevelsKeepInMemmory = 5;
-            this.MainMap.Location = new System.Drawing.Point(205, 454);
+            this.MainMap.Location = new System.Drawing.Point(15, 256);
+            this.MainMap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MainMap.MarkersEnabled = true;
             this.MainMap.MaxZoom = 2;
             this.MainMap.MinZoom = 2;
@@ -80,7 +90,7 @@
             this.MainMap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.MainMap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.MainMap.ShowTileGridLines = false;
-            this.MainMap.Size = new System.Drawing.Size(858, 367);
+            this.MainMap.Size = new System.Drawing.Size(1059, 607);
             this.MainMap.TabIndex = 42;
             this.MainMap.Visible = false;
             this.MainMap.Zoom = 0D;
@@ -89,10 +99,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(22, 248);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(11, 7);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 20);
+            this.label8.Size = new System.Drawing.Size(91, 16);
             this.label8.TabIndex = 46;
             this.label8.Text = "Work Order:";
             // 
@@ -100,24 +109,24 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(540, 248);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(10, 7);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(152, 20);
+            this.label15.Size = new System.Drawing.Size(125, 16);
             this.label15.TabIndex = 47;
             this.label15.Text = "Service Contract:";
             // 
             // generate_btn
             // 
+            this.generate_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.generate_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.generate_btn.Enabled = false;
             this.generate_btn.FlatAppearance.BorderSize = 0;
             this.generate_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.generate_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generate_btn.ForeColor = System.Drawing.Color.White;
-            this.generate_btn.Location = new System.Drawing.Point(1191, 469);
-            this.generate_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.generate_btn.Location = new System.Drawing.Point(1088, 256);
             this.generate_btn.Name = "generate_btn";
-            this.generate_btn.Size = new System.Drawing.Size(132, 70);
+            this.generate_btn.Size = new System.Drawing.Size(99, 57);
             this.generate_btn.TabIndex = 49;
             this.generate_btn.Text = "Generate Map";
             this.generate_btn.UseVisualStyleBackColor = false;
@@ -126,22 +135,23 @@
             // lblUserInfo
             // 
             this.lblUserInfo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserInfo.Location = new System.Drawing.Point(1628, 248);
+            this.lblUserInfo.Location = new System.Drawing.Point(1221, 202);
+            this.lblUserInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserInfo.Name = "lblUserInfo";
-            this.lblUserInfo.Size = new System.Drawing.Size(125, 50);
+            this.lblUserInfo.Size = new System.Drawing.Size(94, 41);
             this.lblUserInfo.TabIndex = 51;
             // 
             // saveRoute
             // 
+            this.saveRoute.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.saveRoute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.saveRoute.FlatAppearance.BorderSize = 0;
             this.saveRoute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveRoute.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveRoute.ForeColor = System.Drawing.Color.White;
-            this.saveRoute.Location = new System.Drawing.Point(1191, 547);
-            this.saveRoute.Margin = new System.Windows.Forms.Padding(4);
+            this.saveRoute.Location = new System.Drawing.Point(1088, 319);
             this.saveRoute.Name = "saveRoute";
-            this.saveRoute.Size = new System.Drawing.Size(132, 70);
+            this.saveRoute.Size = new System.Drawing.Size(99, 57);
             this.saveRoute.TabIndex = 53;
             this.saveRoute.Text = "Session End";
             this.saveRoute.UseVisualStyleBackColor = false;
@@ -152,6 +162,8 @@
             this.workOrderTable.AllowUserToAddRows = false;
             this.workOrderTable.AllowUserToDeleteRows = false;
             this.workOrderTable.AllowUserToResizeRows = false;
+            this.workOrderTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.workOrderTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.workOrderTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.workOrderTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.orderID,
@@ -161,39 +173,15 @@
             this.OrderProvince,
             this.OrderCountry,
             this.Done});
-            this.workOrderTable.Location = new System.Drawing.Point(26, 277);
+            this.workOrderTable.Location = new System.Drawing.Point(15, 30);
+            this.workOrderTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.workOrderTable.Name = "workOrderTable";
             this.workOrderTable.RowHeadersVisible = false;
             this.workOrderTable.RowTemplate.Height = 24;
             this.workOrderTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.workOrderTable.Size = new System.Drawing.Size(499, 171);
+            this.workOrderTable.Size = new System.Drawing.Size(391, 139);
             this.workOrderTable.TabIndex = 54;
             this.workOrderTable.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_DataBindingComplete);
-            // 
-            // servicesTable
-            // 
-            this.servicesTable.AllowUserToAddRows = false;
-            this.servicesTable.AllowUserToDeleteRows = false;
-            this.servicesTable.AllowUserToResizeRows = false;
-            this.servicesTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.servicesTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewCheckBoxColumn1});
-            this.servicesTable.Location = new System.Drawing.Point(544, 277);
-            this.servicesTable.Name = "servicesTable";
-            this.servicesTable.RowHeadersVisible = false;
-            this.servicesTable.RowTemplate.Height = 24;
-            this.servicesTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.servicesTable.Size = new System.Drawing.Size(779, 171);
-            this.servicesTable.TabIndex = 55;
-            this.servicesTable.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_DataBindingComplete);
             // 
             // orderID
             // 
@@ -202,19 +190,17 @@
             this.orderID.Name = "orderID";
             this.orderID.ReadOnly = true;
             this.orderID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.orderID.Width = 50;
             // 
             // issuedDate
             // 
             this.issuedDate.DataPropertyName = "dateIssued";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.issuedDate.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.issuedDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.issuedDate.HeaderText = "Date Issued";
             this.issuedDate.Name = "issuedDate";
             this.issuedDate.ReadOnly = true;
             this.issuedDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.issuedDate.Width = 105;
             // 
             // OrderAddress
             // 
@@ -223,7 +209,6 @@
             this.OrderAddress.Name = "OrderAddress";
             this.OrderAddress.ReadOnly = true;
             this.OrderAddress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.OrderAddress.Width = 150;
             // 
             // OrderCity
             // 
@@ -255,7 +240,34 @@
             // 
             this.Done.HeaderText = "Completed";
             this.Done.Name = "Done";
-            this.Done.Width = 90;
+            // 
+            // servicesTable
+            // 
+            this.servicesTable.AllowUserToAddRows = false;
+            this.servicesTable.AllowUserToDeleteRows = false;
+            this.servicesTable.AllowUserToResizeRows = false;
+            this.servicesTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.servicesTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.servicesTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.servicesTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewCheckBoxColumn1});
+            this.servicesTable.Location = new System.Drawing.Point(13, 30);
+            this.servicesTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.servicesTable.Name = "servicesTable";
+            this.servicesTable.RowHeadersVisible = false;
+            this.servicesTable.RowTemplate.Height = 24;
+            this.servicesTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.servicesTable.Size = new System.Drawing.Size(729, 139);
+            this.servicesTable.TabIndex = 55;
+            this.servicesTable.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_DataBindingComplete);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -264,7 +276,6 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn1.Width = 150;
             // 
             // Column1
             // 
@@ -273,19 +284,17 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column1.Width = 70;
             // 
             // Column2
             // 
             this.Column2.DataPropertyName = "nextDate";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column2.HeaderText = "Due Date";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column2.Width = 95;
             // 
             // Column3
             // 
@@ -294,7 +303,6 @@
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column3.Width = 120;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -303,7 +311,6 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn3.Width = 150;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -321,7 +328,6 @@
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dataGridViewTextBoxColumn5.Visible = false;
-            this.dataGridViewTextBoxColumn5.Width = 80;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -331,43 +337,69 @@
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dataGridViewTextBoxColumn6.Visible = false;
-            this.dataGridViewTextBoxColumn6.Width = 80;
             // 
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.HeaderText = "Completed";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.Width = 90;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(7, 9);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(414, 46);
+            this.label5.TabIndex = 56;
+            this.label5.Text = "Inspection Itinierary";
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.Location = new System.Drawing.Point(15, 70);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.workOrderTable);
+            this.splitContainer1.Panel1.Controls.Add(this.label8);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.servicesTable);
+            this.splitContainer1.Panel2.Controls.Add(this.label15);
+            this.splitContainer1.Size = new System.Drawing.Size(1172, 171);
+            this.splitContainer1.SplitterDistance = 424;
+            this.splitContainer1.TabIndex = 57;
             // 
             // MapsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1452, 886);
-            this.Controls.Add(this.servicesTable);
-            this.Controls.Add(this.workOrderTable);
+            this.ClientSize = new System.Drawing.Size(1199, 894);
+            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.saveRoute);
             this.Controls.Add(this.lblUserInfo);
             this.Controls.Add(this.generate_btn);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.MainMap);
-            this.Location = new System.Drawing.Point(0, 0);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MapsForm";
             this.Text = "MapsForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MapsForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.Controls.SetChildIndex(this.MainMap, 0);
-            this.Controls.SetChildIndex(this.label8, 0);
-            this.Controls.SetChildIndex(this.label15, 0);
-            this.Controls.SetChildIndex(this.generate_btn, 0);
-            this.Controls.SetChildIndex(this.lblUserInfo, 0);
-            this.Controls.SetChildIndex(this.saveRoute, 0);
-            this.Controls.SetChildIndex(this.workOrderTable, 0);
-            this.Controls.SetChildIndex(this.servicesTable, 0);
             ((System.ComponentModel.ISupportInitialize)(this.workOrderTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicesTable)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,6 +431,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.SplitContainer splitContainer1;
 
     }
 }
