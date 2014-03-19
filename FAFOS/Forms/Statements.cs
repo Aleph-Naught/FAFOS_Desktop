@@ -54,8 +54,10 @@ namespace FAFOS
 
                 //Preview testDialog = new Preview(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
                // + "\\Resources\\Statement_"+cbClients.SelectedValue+".pdf");
-                Preview testDialog = new Preview(uri);
-                 testDialog.ShowDialog(this);
+                //Preview testDialog = new Preview(uri);
+                 //testDialog.ShowDialog(this);
+
+                 webBrowser1.Navigate(uri);
             }
           
            

@@ -481,7 +481,9 @@
     <Content Include="Resources\Columns.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\CompanyLogo.png" />
+    <Content Include="Resources\CompanyLogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\DefaultProPic.png" />
     <None Include="Resources\Shades.jpg" />
     <None Include="Resources\ListViewItemSorter.bmp" />
