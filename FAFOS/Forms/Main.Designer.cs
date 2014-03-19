@@ -378,6 +378,7 @@ namespace FAFOS.Forms
             this.syncAndroid.TabIndex = 57;
             this.syncAndroid.Text = "Sync Contracts to Android";
             this.syncAndroid.UseVisualStyleBackColor = false;
+            this.syncAndroid.Click += new System.EventHandler(this.syncAndroid_Click);
             // 
             // label9
             // 

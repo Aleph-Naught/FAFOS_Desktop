@@ -49,7 +49,7 @@ namespace FAFOS
             //_clientForm.Show();
             userID = id;
 
-            _clientForm = new AddEditClientForm(this, true, userID);
+            _clientForm = new AddEditClientForm(this, true, id);
             _clientForm.Activate();
             return _clientForm;
 

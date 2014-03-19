@@ -50,7 +50,7 @@ namespace FAFOS
         public void ListenForClients()
         {
             // Create a model to listen from clients
-            _TCPModel = new TCPModel(Int32.Parse("3000"));
+            _TCPModel = new TCPModel(3000);
 
 //            while (true)
          //   {
