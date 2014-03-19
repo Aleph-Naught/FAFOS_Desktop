@@ -288,6 +288,7 @@ namespace FAFOS.Forms
 
             embeddedForm.Dock = DockStyle.Fill;
 
+            currentPage = embeddedForm;
             embeddedForm.Show();
         }
 
@@ -303,6 +304,7 @@ namespace FAFOS.Forms
 
             embeddedForm.Dock = DockStyle.Fill;
 
+            currentPage = embeddedForm;
             embeddedForm.Show();
         }
 
@@ -319,6 +321,7 @@ namespace FAFOS.Forms
 
             embeddedForm.Dock = DockStyle.Fill;
 
+            currentPage = embeddedForm;
             embeddedForm.Show();
         }
  
