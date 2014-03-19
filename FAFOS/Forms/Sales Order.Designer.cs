@@ -55,7 +55,7 @@
             this.btnPreview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.btnPreview.FlatAppearance.BorderSize = 0;
             this.btnPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPreview.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.btnPreview.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnPreview.ForeColor = System.Drawing.Color.White;
             this.btnPreview.Location = new System.Drawing.Point(587, 528);
             this.btnPreview.Name = "btnPreview";
@@ -129,7 +129,7 @@
             this.btnPullData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.btnPullData.FlatAppearance.BorderSize = 0;
             this.btnPullData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPullData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.btnPullData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnPullData.ForeColor = System.Drawing.Color.White;
             this.btnPullData.Location = new System.Drawing.Point(139, 97);
             this.btnPullData.Name = "btnPullData";
@@ -197,7 +197,7 @@
             this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.btnSubmit.FlatAppearance.BorderSize = 0;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
             this.btnSubmit.Location = new System.Drawing.Point(738, 528);
             this.btnSubmit.Name = "btnSubmit";
@@ -287,11 +287,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F);
             this.label5.Location = new System.Drawing.Point(4, 9);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(232, 46);
+            this.label5.Size = new System.Drawing.Size(255, 46);
             this.label5.TabIndex = 56;
             this.label5.Text = "Sales Order";
             // 
