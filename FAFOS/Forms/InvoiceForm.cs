@@ -162,7 +162,7 @@ namespace FAFOS
 
                 //Create a utility object
                 Utility pdfUtility = new Utility();
-                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\Invoice.pdf";
+                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "Resources\\Invoice.pdf";
 
                 //Open a file specifying the file name as the output pdf file
 
@@ -416,13 +416,15 @@ namespace FAFOS
                 file.Close();
 
                 //Messages.Visible = true;
-                Preview testDialog = new Preview(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\Invoice.pdf");
+                Preview testDialog = new Preview(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "Resources\\Invoice.pdf");
                 testDialog.ShowDialog(this);
             }
             catch (Exception ex)
             {
                MessageBox.Show("Could not display the document with the incorrect Information");
+               MessageBox.Show(ex.ToString());
             }
+
 
         }
 

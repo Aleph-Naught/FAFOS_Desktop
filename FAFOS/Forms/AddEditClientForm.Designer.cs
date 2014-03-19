@@ -361,10 +361,10 @@
             // 
             // delete_Button
             // 
-            this.delete_Button.BackColor = System.Drawing.Color.Red;
+            this.delete_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.delete_Button.FlatAppearance.BorderSize = 0;
             this.delete_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.delete_Button.ForeColor = System.Drawing.Color.White;
             this.delete_Button.Location = new System.Drawing.Point(485, 77);
             this.delete_Button.Margin = new System.Windows.Forms.Padding(4);
@@ -434,7 +434,7 @@
             this.contract_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.contract_Button.FlatAppearance.BorderSize = 0;
             this.contract_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.contract_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contract_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.contract_Button.ForeColor = System.Drawing.Color.White;
             this.contract_Button.Location = new System.Drawing.Point(290, 77);
             this.contract_Button.Margin = new System.Windows.Forms.Padding(4);

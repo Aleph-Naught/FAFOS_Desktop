@@ -348,8 +348,20 @@ namespace FAFOS
 
                 string url = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
                    + "\\Resources\\inspection.xml";
-                XmlDocument doc = new System.Xml.XmlDocument();
-                doc.Load(url);
+
+                XmlDocument doc;
+
+                try
+                {
+                    doc = new System.Xml.XmlDocument();
+                    doc.Load(url);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("An error occurred or no inspection data exists");
+                    return null;
+                }
+                
                 XmlElement docElement = doc.DocumentElement;
 
                 // loop through all childNodes
