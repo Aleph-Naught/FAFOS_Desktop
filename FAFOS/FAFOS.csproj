@@ -185,23 +185,11 @@
     <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\MapsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MapsForm.Designer.cs">
-      <DependentUpon>MapsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Operations\PaymentForm.cs">
       <SubType>Form</SubType>
@@ -254,81 +242,6 @@
     <Compile Include="InventoryController.cs" />
     <Compile Include="InvoiceController.cs" />
     <Compile Include="MaintainClientController.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\ProgressBar\ProgressBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Maps\BSE.Windows.Forms\ProgressBar\ProgressBar.Designer.cs">
-      <DependentUpon>ProgressBar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Maps\BSE.Windows.Forms\ProgressBar\ToolStripProgressBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Maps\BSE.Windows.Forms\Renderer\BseColorTable.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\Renderer\BseRenderer.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\Renderer\ColorTableBlack.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\Renderer\ColorTableBlue.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\Renderer\Office2007BlackColorTable.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\Renderer\Office2007BlueColorTable.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\Renderer\Office2007Renderer.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\Renderer\Office2007SilverColorTable.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\Renderer\OfficeColorTable.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\Renderer\ProfessionalColorTable.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\Resources\Resources.Designer.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\Splitter\Splitter.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Maps\BSE.Windows.Forms\Splitter\Splitter.Designer.cs">
-      <DependentUpon>Splitter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\BasePanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\CaptionStyle.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\ColorScheme.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\ColorSchemeChangeEventArgs.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\Constants.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\CustomColors.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\CustomPanelColors.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\CustomXPanderPanelColors.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\DisplayInformation.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\HoverState.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\HoverStateChangeEventArgs.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\IPanel.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\Panel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\Panel.Designer.cs">
-      <DependentUpon>Panel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelColors.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelColorsBlack.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelColorsBlue.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelColorsBse.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelColorsOffice.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelColorsOffice2007Black.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelColorsOffice2007Blue.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelColorsOffice2007Silver.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelColorsRed.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelSettingsManager.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelStyle.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelStyleChangeEventArgs.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\UseAntiAlias.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\UseClearTypeGridFit.cs" />
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\XPanderPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\XPanderPanel.Designer.cs">
-      <DependentUpon>XPanderPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\XPanderPanelList.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\XPanderPanelList.Designer.cs">
-      <DependentUpon>XPanderPanelList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Maps\BSE.Windows.Forms\XPander\XPanderStateChangeEventArgs.cs" />
-    <Compile Include="Maps\CustomMarkers\GMapMarkerCircle.cs" />
-    <Compile Include="Maps\CustomMarkers\GMapMarkerRect.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Client.cs" />
@@ -423,14 +336,8 @@
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MapsForm.resx">
-      <DependentUpon>MapsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Operations\PaymentForm.resx">
       <DependentUpon>PaymentForm.cs</DependentUpon>
@@ -455,18 +362,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Statements.resx">
       <DependentUpon>Statements.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Maps\BSE.Windows.Forms\Resources\Resources.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Maps\BSE.Windows.Forms\XPander\Panel.resx">
-      <DependentUpon>Panel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Maps\BSE.Windows.Forms\XPander\XPanderPanel.resx">
-      <DependentUpon>XPanderPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Maps\BSE.Windows.Forms\XPander\XPanderPanelList.resx">
-      <DependentUpon>XPanderPanelList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -578,15 +473,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo.ico" />
-    <Content Include="Maps\BSE.Windows.Forms\Resources\ChevronDown.png" />
-    <Content Include="Maps\BSE.Windows.Forms\Resources\ChevronLeft.png" />
-    <Content Include="Maps\BSE.Windows.Forms\Resources\ChevronRight.png" />
-    <Content Include="Maps\BSE.Windows.Forms\Resources\ChevronUp.png" />
-    <Content Include="Maps\BSE.Windows.Forms\Resources\closePanel.png" />
-    <Content Include="Maps\BSE.Windows.Forms\Resources\Collapse.jpg" />
-    <Content Include="Maps\BSE.Windows.Forms\Resources\Collapse_h.jpg" />
-    <Content Include="Maps\BSE.Windows.Forms\Resources\Expand.jpg" />
-    <Content Include="Maps\BSE.Windows.Forms\Resources\Expand_h.jpg" />
     <Content Include="Resources\Back2.png" />
     <Content Include="Resources\BackOver.png" />
     <Content Include="Resources\CompanyLogo.png" />
