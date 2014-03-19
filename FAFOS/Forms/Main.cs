@@ -53,6 +53,23 @@ namespace FAFOS.Forms
 
 
             HomePage embeddedForm = new HomePage(userid.ToString());
+
+
+            embeddedForm.recordPurchaseClicked += recordPurchaseToolStripMenuItem_Click;
+            embeddedForm.payInvoiceClicked += paymentToolStripMenuItem_Click;
+            embeddedForm.addClientCLicked += addClientToolStripMenuItem_Click;
+            embeddedForm.addContractClicked += addContractToolStripMenuItem_Click;
+
+            embeddedForm.createQuoteClicked += createQuoteToolStripMenuItem_Click;
+            embeddedForm.revenueReportClicked += revenueReportsToolStripMenuItem_Click;
+            embeddedForm.createSalesClicked += createSalesOrderToolStripMenuItem_Click;
+            embeddedForm.royaltyReportClicked += royaltyFeeToolStripMenuItem_Click;
+
+
+            embeddedForm.userSettingsClicked += userSettingsToolStripMenuItem_Click;
+            embeddedForm.logoutClicked += logoutToolStripMenuItem_Click;
+
+
             currentPage = embeddedForm;
             embeddedForm.TopLevel = false;
             splitContainer1.Panel2.Controls.Add(embeddedForm);
@@ -239,6 +256,20 @@ namespace FAFOS.Forms
             currentPage.Close();
 
             HomePage embeddedForm = new HomePage(userid.ToString());
+
+            embeddedForm.recordPurchaseClicked += recordPurchaseToolStripMenuItem_Click;
+            embeddedForm.payInvoiceClicked += paymentToolStripMenuItem_Click;
+            embeddedForm.addClientCLicked += addClientToolStripMenuItem_Click;
+            embeddedForm.addContractClicked += addContractToolStripMenuItem_Click;
+
+            embeddedForm.createQuoteClicked += createQuoteToolStripMenuItem_Click;
+            embeddedForm.revenueReportClicked += revenueReportsToolStripMenuItem_Click;
+            embeddedForm.createSalesClicked += createSalesOrderToolStripMenuItem_Click;
+            embeddedForm.royaltyReportClicked += royaltyFeeToolStripMenuItem_Click;
+
+            embeddedForm.userSettingsClicked += userSettingsToolStripMenuItem_Click;
+            embeddedForm.logoutClicked += logoutToolStripMenuItem_Click;
+
             currentPage = embeddedForm;
             embeddedForm.TopLevel = false;
             splitContainer1.Panel2.Controls.Add(embeddedForm);

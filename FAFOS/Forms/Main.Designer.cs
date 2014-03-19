@@ -369,7 +369,7 @@ namespace FAFOS.Forms
             this.syncAndroid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.syncAndroid.FlatAppearance.BorderSize = 0;
             this.syncAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.syncAndroid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.syncAndroid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.syncAndroid.ForeColor = System.Drawing.Color.White;
             this.syncAndroid.Location = new System.Drawing.Point(25, 129);
             this.syncAndroid.Margin = new System.Windows.Forms.Padding(4);

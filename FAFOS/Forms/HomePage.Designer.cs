@@ -31,18 +31,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.profilePic = new System.Windows.Forms.PictureBox();
             this.lblUserInfo = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.recordPurchaseBtn = new System.Windows.Forms.Button();
+            this.payInvoiceBtn = new System.Windows.Forms.Button();
+            this.createSalesOrderBtn = new System.Windows.Forms.Button();
+            this.creatQuoteBtn = new System.Windows.Forms.Button();
+            this.addClientBtn = new System.Windows.Forms.Button();
+            this.addContractBtn = new System.Windows.Forms.Button();
+            this.royaltyReportBtn = new System.Windows.Forms.Button();
+            this.revenueReport = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.logoutBtn = new System.Windows.Forms.Button();
+            this.userSettingsBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -81,98 +81,105 @@
             this.lblUserInfo.Text = "none";
             this.lblUserInfo.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // button1
+            // recordPurchaseBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(6, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 99);
-            this.button1.TabIndex = 59;
-            this.button1.Text = "Record Purchase";
-            this.button1.UseVisualStyleBackColor = true;
+            this.recordPurchaseBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recordPurchaseBtn.Location = new System.Drawing.Point(6, 28);
+            this.recordPurchaseBtn.Name = "recordPurchaseBtn";
+            this.recordPurchaseBtn.Size = new System.Drawing.Size(114, 99);
+            this.recordPurchaseBtn.TabIndex = 59;
+            this.recordPurchaseBtn.Text = "Record Purchase";
+            this.recordPurchaseBtn.UseVisualStyleBackColor = true;
+            this.recordPurchaseBtn.Click += new System.EventHandler(this.recordPurchaseBtn_Click);
             // 
-            // button2
+            // payInvoiceBtn
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(126, 28);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 99);
-            this.button2.TabIndex = 60;
-            this.button2.Text = "Pay Invoice";
-            this.button2.UseVisualStyleBackColor = true;
+            this.payInvoiceBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.payInvoiceBtn.Location = new System.Drawing.Point(126, 28);
+            this.payInvoiceBtn.Name = "payInvoiceBtn";
+            this.payInvoiceBtn.Size = new System.Drawing.Size(114, 99);
+            this.payInvoiceBtn.TabIndex = 60;
+            this.payInvoiceBtn.Text = "Pay Invoice";
+            this.payInvoiceBtn.UseVisualStyleBackColor = true;
+            this.payInvoiceBtn.Click += new System.EventHandler(this.payInvoiceBtn_Click);
             // 
-            // button3
+            // createSalesOrderBtn
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(418, 28);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(114, 99);
-            this.button3.TabIndex = 61;
-            this.button3.Text = "Create Sales Order";
-            this.button3.UseVisualStyleBackColor = true;
+            this.createSalesOrderBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createSalesOrderBtn.Location = new System.Drawing.Point(418, 28);
+            this.createSalesOrderBtn.Name = "createSalesOrderBtn";
+            this.createSalesOrderBtn.Size = new System.Drawing.Size(114, 99);
+            this.createSalesOrderBtn.TabIndex = 61;
+            this.createSalesOrderBtn.Text = "Create Sales Order";
+            this.createSalesOrderBtn.UseVisualStyleBackColor = true;
+            this.createSalesOrderBtn.Click += new System.EventHandler(this.createSalesOrderBtn_Click);
             // 
-            // button4
+            // creatQuoteBtn
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(298, 28);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 99);
-            this.button4.TabIndex = 62;
-            this.button4.Text = "Create Quote";
-            this.button4.UseVisualStyleBackColor = true;
+            this.creatQuoteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.creatQuoteBtn.Location = new System.Drawing.Point(298, 28);
+            this.creatQuoteBtn.Name = "creatQuoteBtn";
+            this.creatQuoteBtn.Size = new System.Drawing.Size(114, 99);
+            this.creatQuoteBtn.TabIndex = 62;
+            this.creatQuoteBtn.Text = "Create Quote";
+            this.creatQuoteBtn.UseVisualStyleBackColor = true;
+            this.creatQuoteBtn.Click += new System.EventHandler(this.creatQuoteBtn_Click);
             // 
-            // button5
+            // addClientBtn
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(6, 168);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(114, 99);
-            this.button5.TabIndex = 63;
-            this.button5.Text = "Add Client";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.addClientBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addClientBtn.Location = new System.Drawing.Point(6, 168);
+            this.addClientBtn.Name = "addClientBtn";
+            this.addClientBtn.Size = new System.Drawing.Size(114, 99);
+            this.addClientBtn.TabIndex = 63;
+            this.addClientBtn.Text = "Add Client";
+            this.addClientBtn.UseVisualStyleBackColor = true;
+            this.addClientBtn.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button6
+            // addContractBtn
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(126, 168);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(114, 99);
-            this.button6.TabIndex = 64;
-            this.button6.Text = "Add Contract";
-            this.button6.UseVisualStyleBackColor = true;
+            this.addContractBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addContractBtn.Location = new System.Drawing.Point(126, 168);
+            this.addContractBtn.Name = "addContractBtn";
+            this.addContractBtn.Size = new System.Drawing.Size(114, 99);
+            this.addContractBtn.TabIndex = 64;
+            this.addContractBtn.Text = "Add Contract";
+            this.addContractBtn.UseVisualStyleBackColor = true;
+            this.addContractBtn.Click += new System.EventHandler(this.addContractBtn_Click);
             // 
-            // button7
+            // royaltyReportBtn
             // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(418, 168);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(114, 99);
-            this.button7.TabIndex = 66;
-            this.button7.Text = "Royalty Report";
-            this.button7.UseVisualStyleBackColor = true;
+            this.royaltyReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.royaltyReportBtn.Location = new System.Drawing.Point(418, 168);
+            this.royaltyReportBtn.Name = "royaltyReportBtn";
+            this.royaltyReportBtn.Size = new System.Drawing.Size(114, 99);
+            this.royaltyReportBtn.TabIndex = 66;
+            this.royaltyReportBtn.Text = "Royalty Report";
+            this.royaltyReportBtn.UseVisualStyleBackColor = true;
+            this.royaltyReportBtn.Click += new System.EventHandler(this.royaltyReportBtn_Click);
             // 
-            // button8
+            // revenueReport
             // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(298, 168);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(114, 99);
-            this.button8.TabIndex = 65;
-            this.button8.Text = "Job Report";
-            this.button8.UseVisualStyleBackColor = true;
+            this.revenueReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.revenueReport.Location = new System.Drawing.Point(298, 168);
+            this.revenueReport.Name = "revenueReport";
+            this.revenueReport.Size = new System.Drawing.Size(114, 99);
+            this.revenueReport.TabIndex = 65;
+            this.revenueReport.Text = "Revenue Report";
+            this.revenueReport.UseVisualStyleBackColor = true;
+            this.revenueReport.Click += new System.EventHandler(this.revenueReport_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button8);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.addContractBtn);
+            this.groupBox1.Controls.Add(this.royaltyReportBtn);
+            this.groupBox1.Controls.Add(this.recordPurchaseBtn);
+            this.groupBox1.Controls.Add(this.revenueReport);
+            this.groupBox1.Controls.Add(this.payInvoiceBtn);
+            this.groupBox1.Controls.Add(this.createSalesOrderBtn);
+            this.groupBox1.Controls.Add(this.addClientBtn);
+            this.groupBox1.Controls.Add(this.creatQuoteBtn);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(271, 127);
             this.groupBox1.Name = "groupBox1";
@@ -192,33 +199,35 @@
             this.pictureBox1.TabIndex = 68;
             this.pictureBox1.TabStop = false;
             // 
-            // button9
+            // logoutBtn
             // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.Location = new System.Drawing.Point(983, 127);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(105, 24);
-            this.button9.TabIndex = 69;
-            this.button9.Text = "Logout";
-            this.button9.UseVisualStyleBackColor = true;
+            this.logoutBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.logoutBtn.Location = new System.Drawing.Point(983, 127);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(105, 24);
+            this.logoutBtn.TabIndex = 69;
+            this.logoutBtn.Text = "Logout";
+            this.logoutBtn.UseVisualStyleBackColor = true;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
-            // button10
+            // userSettingsBtn
             // 
-            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.Location = new System.Drawing.Point(983, 97);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(105, 24);
-            this.button10.TabIndex = 70;
-            this.button10.Text = "User Settings";
-            this.button10.UseVisualStyleBackColor = true;
+            this.userSettingsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.userSettingsBtn.Location = new System.Drawing.Point(983, 97);
+            this.userSettingsBtn.Name = "userSettingsBtn";
+            this.userSettingsBtn.Size = new System.Drawing.Size(105, 24);
+            this.userSettingsBtn.TabIndex = 70;
+            this.userSettingsBtn.Text = "User Settings";
+            this.userSettingsBtn.UseVisualStyleBackColor = true;
+            this.userSettingsBtn.Click += new System.EventHandler(this.userSettingsBtn_Click);
             // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1230, 593);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
+            this.Controls.Add(this.userSettingsBtn);
+            this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblUserInfo);
@@ -241,17 +250,17 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox profilePic;
         private System.Windows.Forms.Label lblUserInfo;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button recordPurchaseBtn;
+        private System.Windows.Forms.Button payInvoiceBtn;
+        private System.Windows.Forms.Button createSalesOrderBtn;
+        private System.Windows.Forms.Button creatQuoteBtn;
+        private System.Windows.Forms.Button addClientBtn;
+        private System.Windows.Forms.Button addContractBtn;
+        private System.Windows.Forms.Button royaltyReportBtn;
+        private System.Windows.Forms.Button revenueReport;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button logoutBtn;
+        private System.Windows.Forms.Button userSettingsBtn;
     }
 }
