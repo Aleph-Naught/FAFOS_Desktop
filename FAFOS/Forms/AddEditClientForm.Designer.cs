@@ -64,6 +64,7 @@
             this.contract_Button = new System.Windows.Forms.Button();
             this.typeTextBox = new System.Windows.Forms.ComboBox();
             this.cancelBtn = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ErrProvider)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -77,8 +78,7 @@
             this.Ok_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Ok_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ok_Button.ForeColor = System.Drawing.Color.Black;
-
-            this.Ok_Button.Location = new System.Drawing.Point(657, 452);
+            this.Ok_Button.Location = new System.Drawing.Point(656, 526);
             this.Ok_Button.Margin = new System.Windows.Forms.Padding(4);
             this.Ok_Button.Name = "Ok_Button";
             this.Ok_Button.Size = new System.Drawing.Size(75, 23);
@@ -91,7 +91,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 32);
+            this.label1.Location = new System.Drawing.Point(43, 106);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
@@ -103,7 +103,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 97);
+            this.label2.Location = new System.Drawing.Point(43, 171);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 13);
@@ -354,9 +354,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            this.label14.Location = new System.Drawing.Point(307, 18);
-
+            this.label14.Location = new System.Drawing.Point(306, 92);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(50, 13);
@@ -371,9 +369,7 @@
             this.delete_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete_Button.ForeColor = System.Drawing.Color.White;
-
-            this.delete_Button.Location = new System.Drawing.Point(505, 35);
-
+            this.delete_Button.Location = new System.Drawing.Point(504, 109);
             this.delete_Button.Margin = new System.Windows.Forms.Padding(4);
             this.delete_Button.Name = "delete_Button";
             this.delete_Button.Size = new System.Drawing.Size(187, 42);
@@ -396,7 +392,7 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.PrimContactTextBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(39, 339);
+            this.groupBox1.Location = new System.Drawing.Point(38, 413);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -422,7 +418,7 @@
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(39, 150);
+            this.groupBox2.Location = new System.Drawing.Point(38, 224);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -434,7 +430,7 @@
             // nameTxtBox
             // 
             this.nameTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTxtBox.Location = new System.Drawing.Point(42, 49);
+            this.nameTxtBox.Location = new System.Drawing.Point(41, 123);
             this.nameTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameTxtBox.Name = "nameTxtBox";
             this.nameTxtBox.Size = new System.Drawing.Size(217, 20);
@@ -448,9 +444,7 @@
             this.contract_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.contract_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contract_Button.ForeColor = System.Drawing.Color.White;
-
-            this.contract_Button.Location = new System.Drawing.Point(310, 35);
-
+            this.contract_Button.Location = new System.Drawing.Point(309, 109);
             this.contract_Button.Margin = new System.Windows.Forms.Padding(4);
             this.contract_Button.Name = "contract_Button";
             this.contract_Button.Size = new System.Drawing.Size(187, 42);
@@ -467,7 +461,7 @@
             "Commercial & Industrial",
             "Government (Provincial & Federal)",
             "Municipal"});
-            this.typeTextBox.Location = new System.Drawing.Point(42, 113);
+            this.typeTextBox.Location = new System.Drawing.Point(41, 187);
             this.typeTextBox.Name = "typeTextBox";
             this.typeTextBox.Size = new System.Drawing.Size(312, 21);
             this.typeTextBox.TabIndex = 40;
@@ -476,15 +470,23 @@
             // 
             this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-
-            this.cancelBtn.Location = new System.Drawing.Point(575, 452);
-
+            this.cancelBtn.Location = new System.Drawing.Point(574, 526);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 41;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(31, 41);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(155, 37);
+            this.label15.TabIndex = 42;
+            this.label15.Text = "Contracts";
             // 
             // AddEditClientForm
             // 
@@ -496,6 +498,7 @@
             this.CancelButton = this.cancelBtn;
             this.ClientSize = new System.Drawing.Size(1378, 780);
             this.ControlBox = false;
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.typeTextBox);
             this.Controls.Add(this.contract_Button);
@@ -556,5 +559,6 @@
         private System.Windows.Forms.Button contract_Button;
         private System.Windows.Forms.ComboBox typeTextBox;
         private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.Label label15;
     }
 }

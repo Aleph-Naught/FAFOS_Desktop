@@ -53,6 +53,7 @@
             this.editButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deleteAddr = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Add_Row_Button = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceAddrGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +64,7 @@
             this.Ok_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Ok_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ok_Button.ForeColor = System.Drawing.Color.White;
-            this.Ok_Button.Location = new System.Drawing.Point(779, 571);
+            this.Ok_Button.Location = new System.Drawing.Point(769, 639);
             this.Ok_Button.Name = "Ok_Button";
             this.Ok_Button.Size = new System.Drawing.Size(75, 23);
             this.Ok_Button.TabIndex = 0;
@@ -75,7 +76,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(45, 50);
+            this.label1.Location = new System.Drawing.Point(35, 118);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 5;
@@ -83,14 +84,14 @@
             // 
             // StartDatePicker
             // 
-            this.StartDatePicker.Location = new System.Drawing.Point(45, 113);
+            this.StartDatePicker.Location = new System.Drawing.Point(35, 181);
             this.StartDatePicker.Name = "StartDatePicker";
             this.StartDatePicker.Size = new System.Drawing.Size(127, 20);
             this.StartDatePicker.TabIndex = 6;
             // 
             // EndDatePicker
             // 
-            this.EndDatePicker.Location = new System.Drawing.Point(179, 113);
+            this.EndDatePicker.Location = new System.Drawing.Point(169, 181);
             this.EndDatePicker.Name = "EndDatePicker";
             this.EndDatePicker.Size = new System.Drawing.Size(127, 20);
             this.EndDatePicker.TabIndex = 7;
@@ -100,7 +101,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 97);
+            this.label2.Location = new System.Drawing.Point(35, 165);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 8;
@@ -111,7 +112,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(174, 97);
+            this.label3.Location = new System.Drawing.Point(164, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 9;
@@ -122,7 +123,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(42, 144);
+            this.label4.Location = new System.Drawing.Point(32, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 11;
@@ -130,7 +131,7 @@
             // 
             // TermsBox
             // 
-            this.TermsBox.Location = new System.Drawing.Point(45, 160);
+            this.TermsBox.Location = new System.Drawing.Point(35, 228);
             this.TermsBox.Multiline = true;
             this.TermsBox.Name = "TermsBox";
             this.TermsBox.Size = new System.Drawing.Size(498, 125);
@@ -143,7 +144,7 @@
             this.delete_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete_Button.ForeColor = System.Drawing.Color.White;
-            this.delete_Button.Location = new System.Drawing.Point(738, 294);
+            this.delete_Button.Location = new System.Drawing.Point(728, 362);
             this.delete_Button.Name = "delete_Button";
             this.delete_Button.Size = new System.Drawing.Size(113, 39);
             this.delete_Button.TabIndex = 32;
@@ -152,7 +153,7 @@
             // 
             // contractNameBox
             // 
-            this.contractNameBox.Location = new System.Drawing.Point(48, 67);
+            this.contractNameBox.Location = new System.Drawing.Point(38, 135);
             this.contractNameBox.Name = "contractNameBox";
             this.contractNameBox.Size = new System.Drawing.Size(275, 20);
             this.contractNameBox.TabIndex = 38;
@@ -160,7 +161,7 @@
             // linkableClientBox
             // 
             this.linkableClientBox.FormattingEnabled = true;
-            this.linkableClientBox.Location = new System.Drawing.Point(373, 66);
+            this.linkableClientBox.Location = new System.Drawing.Point(363, 134);
             this.linkableClientBox.Name = "linkableClientBox";
             this.linkableClientBox.Size = new System.Drawing.Size(170, 21);
             this.linkableClientBox.TabIndex = 39;
@@ -173,7 +174,7 @@
             this.new_Client_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.new_Client_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.new_Client_Button.ForeColor = System.Drawing.Color.White;
-            this.new_Client_Button.Location = new System.Drawing.Point(569, 60);
+            this.new_Client_Button.Location = new System.Drawing.Point(559, 128);
             this.new_Client_Button.Name = "new_Client_Button";
             this.new_Client_Button.Size = new System.Drawing.Size(109, 30);
             this.new_Client_Button.TabIndex = 40;
@@ -199,7 +200,7 @@
             this.roomButton,
             this.editButton,
             this.deleteAddr});
-            this.ServiceAddrGridView.Location = new System.Drawing.Point(48, 339);
+            this.ServiceAddrGridView.Location = new System.Drawing.Point(38, 407);
             this.ServiceAddrGridView.Name = "ServiceAddrGridView";
             this.ServiceAddrGridView.Size = new System.Drawing.Size(806, 199);
             this.ServiceAddrGridView.TabIndex = 12;
@@ -287,13 +288,23 @@
             this.Add_Row_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add_Row_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Add_Row_Button.ForeColor = System.Drawing.Color.White;
-            this.Add_Row_Button.Location = new System.Drawing.Point(602, 294);
+            this.Add_Row_Button.Location = new System.Drawing.Point(592, 362);
             this.Add_Row_Button.Name = "Add_Row_Button";
             this.Add_Row_Button.Size = new System.Drawing.Size(130, 39);
             this.Add_Row_Button.TabIndex = 42;
             this.Add_Row_Button.Text = "Add Address";
             this.Add_Row_Button.UseVisualStyleBackColor = false;
             this.Add_Row_Button.Click += new System.EventHandler(this.Add_New_Row);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(31, 55);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(114, 37);
+            this.label5.TabIndex = 43;
+            this.label5.Text = "Clients";
             // 
             // AddEditContractForm
             // 
@@ -303,6 +314,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1089, 741);
             this.ControlBox = false;
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.Add_Row_Button);
             this.Controls.Add(this.new_Client_Button);
             this.Controls.Add(this.linkableClientBox);
@@ -317,7 +329,8 @@
             this.Controls.Add(this.StartDatePicker);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Ok_Button);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddEditContractForm";
             ((System.ComponentModel.ISupportInitialize)(this.ServiceAddrGridView)).EndInit();
             this.ResumeLayout(false);
@@ -352,5 +365,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn roomButton;
         private System.Windows.Forms.DataGridViewButtonColumn editButton;
         private System.Windows.Forms.DataGridViewButtonColumn deleteAddr;
+        private System.Windows.Forms.Label label5;
     }
 }
