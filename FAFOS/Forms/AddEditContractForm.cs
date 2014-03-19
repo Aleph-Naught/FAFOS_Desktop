@@ -391,6 +391,11 @@ namespace FAFOS
 
         }
 
+        private void AddEditContractForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         
 
     }
