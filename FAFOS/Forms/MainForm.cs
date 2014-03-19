@@ -24,7 +24,7 @@ namespace FAFOS
 
         private double screenWidth;
         private double screenHeight;
-        MapsForm maps;
+        //MapsForm maps;
         Users user;
         int userid;
         private int screenCenterTop;
@@ -410,10 +410,10 @@ namespace FAFOS
                 }
                 else if (T.Name == "itinerary")
                 {
-                    MapsForm form = new MapsForm(userid, orders, services);
+                    //MapsForm form = new MapsForm(userid, orders, services);
                     
                    
-                    form.Show();
+                    //form.Show();
                     
 
                 }
