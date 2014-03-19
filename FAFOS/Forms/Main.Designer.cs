@@ -226,12 +226,14 @@ namespace FAFOS.Forms
             this.convertToSalesOrderToolStripMenuItem.Name = "convertToSalesOrderToolStripMenuItem";
             this.convertToSalesOrderToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.convertToSalesOrderToolStripMenuItem.Text = "Convert to Sales Order";
+            this.convertToSalesOrderToolStripMenuItem.Click += new System.EventHandler(this.convertToSalesOrderToolStripMenuItem_Click);
             // 
             // editSalesOrderToolStripMenuItem
             // 
             this.editSalesOrderToolStripMenuItem.Name = "editSalesOrderToolStripMenuItem";
             this.editSalesOrderToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.editSalesOrderToolStripMenuItem.Text = "Edit Sales Order";
+            this.editSalesOrderToolStripMenuItem.Click += new System.EventHandler(this.editSalesOrderToolStripMenuItem_Click);
             // 
             // invoiceToolStripMenuItem
             // 

@@ -262,9 +262,9 @@ namespace FAFOS.Forms
 
         private void editQuoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QuoteController qc = new QuoteController(userid.ToString());
-
             currentPage.Close();
+
+            QuoteController qc = new QuoteController(userid.ToString());
             // type 2 = edit
             QuoteForm embeddedForm = qc.quote(2);
             currentPage = embeddedForm;
@@ -278,12 +278,42 @@ namespace FAFOS.Forms
 
         private void createSalesOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            currentPage.Close();
+
+            SalesOrderController control = new SalesOrderController(userid.ToString());
+            // type 1 = create
+            Sales_Order embeddedForm = control.salesOrder(1);
+            embeddedForm.TopLevel = false;
+            splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill;
+
+            embeddedForm.Show();
+        }
+
+        private void editSalesOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentPage.Close();
+
+            SalesOrderController control = new SalesOrderController(userid.ToString());
+            // type 3 = edit
+            Sales_Order embeddedForm = control.salesOrder(3);
+            embeddedForm.TopLevel = false;
+            splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill;
+
+            embeddedForm.Show();
+        }
+
+        private void convertToSalesOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             SalesOrderController control = new SalesOrderController(userid.ToString());
 
             currentPage.Close();
 
-            // type 1 = create
-            Sales_Order embeddedForm = control.salesOrder(1);
+            // type 2 = convert
+            Sales_Order embeddedForm = control.salesOrder(2);
             embeddedForm.TopLevel = false;
             splitContainer1.Panel2.Controls.Add(embeddedForm);
 
