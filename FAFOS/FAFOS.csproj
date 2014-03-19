@@ -475,11 +475,19 @@
     <Content Include="logo.ico" />
     <Content Include="Resources\Back2.png" />
     <Content Include="Resources\BackOver.png" />
+    <Content Include="Resources\Columns.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Columns.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\CompanyLogo.png" />
     <None Include="Resources\DefaultProPic.png" />
     <None Include="Resources\Shades.jpg" />
     <None Include="Resources\ListViewItemSorter.bmp" />
-    <Content Include="Resources\logo.JPG" />
+    <Content Include="Resources\logo.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <PublishFile Include="System.Data.SqlServerCe">
