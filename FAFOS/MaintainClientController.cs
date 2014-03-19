@@ -152,8 +152,10 @@ namespace FAFOS
                 _contractForm = new AddEditContractForm(this, false, userID, id);
                 _contractForm.ClientLinked(_clientForm.GetName());
                 _contractForm.SetFields(_contract.Get(),userID);
+                _contractForm.ControlBox = true;
+                _contractForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+                _contractForm.Text = "Contracts";
                 Populate_AddrGridView(id);
-                _contractForm.Activate();
                 _contractForm.ShowDialog();
             }
         }
