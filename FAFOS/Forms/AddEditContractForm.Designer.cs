@@ -317,7 +317,8 @@
             this.Controls.Add(this.StartDatePicker);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Ok_Button);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddEditContractForm";
             ((System.ComponentModel.ISupportInitialize)(this.ServiceAddrGridView)).EndInit();
             this.ResumeLayout(false);
