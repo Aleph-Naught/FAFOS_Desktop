@@ -37,7 +37,6 @@ namespace FAFOS.Forms
             this.userSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dayItineraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inspectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recordPurchaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +55,6 @@ namespace FAFOS.Forms
             this.editContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.financialStatementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.jobReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.revenueReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.royaltyFeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -83,9 +81,7 @@ namespace FAFOS.Forms
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.userLabel});
-
             this.statusStrip1.Location = new System.Drawing.Point(0, 719);
-
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1184, 22);
             this.statusStrip1.TabIndex = 0;
@@ -145,7 +141,6 @@ namespace FAFOS.Forms
             // operationsToolStripMenuItem
             // 
             this.operationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dayItineraryToolStripMenuItem,
             this.inspectionToolStripMenuItem,
             this.inventoryToolStripMenuItem,
             this.recordPurchaseToolStripMenuItem,
@@ -153,13 +148,6 @@ namespace FAFOS.Forms
             this.operationsToolStripMenuItem.Name = "operationsToolStripMenuItem";
             this.operationsToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.operationsToolStripMenuItem.Text = "Operations";
-            // 
-            // dayItineraryToolStripMenuItem
-            // 
-            this.dayItineraryToolStripMenuItem.Name = "dayItineraryToolStripMenuItem";
-            this.dayItineraryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.dayItineraryToolStripMenuItem.Text = "Day Itinerary";
-            this.dayItineraryToolStripMenuItem.Click += new System.EventHandler(this.dayItineraryToolStripMenuItem_Click);
             // 
             // inspectionToolStripMenuItem
             // 
@@ -283,7 +271,6 @@ namespace FAFOS.Forms
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.financialStatementsToolStripMenuItem,
-            this.jobReportsToolStripMenuItem,
             this.revenueReportsToolStripMenuItem,
             this.royaltyFeeToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
@@ -296,12 +283,6 @@ namespace FAFOS.Forms
             this.financialStatementsToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.financialStatementsToolStripMenuItem.Text = "Financial Statements";
             this.financialStatementsToolStripMenuItem.Click += new System.EventHandler(this.financialStatementsToolStripMenuItem_Click);
-            // 
-            // jobReportsToolStripMenuItem
-            // 
-            this.jobReportsToolStripMenuItem.Name = "jobReportsToolStripMenuItem";
-            this.jobReportsToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.jobReportsToolStripMenuItem.Text = "Job Reports";
             // 
             // revenueReportsToolStripMenuItem
             // 
@@ -333,9 +314,7 @@ namespace FAFOS.Forms
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-
             this.splitContainer1.Size = new System.Drawing.Size(1184, 695);
-
             this.splitContainer1.SplitterDistance = 198;
             this.splitContainer1.TabIndex = 3;
             // 
@@ -351,9 +330,7 @@ namespace FAFOS.Forms
             this.notificationPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.notificationPanel.Location = new System.Drawing.Point(0, 0);
             this.notificationPanel.Name = "notificationPanel";
-
             this.notificationPanel.Size = new System.Drawing.Size(196, 693);
-
             this.notificationPanel.TabIndex = 37;
             // 
             // panel1
@@ -362,9 +339,7 @@ namespace FAFOS.Forms
             this.panel1.Controls.Add(this.syncAndroid);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-
             this.panel1.Location = new System.Drawing.Point(0, 480);
-
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(196, 213);
             this.panel1.TabIndex = 58;
@@ -463,9 +438,7 @@ namespace FAFOS.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-
             this.ClientSize = new System.Drawing.Size(1184, 741);
-
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -513,7 +486,6 @@ namespace FAFOS.Forms
         private System.Windows.Forms.Button syncHQ;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ToolStripMenuItem dayItineraryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inspectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem recordPurchaseToolStripMenuItem;
@@ -529,7 +501,6 @@ namespace FAFOS.Forms
         private System.Windows.Forms.ToolStripMenuItem editClientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editContractToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem financialStatementsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem jobReportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem revenueReportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem royaltyFeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userSettingsToolStripMenuItem;

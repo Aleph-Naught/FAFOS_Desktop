@@ -56,7 +56,7 @@ namespace FAFOS
             }
             catch (SqlException ef)
             {
-                //MessageBox.Show(ef.ToString());
+                MessageBox.Show(ef.ToString());
             }
             con.Close();
 
@@ -103,7 +103,7 @@ namespace FAFOS
             }
             catch (Exception ef)
             {
-                //MessageBox.Show(ef.ToString());
+                MessageBox.Show(ef.ToString());
             }
             // d.Tables.Add(dt);
             con.Close();
@@ -126,7 +126,7 @@ namespace FAFOS
             }
             catch (Exception ef)
             {
-                //MessageBox.Show(ef.ToString());
+                MessageBox.Show(ef.ToString());
             }
             // d.Tables.Add(dt);
             con.Close();
@@ -149,7 +149,7 @@ namespace FAFOS
             }
             catch (Exception ef)
             {
-                //MessageBox.Show(ef.ToString());
+                MessageBox.Show(ef.ToString());
             }
             con.Close();
             return tax;

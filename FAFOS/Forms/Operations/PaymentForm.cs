@@ -175,7 +175,7 @@ namespace FAFOS
                 }
                 else
                     MessageBox.Show("Payment has been processed.");
-                this.Close();
+                //this.Close();
             }
             else
             {

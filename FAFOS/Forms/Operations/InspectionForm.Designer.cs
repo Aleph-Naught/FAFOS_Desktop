@@ -35,6 +35,7 @@
             this.addressBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.pdfPreview = new System.Windows.Forms.WebBrowser();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,12 +126,26 @@
             this.label5.Text = "Inspection Reports";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
+            // pdfPreview
+            // 
+            this.pdfPreview.AllowNavigation = false;
+            this.pdfPreview.AllowWebBrowserDrop = false;
+            this.pdfPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pdfPreview.Location = new System.Drawing.Point(444, 69);
+            this.pdfPreview.MinimumSize = new System.Drawing.Size(20, 20);
+            this.pdfPreview.Name = "pdfPreview";
+            this.pdfPreview.Size = new System.Drawing.Size(620, 587);
+            this.pdfPreview.TabIndex = 56;
+            // 
             // InspectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1089, 687);
+            this.Controls.Add(this.pdfPreview);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -153,5 +168,6 @@
         private System.Windows.Forms.ComboBox addressBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.WebBrowser pdfPreview;
     }
 }
