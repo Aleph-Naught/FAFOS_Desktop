@@ -41,10 +41,17 @@ namespace FAFOS
             String[,] rooms = new String[n,4];
             for (int i = 0; i < n; i++)
             {
-                rooms[i, 0] = RoomGridView.Rows[i].Cells["idCol"].Value.ToString();
-                rooms[i, 1] = RoomGridView.Rows[i].Cells["roomNum"].Value.ToString();
-                rooms[i, 2] = RoomGridView.Rows[i].Cells["floor"].Value.ToString();
-                rooms[i, 3] = AddressID;
+                try
+                {
+                    rooms[i, 0] = RoomGridView.Rows[i].Cells["idCol"].Value.ToString();
+                    rooms[i, 1] = RoomGridView.Rows[i].Cells["roomNum"].Value.ToString();
+                    rooms[i, 2] = RoomGridView.Rows[i].Cells["floor"].Value.ToString();
+                    rooms[i, 3] = AddressID;
+                }
+                catch
+                {
+                    MessageBox.Show("You're missing something.");
+                }
             }
             return rooms;
         }

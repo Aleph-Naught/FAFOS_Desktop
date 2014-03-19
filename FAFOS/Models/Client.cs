@@ -15,11 +15,17 @@ namespace FAFOS
              String connString = FAFOS.Properties.Settings.Default.FAFOS;
             DataSet dt = new DataSet();
             SqlConnection con = new SqlConnection(connString);
-
-            con.Open();
-            SqlCommand command = new SqlCommand("SELECT account_name, client_id FROM Client", con);
-            SqlDataAdapter adap = new SqlDataAdapter(command);
-            adap.Fill(dt);
+            try
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand("SELECT account_name, client_id FROM Client", con);
+                SqlDataAdapter adap = new SqlDataAdapter(command);
+                adap.Fill(dt);
+            }
+            catch
+            {
+                MessageBox.Show("Error getting client.");
+            }
 
             con.Close();
             return dt;
@@ -31,6 +37,7 @@ namespace FAFOS
              String connString = FAFOS.Properties.Settings.Default.FAFOS;
             SqlConnection con = new SqlConnection(connString);
             String clientInfo="";
+
             con.Open();
             SqlCommand command = new SqlCommand("SELECT * FROM Client WHERE client_id = " + id, con);
             try{

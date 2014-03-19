@@ -43,7 +43,6 @@ namespace FAFOS
             con.Open();
             if (old)
             {
-
                 SqlCommand command = new SqlCommand("UPDATE Client_Contract SET contract_nm = '" + values[1] +
                                                                       "', start_date = '" + values[2] +
                                                                       "', end_date = '" + values[3] +
@@ -52,7 +51,14 @@ namespace FAFOS
                                                                         "', franchisee_id = '" + Properties.Settings.Default.FranchiseeID +  
                                                                       "' WHERE client_contract_id = " + ContractID, con);
 
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch
+                {
+                    MessageBox.Show("Error with database.");
+                }
             }
 
             else //if(!old)
@@ -66,7 +72,14 @@ namespace FAFOS
                                                                                     + values[4] + "', '"
                                                                                     + clientID + "', '"
                                                                                     + Properties.Settings.Default.FranchiseeID + "')", con);
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch
+                {
+                    MessageBox.Show("Error with database.");
+                }
 
             }
             con.Close();
@@ -132,7 +145,14 @@ namespace FAFOS
 
                 con.Open();
                 SqlCommand command = new SqlCommand("UPDATE Client SET client_contract_id = NULL WHERE client_id = " + clientID, con);
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch
+                {
+                    MessageBox.Show("Error with database.");
+                }
                 con.Close();
             }
             catch (SqlException) { }

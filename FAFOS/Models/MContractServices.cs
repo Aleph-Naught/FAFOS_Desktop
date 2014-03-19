@@ -57,7 +57,14 @@ namespace FAFOS
 
 
                 }
-                command.ExecuteNonQuery();  
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch
+                {
+                    MessageBox.Show("Error with database.");
+                }
             }              
             con.Close();
             return;
