@@ -182,13 +182,16 @@ namespace FAFOS
 
         public void Client_Delete_Button_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want Delete this client?", "Confirm Deletion", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (_client != null)
             {
-                String id = _client.FindID();
-                _client.Delete();
-                MClientContract.DeleteAll(id);
-               // _mainForm.SetClientBox(MClient.GetList());
-                _clientForm.Close();
+                if (MessageBox.Show("Are you sure you want Delete this client?", "Confirm Deletion", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    String id = _client.FindID();
+                    _client.Delete();
+                    MClientContract.DeleteAll(id);
+                    // _mainForm.SetClientBox(MClient.GetList());
+                    _clientForm.Close();
+                }
             }
         }
 
@@ -344,12 +347,15 @@ namespace FAFOS
 
         public void Contract_Delete_Button_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want Delete this client?\nThis will delete Service Addresses connected to is as well", "Confirm Deletion", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (_contract != null)
             {
-                _contract.RemoveFromClient();
-                _contract.Delete();
-              //  _mainForm.SetContractsBox(MClientContract.GetList());
-                _contractForm.Close();
+                if (MessageBox.Show("Are you sure you want Delete this client?\nThis will delete Service Addresses connected to is as well", "Confirm Deletion", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    _contract.RemoveFromClient();
+                    _contract.Delete();
+                    //  _mainForm.SetContractsBox(MClientContract.GetList());
+                    _contractForm.Close();
+                }
             }
         }//Make it Cascade
 
