@@ -121,7 +121,14 @@ namespace FAFOS
                 SqlDataReader reader = command.ExecuteReader();
                 reader.Read();
 
-                completed = ((int)reader[0]) == 1;
+                try
+                {
+                    completed = ((int)reader[0]) == 1;
+                }
+                catch (InvalidCastException e)
+                {
+                    // don't really care cuz it still works
+                }
 
             }
             catch (Exception ef)
