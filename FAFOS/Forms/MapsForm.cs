@@ -20,7 +20,7 @@ using System.Collections;
 
 namespace FAFOS
 {
-    public partial class MapsForm : Form
+    public partial class MapsForm : FAFOS.Background
     {
 
 
@@ -49,8 +49,6 @@ namespace FAFOS
         ContractService[] service;
         bool prefetch;
 
-        public delegate void AsyncMapLoadCaller();
-
         public MapsForm(int id, object orders, object services)
         {
             InitializeComponent();
@@ -58,7 +56,7 @@ namespace FAFOS
 
             //User label
             userid = id;
-            //setup(userid.ToString(), "FAFOS Day Itinerary");
+            setup(userid.ToString(), "FAFOS Day Itinerary");
 
             //Tables
             DataTable dt = new SalesOrder().getWorkOrders(userid);
@@ -73,20 +71,9 @@ namespace FAFOS
 
 
             //Load the map
-
-            AsyncMapLoadCaller asyncMapLoad = new AsyncMapLoadCaller(LoadMap);
-            asyncMapLoad.BeginInvoke(new AsyncCallback(TaskCompleted),null);
-
-            //LoadMap();
+            LoadMap();
 
         }
-
-        public void TaskCompleted(IAsyncResult R)
-        {
-            generate_btn.BeginInvoke((Action)
-                (() => generate_btn.Enabled = true));
-        }
-
 
 
 
@@ -103,7 +90,7 @@ namespace FAFOS
         void AddLocation(int order, string place)
         {
             GeoCoderStatusCode status = GeoCoderStatusCode.Unknow;
-            PointLatLng? pos = GMapProviders.GoogleMap.GetPoint("Canada, " + place, out status);
+            PointLatLng? pos = GMapProviders.BingMap.GetPoint("Canada, " + place, out status);
             if (pos != null && status == GeoCoderStatusCode.G_GEO_SUCCESS)
             {
                 GMarkerGoogle m;
@@ -130,8 +117,8 @@ namespace FAFOS
             if (!DesignMode)
             {
                 // set cache mode only if no internet avaible
-                if (!PingNetwork("www.google.ca"))
-        //        if (!Stuff.PingNetwork("www.google.ca"))
+                if (!PingNetwork("www.Bing.ca"))
+        //        if (!Stuff.PingNetwork("www.Bing.ca"))
                 {
                     MainMap.Manager.Mode = AccessMode.CacheOnly;
                     MessageBox.Show("No internet connection available, going to CacheOnly mode.", "FAFOS Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -140,10 +127,10 @@ namespace FAFOS
                 String[] startingAddress = new Franchisee().getAddress(userid);
 
                 // config map         
-                MainMap.MapProvider = GMapProviders.BingMap; //.GoogleMap;
+                MainMap.MapProvider = GMapProviders.BingMap; //.BingMap;
                 GeoCoderStatusCode status = GeoCoderStatusCode.Unknow;
-      //          PointLatLng? p = GMapProviders.GoogleMap.GetPoint(startingAddress[0] + ", " + startingAddress[2] + ", " + startingAddress[1], out status);
-                PointLatLng? p = GMapProviders.GoogleMap.GetPoint("817 Silversmith Street, London, Ontario, N6H 5T4, Canada", out status);
+      //          PointLatLng? p = GMapProviders.BingMap.GetPoint(startingAddress[0] + ", " + startingAddress[2] + ", " + startingAddress[1], out status);
+                PointLatLng? p = GMapProviders.BingMap.GetPoint("817 Silversmith Street, London, Ontario, N6H 5T4, Canada", out status);
                 if (p != null && status == GeoCoderStatusCode.G_GEO_SUCCESS)
                 {
                     MainMap.Position = p.Value;  
@@ -191,7 +178,7 @@ namespace FAFOS
                 }
 
                 //Set Operational Region
-                /*       PointLatLng? p2 = GMapProviders.GoogleMap.GetPoint(startingAddress[2]+", "+startingAddress[0], out status);
+                /*       PointLatLng? p2 = GMapProviders.BingMap.GetPoint(startingAddress[2]+", "+startingAddress[0], out status);
                        GMapMarkerCircle circle = new GMapMarkerCircle(p2.Value);
                        circle.Radius = 15000;
                        circle.Stroke=new Pen(Color.Red);
@@ -369,7 +356,7 @@ namespace FAFOS
                 if (item is GMapMarkerRect)
                 {
                     GeoCoderStatusCode status;
-                    var pos = GMapProviders.GoogleMap.GetPlacemark(item.Position, out status);
+                    var pos = GMapProviders.BingMap.GetPlacemark(item.Position, out status);
                     if (status == GeoCoderStatusCode.G_GEO_SUCCESS && pos != null)
                     {
                         GMapMarkerRect v = item as GMapMarkerRect;
@@ -610,7 +597,7 @@ namespace FAFOS
             PointLatLng? pos;
             GeoCoderStatusCode status = GeoCoderStatusCode.Unknow;
             {
-                pos = GMapProviders.GoogleMap.GetPoint(startingAddress[2] + ", " + startingAddress[0], out status);
+                pos = GMapProviders.BingMap.GetPoint(startingAddress[2] + ", " + startingAddress[0], out status);
                 if (pos != null && status == GeoCoderStatusCode.G_GEO_SUCCESS)
                 {
                     currentMarker.Position = pos.Value;
@@ -639,8 +626,8 @@ namespace FAFOS
 
                 for (int i = 0; i < workOrderTable.SelectedRows.Count; i++)
                 {
-  MessageBox.Show(location[i].ToString());
-                    PointLatLng? pos1 = GMapProviders.GoogleMap.GetPoint(location[i].ToString(), out status);
+ // MessageBox.Show(location[i].ToString());
+                    PointLatLng? pos1 = GMapProviders.BingMap.GetPoint(location[i].ToString(), out status);
                     if (pos1 != null && status == GeoCoderStatusCode.G_GEO_SUCCESS)
                     {
                         myWaypoints.Add(pos1.Value);
@@ -675,14 +662,12 @@ namespace FAFOS
 
                 for (int i = 0; i < servicesTable.SelectedRows.Count; i++)
                 {
-                    PointLatLng? pos1 = GMapProviders.GoogleMap.GetPoint(country[i] + ", " + address[i], out status);
+                    PointLatLng? pos1 = GMapProviders.BingMap.GetPoint(country[i] + ", " + address[i], out status);
                     myWaypoints.Add(pos1.Value);
                     AddLocation(order++, address[i]);
                     currentMarker.Position = pos1.Value;
                 }
             }
-
-            /*
             GMapRoute rte = new GMapRoute("name");
 
             GDirections _dir;
@@ -696,7 +681,6 @@ namespace FAFOS
             }
 
             routes.Routes.Add(rte);
-             */ 
         }
 
         private void preload()
@@ -809,7 +793,6 @@ namespace FAFOS
 
         private void MapsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            /*
             if (prefetch)
             {
                 for (int i = 0; i < order.Length; i++)
@@ -863,7 +846,6 @@ namespace FAFOS
 
 
             }
-            */ 
 
         }
 

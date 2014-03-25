@@ -191,6 +191,12 @@
     <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Operations\MapsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Operations\MapsForm.designer.cs">
+      <DependentUpon>MapsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Operations\PaymentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,11 @@
     <Compile Include="InventoryController.cs" />
     <Compile Include="InvoiceController.cs" />
     <Compile Include="MaintainClientController.cs" />
+    <Compile Include="Maps\CustomMarkers\GMapMarkerCircle.cs" />
+    <Compile Include="Maps\CustomMarkers\GMapMarkerRect.cs" />
+    <Compile Include="Maps\Map.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Client.cs" />
@@ -339,6 +350,9 @@
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Operations\MapsForm.resx">
+      <DependentUpon>MapsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Operations\PaymentForm.resx">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -370,6 +384,8 @@
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="FAFOS_TemporaryKey.pfx" />
+    <None Include="Maps\DataExp.gmdb" />
+    <None Include="Maps\DataExp3.gmdb" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

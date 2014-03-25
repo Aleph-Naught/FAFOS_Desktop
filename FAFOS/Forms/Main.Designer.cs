@@ -68,6 +68,7 @@ namespace FAFOS.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.dayItineraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -144,7 +145,8 @@ namespace FAFOS.Forms
             this.inspectionToolStripMenuItem,
             this.inventoryToolStripMenuItem,
             this.recordPurchaseToolStripMenuItem,
-            this.paymentToolStripMenuItem});
+            this.paymentToolStripMenuItem,
+            this.dayItineraryToolStripMenuItem});
             this.operationsToolStripMenuItem.Name = "operationsToolStripMenuItem";
             this.operationsToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.operationsToolStripMenuItem.Text = "Operations";
@@ -437,6 +439,13 @@ namespace FAFOS.Forms
             this.label1.TabIndex = 0;
             this.label1.Text = "Day Notifications";
             // 
+            // dayItineraryToolStripMenuItem
+            // 
+            this.dayItineraryToolStripMenuItem.Name = "dayItineraryToolStripMenuItem";
+            this.dayItineraryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.dayItineraryToolStripMenuItem.Text = "Day Itinerary";
+            this.dayItineraryToolStripMenuItem.Click += new System.EventHandler(this.dayItineraryToolStripMenuItem_Click_1);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,5 +519,6 @@ namespace FAFOS.Forms
         private System.Windows.Forms.ToolStripMenuItem userSettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dayItineraryToolStripMenuItem;
     }
 }

@@ -455,6 +455,20 @@ namespace FAFOS.Forms
         {
 
         }
+
+        private void dayItineraryToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            currentPage.Close();
+
+            MapsForm embeddedForm = new MapsForm(userid, orders, services);
+            currentPage = embeddedForm;
+            embeddedForm.TopLevel = false;
+            splitContainer1.Panel2.Controls.Add(embeddedForm);
+
+            embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
+
+            embeddedForm.Show();
+        }
  
     }
 }
