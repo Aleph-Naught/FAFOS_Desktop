@@ -83,7 +83,7 @@
             // 
             // recordPurchaseBtn
             // 
-            this.recordPurchaseBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recordPurchaseBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recordPurchaseBtn.Location = new System.Drawing.Point(6, 28);
             this.recordPurchaseBtn.Name = "recordPurchaseBtn";
             this.recordPurchaseBtn.Size = new System.Drawing.Size(114, 99);
@@ -94,7 +94,7 @@
             // 
             // payInvoiceBtn
             // 
-            this.payInvoiceBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.payInvoiceBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.payInvoiceBtn.Location = new System.Drawing.Point(126, 28);
             this.payInvoiceBtn.Name = "payInvoiceBtn";
             this.payInvoiceBtn.Size = new System.Drawing.Size(114, 99);
@@ -105,7 +105,7 @@
             // 
             // createSalesOrderBtn
             // 
-            this.createSalesOrderBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createSalesOrderBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createSalesOrderBtn.Location = new System.Drawing.Point(418, 28);
             this.createSalesOrderBtn.Name = "createSalesOrderBtn";
             this.createSalesOrderBtn.Size = new System.Drawing.Size(114, 99);
@@ -116,7 +116,7 @@
             // 
             // creatQuoteBtn
             // 
-            this.creatQuoteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.creatQuoteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.creatQuoteBtn.Location = new System.Drawing.Point(298, 28);
             this.creatQuoteBtn.Name = "creatQuoteBtn";
             this.creatQuoteBtn.Size = new System.Drawing.Size(114, 99);
@@ -127,7 +127,7 @@
             // 
             // addClientBtn
             // 
-            this.addClientBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addClientBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addClientBtn.Location = new System.Drawing.Point(6, 168);
             this.addClientBtn.Name = "addClientBtn";
             this.addClientBtn.Size = new System.Drawing.Size(114, 99);
@@ -138,7 +138,7 @@
             // 
             // addContractBtn
             // 
-            this.addContractBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addContractBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addContractBtn.Location = new System.Drawing.Point(126, 168);
             this.addContractBtn.Name = "addContractBtn";
             this.addContractBtn.Size = new System.Drawing.Size(114, 99);
@@ -149,7 +149,7 @@
             // 
             // royaltyReportBtn
             // 
-            this.royaltyReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.royaltyReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.royaltyReportBtn.Location = new System.Drawing.Point(418, 168);
             this.royaltyReportBtn.Name = "royaltyReportBtn";
             this.royaltyReportBtn.Size = new System.Drawing.Size(114, 99);
@@ -160,7 +160,7 @@
             // 
             // revenueReport
             // 
-            this.revenueReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.revenueReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.revenueReport.Location = new System.Drawing.Point(298, 168);
             this.revenueReport.Name = "revenueReport";
             this.revenueReport.Size = new System.Drawing.Size(114, 99);

@@ -362,7 +362,6 @@ namespace FAFOS.Forms
             this.syncHQ.TabIndex = 56;
             this.syncHQ.Text = "Sync Reports to HQ";
             this.syncHQ.UseVisualStyleBackColor = false;
-            this.syncHQ.Visible = false;
             this.syncHQ.Click += new System.EventHandler(this.syncHQ_Click);
             // 
             // syncAndroid
@@ -379,7 +378,6 @@ namespace FAFOS.Forms
             this.syncAndroid.TabIndex = 57;
             this.syncAndroid.Text = "Sync Contracts to Android";
             this.syncAndroid.UseVisualStyleBackColor = false;
-            this.syncAndroid.Visible = false;
             // 
             // label9
             // 
@@ -390,7 +388,6 @@ namespace FAFOS.Forms
             this.label9.Size = new System.Drawing.Size(100, 18);
             this.label9.TabIndex = 55;
             this.label9.Text = "Sync Options";
-            this.label9.Visible = false;
             // 
             // paymentNotification
             // 
