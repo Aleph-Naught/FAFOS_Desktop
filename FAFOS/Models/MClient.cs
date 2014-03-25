@@ -97,9 +97,15 @@ namespace FAFOS
                                                                           ", city_id = " + cityID +
                                                                           ", client_contract_id = "+ contractID +
                                                                           " WHERE client_id = " + clientID, con);
-                    
 
-                command.ExecuteNonQuery();
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error with database.");
+                    }
             }
             
             else //if(!old)
@@ -122,7 +128,14 @@ namespace FAFOS
                                                                                     + provStateID + ", "
                                                                                     + cityID + ", "
                                                                                     + contractID + ")", con);
-                command.ExecuteNonQuery();           
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch
+                {
+                    MessageBox.Show("Error with database.");
+                }
             }
             con.Close();
             return;
@@ -138,9 +151,15 @@ namespace FAFOS
                                                                      " WHERE client_id = " + cliID, con);
             SqlCommand command2 = new SqlCommand("UPDATE Client_Contract SET  client_id = " + conID +
                                                                      " WHERE client_contract_id = " + cliID, con);
-
-            command.ExecuteNonQuery();
-            command2.ExecuteNonQuery();
+            try
+            {
+                command.ExecuteNonQuery();
+                command2.ExecuteNonQuery();
+            }
+            catch
+            {
+                MessageBox.Show("Error with database.");
+            }
             con.Close();
         }
 

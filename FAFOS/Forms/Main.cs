@@ -411,7 +411,7 @@ namespace FAFOS.Forms
             currentPage.Close();
 
             MaintainClientController control = new MaintainClientController();
-            AddEditClientForm embeddedForm = control.New_client_button_Click(userid);
+            AddEditClientForm embeddedForm = control.Edit_Client_Button_Click(userid);
             currentPage = embeddedForm;
             embeddedForm.TopLevel = false;
             splitContainer1.Panel2.Controls.Add(embeddedForm);
@@ -449,6 +449,11 @@ namespace FAFOS.Forms
             embeddedForm.Dock = DockStyle.Fill; //This is required for scaling
 
             embeddedForm.Show();
+        }
+
+        private void syncAndroid_Click(object sender, EventArgs e)
+        {
+
         }
  
     }

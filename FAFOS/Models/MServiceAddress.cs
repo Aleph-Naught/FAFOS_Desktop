@@ -29,8 +29,16 @@ namespace FAFOS
                                                                     ", client_contract_id = " + values[9] +
                                                                     " WHERE service_address_id = " + values[0], con);
 
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
 
-            command.ExecuteNonQuery();            
+                MessageBox.Show("Error with database.");
+
+            }
             con.Close();
             return;
         }
@@ -53,7 +61,15 @@ namespace FAFOS
                                                                                 + "0" + ", "
                                                                                 + "0" + ", "
                                                                                 + "0" + ")", con);
-            command.ExecuteNonQuery();
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                MessageBox.Show("Error with database.");
+            }
+
             con.Close();
             return srvAddrID;
 
@@ -82,8 +98,15 @@ namespace FAFOS
 
             con.Open();
             SqlCommand command = new SqlCommand("SELECT service_address_id FROM Service_Address WHERE client_contract_id = " + id, con);
-            SqlDataAdapter adap = new SqlDataAdapter(command);
-            adap.Fill(dt);
+            try
+            {
+                SqlDataAdapter adap = new SqlDataAdapter(command);
+                adap.Fill(dt);
+            }
+            catch
+            {
+                MessageBox.Show("Error with database.");
+            }
             con.Close();
 
             return dt;

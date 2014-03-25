@@ -190,7 +190,7 @@ namespace FAFOS
                 Utility pdfUtility = new Utility();
 
                 //Open a file specifying the file name as the output pdf file
-                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\SalesOrder.pdf";
+                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "Resources\\SalesOrder.pdf";
 
                 FileStream file = new FileStream(FilePath, FileMode.Create);
                 int size = 0;
@@ -228,7 +228,7 @@ namespace FAFOS
                 TextAndTables textAndtable = new TextAndTables(pSize);
 
                 //create the reference to an image and the data that represents it
-                String ImagePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\logo.jpg";   //file path to image source
+                String ImagePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "Resources\\logo.jpg";   //file path to image source
                 ImageDict I1 = new ImageDict();                     //new image dictionary object
                 I1.CreateImageDict("I1", ImagePath);                //create the object which describes the image
                 page.AddImageResource(I1.PDFImageName, I1, content.objectNum);  //create a reference where the PDF can identify which object
@@ -407,7 +407,7 @@ namespace FAFOS
                 file.Close();
 
                 //Messages.Visible = true;
-                Preview testDialog = new Preview(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\SalesOrder.pdf");
+                Preview testDialog = new Preview(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "Resources\\SalesOrder.pdf");
                 testDialog.ShowDialog();
             }
             catch (Exception ex)

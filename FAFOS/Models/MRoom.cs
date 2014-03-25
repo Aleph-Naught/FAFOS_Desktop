@@ -32,8 +32,14 @@ namespace FAFOS
                                                       "', service_addr_id = " + rooms[i, 3] +
                                                   " WHERE room_id = " + rooms[i, 0], con);
 
-
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch
+                {
+                    MessageBox.Show("Error with database.");
+                }
                 
             }
             con.Close();
@@ -73,7 +79,14 @@ namespace FAFOS
                                                            ", room_id = " + values[i, 6] +
                                                       " WHERE extinguisher_id = " + values[i, 0], con);
                 }
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch
+                {
+                    MessageBox.Show("Error with database.");
+                }
 
             }
             con.Close();
@@ -107,7 +120,14 @@ namespace FAFOS
                                                            ", room_id = " + values[i, 3] +
                                                       " WHERE hose_id = " + values[i, 0], con);                   
                 }
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch
+                {
+                    MessageBox.Show("Error with database.");
+                }
 
             }
             con.Close();
@@ -153,8 +173,16 @@ namespace FAFOS
                                                       " WHERE light_id = " + values[i, 0], con);
                 }
 
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch
+                {
 
-                command.ExecuteNonQuery();
+                    MessageBox.Show("Error with database.");
+
+                }
 
             }
             con.Close();
@@ -209,7 +237,14 @@ namespace FAFOS
                                                                                 + "<empty>" + "', '"
                                                                                 + "<empty>" + "', "
                                                                                 + "0" + ")", con);
-            command.ExecuteNonQuery();
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                MessageBox.Show("Error with database.");
+            }
             con.Close();
 
             return newID;

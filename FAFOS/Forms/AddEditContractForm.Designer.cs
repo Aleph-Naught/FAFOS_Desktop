@@ -142,9 +142,10 @@
             this.delete_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.delete_Button.FlatAppearance.BorderSize = 0;
             this.delete_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
+            this.delete_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete_Button.ForeColor = System.Drawing.Color.White;
-            this.delete_Button.Location = new System.Drawing.Point(705, 336);
+
+            this.delete_Button.Location = new System.Drawing.Point(738, 294);
             this.delete_Button.Name = "delete_Button";
             this.delete_Button.Size = new System.Drawing.Size(113, 39);
             this.delete_Button.TabIndex = 32;
@@ -286,9 +287,11 @@
             this.Add_Row_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.Add_Row_Button.FlatAppearance.BorderSize = 0;
             this.Add_Row_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Add_Row_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
+            this.Add_Row_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Add_Row_Button.ForeColor = System.Drawing.Color.White;
-            this.Add_Row_Button.Location = new System.Drawing.Point(569, 336);
+
+            this.Add_Row_Button.Location = new System.Drawing.Point(602, 294);
+
             this.Add_Row_Button.Name = "Add_Row_Button";
             this.Add_Row_Button.Size = new System.Drawing.Size(130, 39);
             this.Add_Row_Button.TabIndex = 42;
