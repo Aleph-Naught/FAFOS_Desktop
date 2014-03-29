@@ -308,25 +308,28 @@ namespace FAFOS
                 textAndtable.AddText(65, 350, "Fire Extinguisher Inspection List", 11, "T3", Align.LeftAlign);
 
                 //create the reference to an image and the data that represents it
+            /*
                 String ImagePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\Columns.jpg";   //file path to image source
                 ImageDict I1 = new ImageDict();                     //new image dictionary object
                 I1.CreateImageDict("I1", ImagePath);                //create the object which describes the image
                 page.AddImageResource(I1.PDFImageName, I1, content.objectNum);  //create a reference where the PDF can identify which object
                 //describes the image when we want to draw it on the page
-
+            */
                 /*
                  * draw the image to page (add the instruction to the content stream which says draw the image called I1 starting
                  * at X = 269, Y = 20 and with an ACTUAL image size on the page of w = 144 and h = 100)
                  */
+            /*
                 PageImages pi = new PageImages();
                 content.SetStream(pi.ShowImage("I1", 58, 355, 510, 78));   //tell the PDF we want to draw an image called 'I1', where and what size
-
+            */
                 //Specify the color for the cell and the line
                 ColorSpec cellColor = new ColorSpec(255, 255, 255);
                 ColorSpec lineColor = new ColorSpec(0, 0, 0);
 
 
            //     textAndtable.AddText(50, 275, "Page:    1", 10, "T4", Align.LeftAlign);
+            // make sure this is the size of the number of columns
                 Align[] alignC1 = new Align[17];
                 alignC1[0] = Align.LeftAlign;
                 alignC1[1] = Align.LeftAlign;
@@ -372,19 +375,40 @@ namespace FAFOS
                 XmlNode start = docElement.FirstChild;
 
 
-                //BEN, THIS IS YOUR STARTING POINT
                 XmlNode serviceAddress = doc.SelectSingleNode("//ServiceAddress[@address='123 Sesame Street']");
 
                 String floorName = null;
 
+                //--------- HEADER -----------
+                ColorSpec headerCellColor = new ColorSpec(255, 0, 0);
+                //ColorSpec lineColor = new ColorSpec(0, 0, 0);
+
+                TableParams tableHeader = new TableParams(17, 60, 28, 30, 90, 25, 30, 50, 35, 17, 17, 17, 17, 17, 17, 17, 17, 17);
+
+                uint initHeight = 430;
+
+                tableHeader.yPos = initHeight;
+                tableHeader.xPos = 49;
+                tableHeader.rowHeight = 15;
+                textAndtable.SetParams(tableHeader, headerCellColor, Align.LeftAlign, 3);
+
+                textAndtable.AddRow(true, 8, "T3", alignC1, false, "Floor", "Room", "ID", "Location",
+                    "Size", "Type", "Model", "Serial No.", "H Test", "6 yr", "Wt", "Brckt", "Gauge",
+                    "Pin", "Sign", "Coll", "Hose");
+
+                height += tableHeader.rowHeight; //Move offset to next row
+                //height += 100; //THIS CAUSES BUGS, REDUCE TO 20 AND YOU WILL SEE
+                content.SetStream(textAndtable.EndTable(lineColor, true));
+
                 foreach(XmlNode floor in serviceAddress.ChildNodes)
                 {
 
-                    TableParams table2 = new TableParams(17, 60, 28, 30, 90, 25, 30, 50, 35, 17,
-                            17, 17, 17, 17, 17, 17, 17, 17); //Sets paramaters for tables, first one is number of columns, other are column widths
+                    //Sets paramaters for tables, first one is number of columns, other are column widths
+                    // current total width: 501
+                    TableParams table2 = new TableParams(17, 60, 28, 30, 90, 25, 30, 50, 35, 17, 17, 17, 17, 17, 17, 17, 17, 17); 
 
       
-                    table2.yPos = 340 - height;
+                    table2.yPos = /*340*/ initHeight - height;
                     table2.xPos = 49;
                     table2.rowHeight = 15;
                     textAndtable.SetParams(table2, cellColor, Align.LeftAlign, 3);
@@ -419,17 +443,19 @@ namespace FAFOS
                             {
                                 if (element.Attributes["testNote"].InnerText.Trim() != "")
                                 {
-                                    textAndtable.AddRow(true, 8, "T3", alignC1, false, element.Attributes["testNote"].InnerText); 
+                                    textAndtable.AddRow(true, 8, "T3", alignC1, false, element.Attributes["testNote"].InnerText);
                                 }
                             }
 
                             //Construct row
+
+                            height += table2.rowHeight;
                         }
 
-                        height += table2.rowHeight; //Move offset to next row
+                        //height += table2.rowHeight; //Move offset to next row
                     }
 
-                    height += 100; //THIS CAUSES BUGS, REDUCE TO 20 AND YOU WILL SEE
+                    //height += 50;//100; //THIS CAUSES BUGS, REDUCE TO 20 AND YOU WILL SEE
                     content.SetStream(textAndtable.EndTable(lineColor, true));
                 }
                 
@@ -513,7 +539,7 @@ namespace FAFOS
                 file.Write(Courier.GetFontDict(file.Length, out size), 0, size);
 
                 //write image dict
-                 file.Write(I1.GetImageDict(file.Length, out size), 0, size);
+                // file.Write(I1.GetImageDict(file.Length, out size), 0, size);
                  file.Write(I2.GetImageDict(file.Length, out size), 0, size);
 
                 file.Write(infoDict.GetInfoDict(file.Length, out size), 0, size);
