@@ -327,7 +327,7 @@ namespace FAFOS
 
 
            //     textAndtable.AddText(50, 275, "Page:    1", 10, "T4", Align.LeftAlign);
-                Align[] alignC1 = new Align[16];
+                Align[] alignC1 = new Align[17];
                 alignC1[0] = Align.LeftAlign;
                 alignC1[1] = Align.LeftAlign;
                 alignC1[2] = Align.LeftAlign;
@@ -344,6 +344,7 @@ namespace FAFOS
                 alignC1[13] = Align.CenterAlign;
                 alignC1[14] = Align.CenterAlign;
                 alignC1[15] = Align.CenterAlign;
+                alignC1[16] = Align.CenterAlign;
 
                
 
@@ -379,8 +380,8 @@ namespace FAFOS
                 foreach(XmlNode floor in serviceAddress.ChildNodes)
                 {
 
-                    TableParams table2 = new TableParams(17, 62, 28, 30, 85, 25, 30, 40, 25, 18,
-                            18, 18, 18, 18, 18, 18, 18, 18); //Sets paramaters for tables, first one is number of columns, other are column widths
+                    TableParams table2 = new TableParams(17, 60, 28, 30, 90, 25, 30, 50, 35, 17,
+                            17, 17, 17, 17, 17, 17, 17, 17); //Sets paramaters for tables, first one is number of columns, other are column widths
 
       
                     table2.yPos = 340 - height;
@@ -410,6 +411,17 @@ namespace FAFOS
                                 passFail(equipment.SelectNodes("*[@name='Signage']")[0].Attributes["testResult"].InnerText),
                                 passFail(equipment.SelectNodes("*[@name='Collar']")[0].Attributes["testResult"].InnerText),
                                 passFail(equipment.SelectNodes("*[@name='Hose']")[0].Attributes["testResult"].InnerText));
+
+                            // EXPERIMENTAL: add a new row when there are notes for a failed element
+                            // In this case I don't like that it keeps the row formatting
+                            XmlNodeList elements = equipment.SelectNodes("*");
+                            foreach (XmlNode element in elements)
+                            {
+                                if (element.Attributes["testNote"].InnerText.Trim() != "")
+                                {
+                                    textAndtable.AddRow(true, 8, "T3", alignC1, false, element.Attributes["testNote"].InnerText); 
+                                }
+                            }
 
                             //Construct row
                         }
