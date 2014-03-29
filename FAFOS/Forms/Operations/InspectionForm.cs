@@ -379,7 +379,8 @@ namespace FAFOS
                 foreach(XmlNode floor in serviceAddress.ChildNodes)
                 {
 
-                    TableParams table2 = new TableParams(6, 62, 28, 50, 80, 30, 30); //Sets paramaters for tables, first one is number of columns, other are column widths
+                    TableParams table2 = new TableParams(17, 62, 28, 30, 85, 25, 30, 40, 25, 18,
+                            18, 18, 18, 18, 18, 18, 18, 18); //Sets paramaters for tables, first one is number of columns, other are column widths
 
       
                     table2.yPos = 340 - height;
@@ -396,8 +397,20 @@ namespace FAFOS
 
                         foreach(XmlNode equipment in equipmentList)
                         {
-                            textAndtable.AddRow(true, 10, "T3", alignC1, false, floorName, room.Attributes["id"].InnerText, equipment.Attributes["id"].InnerText,
-                                equipment.Attributes["location"].InnerText, equipment.Attributes["size"].InnerText, equipment.Attributes["type"].InnerText);
+                            textAndtable.AddRow(true, 8, "T3", alignC1, false, floorName, room.Attributes["id"].InnerText,
+                                equipment.Attributes["id"].InnerText, equipment.Attributes["location"].InnerText,
+                                equipment.Attributes["size"].InnerText, equipment.Attributes["type"].InnerText,
+                                equipment.Attributes["model"].InnerText, equipment.Attributes["serialNo"].InnerText,
+                                passFail(equipment.SelectNodes("*[@name='Hydro Test']")[0].Attributes["testResult"].InnerText),
+                                passFail(equipment.SelectNodes("*[@name='6 Year Insp']")[0].Attributes["testResult"].InnerText),
+                                passFail(equipment.SelectNodes("*[@name='Weight']")[0].Attributes["testResult"].InnerText),
+                                passFail(equipment.SelectNodes("*[@name='Bracket']")[0].Attributes["testResult"].InnerText),
+                                passFail(equipment.SelectNodes("*[@name='Gauge']")[0].Attributes["testResult"].InnerText),
+                                passFail(equipment.SelectNodes("*[@name='Pull Pin']")[0].Attributes["testResult"].InnerText),
+                                passFail(equipment.SelectNodes("*[@name='Signage']")[0].Attributes["testResult"].InnerText),
+                                passFail(equipment.SelectNodes("*[@name='Collar']")[0].Attributes["testResult"].InnerText),
+                                passFail(equipment.SelectNodes("*[@name='Hose']")[0].Attributes["testResult"].InnerText));
+
                             //Construct row
                         }
 
@@ -505,6 +518,19 @@ namespace FAFOS
 
         }
 
+        private String passFail(String raw)
+        {
+            switch (raw)
+            {
+                case "Pass":
+                    return "OK";
+                case "Fail":
+                    return "X";
+            }
+
+            // if this is the empty string there will be errors
+            return " ";
+        }
 
 
     }
