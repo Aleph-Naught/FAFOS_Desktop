@@ -82,7 +82,11 @@ namespace FAFOS
             if(old)
             {
 
-                    SqlCommand command = new SqlCommand("UPDATE Client SET account_name = '" + values[1] +
+                SqlCommand command = null;
+
+                if (contractID != "")
+                {
+                    command = new SqlCommand("UPDATE Client SET account_name = '" + values[1] +
                                                                           "', type = '" + values[2] +
                                                                           "', address = '" + values[3] +
                                                                           "', postal_code = '" + values[4] +
@@ -95,14 +99,35 @@ namespace FAFOS
                                                                           "', country_id = " + countryID +
                                                                           ", province_id = " + provStateID +
                                                                           ", city_id = " + cityID +
-                                                                          ", client_contract_id = "+ contractID +
+                                                                          ", client_contract_id = " + contractID +
                                                                           " WHERE client_id = " + clientID, con);
+                }
+                else
+                {
+
+                    command = new SqlCommand("UPDATE Client SET account_name = '" + values[1] +
+                                                                              "', type = '" + values[2] +
+                                                                              "', address = '" + values[3] +
+                                                                              "', postal_code = '" + values[4] +
+                                                                              "', main_phone = '" + values[5] +
+                                                                              "', secondary_phone = '" + values[6] +
+                                                                              "', fax = '" + values[7] +
+                                                                              "', email = '" + values[8] +
+                                                                              "', poBox = '" + values[9] +
+                                                                              "', primary_contact = '" + values[10] +
+                                                                              "', country_id = " + countryID +
+                                                                              ", province_id = " + provStateID +
+                                                                              ", city_id = " + cityID +
+                                                                              " WHERE client_id = " + clientID, con);
+                }
+
+                    
 
                     try
                     {
                         command.ExecuteNonQuery();
                     }
-                    catch
+                    catch(Exception e)
                     {
                         MessageBox.Show("Error with database.");
                     }
