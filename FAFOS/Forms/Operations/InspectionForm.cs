@@ -124,8 +124,6 @@ namespace FAFOS
         }
         private string generateExtinguisher()
         {
-            try
-            {
                
 
 
@@ -225,8 +223,10 @@ namespace FAFOS
                 String[] ad = new String[6];
                 ad = address.Split(',');
 
+                String id = addressBox.SelectedValue.ToString();
+
              //   client.get(contract.getClient(sales_order.getSAddress(_view.GetText())))
-                String clientInfo = new Client().get(new ClientContract().getClient(addressBox.SelectedValue.ToString()));
+                String clientInfo = new Client().get(new ClientContract().getClient(id));
                 String[] client = new String[9];
                 client = clientInfo.Split(',');
 
@@ -369,9 +369,18 @@ namespace FAFOS
                 String floor="";
                 uint height = 0 ;
                 XmlNode start = docElement.FirstChild;
+
+
+                //BEN, THIS IS YOUR STARTING POINT
+                XmlNode serviceAddress = doc.SelectSingleNode("//ServiceAddress[@address='123 Sesame Street']");
+                //BEN START HERE ^
+                
+                
+                
                 foreach (XmlNode c1 in start)//contract
                 {
                     XmlNode addresses = c1.FirstChild;
+                    
                     foreach (XmlNode c2 in addresses.ChildNodes)//address
                     {
                         if (Convert.ToInt32(c2.Attributes["id"].InnerText) == Convert.ToInt32(addressBox.SelectedValue))
@@ -449,12 +458,6 @@ namespace FAFOS
 
                 return FilePath;
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Could not display the document because " + ex.ToString());
-                return null;
-            }
         }
 
         private void label5_Click(object sender, EventArgs e)
