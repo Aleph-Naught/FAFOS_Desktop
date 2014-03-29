@@ -366,15 +366,50 @@ namespace FAFOS
                 XmlElement docElement = doc.DocumentElement;
 
                 // loop through all childNodes
-                String floor="";
+                //String floor="";
                 uint height = 0 ;
                 XmlNode start = docElement.FirstChild;
 
 
                 //BEN, THIS IS YOUR STARTING POINT
                 XmlNode serviceAddress = doc.SelectSingleNode("//ServiceAddress[@address='123 Sesame Street']");
-                //BEN START HERE ^
+
+                String floorName = null;
+
+                foreach(XmlNode floor in serviceAddress.ChildNodes)
+                {
+
+                    TableParams table2 = new TableParams(6, 62, 28, 50, 80, 30, 30); //Sets paramaters for tables, first one is number of columns, other are column widths
+
+      
+                    table2.yPos = 340 - height;
+                    table2.xPos = 49;
+                    table2.rowHeight = 15;
+                    textAndtable.SetParams(table2, cellColor, Align.LeftAlign, 3);
+
+                    floorName = floor.Attributes["name"].InnerText;
+
+                    foreach(XmlNode room in floor.ChildNodes)
+                    {
+
+                        XmlNodeList equipmentList = room.SelectNodes("Extinguisher"); //Currently hard coded to extinguisher
+
+                        foreach(XmlNode equipment in equipmentList)
+                        {
+                            textAndtable.AddRow(true, 10, "T3", alignC1, false, floorName, room.Attributes["id"].InnerText, equipment.Attributes["id"].InnerText,
+                                equipment.Attributes["location"].InnerText, equipment.Attributes["size"].InnerText, equipment.Attributes["type"].InnerText);
+                            //Construct row
+                        }
+
+                        height += table2.rowHeight; //Move offset to next row
+                    }
+
+                    height += 100; //THIS CAUSES BUGS, REDUCE TO 20 AND YOU WILL SEE
+                    content.SetStream(textAndtable.EndTable(lineColor, true));
+                }
                 
+
+                /*
                 
                 
                 foreach (XmlNode c1 in start)//contract
@@ -389,7 +424,7 @@ namespace FAFOS
                             foreach (XmlNode c3 in floors.ChildNodes)
                             {
                                 //Fill in the parameters for the table
-                                TableParams table2 = new TableParams(16, 25, 60, 80, 25, 30, 80, 55,
+                                TableParams table2 = new TableParams(1, 25, 60, 80, 25, 30, 80, 55,
                                                                 17, 17, 17, 17, 17, 17, 17, 17, 17);
                                 table2.yPos = 340 - height;
                                 table2.xPos = 49;
@@ -423,6 +458,11 @@ namespace FAFOS
                         }
                     }
                 }
+                
+                 */
+                
+
+
                 textAndtable.AddText(65, 720, "Print ", 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(125, 720, DateTime.Now.ToString("dd/MM/yyyy"), 10, "T4", Align.LeftAlign);
                 textAndtable.AddText(500, 720, "Page 1 of 1", 10, "T3", Align.LeftAlign);
