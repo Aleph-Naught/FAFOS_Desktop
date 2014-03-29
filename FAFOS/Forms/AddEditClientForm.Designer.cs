@@ -77,7 +77,7 @@
             this.Ok_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Ok_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ok_Button.ForeColor = System.Drawing.Color.Black;
-            this.Ok_Button.Location = new System.Drawing.Point(637, 494);
+            this.Ok_Button.Location = new System.Drawing.Point(699, 543);
             this.Ok_Button.Margin = new System.Windows.Forms.Padding(4);
             this.Ok_Button.Name = "Ok_Button";
             this.Ok_Button.Size = new System.Drawing.Size(75, 23);
@@ -198,6 +198,7 @@
             // 
             // postalCodeTextBox
             // 
+            this.postalCodeTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.postalCodeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.postalCodeTextBox.Location = new System.Drawing.Point(21, 121);
             this.postalCodeTextBox.Margin = new System.Windows.Forms.Padding(4);
@@ -387,17 +388,18 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.PrimContactTextBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(19, 381);
+            this.groupBox1.Location = new System.Drawing.Point(22, 366);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(764, 102);
+            this.groupBox1.Size = new System.Drawing.Size(764, 171);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Info";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.postalCodeTextBox);
             this.groupBox2.Controls.Add(this.PoBoxTextBox);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.addrTextBox);
@@ -407,7 +409,6 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.postalCodeTextBox);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -415,7 +416,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(764, 73);
+            this.groupBox2.Size = new System.Drawing.Size(764, 170);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Address Information";
@@ -461,7 +462,7 @@
             // cancelBtn
             // 
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelBtn.Location = new System.Drawing.Point(555, 494);
+            this.cancelBtn.Location = new System.Drawing.Point(617, 543);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 41;
@@ -472,10 +473,10 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F);
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.label15.Location = new System.Drawing.Point(7, 9);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(156, 46);
+            this.label15.Size = new System.Drawing.Size(142, 46);
             this.label15.TabIndex = 42;
             this.label15.Text = "Clients";
             // 
@@ -486,7 +487,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.cancelBtn;
-            this.ClientSize = new System.Drawing.Size(819, 528);
+            this.ClientSize = new System.Drawing.Size(834, 579);
             this.ControlBox = false;
             this.Controls.Add(this.label15);
             this.Controls.Add(this.cancelBtn);
