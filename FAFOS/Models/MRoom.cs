@@ -50,7 +50,7 @@ namespace FAFOS
             SqlConnection con = new SqlConnection(connString);
             SqlCommand command;
 
-            int nExt = (values.Length / 7);
+            int nExt = (values.Length / 9);
             con.Open();
             for (int i = 0; i < nExt; i++)
             {
@@ -65,8 +65,11 @@ namespace FAFOS
                                                                            "','" + values[i, 2] +
                                                                            "','" + values[i, 3] +
                                                                            "','" + values[i, 4] +
-                                                                            "'," + values[i, 5] +
-                                                                             "," + values[i, 6] + ")", con);
+                                                                           "','" + values[i, 5] +
+                                                                           "'," + values[i, 8] +
+                                                                             ",'" + values[i, 6] + 
+                                                                             "','" + values[i, 7] +
+                                                                             "')", con);
                 }
 
                 else
@@ -76,8 +79,10 @@ namespace FAFOS
                                                           "', type = '" + values[i, 3] +
                                                           "', model = '" + values[i, 4] +
                                                           "', serial = " + values[i, 5] +
-                                                           ", room_id = " + values[i, 6] +
-                                                      " WHERE extinguisher_id = " + values[i, 0], con);
+                                                           ", room_id = " + values[i, 8] +
+                                                           ", bar_code = '" + values[i, 6] + 
+                                                           "', manufacturing_date = '" + values[i,7] +
+                                                      "' WHERE extinguisher_id = " + values[i, 0], con);
                 }
                 try
                 {

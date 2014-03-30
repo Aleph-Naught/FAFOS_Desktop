@@ -58,9 +58,9 @@ namespace FAFOS
         public String[,] GetExtinguishers(int index)
         {
             int n = extViews[index].Rows.Count;
-            String[,] extinguishers = new String[n, 7];
+            String[,] extinguishers = new String[n, 9];
             for (int i = 0; i < n; i++)
-                for(int j = 0; j < 7;j++)
+                for(int j = 0; j < 9;j++)
                 {
                     try { extinguishers[i, j] = extViews[index].Rows[i].Cells[j].Value.ToString(); }
                     catch (NullReferenceException) { extinguishers[i, j] = null; }
@@ -127,7 +127,7 @@ namespace FAFOS
             for (int i = 0; i < n; i++)
             {
                 AddExtinguisher(index);
-                for (int j = 0; j < 7; j++)
+                for (int j = 0; j < 9; j++)
                 {
                     extViews[index].Rows[i].Cells[j].Value = extinguishers.Rows[i][j];
                 }
@@ -255,7 +255,7 @@ namespace FAFOS
         public void extView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            if ((e.ColumnIndex == 7) && (e.RowIndex > -1))
+            if ((e.ColumnIndex == 9) && (e.RowIndex > -1))
             {
                 DecMetric("extinguisher", currentRow);
                 my_controller.ExtinguisherView_CellClick(sender, e);
@@ -356,6 +356,8 @@ namespace FAFOS
             DataGridViewTextBoxColumn eTypeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn eModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn eSerial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn eBarcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn eManufacturingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewButtonColumn eDel = new DataGridViewButtonColumn();
 
             eIDCol.HeaderText = "ID";
@@ -387,6 +389,14 @@ namespace FAFOS
             eSerial.Name = "eSerial";
             eSerial.Width = 150;
 
+            eBarcode.HeaderText = "Barcode";
+            eBarcode.Name = "eBarcode";
+            eBarcode.Width = 150;
+
+            eManufacturingDate.HeaderText = "Manufacturing Date";
+            eManufacturingDate.Name = "eManufacturingDate";
+            eManufacturingDate.Width = 150;
+
             eDel.HeaderText = "Delete";
             eDel.Name = "eDel";
             eDel.Width = 40;
@@ -404,6 +414,8 @@ namespace FAFOS
             eTypeCol,
             eModel,
             eSerial,
+            eBarcode,
+            eManufacturingDate,
             eRoom,
             eDel});
 

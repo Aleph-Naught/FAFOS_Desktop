@@ -34,6 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Ok_Button = new System.Windows.Forms.Button();
             this.RoomGridView = new System.Windows.Forms.DataGridView();
+            this.addRoomButton = new System.Windows.Forms.Button();
+            this.AddItemButton = new System.Windows.Forms.Button();
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.floor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,8 +43,6 @@
             this.hoseCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lightCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.addRoomButton = new System.Windows.Forms.Button();
-            this.AddItemButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.RoomGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,6 +120,37 @@
             this.RoomGridView.TabIndex = 60;
             this.RoomGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.RoomGridView_RowsRemoved);
             // 
+            // addRoomButton
+            // 
+            this.addRoomButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.addRoomButton.FlatAppearance.BorderSize = 0;
+            this.addRoomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addRoomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addRoomButton.ForeColor = System.Drawing.Color.White;
+            this.addRoomButton.Location = new System.Drawing.Point(610, 29);
+            this.addRoomButton.Name = "addRoomButton";
+            this.addRoomButton.Size = new System.Drawing.Size(101, 36);
+            this.addRoomButton.TabIndex = 64;
+            this.addRoomButton.Text = "Add Room";
+            this.addRoomButton.UseVisualStyleBackColor = false;
+            this.addRoomButton.Click += new System.EventHandler(this.addRoomButton_Click);
+            // 
+            // AddItemButton
+            // 
+            this.AddItemButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.AddItemButton.FlatAppearance.BorderSize = 0;
+            this.AddItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddItemButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddItemButton.ForeColor = System.Drawing.Color.White;
+            this.AddItemButton.Location = new System.Drawing.Point(12, 409);
+            this.AddItemButton.Name = "AddItemButton";
+            this.AddItemButton.Size = new System.Drawing.Size(127, 36);
+            this.AddItemButton.TabIndex = 67;
+            this.AddItemButton.Text = "Add Extinguisher";
+            this.AddItemButton.UseVisualStyleBackColor = false;
+            this.AddItemButton.Visible = false;
+            this.AddItemButton.Click += new System.EventHandler(this.AddItemButton_Click);
+            // 
             // idCol
             // 
             this.idCol.HeaderText = "ID";
@@ -163,37 +194,6 @@
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.ReadOnly = true;
             this.deleteButton.Width = 70;
-            // 
-            // addRoomButton
-            // 
-            this.addRoomButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.addRoomButton.FlatAppearance.BorderSize = 0;
-            this.addRoomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addRoomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addRoomButton.ForeColor = System.Drawing.Color.White;
-            this.addRoomButton.Location = new System.Drawing.Point(610, 29);
-            this.addRoomButton.Name = "addRoomButton";
-            this.addRoomButton.Size = new System.Drawing.Size(101, 36);
-            this.addRoomButton.TabIndex = 64;
-            this.addRoomButton.Text = "Add Room";
-            this.addRoomButton.UseVisualStyleBackColor = false;
-            this.addRoomButton.Click += new System.EventHandler(this.addRoomButton_Click);
-            // 
-            // AddItemButton
-            // 
-            this.AddItemButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.AddItemButton.FlatAppearance.BorderSize = 0;
-            this.AddItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddItemButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddItemButton.ForeColor = System.Drawing.Color.White;
-            this.AddItemButton.Location = new System.Drawing.Point(12, 409);
-            this.AddItemButton.Name = "AddItemButton";
-            this.AddItemButton.Size = new System.Drawing.Size(127, 36);
-            this.AddItemButton.TabIndex = 67;
-            this.AddItemButton.Text = "Add Extinguisher";
-            this.AddItemButton.UseVisualStyleBackColor = false;
-            this.AddItemButton.Visible = false;
-            this.AddItemButton.Click += new System.EventHandler(this.AddItemButton_Click);
             // 
             // AddEditRoomForm
             // 
