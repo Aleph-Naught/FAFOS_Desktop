@@ -392,7 +392,7 @@ namespace FAFOS
                 tableHeader.rowHeight = 15;
                 textAndtable.SetParams(tableHeader, headerCellColor, Align.LeftAlign, 3);
 
-                textAndtable.AddRow(true, 8, "T3", alignC1, false, "Floor", "Room", "ID", "Location",
+                textAndtable.AddRow(false, 8, "T3", alignC1, false, true, "Floor", "Room", "ID", "Location",
                     "Size", "Type", "Model", "Serial No.", "H Test", "6 yr", "Wt", "Brckt", "Gauge",
                     "Pin", "Sign", "Coll", "Hose");
 
@@ -422,7 +422,7 @@ namespace FAFOS
 
                         foreach(XmlNode equipment in equipmentList)
                         {
-                            textAndtable.AddRow(true, 8, "T3", alignC1, false, floorName, room.Attributes["id"].InnerText,
+                            textAndtable.AddRow(true, 8, "T3", alignC1, false, false, floorName, room.Attributes["id"].InnerText,
                                 equipment.Attributes["id"].InnerText, equipment.Attributes["location"].InnerText,
                                 equipment.Attributes["size"].InnerText, equipment.Attributes["type"].InnerText,
                                 equipment.Attributes["model"].InnerText, equipment.Attributes["serialNo"].InnerText,
@@ -443,7 +443,7 @@ namespace FAFOS
                             {
                                 if (element.Attributes["testNote"].InnerText.Trim() != "")
                                 {
-                                    textAndtable.AddRow(true, 8, "T3", alignC1, false, element.Attributes["testNote"].InnerText);
+                                    textAndtable.AddRow(true, 8, "T3", alignC1, false, false, element.Attributes["testNote"].InnerText);
                                 }
                             }
 
