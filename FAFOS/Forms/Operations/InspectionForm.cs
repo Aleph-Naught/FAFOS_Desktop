@@ -385,12 +385,12 @@ namespace FAFOS
 
                 TableParams tableHeader = new TableParams(17, 60, 28, 30, 90, 25, 30, 50, 35, 17, 17, 17, 17, 17, 17, 17, 17, 17);
 
-                uint initHeight = 430;
+                uint initHeight = 415;
 
                 tableHeader.yPos = initHeight;
                 tableHeader.xPos = 49;
                 tableHeader.rowHeight = 15;
-                textAndtable.SetParams(tableHeader, headerCellColor, Align.LeftAlign, 3);
+                textAndtable.SetHeaderParams(tableHeader, headerCellColor, Align.LeftAlign, 3, tableHeader.rowHeight);
 
                 textAndtable.AddRow(false, 8, "T3", alignC1, false, true, "Floor", "Room", "ID", "Location",
                     "Size", "Type", "Model", "Serial No.", "H Test", "6 yr", "Wt", "Brckt", "Gauge",

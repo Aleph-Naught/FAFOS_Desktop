@@ -891,6 +891,39 @@ namespace InvoicePDF
 
         }
 
+        public bool SetHeaderParams(TableParams table, ColorSpec cellColor, Align alignment, uint cellPadding, uint rHeight)
+        {
+            if ((table.yPos > (pSize.yHeight - pSize.topMargin)) || (tableWidth > (pSize.xWidth - (pSize.leftMargin + pSize.rightMargin))))
+                return false;
+            tableWidth = table.tableWidth;
+            switch (alignment)
+            {
+
+                case (Align.LeftAlign):
+                    tableX = pSize.leftMargin + table.xPos;
+                    break;
+                case (Align.CenterAlign):
+                    tableX = (pSize.xWidth - (pSize.leftMargin + pSize.rightMargin) - tableWidth) / 2;
+                    break;
+                case (Align.RightAlign):
+                    tableX = pSize.xWidth - (pSize.rightMargin + tableWidth) - 68;
+                    break;
+            }
+
+            textX = tableX;
+            textY = table.yPos;
+            fixedTop = table.yPos+rHeight;
+            rowHeight = table.rowHeight;
+            numColumn = table.numColumn;
+            cColor = cellColor;
+            cPadding = cellPadding;
+            colWidth = new uint[numColumn];
+            colWidth = table.columnWidths;
+            rowY = new ArrayList();
+            return true;
+
+        }
+
 
         /// <summary>
         /// Create the lines of text in the cells, when text wrap is true
@@ -1151,8 +1184,16 @@ namespace InvoicePDF
                 else
                 {
                     textY = textY - rowHeight;
-                    rowY.Add(textY);
-                    rowY.Add(rowHeight);
+                    if (!rotate)
+                    {
+                        rowY.Add(textY);
+                        rowY.Add(rowHeight);
+                    }
+                    else
+                    {
+                        rowY.Add(textY);
+                        rowY.Add(rowHeight*2);
+                    }
                 }
                 
             }
