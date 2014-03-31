@@ -109,6 +109,7 @@ namespace FAFOS
             con.Close();
             return address;
         }
+
         public bool getCompleted(String id)
         {
              String connString = FAFOS.Properties.Settings.Default.FAFOS;
@@ -119,16 +120,16 @@ namespace FAFOS
             try
             {
                 SqlDataReader reader = command.ExecuteReader();
-                reader.Read();
+                completed = reader.Read();
 
-                try
+                /*try
                 {
                     completed = ((int)reader[0]) == 1;
                 }
                 catch (InvalidCastException e)
                 {
                     // don't really care cuz it still works
-                }
+                }*/
 
             }
             catch (Exception ef)

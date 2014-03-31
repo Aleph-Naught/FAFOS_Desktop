@@ -891,6 +891,39 @@ namespace InvoicePDF
 
         }
 
+        public bool SetHeaderParams(TableParams table, ColorSpec cellColor, Align alignment, uint cellPadding, uint rHeight)
+        {
+            if ((table.yPos > (pSize.yHeight - pSize.topMargin)) || (tableWidth > (pSize.xWidth - (pSize.leftMargin + pSize.rightMargin))))
+                return false;
+            tableWidth = table.tableWidth;
+            switch (alignment)
+            {
+
+                case (Align.LeftAlign):
+                    tableX = pSize.leftMargin + table.xPos;
+                    break;
+                case (Align.CenterAlign):
+                    tableX = (pSize.xWidth - (pSize.leftMargin + pSize.rightMargin) - tableWidth) / 2;
+                    break;
+                case (Align.RightAlign):
+                    tableX = pSize.xWidth - (pSize.rightMargin + tableWidth) - 68;
+                    break;
+            }
+
+            textX = tableX;
+            textY = table.yPos;
+            fixedTop = table.yPos+rHeight;
+            rowHeight = table.rowHeight;
+            numColumn = table.numColumn;
+            cColor = cellColor;
+            cPadding = cellPadding;
+            colWidth = new uint[numColumn];
+            colWidth = table.columnWidths;
+            rowY = new ArrayList();
+            return true;
+
+        }
+
 
         /// <summary>
         /// Create the lines of text in the cells, when text wrap is true
@@ -995,6 +1028,12 @@ namespace InvoicePDF
             return (cWidth * fontSize / 1000);
         }
 
+        //default cause I'm lazy
+        public bool AddRow(bool textWrap, uint fontSize, string fontName, Align[] alignment, bool col, params string[] rowText)
+        {
+            return AddRow(textWrap, fontSize, fontName, alignment, col, false, rowText);
+        }
+
         /// <summary>
         /// Add One row to the table
         /// </summary>
@@ -1004,7 +1043,7 @@ namespace InvoicePDF
         /// <param name="alignment"></param>
         /// <param name="rowText"></param>
         /// <returns></returns>
-        public bool AddRow(bool textWrap, uint fontSize, string fontName, Align[] alignment,bool col, params string[] rowText)
+        public bool AddRow(bool textWrap, uint fontSize, string fontName, Align[] alignment,bool col, bool rotate, params string[] rowText)
         {
             if (rowText.Length > numColumn)
             {
@@ -1066,8 +1105,8 @@ namespace InvoicePDF
                         text[column][lines] = text[column][lines].Replace("\\", "\\\\");
                         text[column][lines] = text[column][lines].Replace("(", "\\(");
                         text[column][lines] = text[column][lines].Replace(")", "\\)");
-
-                        tableStream += string.Format("\rBT/{0} {1} Tf \r{2} {3} Td \r({4}) Tj\rET", fontName, fontSize, x, y, text[column][lines]);
+                        
+                            tableStream += string.Format("\rBT/{0} {1} Tf \r{2} {3} Td \r({4}) Tj\rET", fontName, fontSize, x, y, text[column][lines]);
                     }
                     //Calculate the maximum number of lines in this row
                     if (lines > maxLines)
@@ -1121,12 +1160,21 @@ namespace InvoicePDF
                     rowText[column] = rowText[column].Replace("(", "\\(");
                     rowText[column] = rowText[column].Replace(")", "\\)");
 
+
                     if (col)
-                        tableStream += string.Format("\r1.0 1.0 1.0 rg\rBT/{0} {1} Tf\r{2} {3} Td \r({4}) Tj\rET\r", fontName, fontSize, x, y, rowText[column]);
+                        if (rotate && column > 7)
+                            tableStream += string.Format("\rBT/{0} {1} Tf \r{2} {3} Td \r0 1 -1 0 {2} {3} Tm \r({4}) Tj\rET", fontName, fontSize, x + 8, y, rowText[column]);
+                        else
+                            tableStream += string.Format("\r1.0 1.0 1.0 rg\rBT/{0} {1} Tf\r{2} {3} Td \r({4}) Tj\rET\r", fontName, fontSize, x, y, rowText[column]);
                     else
-                        tableStream += string.Format("\r0.0 0.0 0.0 rg\rBT/{0} {1} Tf\r{2} {3} Td \r({4}) Tj\rET\r", fontName, fontSize, x, y, rowText[column]);
+                        if (rotate && column > 7)
+                            tableStream += string.Format("\rBT/{0} {1} Tf \r{2} {3} Td \r0 1 -1 0 {2} {3} Tm \r({4}) Tj\rET", fontName, fontSize, x + 8, y, rowText[column]);
+                        else
+                            tableStream += string.Format("\r0.0 0.0 0.0 rg\rBT/{0} {1} Tf\r{2} {3} Td \r({4}) Tj\rET\r", fontName, fontSize, x, y, rowText[column]);
                     //"\rBT/{0} {1} Tf \r{2} {3} Td \r({4}) Tj\rET"
                 }
+
+                
                 if (textY < pSize.bottomMargin)
                 {
                     textY = 0;
@@ -1136,9 +1184,18 @@ namespace InvoicePDF
                 else
                 {
                     textY = textY - rowHeight;
-                    rowY.Add(textY);
-                    rowY.Add(rowHeight);
+                    if (!rotate)
+                    {
+                        rowY.Add(textY);
+                        rowY.Add(rowHeight);
+                    }
+                    else
+                    {
+                        rowY.Add(textY);
+                        rowY.Add(rowHeight*2);
+                    }
                 }
+                
             }
             return true;
         }
@@ -1149,6 +1206,7 @@ namespace InvoicePDF
         /// <returns></returns>
         public void AddText(uint X, uint Y, string text, uint fontSize, string fontName, Align alignment)
         {
+            
             Exception invalidPoints = new Exception("The X Y coordinate out of Page Boundary");
             if (X > pSize.xWidth || Y > pSize.yHeight)
                 throw invalidPoints;
@@ -1170,6 +1228,7 @@ namespace InvoicePDF
             text = text.Replace(")", "\\)");
 
             textStream += string.Format("\r0.0 0.0 0.0 rg\rBT/{0} {1} Tf\r{2} {3} Td \r({4}) Tj\rET\r", fontName, fontSize, startX, (pSize.yHeight - Y), text);
+             
         }
 
         /// <summary>

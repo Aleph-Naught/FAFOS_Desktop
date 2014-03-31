@@ -100,16 +100,9 @@ namespace FAFOS
             //string uri = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
             //  + "\\Resources\\" + inspectionType.Text + "_" + DateTime.Today.ToShortDateString() + ".pdf";
 
-            string uri ="";
+            string uri ="";           
 
-            if (inspectionType.Text == "Extinguisher Report")
-            {
-                
-
-                uri = generateExtinguisher();
-
-
-            }
+            uri = generateExtinguisher();
 
 
             //Preview testDialog = new Preview(uri);
@@ -124,8 +117,6 @@ namespace FAFOS
         }
         private string generateExtinguisher()
         {
-            try
-            {
                
 
 
@@ -222,17 +213,34 @@ namespace FAFOS
 
 
                 String address = new ServiceAddress().get(addressBox.SelectedValue.ToString());
+
+                String reportType = inspectionType.Text;
+                //String reportType = "Emergency Light";
+
                 String[] ad = new String[6];
                 ad = address.Split(',');
 
+                String id = addressBox.SelectedValue.ToString();
+
              //   client.get(contract.getClient(sales_order.getSAddress(_view.GetText())))
-                String clientInfo = new Client().get(new ClientContract().getClient(addressBox.SelectedValue.ToString()));
+                String clientInfo = new Client().get(new ClientContract().getClient(id));
                 String[] client = new String[9];
                 client = clientInfo.Split(',');
 
                 //Add text to the page
                 textAndtable.AddText(60, 70, "Report of Inspection/Test", 16, "T3", Align.LeftAlign);
-                textAndtable.AddText(60, 85, "Extinguisher", 10, "T3", Align.LeftAlign);
+
+                if (reportType.Contains("Fire Hose Cabinet"))
+                {
+                    textAndtable.AddText(60, 85, "Fire Hose Cabinet", 10, "T3", Align.LeftAlign);
+                }
+                else if (reportType.Contains("Emergency Light"))
+                {
+                    textAndtable.AddText(60, 85, "Emergency Light", 10, "T3", Align.LeftAlign);
+                }
+                else
+                    textAndtable.AddText(60, 85, "Extinguisher", 10, "T3", Align.LeftAlign);
+
                 string format = "MMMM d, yyyy";
                 textAndtable.AddText(60, 100, DateTime.Today.ToString(format), 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(60, 115, "Property", 10, "T3", Align.LeftAlign);
@@ -305,29 +313,41 @@ namespace FAFOS
                 textAndtable.AddText(391, 232, "Conditions", 8, "T4", Align.LeftAlign);
                 textAndtable.AddText(391, 275, "Conditions", 8, "T4", Align.LeftAlign);
 
-                textAndtable.AddText(65, 350, "Fire Extinguisher Inspection List", 11, "T3", Align.LeftAlign);
+                if (reportType.Contains("Fire Hose Cabinet"))
+                {
+                    textAndtable.AddText(65, 350, "Fire Hose Cabinet Inspection List", 11, "T3", Align.LeftAlign);
+                }
+                else if (reportType.Contains("Emergency Light"))
+                {
+                    textAndtable.AddText(65, 350, "Emergency Light Inspection List", 11, "T3", Align.LeftAlign);
+                }
+                else
+                    textAndtable.AddText(65, 350, "Fire Extinguisher Inspection List", 11, "T3", Align.LeftAlign);
 
                 //create the reference to an image and the data that represents it
+            /*
                 String ImagePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\Columns.jpg";   //file path to image source
                 ImageDict I1 = new ImageDict();                     //new image dictionary object
                 I1.CreateImageDict("I1", ImagePath);                //create the object which describes the image
                 page.AddImageResource(I1.PDFImageName, I1, content.objectNum);  //create a reference where the PDF can identify which object
                 //describes the image when we want to draw it on the page
-
+            */
                 /*
                  * draw the image to page (add the instruction to the content stream which says draw the image called I1 starting
                  * at X = 269, Y = 20 and with an ACTUAL image size on the page of w = 144 and h = 100)
                  */
+            /*
                 PageImages pi = new PageImages();
                 content.SetStream(pi.ShowImage("I1", 58, 355, 510, 78));   //tell the PDF we want to draw an image called 'I1', where and what size
-
+            */
                 //Specify the color for the cell and the line
                 ColorSpec cellColor = new ColorSpec(255, 255, 255);
                 ColorSpec lineColor = new ColorSpec(0, 0, 0);
 
 
            //     textAndtable.AddText(50, 275, "Page:    1", 10, "T4", Align.LeftAlign);
-                Align[] alignC1 = new Align[16];
+            // make sure this is the size of the number of columns
+                Align[] alignC1 = new Align[17];
                 alignC1[0] = Align.LeftAlign;
                 alignC1[1] = Align.LeftAlign;
                 alignC1[2] = Align.LeftAlign;
@@ -344,6 +364,7 @@ namespace FAFOS
                 alignC1[13] = Align.CenterAlign;
                 alignC1[14] = Align.CenterAlign;
                 alignC1[15] = Align.CenterAlign;
+                alignC1[16] = Align.CenterAlign;
 
                
 
@@ -366,12 +387,215 @@ namespace FAFOS
                 XmlElement docElement = doc.DocumentElement;
 
                 // loop through all childNodes
-                String floor="";
+                //String floor="";
                 uint height = 0 ;
                 XmlNode start = docElement.FirstChild;
+
+                XmlNode serviceAddress = doc.SelectSingleNode("//ServiceAddress[@address='123 Sesame Street']");
+
+                String floorName = null;
+
+                //--------- HEADER -----------
+                ColorSpec headerCellColor = new ColorSpec(255, 0, 0);
+                //ColorSpec lineColor = new ColorSpec(0, 0, 0);
+
+                TableParams tableHeader;
+
+                if(reportType.Contains("Fire Hose Cabinet"))
+                {
+                    tableHeader = new TableParams(9, 60, 28, 30, 90, 59, 59, 59, 59, 57); 
+                }
+                else if (reportType.Contains("Emergency Light"))
+                {
+                    tableHeader = new TableParams(11, 60, 28, 30, 90, 30, 50, 50, 50, 30, 50, 50);
+                }
+                else
+                    tableHeader = new TableParams(17, 60, 28, 30, 90, 25, 30, 50, 35, 17, 17, 17, 17, 17, 17, 17, 17, 17);
+
+                uint initHeight = 415;
+
+                tableHeader.yPos = initHeight;
+                tableHeader.xPos = 49;
+                tableHeader.rowHeight = 15;
+
+                if (reportType.Contains("Fire Hose Cabinet"))
+                {
+                    textAndtable.SetParams(tableHeader, headerCellColor, Align.LeftAlign, 3);
+                }
+                else if (reportType.Contains("Emergency Light"))
+                {
+                    textAndtable.SetParams(tableHeader, headerCellColor, Align.LeftAlign, 3);
+                }
+                else
+                    textAndtable.SetHeaderParams(tableHeader, headerCellColor, Align.LeftAlign, 3, tableHeader.rowHeight);
+
+
+                if (reportType.Contains("Fire Hose Cabinet"))
+                {
+                    textAndtable.AddRow(true, 8, "T3", alignC1, false, false, "Floor", "Room", "ID", "Location",
+                        "Manufacting Date", "Cabinet Condition", "Nozzle Condition", "Hose Re-Rack", "Hydrostatic Test Due");
+
+                    height += tableHeader.rowHeight * 2; //Move offset to next row
+                }
+                else if (reportType.Contains("Emergency Light"))
+                {
+                    textAndtable.AddRow(true, 8, "T3", alignC1, false, false, "Floor", "Room", "ID", "Location",
+                        "Model", "Make", "Number of Heads", "Total Power", "Voltage", "Requires Service or Repair", "Operation Confirmed");
+
+                    height += tableHeader.rowHeight * 3; //Move offset to next row
+                }
+                else
+                {
+                    textAndtable.AddRow(false, 8, "T3", alignC1, false, true, "Floor", "Room", "ID", "Location",
+                        "Size", "Type", "Model", "Serial No.", "H Test", "6 yr", "Wt", "Brckt", "Gauge",
+                        "Pin", "Sign", "Coll", "Hose");
+
+                    height += tableHeader.rowHeight; //Move offset to next row
+                }
+
+                
+
+                content.SetStream(textAndtable.EndTable(lineColor, true));
+
+                foreach(XmlNode floor in serviceAddress.ChildNodes)
+                {
+
+                    //Sets paramaters for tables, first one is number of columns, other are column widths
+                    // current total width: 501
+
+                    TableParams table2;
+
+                    if(reportType.Contains("Fire Hose Cabinet"))
+                    {
+                        table2 = new TableParams(9, 60, 28, 30, 90, 59, 59, 59, 59, 57); 
+                    }
+                    else if (reportType.Contains("Emergency Light"))
+                    {
+                        table2 = new TableParams(11, 60, 28, 30, 90, 30, 50, 50, 50, 30, 50, 50);
+                    }
+                    else
+                         table2 = new TableParams(17, 60, 28, 30, 90, 25, 30, 50, 35, 17, 17, 17, 17, 17, 17, 17, 17, 17); 
+
+      
+                    table2.yPos = /*340*/ initHeight - height;
+                    table2.xPos = 49;
+                    table2.rowHeight = 15;
+                    textAndtable.SetParams(table2, cellColor, Align.LeftAlign, 3);
+
+                    floorName = floor.Attributes["name"].InnerText;
+
+                    foreach(XmlNode room in floor.ChildNodes)
+                    {
+
+                        if (reportType.Contains("Extinguisher"))
+                        {
+                            XmlNodeList equipmentList = room.SelectNodes("Extinguisher"); //Currently hard coded to extinguisher
+
+                            foreach (XmlNode equipment in equipmentList)
+                            {
+                                textAndtable.AddRow(true, 8, "T3", alignC1, false, false, floorName, room.Attributes["id"].InnerText,
+                                    equipment.Attributes["id"].InnerText, equipment.Attributes["location"].InnerText,
+                                    equipment.Attributes["size"].InnerText, equipment.Attributes["type"].InnerText,
+                                    equipment.Attributes["model"].InnerText, equipment.Attributes["serialNo"].InnerText,
+                                    passFail(equipment.SelectNodes("*[@name='Hydro Test']")[0].Attributes["testResult"].InnerText),
+                                    passFail(equipment.SelectNodes("*[@name='6 Year Insp']")[0].Attributes["testResult"].InnerText),
+                                    passFail(equipment.SelectNodes("*[@name='Weight']")[0].Attributes["testResult"].InnerText),
+                                    passFail(equipment.SelectNodes("*[@name='Bracket']")[0].Attributes["testResult"].InnerText),
+                                    passFail(equipment.SelectNodes("*[@name='Gauge']")[0].Attributes["testResult"].InnerText),
+                                    passFail(equipment.SelectNodes("*[@name='Pull Pin']")[0].Attributes["testResult"].InnerText),
+                                    passFail(equipment.SelectNodes("*[@name='Signage']")[0].Attributes["testResult"].InnerText),
+                                    passFail(equipment.SelectNodes("*[@name='Collar']")[0].Attributes["testResult"].InnerText),
+                                    passFail(equipment.SelectNodes("*[@name='Hose']")[0].Attributes["testResult"].InnerText));
+
+                                // EXPERIMENTAL: add a new row when there are notes for a failed element
+                                // In this case I don't like that it keeps the row formatting
+                                XmlNodeList elements = equipment.SelectNodes("*");
+                                foreach (XmlNode element in elements)
+                                {
+                                    if (element.Attributes["testNote"].InnerText.Trim() != "")
+                                    {
+                                        textAndtable.AddRow(true, 8, "T3", alignC1, false, false, element.Attributes["testNote"].InnerText);
+                                    }
+                                }
+
+                            }
+                            //Construct row
+
+                        }
+                        else if(reportType.Contains("Fire Hose Cabinet"))
+                        {
+                            XmlNodeList equipmentList = room.SelectNodes("FireHoseCabinet");
+
+                            foreach (XmlNode equipment in equipmentList)
+                            {
+
+
+                                textAndtable.AddRow(true, 8, "T3", alignC1, false, false, floorName, room.Attributes["id"].InnerText,
+                                    equipment.Attributes["id"].InnerText, equipment.Attributes["location"].InnerText,
+                                    equipment.Attributes["manufacturingDate"].InnerText,
+                                    goodPoor(equipment.SelectNodes("*[@name='Cabinet Condition']")[0].Attributes["testResult"].InnerText),
+                                    goodPoor(equipment.SelectNodes("*[@name='Nozzle Condition']")[0].Attributes["testResult"].InnerText),
+                                    goodPoor(equipment.SelectNodes("*[@name='Hose Re-Rack']")[0].Attributes["testResult"].InnerText),
+                                    goodPoor(equipment.SelectNodes("*[@name='Hydrostatic Test Due']")[0].Attributes["testResult"].InnerText));
+
+                                // EXPERIMENTAL: add a new row when there are notes for a failed element
+                                // In this case I don't like that it keeps the row formatting
+                                XmlNodeList elements = equipment.SelectNodes("*");
+                                foreach (XmlNode element in elements)
+                                {
+                                    if (element.Attributes["testNote"].InnerText.Trim() != "")
+                                    {
+                                        textAndtable.AddRow(true, 8, "T3", alignC1, false, false, element.Attributes["testNote"].InnerText);
+                                    }
+                                }
+
+                            }
+                        }
+                        else if (reportType.Contains("Emergency Light"))
+                        {
+                            XmlNodeList equipmentList = room.SelectNodes("EmergencyLight");
+
+                            foreach (XmlNode equipment in equipmentList)
+                            {
+
+                                textAndtable.AddRow(true, 8, "T3", alignC1, false, false, floorName, room.Attributes["id"].InnerText,
+                                    equipment.Attributes["id"].InnerText, equipment.Attributes["location"].InnerText,
+                                    equipment.Attributes["model"].InnerText, equipment.Attributes["make"].InnerText,
+                                    equipment.Attributes["numHeads"].InnerText, equipment.Attributes["totalPower"].InnerText,
+                                    equipment.Attributes["voltage"].InnerText,
+                                    goodPoor(equipment.SelectNodes("*[@name='Requires Service or Repair']")[0].Attributes["testResult"].InnerText),
+                                    goodPoor(equipment.SelectNodes("*[@name='Operation Confirmed']")[0].Attributes["testResult"].InnerText));
+
+                                // EXPERIMENTAL: add a new row when there are notes for a failed element
+                                // In this case I don't like that it keeps the row formatting
+                                XmlNodeList elements = equipment.SelectNodes("*");
+                                foreach (XmlNode element in elements)
+                                {
+                                    if (element.Attributes["testNote"].InnerText.Trim() != "")
+                                    {
+                                        textAndtable.AddRow(true, 8, "T3", alignC1, false, false, element.Attributes["testNote"].InnerText);
+                                    }
+                                }
+
+                            }
+                        }
+
+                        height += table2.rowHeight;
+                        
+                    }
+
+                    //height += 50;//100; //THIS CAUSES BUGS, REDUCE TO 20 AND YOU WILL SEE
+                    content.SetStream(textAndtable.EndTable(lineColor, true));
+                }
+                
+
+                /*
+                
+                
                 foreach (XmlNode c1 in start)//contract
                 {
                     XmlNode addresses = c1.FirstChild;
+                    
                     foreach (XmlNode c2 in addresses.ChildNodes)//address
                     {
                         if (Convert.ToInt32(c2.Attributes["id"].InnerText) == Convert.ToInt32(addressBox.SelectedValue))
@@ -380,7 +604,7 @@ namespace FAFOS
                             foreach (XmlNode c3 in floors.ChildNodes)
                             {
                                 //Fill in the parameters for the table
-                                TableParams table2 = new TableParams(16, 25, 60, 80, 25, 30, 80, 55,
+                                TableParams table2 = new TableParams(1, 25, 60, 80, 25, 30, 80, 55,
                                                                 17, 17, 17, 17, 17, 17, 17, 17, 17);
                                 table2.yPos = 340 - height;
                                 table2.xPos = 49;
@@ -414,6 +638,11 @@ namespace FAFOS
                         }
                     }
                 }
+                
+                 */
+                
+
+
                 textAndtable.AddText(65, 720, "Print ", 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(125, 720, DateTime.Now.ToString("dd/MM/yyyy"), 10, "T4", Align.LeftAlign);
                 textAndtable.AddText(500, 720, "Page 1 of 1", 10, "T3", Align.LeftAlign);
@@ -439,7 +668,7 @@ namespace FAFOS
                 file.Write(Courier.GetFontDict(file.Length, out size), 0, size);
 
                 //write image dict
-                 file.Write(I1.GetImageDict(file.Length, out size), 0, size);
+                // file.Write(I1.GetImageDict(file.Length, out size), 0, size);
                  file.Write(I2.GetImageDict(file.Length, out size), 0, size);
 
                 file.Write(infoDict.GetInfoDict(file.Length, out size), 0, size);
@@ -449,12 +678,6 @@ namespace FAFOS
 
                 return FilePath;
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Could not display the document because " + ex.ToString());
-                return null;
-            }
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -462,6 +685,27 @@ namespace FAFOS
 
         }
 
+        private String passFail(String raw)
+        {
+            switch (raw)
+            {
+                case "Pass":
+                    return "OK";
+                case "Fail":
+                    return "X";
+            }
+
+            // if this is the empty string there will be errors
+            return " ";
+        }
+
+        private String goodPoor(String raw)
+        {
+            if (raw.Equals(""))
+                return " ";
+            else
+                return raw;
+        }
 
 
     }

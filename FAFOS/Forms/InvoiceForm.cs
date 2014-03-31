@@ -282,7 +282,7 @@ namespace FAFOS
 
                 //Set the parameters of this table
                 textAndtable.SetParams(table, cellColor, Align.CenterAlign, 3);
-                textAndtable.AddRow(false, 8, "T3", alignC, true, "Terms", "Purchase Order", "Date Issued", "Due Date");
+                textAndtable.AddRow(false, 8, "T3", alignC, true, false, "Terms", "Purchase Order", "Date Issued", "Due Date");
                 //After drawing table and text add them to the page 
                 content.SetStream(textAndtable.EndTable(lineColor,true));
 
@@ -295,7 +295,7 @@ namespace FAFOS
                 table2.xPos = 50;
                 table2.rowHeight = 15;
                 textAndtable2.SetParams(table2, cell1, Align.CenterAlign, 3);
-                textAndtable2.AddRow(false, 8, "T3", alignR, false, "Net"+txtTerm.Text, txtSalesOrder.SelectedValue.ToString(),
+                textAndtable2.AddRow(false, 8, "T3", alignR, false, false, "Net"+txtTerm.Text, txtSalesOrder.SelectedValue.ToString(),
                     Issued.Value.ToShortDateString(), Issued.Value.AddDays(Convert.ToDouble(txtTerm.Text)).ToShortDateString());
                 content.SetStream(textAndtable2.EndTable(line1, true));
 
