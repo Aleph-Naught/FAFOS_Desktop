@@ -414,9 +414,9 @@ namespace FAFOS
             eTypeCol,
             eModel,
             eSerial,
+            eRoom,
             eBarcode,
             eManufacturingDate,
-            eRoom,
             eDel});
 
             ExtinguisherView.Location = new System.Drawing.Point(5, 220);
