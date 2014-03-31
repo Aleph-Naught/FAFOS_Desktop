@@ -129,7 +129,7 @@ namespace FAFOS
                     }
                     catch(Exception e)
                     {
-                        MessageBox.Show("Error with database.");
+                        MessageBox.Show("You missed something");
                     }
             }
             
@@ -159,7 +159,7 @@ namespace FAFOS
                 }
                 catch
                 {
-                    MessageBox.Show("Error with database.");
+                    MessageBox.Show("You missed something");
                 }
             }
             con.Close();

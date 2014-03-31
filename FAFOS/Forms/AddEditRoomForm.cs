@@ -421,7 +421,7 @@ namespace FAFOS
 
             ExtinguisherView.Location = new System.Drawing.Point(5, 220);
             ExtinguisherView.Name = "ExtinguisherView";
-            ExtinguisherView.Size = new System.Drawing.Size(525, 150);
+            ExtinguisherView.Size = new System.Drawing.Size(650, 150);
             ExtinguisherView.TabIndex = 61;
             ExtinguisherView.Visible = false;
             
@@ -479,7 +479,7 @@ namespace FAFOS
 
             HoseView.Location = new System.Drawing.Point(5, 220);
             HoseView.Name = "HoseView";
-            HoseView.Size = new System.Drawing.Size(320, 150);
+            HoseView.Size = new System.Drawing.Size(650, 150);
             HoseView.TabIndex = 65;
             HoseView.Visible = false;
 
@@ -567,7 +567,7 @@ namespace FAFOS
 
             LightView.Location = new System.Drawing.Point(5, 220);
             LightView.Name = "LightView";
-            LightView.Size = new System.Drawing.Size(710, 150);
+            LightView.Size = new System.Drawing.Size(650, 150);
             LightView.TabIndex = 66;
             LightView.Visible = false;
 

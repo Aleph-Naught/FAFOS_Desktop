@@ -88,7 +88,7 @@ namespace FAFOS
                 }
                 catch
                 {
-                    MessageBox.Show("Error with database.");
+                    MessageBox.Show("You missed something/Date format error");
                 }
 
             }
@@ -132,7 +132,7 @@ namespace FAFOS
                 }
                 catch
                 {
-                    MessageBox.Show("Error with database.");
+                    MessageBox.Show("You missed something/Date format error");
                 }
 
             }
@@ -189,7 +189,7 @@ namespace FAFOS
                 catch
                 {
 
-                    MessageBox.Show("Error with database.");
+                    MessageBox.Show("You missed something/Date format error");
 
                 }
 
