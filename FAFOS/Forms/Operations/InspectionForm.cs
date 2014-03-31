@@ -214,8 +214,8 @@ namespace FAFOS
 
                 String address = new ServiceAddress().get(addressBox.SelectedValue.ToString());
 
-                //String reportType = inspectionType.Text;
-                String reportType = "Emergency Light";
+                String reportType = inspectionType.Text;
+                //String reportType = "Emergency Light";
 
                 String[] ad = new String[6];
                 ad = address.Split(',');
