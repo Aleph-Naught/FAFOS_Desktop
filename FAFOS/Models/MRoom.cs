@@ -66,9 +66,9 @@ namespace FAFOS
                                                                            "','" + values[i, 3] +
                                                                            "','" + values[i, 4] +
                                                                            "','" + values[i, 5] +
-                                                                           "'," + values[i, 8] +
-                                                                             ",'" + values[i, 6] + 
-                                                                             "','" + values[i, 7] +
+                                                                             "'," + values[i, 6] + 
+                                                                             ",'" + values[i, 7] +
+                                                                              "','" + values[i, 8] +
                                                                              "')", con);
                 }
 
@@ -79,9 +79,7 @@ namespace FAFOS
                                                           "', type = '" + values[i, 3] +
                                                           "', model = '" + values[i, 4] +
                                                           "', serial = " + values[i, 5] +
-                                                           ", room_id = " + values[i, 8] +
-                                                           ", bar_code = '" + values[i, 6] + 
-                                                           "', manufacturing_date = '" + values[i,7] +
+                                                           ", bar_code = '" + values[i, 7] + 
                                                       "' WHERE extinguisher_id = " + values[i, 0], con);
                 }
                 try
@@ -102,7 +100,7 @@ namespace FAFOS
             SqlConnection con = new SqlConnection(connString);
             SqlCommand command;
 
-            int nHose = (values.Length / 4);
+            int nHose = (values.Length / 6);
             con.Open();
             for (int i = 0; i < nHose; i++)
             {
@@ -114,16 +112,19 @@ namespace FAFOS
 
                     command = new SqlCommand("INSERT INTO Hose VALUES (" + values[i, 0] +
                                                                      ",'" + values[i, 1] +
-                                                                    "'," + values[i, 2] +
-                                                                     "," + values[i, 3] + ")", con);
+                                                                    "','" + values[i, 2] +
+                                                                     "'," + values[i, 3] + 
+                                                                     ",'" + values[i, 4] +
+                                                                     "','" + values[i, 5] + 
+                                                                     "')", con);
                 }
 
                 else
                 {
                     command = new SqlCommand("UPDATE Hose SET location = '" + values[i, 1] +
-                                                          "', serial = " + values[i, 2] +
-                                                           ", room_id = " + values[i, 3] +
-                                                      " WHERE hose_id = " + values[i, 0], con);                   
+                                                          "', serial = '" + values[i, 2] +
+                                                          "', bar_code = '" + values[i, 4] +
+                                                      "' WHERE hose_id = " + values[i, 0], con);                   
                 }
                 try
                 {
@@ -143,7 +144,7 @@ namespace FAFOS
             SqlConnection con = new SqlConnection(connString);
             SqlCommand command;
 
-            int nLight = (values.Length / 10);
+            int nLight = (values.Length / 12);
             MRoom r;
             con.Open();
             for (int i = 0; i < nLight; i++)
@@ -161,7 +162,10 @@ namespace FAFOS
                                                           "','" + values[i, 6] +
                                                           "','" + values[i, 7] +
                                                            "'," + values[i, 8] +
-                                                            "," + values[i, 9] + ")", con);
+                                                            "," + values[i, 9] +
+                                                            ",'" + values[i, 10] +
+                                                            "','" + values [i, 11] +
+                                                            "')", con);
                 }
                 else
                 {
@@ -173,9 +177,9 @@ namespace FAFOS
                                                           "', power = '" + values[i, 5] +
                                                           "', voltage = '" + values[i, 6] +
                                                           "', require_service = '" + values[i, 7] +
-                                                          "', serial = " + values[i, 8] +
-                                                           ", room_id = " + values[i, 9] +
-                                                      " WHERE light_id = " + values[i, 0], con);
+                                                          "', serial = '" + values[i, 8] +
+                                                          "', bar_code = '" + values[i, 10] +
+                                                      "' WHERE light_id = " + values[i, 0], con);
                 }
 
                 try
