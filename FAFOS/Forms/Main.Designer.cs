@@ -385,7 +385,7 @@ namespace FAFOS.Forms
             this.syncAndroid.Name = "syncAndroid";
             this.syncAndroid.Size = new System.Drawing.Size(133, 49);
             this.syncAndroid.TabIndex = 57;
-            this.syncAndroid.Text = "Sync Contracts to Android";
+            this.syncAndroid.Text = "Sync Data With Android";
             this.syncAndroid.UseVisualStyleBackColor = false;
             this.syncAndroid.Click += new System.EventHandler(this.syncAndroid_Click);
             // 

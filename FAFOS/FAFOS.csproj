@@ -146,11 +146,11 @@
     <Compile Include="Forms\AdminUserForm.Designer.cs">
       <DependentUpon>AdminUserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AndroidSyncForm.cs">
+    <Compile Include="Forms\FromMobileView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AndroidSyncForm.Designer.cs">
-      <DependentUpon>AndroidSyncForm.cs</DependentUpon>
+    <Compile Include="Forms\FromMobileView.designer.cs">
+      <DependentUpon>FromMobileView.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HomePage.cs">
       <SubType>Form</SubType>
@@ -260,6 +260,18 @@
     <Compile Include="Forms\Statements.Designer.cs">
       <DependentUpon>Statements.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SyncView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SyncView.designer.cs">
+      <DependentUpon>SyncView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ToMobileView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToMobileView.designer.cs">
+      <DependentUpon>ToMobileView.cs</DependentUpon>
+    </Compile>
     <Compile Include="InventoryController.cs" />
     <Compile Include="InvoiceController.cs" />
     <Compile Include="MaintainClientController.cs" />
@@ -274,6 +286,7 @@
     <Compile Include="Models\ClientContract.cs" />
     <Compile Include="Models\ContractService.cs" />
     <Compile Include="Models\Franchisee.cs" />
+    <Compile Include="Models\InspectionData.cs" />
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\InventoryTransaction.cs" />
     <Compile Include="Models\Invoice.cs" />
@@ -305,6 +318,7 @@
     <Compile Include="Models\ServiceAddress.cs" />
     <Compile Include="Models\Services.cs" />
     <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\TCP_Model.cs" />
     <Compile Include="Models\Term.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Models\WorkOrder.cs" />
@@ -322,6 +336,7 @@
     </Compile>
     <Compile Include="SalesOrderController.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="syncController.cs" />
     <Compile Include="UserController.cs" />
     <EmbeddedResource Include="Forms\AddEditClientForm.resx">
       <DependentUpon>AddEditClientForm.cs</DependentUpon>
@@ -338,8 +353,8 @@
     <EmbeddedResource Include="Forms\adminUserForm.resx">
       <DependentUpon>AdminUserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AndroidSyncForm.resx">
-      <DependentUpon>AndroidSyncForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FromMobileView.resx">
+      <DependentUpon>FromMobileView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
@@ -394,6 +409,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Statements.resx">
       <DependentUpon>Statements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SyncView.resx">
+      <DependentUpon>SyncView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToMobileView.resx">
+      <DependentUpon>ToMobileView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -21,7 +21,7 @@ namespace FAFOS.Forms
         Form currentPage;
 
         MaintainUsersForm userSettings;
-        AndroidSyncForm android;
+        SyncView android;
 
         WorkOrder[] orders;
         ContractService[] services;
@@ -465,9 +465,9 @@ namespace FAFOS.Forms
             }
             else
             {
-                android = new AndroidSyncForm();
+                android = new SyncView();
                 android.Show();
-               android.androidClosed += closeAndroid;
+               //android.androidClosed += closeAndroid;
             }
         }
 
