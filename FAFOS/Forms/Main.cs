@@ -21,6 +21,7 @@ namespace FAFOS.Forms
         Form currentPage;
 
         MaintainUsersForm userSettings;
+        AndroidSyncForm android;
 
         WorkOrder[] orders;
         ContractService[] services;
@@ -40,6 +41,11 @@ namespace FAFOS.Forms
         void closeSettings(object sender, EventArgs e)
         {
             userSettings = null;
+        }
+
+        void closeAndroid(object sender, EventArgs e)
+        {
+            android = null;
         }
 
 
@@ -453,7 +459,16 @@ namespace FAFOS.Forms
 
         private void syncAndroid_Click(object sender, EventArgs e)
         {
-
+            if (android != null)
+            {
+                android.BringToFront();
+            }
+            else
+            {
+                android = new AndroidSyncForm();
+                android.Show();
+               android.androidClosed += closeAndroid;
+            }
         }
 
         private void dayItineraryToolStripMenuItem_Click_1(object sender, EventArgs e)

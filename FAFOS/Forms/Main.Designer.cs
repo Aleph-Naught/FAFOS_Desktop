@@ -41,6 +41,7 @@ namespace FAFOS.Forms
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recordPurchaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dayItineraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createQuoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editQuoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,7 +69,6 @@ namespace FAFOS.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dayItineraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -178,6 +178,13 @@ namespace FAFOS.Forms
             this.paymentToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.paymentToolStripMenuItem.Text = "Payment";
             this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
+            // 
+            // dayItineraryToolStripMenuItem
+            // 
+            this.dayItineraryToolStripMenuItem.Name = "dayItineraryToolStripMenuItem";
+            this.dayItineraryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.dayItineraryToolStripMenuItem.Text = "Day Itinerary";
+            this.dayItineraryToolStripMenuItem.Click += new System.EventHandler(this.dayItineraryToolStripMenuItem_Click_1);
             // 
             // documentsToolStripMenuItem
             // 
@@ -380,6 +387,7 @@ namespace FAFOS.Forms
             this.syncAndroid.TabIndex = 57;
             this.syncAndroid.Text = "Sync Contracts to Android";
             this.syncAndroid.UseVisualStyleBackColor = false;
+            this.syncAndroid.Click += new System.EventHandler(this.syncAndroid_Click);
             // 
             // label9
             // 
@@ -438,13 +446,6 @@ namespace FAFOS.Forms
             this.label1.Size = new System.Drawing.Size(128, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Day Notifications";
-            // 
-            // dayItineraryToolStripMenuItem
-            // 
-            this.dayItineraryToolStripMenuItem.Name = "dayItineraryToolStripMenuItem";
-            this.dayItineraryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.dayItineraryToolStripMenuItem.Text = "Day Itinerary";
-            this.dayItineraryToolStripMenuItem.Click += new System.EventHandler(this.dayItineraryToolStripMenuItem_Click_1);
             // 
             // Main
             // 

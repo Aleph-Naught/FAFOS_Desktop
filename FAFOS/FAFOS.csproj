@@ -146,6 +146,12 @@
     <Compile Include="Forms\AdminUserForm.Designer.cs">
       <DependentUpon>AdminUserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AndroidSyncForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AndroidSyncForm.Designer.cs">
+      <DependentUpon>AndroidSyncForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\adminUserForm.resx">
       <DependentUpon>AdminUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AndroidSyncForm.resx">
+      <DependentUpon>AndroidSyncForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
