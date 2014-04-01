@@ -80,9 +80,10 @@
             this.Controls.Add(this.syncToAndroid);
             this.Controls.Add(this.syncFromAndroid);
             this.Controls.Add(this.label9);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SyncView";
             this.Text = "FAFOS";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SyncView_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

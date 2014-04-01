@@ -448,7 +448,7 @@ namespace FAFOS
 
             settings.OmitXmlDeclaration = true;
 
-            using (XmlWriter writer = XmlWriter.Create(@"c:\FAFOS\InspectionData\Out\InspectionData.xml", settings))
+            using (XmlWriter writer = XmlWriter.Create(@System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)+"\\InspectionData\\Out\\InspectionData.xml", settings))
             {
                 Inspection.Save(writer);
             }

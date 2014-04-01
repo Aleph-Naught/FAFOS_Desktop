@@ -14,6 +14,8 @@ namespace FAFOS
         syncController my_sync_controller = null;
         //====sync
 
+        public event EventHandler androidClosed;
+
         public SyncView()
         {
             InitializeComponent();
@@ -29,6 +31,11 @@ namespace FAFOS
             this.syncToAndroid.Click += new System.EventHandler(my_sync_controller.syncToAndroid_Click);
             //====sync
 
+        }
+
+        private void SyncView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            androidClosed(sender, e);
         }
     }
 }

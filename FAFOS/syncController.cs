@@ -150,7 +150,7 @@ namespace FAFOS
         public void SaveInspectionData()
         {
             XML.SaveInspection();
-            string message = "The inspection data has been saved successfully in\n" + @"c:\FAFOS\InspectionData\Out\InspectionData.xml.";
+            string message = "The inspection data has been saved successfully in\n" + @System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\InspectionData\\Out\\InspectionData.xml";
             string caption = "Save Inspection Dialog Box";
             MessageBox.Show(message, caption);
         }
@@ -255,8 +255,8 @@ namespace FAFOS
             }
 
             // save the file into C:\FAFOS\InspectionData\In
-            System.IO.File.WriteAllText(@"C:\FAFOS\InspectionData\In\InspectionData.xml", XMLDataFile);
-            UpdateInfoBox("The Inspection results file is saved in \r\n" + @"C:\FAFOS\InspectionData\In\InspectionData.xml \r\n");
+            System.IO.File.WriteAllText(@System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)+"\\InspectionData\\In\\InspectionData.xml", XMLDataFile);
+            UpdateInfoBox("The Inspection results file is saved in \r\n" + @System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)+"\\InspectionData\\In\\InspectionData.xml \r\n");
         }
 
 
