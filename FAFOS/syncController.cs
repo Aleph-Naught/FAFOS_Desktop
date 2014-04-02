@@ -21,6 +21,7 @@ namespace FAFOS
         private static FromMobileView _fromMobileView;
         TCP_Model _TCPModel = null;
         Thread clientThread;
+        int userid;
 
         public syncController(int UserId)
         {
@@ -33,6 +34,7 @@ namespace FAFOS
             reader.Read();
             String[] Franchisee_data = new String[2] { reader[0].ToString(), reader[1].ToString() };
             XML = new InspectionData(Franchisee_data);
+            userid = UserId;
         }
 
         public void syncToAndroid_Click(object sender, EventArgs e)
@@ -44,7 +46,7 @@ namespace FAFOS
 
         public void syncFromAndroid_Click(object sender, EventArgs e)
         {
-            FromMobileView fromMobileView = new FromMobileView();
+            FromMobileView fromMobileView = new FromMobileView(userid);
             fromMobileView.Show();
         }
 
