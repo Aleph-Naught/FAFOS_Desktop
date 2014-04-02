@@ -18,102 +18,32 @@ namespace FAFOS
 {
     public partial class InspectionForm : Form
     {
-        Thread listenThread;
-        TCPModel _TCPModel = null;
-        Thread clientThread;
         string userid;
 
         public InspectionForm(string id)
         {
 
-            //TODO: Generating Reports doesn't actually work on my machine -Nick
-
             InitializeComponent();
             userid = id;
-            //setup(userid, "FAFOS Inspection Form");
 
-            //panel1.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width / 2 - Convert.ToInt32(panel1.Size.Width) / 2,
-            //System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height / 2 - Convert.ToInt32(panel1.Size.Height) / 2);
 
             DataTable dt = new ServiceAddress().getAddresses();
             addressBox.DataSource = dt;
             addressBox.DisplayMember = "address";
             addressBox.ValueMember = "id";
-
-
-            // Create a thread to accept from connected clients 
-            this.listenThread = new Thread(ListenForClients);
-            listenThread.IsBackground = true; // to stop all threads when application is terminated
-            this.listenThread.Start();
-           // ListenForClients();
         }
 
-        public void ListenForClients()
-        {
-            // Create a model to listen from clients
-
-            _TCPModel = new TCPModel(Int32.Parse("8888"));
-
-//            while (true)
-         //   {
-                //blocks until a client has connected to the server
-                Socket TCPsocket = _TCPModel.AcceptOneClient();
-
-                //create a thread to handle communication with connected client                
-                clientThread = new Thread(new ParameterizedThreadStart(Communications));
-                clientThread.IsBackground = true; // to stop all threads when application is terminated
-                clientThread.Start(TCPsocket);
-           // }
-        }
-
-        public void Communications(object socket)
-        {
-            Socket TCP_socket = (Socket)socket;
-
-            // Create a new client object 
-            ClientModel _ClientModel = new ClientModel(TCP_socket);
-
-            while (true)
-            {
-                //Wait for the client data
-                string XMLData = _ClientModel.ReceiveFromClient();   // block until client sends XML message
-                if (XMLData != null)
-                {
-                    string url = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
-                   + "\\Resources\\inspection.xml";
-                    using (StreamWriter writer = new StreamWriter(url))
-                    {
-                        writer.Write(XMLData);
-                        writer.Flush();
-                    }
-                    break;
-                }
-                else
-                {
-                    break;
-                }
-            }
-        }
+  
 
         private void generate_btn_Click(object sender, EventArgs e)
         {
-
-            //string uri = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
-            //  + "\\Resources\\" + inspectionType.Text + "_" + DateTime.Today.ToShortDateString() + ".pdf";
 
             string uri ="";           
 
             uri = generateExtinguisher();
 
 
-            //Preview testDialog = new Preview(uri);
-            //testDialog.ShowDialog(this);
-
             pdfPreview.Navigate(uri);
-
-          //  clientThread.Abort();
-           // listenThread.Abort();
-            
 
         }
         private string generateExtinguisher()
@@ -344,22 +274,7 @@ namespace FAFOS
                 else
                     textAndtable.AddText(65, 350, "Fire Extinguisher Inspection List", 11, "T3", Align.LeftAlign);
 
-                //create the reference to an image and the data that represents it
-            /*
-                String ImagePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\Columns.jpg";   //file path to image source
-                ImageDict I1 = new ImageDict();                     //new image dictionary object
-                I1.CreateImageDict("I1", ImagePath);                //create the object which describes the image
-                page.AddImageResource(I1.PDFImageName, I1, content.objectNum);  //create a reference where the PDF can identify which object
-                //describes the image when we want to draw it on the page
-            */
-                /*
-                 * draw the image to page (add the instruction to the content stream which says draw the image called I1 starting
-                 * at X = 269, Y = 20 and with an ACTUAL image size on the page of w = 144 and h = 100)
-                 */
-            /*
-                PageImages pi = new PageImages();
-                content.SetStream(pi.ShowImage("I1", 58, 355, 510, 78));   //tell the PDF we want to draw an image called 'I1', where and what size
-            */
+               
                 //Specify the color for the cell and the line
                 ColorSpec cellColor = new ColorSpec(255, 255, 255);
                 ColorSpec lineColor = new ColorSpec(0, 0, 0);
@@ -389,7 +304,7 @@ namespace FAFOS
                
 
                 string url = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
-                   + "\\Resources\\inspection.xml";
+                   + "\\InspectionData\\In\\InspectionData.xml";
 
                 XmlDocument doc;
 
@@ -626,61 +541,7 @@ namespace FAFOS
                     //height += 50;//100; //THIS CAUSES BUGS, REDUCE TO 20 AND YOU WILL SEE
                     content.SetStream(textAndtable.EndTable(lineColor, true));
                 }
-                
-
-                /*
-                
-                
-                foreach (XmlNode c1 in start)//contract
-                {
-                    XmlNode addresses = c1.FirstChild;
-                    
-                    foreach (XmlNode c2 in addresses.ChildNodes)//address
-                    {
-                        if (Convert.ToInt32(c2.Attributes["id"].InnerText) == Convert.ToInt32(addressBox.SelectedValue))
-                        {
-                            XmlNode floors = c2.FirstChild;
-                            foreach (XmlNode c3 in floors.ChildNodes)
-                            {
-                                //Fill in the parameters for the table
-                                TableParams table2 = new TableParams(1, 25, 60, 80, 25, 30, 80, 55,
-                                                                17, 17, 17, 17, 17, 17, 17, 17, 17);
-                                table2.yPos = 340 - height;
-                                table2.xPos = 49;
-                                table2.rowHeight = 15;
-                                textAndtable.SetParams(table2, cellColor, Align.LeftAlign, 3);
-
-                                floor = Convert.ToInt32(c3.Attributes["id"].InnerText).ToString();
-                                XmlNode rooms = c3.FirstChild;
-                                foreach (XmlNode c4 in rooms.ChildNodes)
-                                {
-                                    XmlNode items = c4.FirstChild;
-                                    foreach (XmlNode c5 in items.ChildNodes)
-                                    {
-                                        if (c5.Attributes["class"].InnerText == "com.sedge.fireinspectionapp.Extinguisher")
-                                        {
-                                            textAndtable.AddRow(false, 10, "T3", alignC1, false, floor, c5.Attributes["id"].InnerText,
-                                                c5.Attributes["location"].InnerText, c5.Attributes["size"].InnerText,
-                                                c5.Attributes["type"].InnerText, c5.Attributes["model"].InnerText, "", c5.Attributes["t1"].InnerText,
-                                                c5.Attributes["t2"].InnerText, c5.Attributes["t3"].InnerText, c5.Attributes["t4"].InnerText, c5.Attributes["t5"].InnerText,
-                                                c5.Attributes["t6"].InnerText, c5.Attributes["t7"].InnerText, c5.Attributes["t8"].InnerText, c5.Attributes["t9"].InnerText);
-                                            height += table2.rowHeight;
-                                        }
-                                        //After drawing table and text add them to the page 
-                                       
-
-                                    }
-                                }
-                                height += 20;
-                                content.SetStream(textAndtable.EndTable(lineColor, true));
-                            }
-                        }
-                    }
-                }
-                
-                 */
-                
-
+               
 
                 textAndtable.AddText(65, 720, "Print ", 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(125, 720, DateTime.Now.ToString("dd/MM/yyyy"), 10, "T4", Align.LeftAlign);
@@ -745,99 +606,7 @@ namespace FAFOS
             else
                 return raw;
         }
-
-
-    }
-    class ClientModel
-    {
-        private Socket ClientSocket;
-        private const int BufferSize = 15000;
-        private byte[] buffer = new byte[BufferSize];
-
-        public ClientModel(Socket s)
-        {
-            this.ClientSocket = s;
-            ClientIP = ((IPEndPoint)s.RemoteEndPoint).Address;
-            ClientPort = ((IPEndPoint)s.RemoteEndPoint).Port;
-        }
-
-        public string ReceiveFromClient()
-        {
-            byte[] data = new byte[BufferSize];
-            int byteRecv = 0;
-            string receivedData = null;
-            try
-            {
-                byteRecv = ClientSocket.Receive(data, 0, BufferSize, SocketFlags.None);
-                if (byteRecv > 0)
-                {
-                    return receivedData = Encoding.ASCII.GetString(data, 0, byteRecv);
-                }
-                else
-                    return null;
-            }
-            catch
-            {
-                return null;
-            }
-        }
-
-        public IPAddress ClientIP { get; set; }
-        public int ClientPort { get; set; }
-        public IPEndPoint clientEndPoint { get; set; }
-
-    }
-    class TCPModel
-    {
-        private Socket listening_RTSPsocket = null;
-        private IPAddress ServerIPAddr = null;
-        private int RTSPport;
-
-        public TCPModel(int GivenPort)
-        {
-            // Creating TCP listening socket
-            if (listening_RTSPsocket == null)
-                listening_RTSPsocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-                // Creating Endpoint to the localhost address with the given port number
-                IPHostEntry host;
-                host = Dns.GetHostEntry(Dns.GetHostName());
-                foreach (IPAddress ip in host.AddressList)
-                {
-                    if (ip.AddressFamily == AddressFamily.InterNetwork)
-                    {
-                        ServerIP = ip;
-                    }
-                }
-
-                RTSPport = GivenPort;
-                IPEndPoint listenEndPoint = new IPEndPoint(ServerIPAddr, RTSPport);
-
-                // Bind server socket to Endpoint object
-                listening_RTSPsocket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
-                listening_RTSPsocket.Bind(listenEndPoint);
-                
-                listening_RTSPsocket.Listen(int.MaxValue);
-            
-            
-        }
-       ~TCPModel()
-        {
-            listening_RTSPsocket.Close();
-            
-        }
-
-        public Socket AcceptOneClient()
-        {
-            //blocks until a client has connected to the server
-            return this.listening_RTSPsocket.Accept();
-        }
-
-        public IPAddress ServerIP
-        {
-            get { return ServerIPAddr; }
-            set { ServerIPAddr = value; }
-        }
+   
 
     }
 }

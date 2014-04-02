@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -140,6 +141,20 @@ namespace FAFOS.Forms
 
         private void MainPrototype_Load(object sender, EventArgs e)
         {
+            
+            /*
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.FAFOS);
+            con.Open();
+           
+            SqlCommand command = new SqlCommand("INSERT INTO Supplier (supplier_id, name) VALUES (@id, @name)", con);
+            command.Parameters.AddWithValue("@id", "1234");
+            command.Parameters.AddWithValue("@name", "Western Engineering");
+
+            command.ExecuteNonQuery();
+            con.Close();
+            */ 
+            
+
             loginform.ShowDialog();
         }
 

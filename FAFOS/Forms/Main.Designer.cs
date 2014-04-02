@@ -61,9 +61,7 @@ namespace FAFOS.Forms
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.notificationPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.syncHQ = new System.Windows.Forms.Button();
             this.syncAndroid = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.paymentNotification = new System.Windows.Forms.Label();
             this.serviceNotification = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -348,30 +346,12 @@ namespace FAFOS.Forms
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.syncHQ);
             this.panel1.Controls.Add(this.syncAndroid);
-            this.panel1.Controls.Add(this.label9);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 480);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(196, 213);
             this.panel1.TabIndex = 58;
-            // 
-            // syncHQ
-            // 
-            this.syncHQ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.syncHQ.FlatAppearance.BorderSize = 0;
-            this.syncHQ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.syncHQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.syncHQ.ForeColor = System.Drawing.Color.White;
-            this.syncHQ.Location = new System.Drawing.Point(25, 70);
-            this.syncHQ.Margin = new System.Windows.Forms.Padding(4);
-            this.syncHQ.Name = "syncHQ";
-            this.syncHQ.Size = new System.Drawing.Size(133, 51);
-            this.syncHQ.TabIndex = 56;
-            this.syncHQ.Text = "Sync Reports to HQ";
-            this.syncHQ.UseVisualStyleBackColor = false;
-            this.syncHQ.Click += new System.EventHandler(this.syncHQ_Click);
             // 
             // syncAndroid
             // 
@@ -388,16 +368,6 @@ namespace FAFOS.Forms
             this.syncAndroid.Text = "Sync Data With Android";
             this.syncAndroid.UseVisualStyleBackColor = false;
             this.syncAndroid.Click += new System.EventHandler(this.syncAndroid_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(21, 32);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 18);
-            this.label9.TabIndex = 55;
-            this.label9.Text = "Sync Options";
             // 
             // paymentNotification
             // 
@@ -473,7 +443,6 @@ namespace FAFOS.Forms
             this.notificationPanel.ResumeLayout(false);
             this.notificationPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -497,8 +466,6 @@ namespace FAFOS.Forms
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button syncAndroid;
-        private System.Windows.Forms.Button syncHQ;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem inspectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;

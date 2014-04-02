@@ -793,60 +793,65 @@ namespace FAFOS
 
         private void MapsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (prefetch)
+            try
             {
-                for (int i = 0; i < order.Length; i++)
+                if (prefetch)
                 {
-                    if (order[i] != null)
-                        order[i].clear();
-                }
-                for (int i = 0; i < workOrderTable.SelectedRows.Count; i++)
-                {
-                    bool check = false;
-                    DataGridViewCheckBoxCell ch = (DataGridViewCheckBoxCell)workOrderTable.SelectedRows[i].Cells[0];
-                    if (ch.Value != null)
+                    for (int i = 0; i < order.Length; i++)
                     {
-                        if ((bool)ch.Value)
+                        if (order[i] != null)
+                            order[i].clear();
+                    }
+                    for (int i = 0; i < workOrderTable.SelectedRows.Count; i++)
+                    {
+                        bool check = false;
+                        DataGridViewCheckBoxCell ch = (DataGridViewCheckBoxCell)workOrderTable.SelectedRows[i].Cells[0];
+                        if (ch.Value != null)
                         {
-                            check = true;
+                            if ((bool)ch.Value)
+                            {
+                                check = true;
+                            }
+
                         }
 
+                        order[i] = new WorkOrder(Convert.ToInt32(workOrderTable.SelectedRows[i].Cells[1].Value),
+                            workOrderTable.SelectedRows[i].Cells[2].Value.ToString(), workOrderTable.SelectedRows[i].Cells[3].Value.ToString(),
+                            workOrderTable.SelectedRows[i].Cells[4].Value.ToString(), workOrderTable.SelectedRows[i].Cells[5].Value.ToString(),
+                            workOrderTable.SelectedRows[i].Cells[6].Value.ToString(), check);
                     }
 
-                    order[i] = new WorkOrder(Convert.ToInt32(workOrderTable.SelectedRows[i].Cells[1].Value),
-                        workOrderTable.SelectedRows[i].Cells[2].Value.ToString(), workOrderTable.SelectedRows[i].Cells[3].Value.ToString(),
-                        workOrderTable.SelectedRows[i].Cells[4].Value.ToString(), workOrderTable.SelectedRows[i].Cells[5].Value.ToString(),
-                        workOrderTable.SelectedRows[i].Cells[6].Value.ToString(), check);
-                }
-
-                for (int i = 0; i < service.Length; i++)
-                {
-                    if (service[i] != null)
-                        service[i].clear();
-                }
-                for (int i = 0; i < servicesTable.SelectedRows.Count; i++)
-                {
-                    bool check = false;
-                    DataGridViewCheckBoxCell ch = (DataGridViewCheckBoxCell)servicesTable.SelectedRows[i].Cells[0];
-                    if (ch.Value != null)
+                    for (int i = 0; i < service.Length; i++)
                     {
-                        if ((bool)ch.Value)
-                        {
-                            check = true;
-                        }
-
+                        if (service[i] != null)
+                            service[i].clear();
                     }
-                    service[i] = new ContractService(servicesTable.SelectedRows[i].Index, servicesTable.SelectedRows[i].Cells[1].Value.ToString(),
-                        servicesTable.SelectedRows[i].Cells[2].Value.ToString(), servicesTable.SelectedRows[i].Cells[3].Value.ToString(),
-                        servicesTable.SelectedRows[i].Cells[4].Value.ToString(), servicesTable.SelectedRows[i].Cells[5].Value.ToString(),
-                        servicesTable.SelectedRows[i].Cells[6].Value.ToString(), servicesTable.SelectedRows[i].Cells[7].Value.ToString(),
-                        servicesTable.SelectedRows[i].Cells[8].Value.ToString(),
-                        check);
-                }
+                    for (int i = 0; i < servicesTable.SelectedRows.Count; i++)
+                    {
+                        bool check = false;
+                        DataGridViewCheckBoxCell ch = (DataGridViewCheckBoxCell)servicesTable.SelectedRows[i].Cells[0];
+                        if (ch.Value != null)
+                        {
+                            if ((bool)ch.Value)
+                            {
+                                check = true;
+                            }
 
+                        }
+                        service[i] = new ContractService(servicesTable.SelectedRows[i].Index, servicesTable.SelectedRows[i].Cells[1].Value.ToString(),
+                            servicesTable.SelectedRows[i].Cells[2].Value.ToString(), servicesTable.SelectedRows[i].Cells[3].Value.ToString(),
+                            servicesTable.SelectedRows[i].Cells[4].Value.ToString(), servicesTable.SelectedRows[i].Cells[5].Value.ToString(),
+                            servicesTable.SelectedRows[i].Cells[6].Value.ToString(), servicesTable.SelectedRows[i].Cells[7].Value.ToString(),
+                            servicesTable.SelectedRows[i].Cells[8].Value.ToString(),
+                            check);
+                    }
+
+
+                }
 
             }
-
+            catch(Exception f)
+            { }
         }
 
     }
