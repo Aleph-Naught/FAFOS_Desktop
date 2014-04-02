@@ -465,7 +465,7 @@ namespace FAFOS.Forms
             }
             else
             {
-                android = new SyncView();
+                android = new SyncView(userid);
                 android.Show();
                android.androidClosed += closeAndroid;
             }

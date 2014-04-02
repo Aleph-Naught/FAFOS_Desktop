@@ -75,6 +75,12 @@ namespace FAFOS
             //blocks until a client has connected to the server
             return this.listening_TCPsocket.Accept();
         }
+        ~TCP_Model()
+        {
+            if (listening_TCPsocket != null)
+            listening_TCPsocket.Close();
+            
+        }
 
         public void Send_to_TCP(String data)
         {

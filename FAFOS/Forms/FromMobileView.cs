@@ -19,14 +19,14 @@ namespace FAFOS
         delegate void SetIPServerCallback(string frame);
 
 
-        public FromMobileView()
+        public FromMobileView(int userid)
         {
             InitializeComponent();
 
             // add this part at the end of the "Login_btn_Click" method
             // we will hardcode the value for userid just in this sample code
             // delete the following line in the FAFOS application
-            int userid = 1;
+            //int userid = 1;
             //====sync
             _controller = new syncController(userid);
             this.Listen_btn.Click += new System.EventHandler(_controller.Listen_btn_Click);

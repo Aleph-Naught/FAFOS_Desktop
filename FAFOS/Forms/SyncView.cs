@@ -16,7 +16,7 @@ namespace FAFOS
 
         public event EventHandler androidClosed;
 
-        public SyncView()
+        public SyncView(int userid)
         {
             InitializeComponent();
 
@@ -24,7 +24,7 @@ namespace FAFOS
             // add this part at the end of the "Login_btn_Click" method
             // we will hardcode the value for userid just in this sample code
             // delete the following line in the FAFOS application
-            int userid = 1;
+            //int userid = 1;
             //====sync
             my_sync_controller = new syncController(userid);
             this.syncFromAndroid.Click += new System.EventHandler(my_sync_controller.syncFromAndroid_Click);
