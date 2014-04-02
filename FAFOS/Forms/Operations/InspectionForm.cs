@@ -22,6 +22,7 @@ namespace FAFOS
         TCPModel _TCPModel = null;
         Thread clientThread;
         string userid;
+
         public InspectionForm(string id)
         {
 
@@ -210,9 +211,17 @@ namespace FAFOS
                 PageImages pi2 = new PageImages();
                 content.SetStream(pi2.ShowImage("I2", 400, 680, 155, 85));   //tell the PDF we want to draw an image called 'I1', where and what size
 
+                String address = null;
 
-
-                String address = new ServiceAddress().get(addressBox.SelectedValue.ToString());
+                try
+                {
+                    address = new ServiceAddress().get(addressBox.SelectedValue.ToString());
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show("An error occured, or no service addresses exist");
+                    return null;
+                }
 
                 String reportType = inspectionType.Text;
                 //String reportType = "Emergency Light";
@@ -223,95 +232,106 @@ namespace FAFOS
                 String id = addressBox.SelectedValue.ToString();
 
              //   client.get(contract.getClient(sales_order.getSAddress(_view.GetText())))
-                String clientInfo = new Client().get(new ClientContract().getClient(id));
-                String[] client = new String[9];
-                client = clientInfo.Split(',');
 
-                //Add text to the page
-                textAndtable.AddText(60, 70, "Report of Inspection/Test", 16, "T3", Align.LeftAlign);
-
-                if (reportType.Contains("Fire Hose Cabinet"))
+                try
                 {
-                    textAndtable.AddText(60, 85, "Fire Hose Cabinet", 10, "T3", Align.LeftAlign);
+
+                    String clientInfo = new Client().get(new ClientContract().getClient(id));
+                    String[] client = new String[9];
+                    client = clientInfo.Split(',');
+
+                    //Add text to the page
+                    textAndtable.AddText(60, 70, "Report of Inspection/Test", 16, "T3", Align.LeftAlign);
+
+                    if (reportType.Contains("Fire Hose Cabinet"))
+                    {
+                        textAndtable.AddText(60, 85, "Fire Hose Cabinet", 10, "T3", Align.LeftAlign);
+                    }
+                    else if (reportType.Contains("Emergency Light"))
+                    {
+                        textAndtable.AddText(60, 85, "Emergency Light", 10, "T3", Align.LeftAlign);
+                    }
+                    else
+                        textAndtable.AddText(60, 85, "Extinguisher", 10, "T3", Align.LeftAlign);
+
+                    string format = "MMMM d, yyyy";
+                    textAndtable.AddText(60, 100, DateTime.Today.ToString(format), 10, "T3", Align.LeftAlign);
+                    textAndtable.AddText(60, 115, "Property", 10, "T3", Align.LeftAlign);
+                    textAndtable.AddText(65, 130, ad[0], 10, "T4", Align.LeftAlign);
+                    textAndtable.AddText(65, 140, ad[3] + ", " + ad[4], 10, "T4", Align.LeftAlign);
+                    textAndtable.AddText(65, 150, ad[5] + " " + ad[1], 10, "T4", Align.LeftAlign);
+                    textAndtable.AddText(65, 180, ad[2], 10, "T4", Align.LeftAlign);
+                    textAndtable.AddText(65, 190, "N/A", 10, "T4", Align.LeftAlign);
+
+                    textAndtable.AddText(200, 115, "Owner/Agent", 10, "T3", Align.LeftAlign);
+                    textAndtable.AddText(205, 130, client[0], 10, "T4", Align.LeftAlign);
+                    textAndtable.AddText(205, 140, client[1], 10, "T4", Align.LeftAlign);
+                    textAndtable.AddText(205, 150, client[6] + ", " + client[7], 10, "T4", Align.LeftAlign);
+                    textAndtable.AddText(205, 180, client[5], 10, "T4", Align.LeftAlign);
+                    textAndtable.AddText(205, 190, client[3], 10, "T4", Align.LeftAlign);
+
+                    textAndtable.AddText(370, 160, "Conducted by:", 10, "T3", Align.LeftAlign);
+                    textAndtable.AddText(370, 170, "Inspection Ref:", 10, "T3", Align.LeftAlign);
+                    textAndtable.AddText(370, 180, "Contact:", 10, "T3", Align.LeftAlign);
+                    textAndtable.AddText(450, 160, new Users().getName(Convert.ToInt32(userid)), 10, "T4", Align.LeftAlign);
+                    textAndtable.AddText(450, 170, "456", 10, "T4", Align.LeftAlign);
+                    textAndtable.AddText(450, 180, "N/A", 10, "T4", Align.LeftAlign);
+
+
+
+                    //create the colours for the round rectangles
+                    ColorSpec rrBorder = new ColorSpec(0, 0, 0);        //main border colour
+                    ColorSpec rrMainBG = new ColorSpec(204, 204, 204);  //background colour of the round rectangle
+                    ColorSpec rrTBBG = new ColorSpec(255, 255, 255);    //background colour of the rectangle on top of the round rectangle
+
+
+                    //create a new round rectangle object
+                    RoundRectangle rr = new RoundRectangle();
+
+                    //initialise special graphics state (graphics cursor)
+                    content.SetStream("q\r\n");
+
+
+                    content.SetStream(rr.DrawRoundRectangle(55, 460, 510, 130, 5, 0.55, 20, 90, 1, rrBorder, rrMainBG, rrTBBG));
+
+                    //begin drawing any required lines inside the round rectangle
+
+
+                    StraightLine line = new StraightLine();             //new straight line object
+                    ColorSpec vline = new ColorSpec(0, 0, 0);     //line colour - in this case Red
+
+                    //draw the line
+                    content.SetStream(line.DrawLine(180, 570, 180, 480, 1, vline));
+                    content.SetStream(line.DrawLine(320, 570, 320, 480, 1, vline));
+                    content.SetStream(line.DrawLine(390, 570, 390, 480, 1, vline));
+
+                    content.SetStream(line.DrawLine(55, 525, 565, 525, 1, vline));
+
+                    //close the graphics cursor in PDF
+                    content.SetStream("Q\r\n");
+
+                    //add in box headers and contents
+                    textAndtable.AddText(65, 215, "Signatures", 11, "T3", Align.LeftAlign);
+                    textAndtable.AddText(60, 232, "Inspector - Printed", 8, "T4", Align.LeftAlign);
+                    textAndtable.AddText(60, 245, new Users().getName(Convert.ToInt32(userid)), 8, "T3", Align.LeftAlign);
+                    textAndtable.AddText(60, 275, "Owner - Printed", 8, "T4", Align.LeftAlign);
+                    textAndtable.AddText(60, 288, client[5], 8, "T3", Align.LeftAlign);
+
+                    textAndtable.AddText(181, 232, "Inspector - Signature", 8, "T4", Align.LeftAlign);
+                    textAndtable.AddText(181, 275, "Owner - Signature", 8, "T4", Align.LeftAlign);
+
+                    textAndtable.AddText(321, 232, "Date", 8, "T4", Align.LeftAlign);
+                    textAndtable.AddText(321, 275, "Date", 8, "T4", Align.LeftAlign);
+
+                    textAndtable.AddText(391, 232, "Conditions", 8, "T4", Align.LeftAlign);
+                    textAndtable.AddText(391, 275, "Conditions", 8, "T4", Align.LeftAlign);
                 }
-                else if (reportType.Contains("Emergency Light"))
+                catch(Exception e)
                 {
-                    textAndtable.AddText(60, 85, "Emergency Light", 10, "T3", Align.LeftAlign);
+                    MessageBox.Show("An error occured finding the client");
+                    MessageBox.Show(e.ToString());
+                    return null;
                 }
-                else
-                    textAndtable.AddText(60, 85, "Extinguisher", 10, "T3", Align.LeftAlign);
-
-                string format = "MMMM d, yyyy";
-                textAndtable.AddText(60, 100, DateTime.Today.ToString(format), 10, "T3", Align.LeftAlign);
-                textAndtable.AddText(60, 115, "Property", 10, "T3", Align.LeftAlign);
-                textAndtable.AddText(65, 130, ad[0], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(65, 140, ad[3]+", "+ad[4], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(65, 150, ad[5]+ " "+ad[1], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(65, 180, ad[2], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(65, 190, "N/A", 10, "T4", Align.LeftAlign);
-
-                textAndtable.AddText(200, 115, "Owner/Agent", 10, "T3", Align.LeftAlign);
-                textAndtable.AddText(205, 130, client[0], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(205, 140, client[1], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(205, 150, client[6]+", "+client[7], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(205, 180, client[5], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(205, 190, client[3], 10, "T4", Align.LeftAlign);
-
-                textAndtable.AddText(370, 160, "Conducted by:", 10, "T3", Align.LeftAlign);
-                textAndtable.AddText(370, 170, "Inspection Ref:", 10, "T3", Align.LeftAlign);
-                textAndtable.AddText(370, 180, "Contact:", 10, "T3", Align.LeftAlign);
-                textAndtable.AddText(450, 160, new Users().getName(Convert.ToInt32(userid)), 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(450, 170, "456", 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(450, 180, "N/A", 10, "T4", Align.LeftAlign);
-
-
-
-                //create the colours for the round rectangles
-                ColorSpec rrBorder = new ColorSpec(0, 0, 0);        //main border colour
-                ColorSpec rrMainBG = new ColorSpec(204, 204, 204);  //background colour of the round rectangle
-                ColorSpec rrTBBG = new ColorSpec(255, 255, 255);    //background colour of the rectangle on top of the round rectangle
-
-
-                //create a new round rectangle object
-                RoundRectangle rr = new RoundRectangle();
-
-                //initialise special graphics state (graphics cursor)
-                content.SetStream("q\r\n");
-
-
-                content.SetStream(rr.DrawRoundRectangle(55, 460, 510, 130, 5, 0.55, 20, 90, 1, rrBorder, rrMainBG, rrTBBG));
-
-                //begin drawing any required lines inside the round rectangle
-
-
-                StraightLine line = new StraightLine();             //new straight line object
-                ColorSpec vline = new ColorSpec(0, 0, 0);     //line colour - in this case Red
-
-                //draw the line
-                content.SetStream(line.DrawLine(180, 570, 180, 480, 1, vline));
-                content.SetStream(line.DrawLine(320, 570, 320, 480, 1, vline));
-                content.SetStream(line.DrawLine(390, 570, 390, 480, 1, vline));
-
-                content.SetStream(line.DrawLine(55, 525, 565, 525, 1, vline));
-               
-                //close the graphics cursor in PDF
-                content.SetStream("Q\r\n");
-
-                //add in box headers and contents
-                textAndtable.AddText(65, 215, "Signatures", 11, "T3", Align.LeftAlign);
-                textAndtable.AddText(60, 232, "Inspector - Printed", 8, "T4", Align.LeftAlign);
-                textAndtable.AddText(60, 245, new Users().getName(Convert.ToInt32(userid)), 8, "T3", Align.LeftAlign);
-                textAndtable.AddText(60, 275, "Owner - Printed", 8, "T4", Align.LeftAlign);
-                textAndtable.AddText(60, 288, client[5], 8, "T3", Align.LeftAlign);
-
-                textAndtable.AddText(181, 232, "Inspector - Signature", 8, "T4", Align.LeftAlign);
-                textAndtable.AddText(181, 275, "Owner - Signature", 8, "T4", Align.LeftAlign);
-
-                textAndtable.AddText(321, 232, "Date", 8, "T4", Align.LeftAlign);
-                textAndtable.AddText(321, 275, "Date", 8, "T4", Align.LeftAlign);
-
-                textAndtable.AddText(391, 232, "Conditions", 8, "T4", Align.LeftAlign);
-                textAndtable.AddText(391, 275, "Conditions", 8, "T4", Align.LeftAlign);
 
                 if (reportType.Contains("Fire Hose Cabinet"))
                 {
@@ -391,7 +411,26 @@ namespace FAFOS
                 uint height = 0 ;
                 XmlNode start = docElement.FirstChild;
 
-                XmlNode serviceAddress = doc.SelectSingleNode("//ServiceAddress[@address='123 Sesame Street']");
+                XmlNode serviceAddress = null;
+
+                String xmlAddress = addressBox.Text.Split(',')[0];
+
+                try
+                {
+                    serviceAddress = doc.SelectSingleNode("//ServiceAddress[@address='" + xmlAddress + "']");
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show("An error occursed or the service address does not exist in the inspection data");
+                    return null;
+                }
+
+                if(serviceAddress == null)
+                {
+                    MessageBox.Show("An error occursed or the service address does not exist in the inspection data");
+                    return null;
+                }
+                
 
                 String floorName = null;
 

@@ -44,7 +44,9 @@
             this.inspectionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inspectionType.FormattingEnabled = true;
             this.inspectionType.Items.AddRange(new object[] {
-            "Extinguisher Report"});
+            "Extinguisher Report",
+            "Emergency Light",
+            "Fire Hose Cabinet"});
             this.inspectionType.Location = new System.Drawing.Point(4, 118);
             this.inspectionType.Margin = new System.Windows.Forms.Padding(2);
             this.inspectionType.Name = "inspectionType";
