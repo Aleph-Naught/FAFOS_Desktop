@@ -152,7 +152,9 @@ namespace FAFOS.Forms
 
             command.ExecuteNonQuery();
             con.Close();
-            */ 
+             */ 
+            
+            
             
 
             loginform.ShowDialog();

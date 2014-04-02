@@ -72,7 +72,7 @@ namespace FAFOS
             }
             catch (SqlException e)
             {
-
+                MessageBox.Show(e.ToString());
             }
             con.Close();
             return dt;

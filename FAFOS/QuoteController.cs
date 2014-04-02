@@ -37,7 +37,7 @@ namespace FAFOS
             this.type = type;
             QuoteForm newQuote = new QuoteForm(this, franchiseeUserId, type);
             newQuote.fillItemList(new Item().get(franchiseeId).Tables[0]);
-            //newQuote.fillClientList(new Client().get().Tables[0]);
+            newQuote.fillClientList(new Client().get().Tables[0]);
             newQuote.fillServiceAddressList(new ServiceAddress().get().Tables[0]);
             if (type == 2)
                 newQuote.fillQuoteIDs(new Quote().getInProgress(franchiseeUserId));
