@@ -469,8 +469,11 @@ namespace FAFOS
                                     if (element.Attributes["testNote"].InnerText.Trim() != "")
                                     {
                                         textAndtable.AddRow(true, 8, "T3", alignC1, false, false, element.Attributes["testNote"].InnerText);
+                                        height += table2.rowHeight;
                                     }
                                 }
+
+                                height += table2.rowHeight;
 
                             }
                             //Construct row
@@ -500,8 +503,11 @@ namespace FAFOS
                                     if (element.Attributes["testNote"].InnerText.Trim() != "")
                                     {
                                         textAndtable.AddRow(true, 8, "T3", alignC1, false, false, element.Attributes["testNote"].InnerText);
+                                        height += table2.rowHeight;
                                     }
                                 }
+
+                                height += table2.rowHeight;
 
                             }
                         }
@@ -528,12 +534,16 @@ namespace FAFOS
                                     if (element.Attributes["testNote"].InnerText.Trim() != "")
                                     {
                                         textAndtable.AddRow(true, 8, "T3", alignC1, false, false, element.Attributes["testNote"].InnerText);
+                                        height += table2.rowHeight;
                                     }
                                 }
+
+                                height += table2.rowHeight;
 
                             }
                         }
 
+                        // one row spacing between floors
                         height += table2.rowHeight;
                         
                     }
