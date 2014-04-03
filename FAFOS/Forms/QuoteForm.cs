@@ -22,6 +22,9 @@ namespace FAFOS
             this.btnPreview.Click += new System.EventHandler(my_controller.preview);
             if (type == 1)
             {
+                btnPullQuote.Visible = false;
+                txtGetID.Visible = false;
+                lblQuoteID.Visible = false;
                 this.btnSubmit.Click += new System.EventHandler(my_controller.createQuote);
             }
             if (type == 2)
