@@ -141,18 +141,23 @@ namespace FAFOS.Forms
 
         private void MainPrototype_Load(object sender, EventArgs e)
         {
-            
-            /*
-            SqlConnection con = new SqlConnection(Properties.Settings.Default.FAFOS);
-            con.Open();
-           
-            SqlCommand command = new SqlCommand("INSERT INTO Supplier (supplier_id, name) VALUES (@id, @name)", con);
-            command.Parameters.AddWithValue("@id", "1234");
-            command.Parameters.AddWithValue("@name", "Western Engineering");
 
-            command.ExecuteNonQuery();
-            con.Close();
-             */ 
+
+            try
+            {
+                SqlConnection con = new SqlConnection(Properties.Settings.Default.FAFOS);
+                con.Open();
+
+                SqlCommand command = new SqlCommand("INSERT INTO Supplier (supplier_id, name) VALUES (@id, @name)", con);
+                command.Parameters.AddWithValue("@id", "1234");
+                command.Parameters.AddWithValue("@name", "Western Engineering");
+
+                command.ExecuteNonQuery();
+                con.Close();
+            }
+            catch(Exception f)
+            { }
+             
             
             
             
