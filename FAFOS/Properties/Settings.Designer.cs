@@ -12,7 +12,7 @@ namespace FAFOS.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -50,7 +50,7 @@ namespace FAFOS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SEDGESQL;AttachDbFilename=C:\\SEdge2013\\SystemDatabase\\EXPRESS\\FAFOS" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\ALEPHSQL;AttachDbFilename=C:\\Aleph2014\\SystemDatabase\\EXPRESS\\FAFOS" +
             ".mdf;Integrated Security=True;Connect Timeout=30;User Instance=True")]
         public string FAFOS {
             get {
@@ -61,7 +61,7 @@ namespace FAFOS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SEDGESQL;AttachDbFilename=C:\\SEdge2013\\SystemDatabase\\EXPRESS\\FAFOS" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\ALEPHSQL;AttachDbFilename=C:\\Aleph2014\\SystemDatabase\\EXPRESS\\FAFOS" +
             "_HQ.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True")]
         public string HQ {
             get {
