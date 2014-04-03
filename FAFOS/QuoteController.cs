@@ -49,17 +49,25 @@ namespace FAFOS
             QuoteForm newQuote = (QuoteForm)((Button)sender).FindForm();
             //save
             QuoteItems items = new QuoteItems();
-            string id = new Quote().set(franchiseeUserId, newQuote.getServiceAddressId(), tax.ToString(), newQuote.getTotal());
-            DataGridView dt = newQuote.getQuoteItems();
-            for (int i = 0; i < dt.Rows.Count-1; i++)
+            try
             {
-               items.set(dt.Rows[i].Cells[0].Value.ToString(), dt.Rows[i].Cells[4].Value != null ? dt.Rows[i].Cells[4].Value.ToString() : "NULL",
-                    dt.Rows[i].Cells[3].Value != null ? dt.Rows[i].Cells[3].Value.ToString() : "NULL",
-                    dt.Rows[i].Cells[5].Value.ToString(), dt.Rows[i].Cells[1].Value.ToString(), id);
+                string id = new Quote().set(franchiseeUserId, newQuote.getServiceAddressId(), tax.ToString(), newQuote.getTotal());
+            
+                DataGridView dt = newQuote.getQuoteItems();
+                for (int i = 0; i < dt.Rows.Count-1; i++)
+                {
+                   items.set(dt.Rows[i].Cells[0].Value.ToString(), dt.Rows[i].Cells[4].Value != null ? dt.Rows[i].Cells[4].Value.ToString() : "NULL",
+                        dt.Rows[i].Cells[3].Value != null ? dt.Rows[i].Cells[3].Value.ToString() : "NULL",
+                        dt.Rows[i].Cells[5].Value.ToString(), dt.Rows[i].Cells[1].Value.ToString(), id);
+                }
+                newQuote.Dispose();
+                MessageBox.Show("The Quote ID is " + id + "!");
+               // _view.Show();
             }
-            newQuote.Dispose();
-            MessageBox.Show("The Quote ID is " + id + "!");
-           // _view.Show();
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred. Make sure all fields are filled out.");
+            }
         }
 
         public void saveQuote(object sender, EventArgs e)
