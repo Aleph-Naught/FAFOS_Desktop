@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Reflection;
 using System.IO;
 using InvoicePDF;
+using FAFOS.Forms;
 
 namespace FAFOS
 {
@@ -18,15 +19,20 @@ namespace FAFOS
         Term t;
         Users user;
         private int userid;
-        public InvoiceForm(int id)
+
+        Main mainForm = null;
+
+        public InvoiceForm(int id, Main _mainForm)
         {
             InitializeComponent();
+
+            mainForm = _mainForm;
 
 
             user = new Users();
 
            
-            my_controller = new InvoiceController();
+            my_controller = new InvoiceController(mainForm);
 
             this.Find_btn.Click += new System.EventHandler(my_controller.Find_btn_Click);
             this.Send_btn.Click += new System.EventHandler(my_controller.Send_btn_Click);

@@ -374,7 +374,7 @@ namespace FAFOS.Forms
             this.paymentNotification.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.paymentNotification.Location = new System.Drawing.Point(13, 366);
             this.paymentNotification.Name = "paymentNotification";
-            this.paymentNotification.Size = new System.Drawing.Size(168, 214);
+            this.paymentNotification.Size = new System.Drawing.Size(180, 214);
             this.paymentNotification.TabIndex = 5;
             this.paymentNotification.Text = "None";
             // 
@@ -383,7 +383,7 @@ namespace FAFOS.Forms
             this.serviceNotification.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.serviceNotification.Location = new System.Drawing.Point(13, 81);
             this.serviceNotification.Name = "serviceNotification";
-            this.serviceNotification.Size = new System.Drawing.Size(168, 246);
+            this.serviceNotification.Size = new System.Drawing.Size(180, 246);
             this.serviceNotification.TabIndex = 4;
             this.serviceNotification.Text = "None";
             // 

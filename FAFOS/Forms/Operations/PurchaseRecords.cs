@@ -105,7 +105,6 @@ namespace FAFOS
                 my_controller.reloadPurchaseSupplier();
             }
 
-
             supplier.Dispose();
         }
 
