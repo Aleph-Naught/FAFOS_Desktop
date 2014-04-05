@@ -69,7 +69,7 @@
             this.Ok_Button.Name = "Ok_Button";
             this.Ok_Button.Size = new System.Drawing.Size(75, 23);
             this.Ok_Button.TabIndex = 0;
-            this.Ok_Button.Text = "Ok";
+            this.Ok_Button.Text = "Create";
             this.Ok_Button.UseVisualStyleBackColor = false;
             // 
             // label1

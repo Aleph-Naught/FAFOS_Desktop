@@ -73,6 +73,8 @@ namespace FAFOS
 
                 nameComboBox.SelectedValueChanged += new EventHandler(my_controller.Edit_Contract_Populate);
                 this.Controls.Add(nameComboBox);
+
+                this.Ok_Button.Text = "Save";
                 #endregion
             }
             if (!isEdit)
