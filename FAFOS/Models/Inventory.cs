@@ -378,7 +378,7 @@ namespace FAFOS
             reader.Read();
             String cost1 = reader[0].ToString();
             reader.Close();
-            cost = ((Convert.ToInt32(cost1) + Convert.ToInt32(cost)) / 2).ToString();
+            cost = ((Convert.ToDouble(cost1) + Convert.ToDouble(cost)) / 2).ToString();
             command = new SqlCommand("UPDATE franchisee_item SET cost=@cost WHERE item_id = @item_id", con);
             command.Parameters.AddWithValue("@item_id", item_id);
             command.Parameters.AddWithValue("@cost", cost);

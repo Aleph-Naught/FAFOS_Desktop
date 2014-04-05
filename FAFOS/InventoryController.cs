@@ -214,7 +214,8 @@ namespace FAFOS
                 DataGridViewCell currentCell = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex];
                 try
                 {
-                    int cellValue = Convert.ToInt32(currentCell.Value);
+                    double cellValue = Convert.ToDouble(currentCell.Value);
+
                     if (cellValue < 0)
                     {
                         currentCell.Value = "0";

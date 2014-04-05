@@ -74,15 +74,15 @@ namespace FAFOS
                     DataGridViewRow row = purchaseRecordsdgv.Rows[e.RowIndex];
                     String valueA = row.Cells[3].Value.ToString();
                     String valueB = row.Cells[4].Value.ToString();
-                    int result;
-                    int total = 0;
-                    if (Int32.TryParse(valueA, out result) && Int32.TryParse(valueB, out result))
+                    double result;
+                    double total = 0;
+                    if (Double.TryParse(valueA, out result) && Double.TryParse(valueB, out result))
                     {
-                        row.Cells[5].Value = Convert.ToInt32(valueA) * Convert.ToInt32(valueB);
+                        row.Cells[5].Value = Convert.ToDouble(valueA) * Convert.ToDouble(valueB);
                     }
                     for (int i = 0; i < purchaseRecordsdgv.Rows.Count - 1; i++)
                     {
-                        total += Convert.ToInt32(purchaseRecordsdgv.Rows[i].Cells[5].Value);
+                        total += Convert.ToDouble(purchaseRecordsdgv.Rows[i].Cells[5].Value);
                     }
                     txtTotal.Text = "$"+total.ToString();
                 }
