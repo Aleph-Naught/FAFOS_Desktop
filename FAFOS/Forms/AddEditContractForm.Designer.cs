@@ -59,6 +59,7 @@
             // 
             // Ok_Button
             // 
+            this.Ok_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Ok_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.Ok_Button.FlatAppearance.BorderSize = 0;
             this.Ok_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -86,14 +87,14 @@
             // 
             this.StartDatePicker.Location = new System.Drawing.Point(12, 155);
             this.StartDatePicker.Name = "StartDatePicker";
-            this.StartDatePicker.Size = new System.Drawing.Size(127, 20);
+            this.StartDatePicker.Size = new System.Drawing.Size(187, 20);
             this.StartDatePicker.TabIndex = 6;
             // 
             // EndDatePicker
             // 
-            this.EndDatePicker.Location = new System.Drawing.Point(146, 155);
+            this.EndDatePicker.Location = new System.Drawing.Point(209, 155);
             this.EndDatePicker.Name = "EndDatePicker";
-            this.EndDatePicker.Size = new System.Drawing.Size(127, 20);
+            this.EndDatePicker.Size = new System.Drawing.Size(188, 20);
             this.EndDatePicker.TabIndex = 7;
             // 
             // label2
@@ -112,7 +113,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(141, 139);
+            this.label3.Location = new System.Drawing.Point(206, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 9;
@@ -131,21 +132,23 @@
             // 
             // TermsBox
             // 
+            this.TermsBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TermsBox.Location = new System.Drawing.Point(12, 202);
             this.TermsBox.Multiline = true;
             this.TermsBox.Name = "TermsBox";
-            this.TermsBox.Size = new System.Drawing.Size(498, 125);
+            this.TermsBox.Size = new System.Drawing.Size(542, 125);
             this.TermsBox.TabIndex = 10;
             // 
             // delete_Button
             // 
+            this.delete_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.delete_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.delete_Button.FlatAppearance.BorderSize = 0;
             this.delete_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete_Button.ForeColor = System.Drawing.Color.White;
-
-            this.delete_Button.Location = new System.Drawing.Point(738, 294);
+            this.delete_Button.Location = new System.Drawing.Point(708, 288);
             this.delete_Button.Name = "delete_Button";
             this.delete_Button.Size = new System.Drawing.Size(113, 39);
             this.delete_Button.TabIndex = 32;
@@ -156,26 +159,28 @@
             // 
             this.contractNameBox.Location = new System.Drawing.Point(15, 109);
             this.contractNameBox.Name = "contractNameBox";
-            this.contractNameBox.Size = new System.Drawing.Size(275, 20);
+            this.contractNameBox.Size = new System.Drawing.Size(339, 20);
             this.contractNameBox.TabIndex = 38;
             // 
             // linkableClientBox
             // 
+            this.linkableClientBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkableClientBox.FormattingEnabled = true;
-            this.linkableClientBox.Location = new System.Drawing.Point(340, 108);
+            this.linkableClientBox.Location = new System.Drawing.Point(434, 108);
             this.linkableClientBox.Name = "linkableClientBox";
-            this.linkableClientBox.Size = new System.Drawing.Size(170, 21);
+            this.linkableClientBox.Size = new System.Drawing.Size(268, 21);
             this.linkableClientBox.TabIndex = 39;
             this.linkableClientBox.Visible = false;
             // 
             // new_Client_Button
             // 
+            this.new_Client_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.new_Client_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.new_Client_Button.FlatAppearance.BorderSize = 0;
             this.new_Client_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.new_Client_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.new_Client_Button.ForeColor = System.Drawing.Color.White;
-            this.new_Client_Button.Location = new System.Drawing.Point(536, 102);
+            this.new_Client_Button.Location = new System.Drawing.Point(712, 102);
             this.new_Client_Button.Name = "new_Client_Button";
             this.new_Client_Button.Size = new System.Drawing.Size(109, 30);
             this.new_Client_Button.TabIndex = 40;
@@ -188,6 +193,10 @@
             // 
             this.ServiceAddrGridView.AllowUserToAddRows = false;
             this.ServiceAddrGridView.AllowUserToDeleteRows = false;
+            this.ServiceAddrGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ServiceAddrGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ServiceAddrGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ServiceAddrGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCol,
@@ -217,19 +226,16 @@
             // 
             this.address_col.HeaderText = "Address";
             this.address_col.Name = "address_col";
-            this.address_col.Width = 160;
             // 
             // postal_code_col
             // 
             this.postal_code_col.HeaderText = "Postal Code";
             this.postal_code_col.Name = "postal_code_col";
-            this.postal_code_col.Width = 80;
             // 
             // on_site_contact_col
             // 
             this.on_site_contact_col.HeaderText = "OnSite Contact";
             this.on_site_contact_col.Name = "on_site_contact_col";
-            this.on_site_contact_col.Width = 120;
             // 
             // countryCol
             // 
@@ -246,7 +252,6 @@
             this.provStateCol.Name = "provStateCol";
             this.provStateCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.provStateCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.provStateCol.Width = 120;
             // 
             // cityCol
             // 
@@ -260,13 +265,11 @@
             // 
             this.num_floors.HeaderText = "Floors";
             this.num_floors.Name = "num_floors";
-            this.num_floors.Width = 60;
             // 
             // roomButton
             // 
             this.roomButton.HeaderText = "Rooms";
             this.roomButton.Name = "roomButton";
-            this.roomButton.Width = 60;
             // 
             // editButton
             // 
@@ -274,24 +277,21 @@
             this.editButton.Name = "editButton";
             this.editButton.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.editButton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.editButton.Width = 140;
             // 
             // deleteAddr
             // 
             this.deleteAddr.HeaderText = "Remove";
             this.deleteAddr.Name = "deleteAddr";
-            this.deleteAddr.Width = 90;
             // 
             // Add_Row_Button
             // 
+            this.Add_Row_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Add_Row_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.Add_Row_Button.FlatAppearance.BorderSize = 0;
             this.Add_Row_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add_Row_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Add_Row_Button.ForeColor = System.Drawing.Color.White;
-
-            this.Add_Row_Button.Location = new System.Drawing.Point(602, 294);
-
+            this.Add_Row_Button.Location = new System.Drawing.Point(572, 288);
             this.Add_Row_Button.Name = "Add_Row_Button";
             this.Add_Row_Button.Size = new System.Drawing.Size(130, 39);
             this.Add_Row_Button.TabIndex = 42;
@@ -302,10 +302,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.label5.Location = new System.Drawing.Point(7, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(214, 46);
+            this.label5.Size = new System.Drawing.Size(192, 46);
             this.label5.TabIndex = 43;
             this.label5.Text = "Contracts";
             // 
