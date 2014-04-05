@@ -55,10 +55,10 @@
     <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>5622D1845C77FD1FA060F4AE271E9189B632D14A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>D43F500DB122F5562D5AE7D1562AADE13A4EB74A</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>FAFOS_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>FAFOS_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
