@@ -288,6 +288,7 @@ namespace FAFOS
             {
                 case "extinguisher":
                     HideAllViews();
+                    extViews[i].AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     extViews[i].Visible = true;
                     AddItemButton.Text = "Add Extinguisher";
                     AddItemButton.Visible = true;
@@ -295,6 +296,7 @@ namespace FAFOS
 
                 case "hose":
                     HideAllViews();
+                    hoseViews[i].AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     hoseViews[i].Visible = true;
                     AddItemButton.Text = "Add Hose";
                     AddItemButton.Visible = true;
@@ -302,6 +304,7 @@ namespace FAFOS
 
                 case "light":
                     HideAllViews();
+                    lightViews[i].AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     lightViews[i].Visible = true;
                     AddItemButton.Text = "Add Light";
                     AddItemButton.Visible = true;

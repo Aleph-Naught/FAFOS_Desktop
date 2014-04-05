@@ -98,6 +98,7 @@
             // 
             this.TermsView.AllowUserToAddRows = false;
             this.TermsView.AllowUserToDeleteRows = false;
+            this.TermsView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.TermsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TermsView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TermID,
@@ -124,7 +125,6 @@
             // 
             this.serviceBox.HeaderText = "Service";
             this.serviceBox.Name = "serviceBox";
-            this.serviceBox.Width = 150;
             // 
             // recurBox
             // 
@@ -136,19 +136,16 @@
             this.EffectDate.HeaderText = "Effective Date";
             this.EffectDate.Name = "EffectDate";
             this.EffectDate.ReadOnly = true;
-            this.EffectDate.Width = 120;
             // 
             // note
             // 
             this.note.HeaderText = "Notes";
             this.note.Name = "note";
-            this.note.Width = 290;
             // 
             // removeButton
             // 
             this.removeButton.HeaderText = "Remove";
             this.removeButton.Name = "removeButton";
-            this.removeButton.Width = 90;
             // 
             // Add_Service_Button
             // 
