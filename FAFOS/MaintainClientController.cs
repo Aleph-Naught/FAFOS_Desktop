@@ -297,7 +297,7 @@ namespace FAFOS
                 try
                 {
                     string id = dgv.Rows[e.RowIndex].Cells["idCol"].Value.ToString();
-                    MServiceAddress.Delete(id, "Service_Address", "service_addres_id"); 
+                    MServiceAddress.Delete(id, "Service_Address", "service_address_id"); 
                 }
                 catch (Exception) { }
                 dgv.Rows.RemoveAt(e.RowIndex);

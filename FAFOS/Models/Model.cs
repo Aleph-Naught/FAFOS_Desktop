@@ -129,14 +129,14 @@ namespace FAFOS
             SqlConnection con = new SqlConnection(connString);
 
             con.Open();
-            SqlCommand command = new SqlCommand("DELETE FROM " + table + " WHERE "+ columnName +"= " + id, con);
+            SqlCommand command = new SqlCommand("DELETE FROM " + table + " WHERE "+ columnName +"=" + id, con);
             try
             {
                 command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
-               // MessageBox.Show(e.ToString());
+               MessageBox.Show("Remove Failed");
             }
             con.Close();
         }         
