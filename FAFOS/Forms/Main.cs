@@ -87,21 +87,30 @@ namespace FAFOS.Forms
 
             this.userLabel.Text = "Logged in as " + user.getName(userid);
 
-
+            Notifications();
 
         }
 
         public void Notifications()
         {
+            DateTime serviceDate;
+            DateTime today;
+
             DataTable dt2 = new ClientContract().getServices(userid.ToString());
             serviceNotification.Text = "";
+
             for (int i = 0; i < dt2.Rows.Count; i++)
             {
+
+                serviceDate = Convert.ToDateTime(dt2.Rows[i][2]);
+                today = DateTime.Today;
+
+
                 if (Convert.ToDateTime(dt2.Rows[i][2]) == DateTime.Today)
                 {
                     String service = dt2.Rows[i][0].ToString();
-                    serviceNotification.Text += "\n" + service + " needs to be completed by today at ";
-                    serviceNotification.Text += dt2.Rows[i][4].ToString() + ", " + dt2.Rows[i][5].ToString() + "\n";
+                    serviceNotification.Text += service + " needs to be completed today at ";
+                    serviceNotification.Text += dt2.Rows[i][4].ToString() + ", " + dt2.Rows[i][5].ToString() + "\n\n";
                 }
             }
             if (serviceNotification.Text == "")
@@ -112,6 +121,7 @@ namespace FAFOS.Forms
 
             DataTable dt = new Payment().getNotPaid(userid);
             paymentNotification.Text = "";
+
             for (int i = 2; i < dt.Rows.Count; i++)
             {
                 if (Convert.ToDateTime(dt.Rows[i][2]) == DateTime.Today)
@@ -311,7 +321,7 @@ namespace FAFOS.Forms
         {
             currentPage.Close();
 
-            MaintainClientController control = new MaintainClientController();
+            MaintainClientController control = new MaintainClientController(this);
             AddEditClientForm embeddedForm = control.New_client_button_Click(userid);
             currentPage = embeddedForm;
             embeddedForm.TopLevel = false;
@@ -438,7 +448,7 @@ namespace FAFOS.Forms
         {
             currentPage.Close();
 
-            MaintainClientController control = new MaintainClientController();
+            MaintainClientController control = new MaintainClientController(this);
             AddEditClientForm embeddedForm = control.Edit_Client_Button_Click(userid);
             currentPage = embeddedForm;
             embeddedForm.TopLevel = false;
@@ -453,7 +463,7 @@ namespace FAFOS.Forms
         {
             currentPage.Close();
 
-            MaintainClientController control = new MaintainClientController();
+            MaintainClientController control = new MaintainClientController(this);
             AddEditContractForm embeddedForm = control.Add_contract_Button_Click(userid);
             currentPage = embeddedForm;
             embeddedForm.TopLevel = false;
@@ -468,7 +478,7 @@ namespace FAFOS.Forms
         {
             currentPage.Close();
 
-            MaintainClientController control = new MaintainClientController();
+            MaintainClientController control = new MaintainClientController(this);
             AddEditContractForm embeddedForm = control.Edit_contract_Button_Click(userid);
             currentPage = embeddedForm;
             embeddedForm.TopLevel = false;

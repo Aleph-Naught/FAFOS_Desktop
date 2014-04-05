@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data;
+using FAFOS.Forms;
 
 namespace FAFOS
 {
@@ -19,7 +20,14 @@ namespace FAFOS
         private static MServiceAddress _srvAddr;
         private int userID;
         private bool okDone=false;
-        public MaintainClientController() { }
+
+        private Main mainForm = null;
+
+        public MaintainClientController(Main _mainForm) 
+        {
+            mainForm = _mainForm;
+
+        }
 /************************* Instantiating Models *************************************************/
         private static void NewClient() { _client = null; _client = new MClient(); }
         private static void OldClient(String id) { _client = null; _client = new MClient(id); }
@@ -219,7 +227,7 @@ namespace FAFOS
 
                         _client.Set(values);
                         // _mainForm.SetClientBox(MClient.GetList());
-                       
+
                         _clientForm.Close();
                     }
                 }
@@ -398,6 +406,7 @@ namespace FAFOS
                         OldClient(_contract.getClientID());
                         MClient.SetContract(_contract.getClientID(),_contract.FindID());
                         okDone = true;
+                        mainForm.Notifications();
                         _contractForm.Close();
 
 
@@ -540,6 +549,8 @@ namespace FAFOS
                             cs.SetMany(values, userID, _contractForm.GetEndDate()); 
                         }
                         catch (Exception) { MessageBox.Show("Error Updating Database"); }
+
+                        mainForm.Notifications();
                         _srvAddrForm.Close();
 
 

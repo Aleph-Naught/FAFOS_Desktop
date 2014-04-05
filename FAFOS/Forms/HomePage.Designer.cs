@@ -186,7 +186,7 @@
             this.groupBox1.Size = new System.Drawing.Size(545, 296);
             this.groupBox1.TabIndex = 67;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "QuckLinks";
+            this.groupBox1.Text = "QuickLinks";
             // 
             // pictureBox1
             // 
