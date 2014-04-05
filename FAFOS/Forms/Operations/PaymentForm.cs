@@ -125,7 +125,7 @@ namespace FAFOS
 
         private void txtInvoice_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (txtInvoice.SelectedValue.ToString() == "" || txtInvoice.SelectedValue.ToString() == "ID")
+            if (txtInvoice.SelectedValue.ToString() == "" || txtInvoice.SelectedValue.ToString() == "ID" || txtInvoice.SelectedValue.ToString() == "System.Data.DataRowView")
             {
                 InvoiceBox.Visible = false;
                 PaymentBox.Visible = false;
@@ -139,7 +139,8 @@ namespace FAFOS
 
                DataRowView drv = (DataRowView)this.txtInvoice.Items[txtInvoice.SelectedIndex];
                 double paid=0;
-                txtTotal.Text = drv["Total"].ToString();
+                String total = drv["Total"].ToString();
+                txtTotal.Text = String.Format("{0:#,##0.00}",Math.Round(Convert.ToDouble(total),2));
                // MessageBox.Show(drv["id"].ToString());
                 if (drv["id"].ToString() != "")
                 {
@@ -147,7 +148,7 @@ namespace FAFOS
                     paymentTable.DataSource = dt;
                     for (int i = 0; i < dt.Rows.Count; i++)
                         paid += Convert.ToDouble(dt.Rows[i][2]);
-                    txtBalance.Text = (Convert.ToDouble(drv["Total"].ToString()) - paid).ToString();
+                    txtBalance.Text = String.Format("{0:#,##0.00}",(Convert.ToDouble(drv["Total"].ToString()) - paid).ToString());
                 }
             }
             
@@ -168,7 +169,7 @@ namespace FAFOS
                 pay.setIP(txtInvoice.SelectedValue.ToString() + "," + payId);
 
                 //Check if all of invoice is paid off
-                if (txtAmount.Text == txtBalance.Text)
+                if (Convert.ToDouble(txtAmount.Text) >= Convert.ToDouble(txtBalance.Text))
                 {
                     new Invoice().update(txtInvoice.SelectedValue.ToString());
                     MessageBox.Show("Invoice has been fully paid.");

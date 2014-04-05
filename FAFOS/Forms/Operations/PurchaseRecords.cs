@@ -84,7 +84,7 @@ namespace FAFOS
                     {
                         total += Convert.ToInt32(purchaseRecordsdgv.Rows[i].Cells[5].Value);
                     }
-                    txtTotal.Text = "$"+total.ToString();
+                    txtTotal.Text = "$" + String.Format("{0:#,##0.00}", total);
                 }
                 catch
                 {
