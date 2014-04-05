@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
+using FAFOS.Forms;
+using FAFOS.Forms.Operations;
 
 
 namespace FAFOS
@@ -282,10 +284,20 @@ namespace FAFOS
             return servicepricetextbox.Text;
         }
 
-        private void label16_Click(object sender, EventArgs e)
+        private void addSupplierBtn_Click(object sender, EventArgs e)
         {
+            SupplierForm supplier = new SupplierForm();
+
+            if (supplier.ShowDialog(this) == DialogResult.OK)
+            {
+                my_controller.reloadSupplier();
+            }
+        
+
+            supplier.Dispose();
 
         }
+
        
      
 

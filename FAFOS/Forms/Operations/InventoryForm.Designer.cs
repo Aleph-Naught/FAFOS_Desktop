@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.productsdgv = new System.Windows.Forms.DataGridView();
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +79,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.addSupplierBtn = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.productsdgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicesdgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -91,8 +93,8 @@
             // 
             this.productsdgv.AllowUserToAddRows = false;
             this.productsdgv.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productsdgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productsdgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.productsdgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -110,20 +112,20 @@
             this.CategoryName,
             this.SupplierName,
             this.deleteproduct});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.productsdgv.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.productsdgv.DefaultCellStyle = dataGridViewCellStyle6;
             this.productsdgv.Location = new System.Drawing.Point(4, 32);
             this.productsdgv.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.productsdgv.MultiSelect = false;
             this.productsdgv.Name = "productsdgv";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productsdgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productsdgv.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.productsdgv.RowTemplate.Height = 24;
             this.productsdgv.Size = new System.Drawing.Size(847, 266);
             this.productsdgv.TabIndex = 13;
@@ -254,9 +256,9 @@
             this.servicesdgv.Location = new System.Drawing.Point(4, 52);
             this.servicesdgv.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.servicesdgv.Name = "servicesdgv";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.servicesdgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.servicesdgv.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.servicesdgv.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.servicesdgv.RowTemplate.Height = 24;
             this.servicesdgv.Size = new System.Drawing.Size(847, 186);
@@ -392,28 +394,28 @@
             // productnametextBox
             // 
             this.productnametextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.productnametextBox.Location = new System.Drawing.Point(1031, 90);
+            this.productnametextBox.Location = new System.Drawing.Point(1005, 90);
             this.productnametextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.productnametextBox.Name = "productnametextBox";
-            this.productnametextBox.Size = new System.Drawing.Size(259, 23);
+            this.productnametextBox.Size = new System.Drawing.Size(285, 23);
             this.productnametextBox.TabIndex = 35;
             // 
             // productdescriptiontextBox
             // 
             this.productdescriptiontextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.productdescriptiontextBox.Location = new System.Drawing.Point(1031, 134);
+            this.productdescriptiontextBox.Location = new System.Drawing.Point(1005, 134);
             this.productdescriptiontextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.productdescriptiontextBox.Name = "productdescriptiontextBox";
-            this.productdescriptiontextBox.Size = new System.Drawing.Size(259, 23);
+            this.productdescriptiontextBox.Size = new System.Drawing.Size(285, 23);
             this.productdescriptiontextBox.TabIndex = 36;
             // 
             // productpricetextBox
             // 
             this.productpricetextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.productpricetextBox.Location = new System.Drawing.Point(1031, 177);
+            this.productpricetextBox.Location = new System.Drawing.Point(1005, 177);
             this.productpricetextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.productpricetextBox.Name = "productpricetextBox";
-            this.productpricetextBox.Size = new System.Drawing.Size(149, 23);
+            this.productpricetextBox.Size = new System.Drawing.Size(175, 23);
             this.productpricetextBox.TabIndex = 37;
             // 
             // category
@@ -421,10 +423,10 @@
             this.category.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.category.FormattingEnabled = true;
-            this.category.Location = new System.Drawing.Point(1031, 219);
+            this.category.Location = new System.Drawing.Point(1005, 219);
             this.category.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.category.Name = "category";
-            this.category.Size = new System.Drawing.Size(259, 24);
+            this.category.Size = new System.Drawing.Size(285, 24);
             this.category.TabIndex = 39;
             // 
             // supplier
@@ -432,10 +434,10 @@
             this.supplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.supplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.supplier.FormattingEnabled = true;
-            this.supplier.Location = new System.Drawing.Point(1031, 262);
+            this.supplier.Location = new System.Drawing.Point(1005, 262);
             this.supplier.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.supplier.Name = "supplier";
-            this.supplier.Size = new System.Drawing.Size(259, 24);
+            this.supplier.Size = new System.Drawing.Size(175, 24);
             this.supplier.TabIndex = 40;
             // 
             // AddProduct_btn
@@ -471,28 +473,28 @@
             // servicepricetextbox
             // 
             this.servicepricetextbox.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.servicepricetextbox.Location = new System.Drawing.Point(1031, 503);
+            this.servicepricetextbox.Location = new System.Drawing.Point(1005, 503);
             this.servicepricetextbox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.servicepricetextbox.Name = "servicepricetextbox";
-            this.servicepricetextbox.Size = new System.Drawing.Size(149, 23);
+            this.servicepricetextbox.Size = new System.Drawing.Size(175, 23);
             this.servicepricetextbox.TabIndex = 63;
             // 
             // servicedescriptiontextbox
             // 
             this.servicedescriptiontextbox.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.servicedescriptiontextbox.Location = new System.Drawing.Point(1031, 466);
+            this.servicedescriptiontextbox.Location = new System.Drawing.Point(1005, 466);
             this.servicedescriptiontextbox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.servicedescriptiontextbox.Name = "servicedescriptiontextbox";
-            this.servicedescriptiontextbox.Size = new System.Drawing.Size(259, 23);
+            this.servicedescriptiontextbox.Size = new System.Drawing.Size(285, 23);
             this.servicedescriptiontextbox.TabIndex = 62;
             // 
             // servicenametextbox
             // 
             this.servicenametextbox.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.servicenametextbox.Location = new System.Drawing.Point(1031, 427);
+            this.servicenametextbox.Location = new System.Drawing.Point(1005, 427);
             this.servicenametextbox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.servicenametextbox.Name = "servicenametextbox";
-            this.servicenametextbox.Size = new System.Drawing.Size(259, 23);
+            this.servicenametextbox.Size = new System.Drawing.Size(285, 23);
             this.servicenametextbox.TabIndex = 61;
             // 
             // label13
@@ -584,7 +586,6 @@
             this.label16.Size = new System.Drawing.Size(41, 16);
             this.label16.TabIndex = 68;
             this.label16.Text = "Find:";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label14
             // 
@@ -623,12 +624,40 @@
             this.splitContainer1.SplitterDistance = 313;
             this.splitContainer1.TabIndex = 112;
             // 
+            // addSupplierBtn
+            // 
+            this.addSupplierBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addSupplierBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.addSupplierBtn.FlatAppearance.BorderSize = 0;
+            this.addSupplierBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addSupplierBtn.ForeColor = System.Drawing.Color.White;
+            this.addSupplierBtn.Location = new System.Drawing.Point(1211, 262);
+            this.addSupplierBtn.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.addSupplierBtn.Name = "addSupplierBtn";
+            this.addSupplierBtn.Size = new System.Drawing.Size(79, 24);
+            this.addSupplierBtn.TabIndex = 113;
+            this.addSupplierBtn.Text = "Add New";
+            this.addSupplierBtn.UseVisualStyleBackColor = false;
+            this.addSupplierBtn.Click += new System.EventHandler(this.addSupplierBtn_Click);
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(1184, 266);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(22, 16);
+            this.label15.TabIndex = 114;
+            this.label15.Text = "or";
+            // 
             // InventoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1332, 780);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.addSupplierBtn);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.servicepricetextbox);
@@ -724,6 +753,8 @@
         private System.Windows.Forms.DataGridViewButtonColumn deleteService;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Button addSupplierBtn;
+        private System.Windows.Forms.Label label15;
    
     }
 }
