@@ -113,7 +113,7 @@ namespace FAFOS
                 dgvSalesOrder.Rows[index].Cells[1].Value = quoteItems.Rows[i][1];
                 dgvSalesOrder.Rows[index].Cells[3].Value = quoteItems.Rows[i][3];
                 dgvSalesOrder.Rows[index].Cells[4].Value = quoteItems.Rows[i][2];
-                dgvSalesOrder.Rows[index].Cells[5].Value = quoteItems.Rows[i][4];
+                dgvSalesOrder.Rows[index].Cells[5].Value = String.Format("{0:#,##0.00}",Convert.ToDouble(quoteItems.Rows[i][4]));
             }
         }
 
