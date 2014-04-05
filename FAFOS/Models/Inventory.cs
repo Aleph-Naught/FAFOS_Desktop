@@ -88,7 +88,8 @@ namespace FAFOS
             {
                 for (int j = 0; j < size; j++)
                 {
-                    commandArray[j].ExecuteNonQuery();
+                    if(commandArray[j]!=null)
+                        commandArray[j].ExecuteNonQuery();
                 }
             }
             catch (SqlException ef)

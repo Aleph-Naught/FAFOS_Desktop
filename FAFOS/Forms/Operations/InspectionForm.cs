@@ -461,6 +461,8 @@ namespace FAFOS
                                     passFail(equipment.SelectNodes("*[@name='Collar']")[0].Attributes["testResult"].InnerText),
                                     passFail(equipment.SelectNodes("*[@name='Hose']")[0].Attributes["testResult"].InnerText));
 
+                                height += table2.rowHeight;
+
                                 // EXPERIMENTAL: add a new row when there are notes for a failed element
                                 // In this case I don't like that it keeps the row formatting
                                 XmlNodeList elements = equipment.SelectNodes("*");
@@ -468,12 +470,31 @@ namespace FAFOS
                                 {
                                     if (element.Attributes["testNote"].InnerText.Trim() != "")
                                     {
+                                        content.SetStream(textAndtable.EndTable(lineColor, true));
+
+                                        // reset table params
+                                        table2 = new TableParams(1, 501); // 1 row, the width of the entire table
+
+                                        table2.yPos = /*340*/ initHeight - height;
+                                        table2.xPos = 49;
+                                        table2.rowHeight = 15;
+                                        textAndtable.SetParams(table2, cellColor, Align.LeftAlign, 3);
+
                                         textAndtable.AddRow(true, 8, "T3", alignC1, false, false, element.Attributes["testNote"].InnerText);
                                         height += table2.rowHeight;
+
+                                        content.SetStream(textAndtable.EndTable(lineColor, true));
+
+                                        table2 = new TableParams(17, 60, 28, 30, 90, 25, 30, 50, 35, 17, 17, 17, 17, 17, 17, 17, 17, 17);
+
+                                        table2.yPos = /*340*/ initHeight - height;
+                                        table2.xPos = 49;
+                                        table2.rowHeight = 15;
+                                        textAndtable.SetParams(table2, cellColor, Align.LeftAlign, 3);
+
+                                        floorName = floor.Attributes["name"].InnerText;
                                     }
                                 }
-
-                                height += table2.rowHeight;
 
                             }
                             //Construct row
@@ -495,6 +516,8 @@ namespace FAFOS
                                     goodPoor(equipment.SelectNodes("*[@name='Hose Re-Rack']")[0].Attributes["testResult"].InnerText),
                                     goodPoor(equipment.SelectNodes("*[@name='Hydrostatic Test Due']")[0].Attributes["testResult"].InnerText));
 
+                                height += table2.rowHeight;
+
                                 // EXPERIMENTAL: add a new row when there are notes for a failed element
                                 // In this case I don't like that it keeps the row formatting
                                 XmlNodeList elements = equipment.SelectNodes("*");
@@ -502,12 +525,33 @@ namespace FAFOS
                                 {
                                     if (element.Attributes["testNote"].InnerText.Trim() != "")
                                     {
+                                        content.SetStream(textAndtable.EndTable(lineColor, true));
+
+                                        // reset table params
+                                        table2 = new TableParams(1, 501); // 1 row, the width of the entire table
+
+                                        table2.yPos = /*340*/ initHeight - height;
+                                        table2.xPos = 49;
+                                        table2.rowHeight = 15;
+                                        textAndtable.SetParams(table2, cellColor, Align.LeftAlign, 3);
+
                                         textAndtable.AddRow(true, 8, "T3", alignC1, false, false, element.Attributes["testNote"].InnerText);
                                         height += table2.rowHeight;
+
+                                        content.SetStream(textAndtable.EndTable(lineColor, true));
+
+                                        table2 = new TableParams(9, 60, 28, 30, 90, 59, 59, 59, 59, 57);
+
+                                        table2.yPos = /*340*/ initHeight - height;
+                                        table2.xPos = 49;
+                                        table2.rowHeight = 15;
+                                        textAndtable.SetParams(table2, cellColor, Align.LeftAlign, 3);
+
+                                        floorName = floor.Attributes["name"].InnerText;
                                     }
                                 }
 
-                                height += table2.rowHeight;
+                                //height += table2.rowHeight;
 
                             }
                         }
@@ -526,6 +570,8 @@ namespace FAFOS
                                     goodPoor(equipment.SelectNodes("*[@name='Requires Service or Repair']")[0].Attributes["testResult"].InnerText),
                                     goodPoor(equipment.SelectNodes("*[@name='Operation Confirmed']")[0].Attributes["testResult"].InnerText));
 
+                                height += table2.rowHeight;
+
                                 // EXPERIMENTAL: add a new row when there are notes for a failed element
                                 // In this case I don't like that it keeps the row formatting
                                 XmlNodeList elements = equipment.SelectNodes("*");
@@ -533,22 +579,43 @@ namespace FAFOS
                                 {
                                     if (element.Attributes["testNote"].InnerText.Trim() != "")
                                     {
+                                        content.SetStream(textAndtable.EndTable(lineColor, true));
+
+                                        // reset table params
+                                        table2 = new TableParams(1, 518); // 1 row, the width of the entire table
+
+                                        table2.yPos = /*340*/ initHeight - height;
+                                        table2.xPos = 49;
+                                        table2.rowHeight = 15;
+                                        textAndtable.SetParams(table2, cellColor, Align.LeftAlign, 3);
+
                                         textAndtable.AddRow(true, 8, "T3", alignC1, false, false, element.Attributes["testNote"].InnerText);
                                         height += table2.rowHeight;
+
+                                        content.SetStream(textAndtable.EndTable(lineColor, true));
+
+                                        table2 = new TableParams(11, 60, 28, 30, 90, 30, 50, 50, 50, 30, 50, 50);
+
+                                        table2.yPos = /*340*/ initHeight - height;
+                                        table2.xPos = 49;
+                                        table2.rowHeight = 15;
+                                        textAndtable.SetParams(table2, cellColor, Align.LeftAlign, 3);
+
+                                        floorName = floor.Attributes["name"].InnerText;
                                     }
                                 }
 
-                                height += table2.rowHeight;
+                                //height += table2.rowHeight;
 
                             }
                         }
 
                         // one row spacing between floors
-                        height += table2.rowHeight;
+                        //height += table2.rowHeight;
                         
                     }
 
-                    //height += 50;//100; //THIS CAUSES BUGS, REDUCE TO 20 AND YOU WILL SEE
+                    height += table2.rowHeight; //100; //THIS CAUSES BUGS, REDUCE TO 20 AND YOU WILL SEE
                     content.SetStream(textAndtable.EndTable(lineColor, true));
                 }
                

@@ -147,7 +147,10 @@ namespace FAFOS
 
             }
             catch (Exception ed)
-            { MessageBox.Show("The invoice could not be saved. Please try again later."); }
+            { 
+                MessageBox.Show("The invoice could not be saved. Please try again later.");
+                MessageBox.Show(ed.ToString());
+            }
         }
 
         public void Preview_btn_Click(object sender, EventArgs e)

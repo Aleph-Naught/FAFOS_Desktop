@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FAFOS.Forms.Operations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -93,6 +94,24 @@ namespace FAFOS
         public TextBox getTotal()
         {
             return txtTotal;
+        }
+
+        private void addSupplierBtn_Click(object sender, EventArgs e)
+        {
+            SupplierForm supplier = new SupplierForm();
+
+            if (supplier.ShowDialog(this) == DialogResult.OK)
+            {
+                my_controller.reloadPurchaseSupplier();
+            }
+
+
+            supplier.Dispose();
+        }
+
+        private void comboSupplier_SelectedValueChanged(object sender, EventArgs e)
+        {
+            my_controller.fillItemList(sender, e);
         }
        
 

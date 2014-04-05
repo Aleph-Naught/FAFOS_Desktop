@@ -45,6 +45,7 @@ namespace FAFOS
             _view.getSupplier().ValueMember = "service_id";
 
             fillProductcombo();
+
             fillServicecombo();
             try
             {
@@ -125,6 +126,28 @@ namespace FAFOS
             _view.SetServicesTable(servicesTable);
             fillServicecombo();
         }
+
+        public void reloadSupplier()
+        {
+
+            DataTable supplierTable = supplier.get();
+
+            _view.getSupplier().DataSource = supplierTable;
+            _view.getSupplier().DisplayMember = "name";
+            _view.getSupplier().ValueMember = "service_id";
+
+            fillServicecombo();
+
+        }
+
+        public void reloadPurchaseSupplier()
+        {
+            supplierTable = supplier.get();
+            _purchaseRecord.getSupplier().DataSource = supplierTable;
+            _purchaseRecord.getSupplier().ValueMember = "service_id";
+            _purchaseRecord.getSupplier().DisplayMember = "name";
+        }
+
         public void fillProductcombo()
         {
             _view.getProductsComboBox().DataSource = productsTable;
@@ -143,8 +166,9 @@ namespace FAFOS
             _purchaseRecord.getSupplier().DataSource = supplierTable;
             _purchaseRecord.getSupplier().ValueMember = "service_id";
             _purchaseRecord.getSupplier().DisplayMember = "name";
-            String supplier_id = "1";
+            String supplier_id = "";
          //   MessageBox.Show(supplier_id);
+            supplier_id = _purchaseRecord.getSupplier().SelectedValue.ToString();
             
            DataTable itemTable = franchisee_inventory.getProducts(user.getFranchiseeId(_purchaseRecord.getUser()), supplier_id);
             _purchaseRecord.fillItemList(itemTable);
@@ -157,7 +181,7 @@ namespace FAFOS
             _purchaseRecord.getSupplier().ValueMember = "service_id";
 
             String supplier_id =  _purchaseRecord.getSupplier().SelectedValue.ToString();
-          //  MessageBox.Show(supplier_id);
+
             DataTable itemTable = franchisee_inventory.getProducts(user.getFranchiseeId(_purchaseRecord.getUser()), supplier_id);
             _purchaseRecord.fillItemList(itemTable);
         }

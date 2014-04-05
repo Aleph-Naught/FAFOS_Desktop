@@ -139,28 +139,28 @@ namespace FAFOS
 
              String connString = FAFOS.Properties.Settings.Default.FAFOS;
             SqlConnection con = new SqlConnection(connString);
-           
-           // MessageBox.Show(DateTime.Today.ToShortDateString()); 
+
+            // MessageBox.Show(DateTime.Today.ToShortDateString()); 
             con.Open();
-            SqlCommand command = new SqlCommand(" SELECT Contract_Services.service_id, Contract_Services.period_id,ServiceItinerary.date_due, Contract_Services.notes, " +
- " Service_Address.address,Service_Address.city_id,Service_Address.province_id,Service_Address.country_id  "+
-  "FROM Contract_Services, Service_Address,  ServiceItinerary "+
- " WHERE Contract_Services.con_serv_id = ServiceItinerary.con_serv_id AND "+
- " Contract_Services.service_addr_id IN  "+
-	"				   (SELECT service_address_id  "+
-	"					FROM Service_Address  "+
-	"					WHERE client_contract_id IN  "+
-	"							(SELECT client_contract_id  "+
-	"							FROM Client_Contract  "+
-	"							WHERE franchisee_id = (SELECT franchisee_id  "+
-        "											  FROM [User] " +
-       "											   WHERE user_id = " + id + ") " + "AND end_date > '" + DateTime.Today + "'" +
-		"						) "+
-		"				) "+
-"	AND Contract_Services.service_addr_id = Service_Address.service_address_id  "+
-"	AND ServiceItinerary.date_due <= (select cast (DATEADD(DAY,"+60+",GETDATE()) as DATE))"+
-"	AND ServiceItinerary.completed = 0"+
- " ORDER BY  ServiceItinerary.date_due", con);
+            SqlCommand command = new SqlCommand("SELECT Contract_Services.service_id, Contract_Services.period_id,ServiceItinerary.date_due, Contract_Services.notes, " +
+            "Service_Address.address,Service_Address.city_id,Service_Address.province_id,Service_Address.country_id  " +
+            "FROM Contract_Services, Service_Address,  ServiceItinerary " +
+            "WHERE Contract_Services.con_serv_id = ServiceItinerary.con_serv_id AND " +
+            "Contract_Services.service_addr_id IN  (" +
+                "SELECT service_address_id  " +
+                "FROM Service_Address  " +
+                "WHERE client_contract_id IN (" +
+                    "SELECT client_contract_id  " +
+                    "FROM Client_Contract " +
+                    "WHERE franchisee_id = (SELECT franchisee_id  " +
+                        "FROM [User] " +
+                        "WHERE user_id = " + id + ") " + "AND end_date > '" + DateTime.Today + "'" +
+                    ") " +
+                ") " +
+                "AND Contract_Services.service_addr_id = Service_Address.service_address_id  " +
+                "AND ServiceItinerary.date_due <= (select cast (DATEADD(DAY," + 60 + ",GETDATE()) as DATE)) " +
+            "AND ServiceItinerary.completed = 0" +
+            "ORDER BY  ServiceItinerary.date_due", con);
             try
             {
                 SqlDataReader reader3 = command.ExecuteReader();
@@ -175,7 +175,8 @@ namespace FAFOS
 
             }
             catch (Exception e)
-            { 
+            {
+                MessageBox.Show(e.ToString()); 
                 MessageBox.Show("Could not load the contract services, please contact the database adminstrator."); 
             
             }
