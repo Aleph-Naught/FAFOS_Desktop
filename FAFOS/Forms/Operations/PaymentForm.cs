@@ -130,7 +130,10 @@ namespace FAFOS
                     DataTable dt = payment.getAmount(drv["id"].ToString());
                     paymentTable.DataSource = dt;
                     for (int i = 0; i < dt.Rows.Count; i++)
+                    {
                         paid += Convert.ToDouble(dt.Rows[i][2]);
+                        dt.Rows[i][2] = String.Format("{0:#,##0.00}",Convert.ToDouble(dt.Rows[i][2]));
+                    }
                     txtBalance.Text = String.Format("{0:#,##0.00}",(Convert.ToDouble(drv["Total"].ToString()) - paid).ToString());
                 }
             }

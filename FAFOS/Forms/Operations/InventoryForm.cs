@@ -56,6 +56,7 @@ namespace FAFOS
         {
             productsdgv.DataSource = dt;
             productsdgv = setNumberColumn(productsdgv);
+            
         }
         public void SetServicesTable(DataTable dt)
         {

@@ -34,6 +34,12 @@ namespace FAFOS
         {
             _view = (InventoryForm)((InventoryForm)sender).FindForm();
             servicesTable = franchisee_inventory.getServices(user.getFranchiseeId(_view.getUser()));
+            for (int i = 0; i < servicesTable.Rows.Count; i++)
+            {
+                Console.WriteLine(Convert.ToDouble(servicesTable.Rows[i][3]));
+                servicesTable.Rows[i][3] = String.Format("{0:#,##0.00}", Math.Round(Convert.ToDouble(servicesTable.Rows[i][3]),2));
+                Console.WriteLine(Convert.ToDouble(servicesTable.Rows[i][3]));
+            }
             productsTable = franchisee_inventory.getProducts(user.getFranchiseeId(_view.getUser()));
             DataTable categoryTable = category.get();
             DataTable supplierTable = supplier.get();
@@ -171,6 +177,11 @@ namespace FAFOS
             supplier_id = _purchaseRecord.getSupplier().SelectedValue.ToString();
             
            DataTable itemTable = franchisee_inventory.getProducts(user.getFranchiseeId(_purchaseRecord.getUser()), supplier_id);
+           for (int i = 0; i < itemTable.Rows.Count; i++)
+           {
+               itemTable.Rows[i][3] = String.Format("{0:#,##0.00}",Convert.ToDouble(itemTable.Rows[i][3]));
+              // itemTable.Rows[i][5] = String.Format("{0:#,##0.00}", Convert.ToDouble(itemTable.Rows[i][5]));
+           }
             _purchaseRecord.fillItemList(itemTable);
         }
         public void fillItemList(object sender, EventArgs e)
