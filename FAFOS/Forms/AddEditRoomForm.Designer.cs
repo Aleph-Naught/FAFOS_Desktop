@@ -34,8 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Ok_Button = new System.Windows.Forms.Button();
             this.RoomGridView = new System.Windows.Forms.DataGridView();
-            this.addRoomButton = new System.Windows.Forms.Button();
-            this.AddItemButton = new System.Windows.Forms.Button();
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.floor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,11 +41,14 @@
             this.hoseCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lightCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.addRoomButton = new System.Windows.Forms.Button();
+            this.AddItemButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.RoomGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // Cancel_Button
             // 
+            this.Cancel_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Cancel_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.Cancel_Button.FlatAppearance.BorderSize = 0;
             this.Cancel_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -73,6 +74,7 @@
             // 
             // Ok_Button
             // 
+            this.Ok_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Ok_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.Ok_Button.FlatAppearance.BorderSize = 0;
             this.Ok_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -89,6 +91,9 @@
             // 
             this.RoomGridView.AllowUserToAddRows = false;
             this.RoomGridView.AllowUserToDeleteRows = false;
+            this.RoomGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -116,12 +121,51 @@
             this.RoomGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.RoomGridView.Location = new System.Drawing.Point(5, 29);
             this.RoomGridView.Name = "RoomGridView";
-            this.RoomGridView.Size = new System.Drawing.Size(599, 145);
+            this.RoomGridView.Size = new System.Drawing.Size(599, 173);
             this.RoomGridView.TabIndex = 60;
             this.RoomGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.RoomGridView_RowsRemoved);
             // 
+            // idCol
+            // 
+            this.idCol.HeaderText = "ID";
+            this.idCol.Name = "idCol";
+            this.idCol.ReadOnly = true;
+            this.idCol.Visible = false;
+            // 
+            // roomNum
+            // 
+            this.roomNum.HeaderText = "Room #";
+            this.roomNum.Name = "roomNum";
+            // 
+            // floor
+            // 
+            this.floor.HeaderText = "Floor";
+            this.floor.Name = "floor";
+            // 
+            // extCol
+            // 
+            this.extCol.HeaderText = "Extinguishers";
+            this.extCol.Name = "extCol";
+            // 
+            // hoseCol
+            // 
+            this.hoseCol.HeaderText = "Hoses";
+            this.hoseCol.Name = "hoseCol";
+            // 
+            // lightCol
+            // 
+            this.lightCol.HeaderText = "Lights";
+            this.lightCol.Name = "lightCol";
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.HeaderText = "Delete";
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.ReadOnly = true;
+            // 
             // addRoomButton
             // 
+            this.addRoomButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addRoomButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.addRoomButton.FlatAppearance.BorderSize = 0;
             this.addRoomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -137,6 +181,7 @@
             // 
             // AddItemButton
             // 
+            this.AddItemButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AddItemButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.AddItemButton.FlatAppearance.BorderSize = 0;
             this.AddItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -150,50 +195,6 @@
             this.AddItemButton.UseVisualStyleBackColor = false;
             this.AddItemButton.Visible = false;
             this.AddItemButton.Click += new System.EventHandler(this.AddItemButton_Click);
-            // 
-            // idCol
-            // 
-            this.idCol.HeaderText = "ID";
-            this.idCol.Name = "idCol";
-            this.idCol.ReadOnly = true;
-            this.idCol.Visible = false;
-            // 
-            // roomNum
-            // 
-            this.roomNum.HeaderText = "Room #";
-            this.roomNum.Name = "roomNum";
-            this.roomNum.Width = 70;
-            // 
-            // floor
-            // 
-            this.floor.HeaderText = "Floor";
-            this.floor.Name = "floor";
-            this.floor.Width = 60;
-            // 
-            // extCol
-            // 
-            this.extCol.HeaderText = "Extinguishers";
-            this.extCol.Name = "extCol";
-            this.extCol.Width = 150;
-            // 
-            // hoseCol
-            // 
-            this.hoseCol.HeaderText = "Hoses";
-            this.hoseCol.Name = "hoseCol";
-            this.hoseCol.Width = 80;
-            // 
-            // lightCol
-            // 
-            this.lightCol.HeaderText = "Lights";
-            this.lightCol.Name = "lightCol";
-            this.lightCol.Width = 80;
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.HeaderText = "Delete";
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.ReadOnly = true;
-            this.deleteButton.Width = 70;
             // 
             // AddEditRoomForm
             // 

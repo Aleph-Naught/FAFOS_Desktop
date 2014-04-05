@@ -93,17 +93,12 @@ namespace FAFOS.Forms
 
         public void Notifications()
         {
-            DateTime serviceDate;
-            DateTime today;
 
             DataTable dt2 = new ClientContract().getServices(userid.ToString());
             serviceNotification.Text = "";
 
             for (int i = 0; i < dt2.Rows.Count; i++)
             {
-
-                serviceDate = Convert.ToDateTime(dt2.Rows[i][2]);
-                today = DateTime.Today;
 
 
                 if (Convert.ToDateTime(dt2.Rows[i][2]) == DateTime.Today)
@@ -124,10 +119,14 @@ namespace FAFOS.Forms
 
             for (int i = 2; i < dt.Rows.Count; i++)
             {
+
+                String date = Convert.ToDateTime(dt.Rows[i][2]).ToString().ToString();
+                String today1 = DateTime.Today.ToString();
+
                 if (Convert.ToDateTime(dt.Rows[i][2]) == DateTime.Today)
                 {
                     String name = new Client().getName(new ClientContract().getClient(new SalesOrder().getSAddress(new Invoice().getSalesOrderID(dt.Rows[i][0].ToString()).ToString())));
-                    paymentNotification.Text += "\n" + name + " has an outstanding balance of ";
+                    paymentNotification.Text += "" + name + " has an outstanding balance of ";
 
                     DataTable payments = new Payment().getAmount(dt.Rows[i][0].ToString());
                     double total = 0;
@@ -137,17 +136,13 @@ namespace FAFOS.Forms
 
                     }
                     paymentNotification.Text += "$" + String.Format("{0:0.00}", Math.Round(Convert.ToDouble(dt.Rows[i][3].ToString()) - total, 2))
-                        + " on invoice #" + dt.Rows[i][0].ToString() + "\n";
+                        + " on invoice #" + dt.Rows[i][0].ToString() + "\n\n";
                 }
             }
             if (paymentNotification.Text == "")
                 paymentNotification.Text = "None";
         }
 
-        private void syncHQ_Click(object sender, EventArgs e)
-        {
-            //TODO: None of the sync buttons work ROFL, this never got implemented in the first place
-        }
 
         private void MainPrototype_Load(object sender, EventArgs e)
         {
@@ -269,6 +264,7 @@ namespace FAFOS.Forms
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            currentPage.Close();
             this.Hide();
             loginform = new Login();
             loginform.LoggedIn += loginform_LoggedIn;
@@ -279,7 +275,7 @@ namespace FAFOS.Forms
         {
             currentPage.Close();
 
-            InvoiceForm embeddedForm = new InvoiceForm(userid);
+            InvoiceForm embeddedForm = new InvoiceForm(userid, this);
             currentPage = embeddedForm;
             embeddedForm.TopLevel = false;
             splitContainer1.Panel2.Controls.Add(embeddedForm);

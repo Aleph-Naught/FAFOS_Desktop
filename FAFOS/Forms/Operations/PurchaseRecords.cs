@@ -105,8 +105,12 @@ namespace FAFOS
                 my_controller.reloadPurchaseSupplier();
             }
 
-
             supplier.Dispose();
+        }
+
+        private void comboSupplier_SelectedValueChanged(object sender, EventArgs e)
+        {
+            my_controller.fillItemList(sender, e);
         }
        
 

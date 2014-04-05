@@ -102,26 +102,7 @@ namespace FAFOS
             }
             return r2;
         }
-      /*  private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        void button1_MouseLeave(object sender, EventArgs e)
-        {
-            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.Back2));
-            this.button1.Location = new Point(65, 38);
-            this.button1.Size = new Size(84, 78);
-            this.button1.ImageAlign = ContentAlignment.MiddleCenter;
-        }
 
-
-        void button1_MouseEnter(object sender, EventArgs e)
-        {
-            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.BackOver));
-            this.button1.Location = new Point(65, 38);
-            this.button1.Size = new Size(84, 78);
-            this.button1.ImageAlign = ContentAlignment.MiddleCenter;
-        }*/
 
         private void txtInvoice_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -139,9 +120,11 @@ namespace FAFOS
 
                DataRowView drv = (DataRowView)this.txtInvoice.Items[txtInvoice.SelectedIndex];
                 double paid=0;
+
                 String total = drv["Total"].ToString();
                 txtTotal.Text = String.Format("{0:#,##0.00}",Math.Round(Convert.ToDouble(total),2));
                // MessageBox.Show(drv["id"].ToString());
+
                 if (drv["id"].ToString() != "")
                 {
                     DataTable dt = payment.getAmount(drv["id"].ToString());
@@ -173,9 +156,18 @@ namespace FAFOS
                 {
                     new Invoice().update(txtInvoice.SelectedValue.ToString());
                     MessageBox.Show("Invoice has been fully paid.");
+
+                    payment = new Payment();
+
+                    txtInvoice.DataSource = payment.getNotPaid(userid);
+                    txtInvoice.DisplayMember = "id";
+                    txtInvoice.ValueMember = "id";
                 }
                 else
+                {
                     MessageBox.Show("Payment has been processed.");
+                    txtInvoice_SelectedValueChanged(txtInvoice.SelectedItem, new EventArgs());
+                }
                 //this.Close();
             }
             else

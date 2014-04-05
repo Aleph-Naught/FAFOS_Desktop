@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data;
 using System.Reflection;
+using FAFOS.Forms;
 
 namespace FAFOS
 {
@@ -20,9 +21,12 @@ namespace FAFOS
         private ClientContract contract;
         private Franchisee franchisee;
         private Inventory inventory;
+
+        Main mainForm = null;
         
-        public InvoiceController()
+        public InvoiceController(Main _mainForm)
         {
+            mainForm = _mainForm;
             sales_order = new SalesOrder();
             order_items = new OrderItems();
             item = new Item();
@@ -112,8 +116,11 @@ namespace FAFOS
 
 
                 //Update Inventory
-                if (!inventory.set(_view.GetText(),_view.getUserId()))
+                if (!inventory.set(_view.GetText(), _view.getUserId()))
+                {
+                    mainForm.Notifications();
                     _view.Close();
+                }
                 else
                 {
 
@@ -142,6 +149,7 @@ namespace FAFOS
 
 
                     MessageBox.Show("Invoice has been saved.");
+                    mainForm.Notifications();
                     _view.Close();
                 }
 

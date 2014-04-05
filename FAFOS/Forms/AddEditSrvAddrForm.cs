@@ -44,9 +44,22 @@ namespace FAFOS
                 rowIndex = Add_Service();
                 try
                 {
+                    var services = TermsView.Rows[i].Cells["serviceBox"] as DataGridViewComboBoxCell;
+                    var periods = TermsView.Rows[i].Cells["recurBox"] as DataGridViewComboBoxCell;
+                    DataTable dt = MService.GetList();
+                    DataTable dtt = MTimePeriods.GetList();
+                    services.DataSource = dt;
+                    services.DisplayMember = dt.Columns[1].ToString();
+                    services.ValueMember = dt.Columns[0].ToString();
+                    periods.DataSource = dtt;
+                    periods.DisplayMember = dtt.Columns[1].ToString();
+                    periods.ValueMember = dtt.Columns[0].ToString();
+
                     TermsView.Rows[rowIndex].Cells[0].Value = values.Rows[i][0];
-                    TermsView.Rows[rowIndex].Cells[1].Value = values.Rows[i][1];
-                    TermsView.Rows[rowIndex].Cells[2].Value = values.Rows[i][2];
+                    services.Value = values.Rows[i][1].ToString();
+                    periods.Value = values.Rows[i][2].ToString();
+                    //TermsView.Rows[rowIndex].Cells[1].Value = values.Rows[i][1];
+                    //TermsView.Rows[rowIndex].Cells[2].Value = values.Rows[i][2];
                     TermsView.Rows[rowIndex].Cells[3].Value = values.Rows[i][3];
                     TermsView.Rows[rowIndex].Cells[4].Value = values.Rows[i][4];
                 }
