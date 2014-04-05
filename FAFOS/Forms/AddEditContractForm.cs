@@ -51,10 +51,10 @@ namespace FAFOS
                 #region Set Edit Fields
                 DataTable contracts = MClientContract.GetList();
                 nameComboBox = new ComboBox();
-                nameComboBox.Location = new Point(360, 155);
+                nameComboBox.Location = new Point(15, 60);
                 nameComboBox.Font = new Font(nameComboBox.Font.FontFamily, 8);
-                nameComboBox.Size = new Size(195, 28);
-                nameComboBox.Anchor = AnchorStyles.Right | AnchorStyles.Top;
+                nameComboBox.Size = new Size(339, 20);
+                nameComboBox.Anchor = AnchorStyles.Left | AnchorStyles.Top;
                 
                 DataTable dt = new DataTable();
                 dt = contracts.Clone();

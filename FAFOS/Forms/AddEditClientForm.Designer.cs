@@ -377,7 +377,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(280, 94);
+            this.label14.Location = new System.Drawing.Point(368, 163);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(50, 13);
@@ -478,7 +478,7 @@
             // 
             this.contract_label.AutoSize = true;
             this.contract_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contract_label.Location = new System.Drawing.Point(337, 94);
+            this.contract_label.Location = new System.Drawing.Point(425, 158);
             this.contract_label.Name = "contract_label";
             this.contract_label.Size = new System.Drawing.Size(47, 20);
             this.contract_label.TabIndex = 43;

@@ -61,7 +61,7 @@ namespace FAFOS
                 #region Create and set a combo selection box
                 DataTable clients = MClient.GetList();
                 nameComboBox = new ComboBox();
-                nameComboBox.Location = new Point(600, 155);
+                nameComboBox.Location = new Point(420, 91);
                 nameComboBox.Font = new Font(nameComboBox.Font.FontFamily, 10);
                 nameComboBox.Size = new Size(195, 28);
 
@@ -87,7 +87,7 @@ namespace FAFOS
                 Label nameSelection = new Label();
                 nameSelection.Text = "Select Client:";
                 nameSelection.Font = new Font(nameComboBox.Font.FontFamily, 10);
-                nameSelection.Location = new Point(490, 166);
+                nameSelection.Location = new Point(300, 91);
                 this.Controls.Add(nameSelection);
 
                 this.Ok_Button.Text = "Save";
