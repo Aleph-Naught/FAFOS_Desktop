@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.SavePurchase_btn = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -112,8 +112,8 @@
             // 
             // purchaseRecordsdgv
             // 
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.purchaseRecordsdgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.purchaseRecordsdgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.purchaseRecordsdgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -133,24 +133,24 @@
             // 
             // orderItemID
             // 
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderItemID.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderItemID.DefaultCellStyle = dataGridViewCellStyle16;
             this.orderItemID.HeaderText = "#";
             this.orderItemID.Name = "orderItemID";
             this.orderItemID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // item
             // 
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.item.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.item.DefaultCellStyle = dataGridViewCellStyle17;
             this.item.HeaderText = "Item";
             this.item.Name = "item";
             this.item.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // description
             // 
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.description.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.description.DefaultCellStyle = dataGridViewCellStyle18;
             this.description.HeaderText = "Description";
             this.description.Name = "description";
             this.description.ReadOnly = true;
@@ -158,24 +158,24 @@
             // 
             // cost
             // 
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cost.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cost.DefaultCellStyle = dataGridViewCellStyle19;
             this.cost.HeaderText = "Cost";
             this.cost.Name = "cost";
             this.cost.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Qty
             // 
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Qty.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Qty.DefaultCellStyle = dataGridViewCellStyle20;
             this.Qty.HeaderText = "Qty";
             this.Qty.Name = "Qty";
             this.Qty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // lineTotal
             // 
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lineTotal.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lineTotal.DefaultCellStyle = dataGridViewCellStyle21;
             this.lineTotal.HeaderText = "Line Total";
             this.lineTotal.Name = "lineTotal";
             this.lineTotal.ReadOnly = true;
@@ -196,8 +196,9 @@
             this.comboSupplier.FormattingEnabled = true;
             this.comboSupplier.Location = new System.Drawing.Point(94, 83);
             this.comboSupplier.Name = "comboSupplier";
-            this.comboSupplier.Size = new System.Drawing.Size(121, 25);
+            this.comboSupplier.Size = new System.Drawing.Size(195, 25);
             this.comboSupplier.TabIndex = 109;
+            this.comboSupplier.SelectedValueChanged += new System.EventHandler(this.comboSupplier_SelectedValueChanged);
             // 
             // label5
             // 
@@ -212,12 +213,11 @@
             // 
             // addSupplierBtn
             // 
-            this.addSupplierBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addSupplierBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.addSupplierBtn.FlatAppearance.BorderSize = 0;
             this.addSupplierBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addSupplierBtn.ForeColor = System.Drawing.Color.White;
-            this.addSupplierBtn.Location = new System.Drawing.Point(254, 83);
+            this.addSupplierBtn.Location = new System.Drawing.Point(328, 84);
             this.addSupplierBtn.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.addSupplierBtn.Name = "addSupplierBtn";
             this.addSupplierBtn.Size = new System.Drawing.Size(81, 25);
@@ -229,7 +229,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(221, 86);
+            this.label1.Location = new System.Drawing.Point(295, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(24, 17);
             this.label1.TabIndex = 115;
