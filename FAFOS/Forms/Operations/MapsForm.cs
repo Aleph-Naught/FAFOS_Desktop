@@ -16,6 +16,7 @@ using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms.ToolTips;
 using System.Collections;
+using System.Threading.Tasks;
  
 
 namespace FAFOS
@@ -49,10 +50,19 @@ namespace FAFOS
         ContractService[] service;
         bool prefetch;
 
+        private delegate void LoadMapsDelegate();
+        private delegate void enableButtonDelegate();
+        private LoadMapsDelegate loadMaps;
+        
+
+        private AsyncCallback loadCallBack;
+
         public MapsForm(int id, object orders, object services)
         {
             InitializeComponent();
 
+            loadMaps = new LoadMapsDelegate(LoadMap);
+            loadCallBack = new AsyncCallback(loadDone);
 
             //User label
             userid = id;
@@ -69,10 +79,16 @@ namespace FAFOS
             service = (ContractService[])services;
             prefetch = true;
 
+        }
 
-            //Load the map
-            LoadMap();
+        void loadDone(IAsyncResult result)
+        {
+            this.Invoke(new enableButtonDelegate(enableButton));
+        }
 
+        public void enableButton()
+        {
+            generate_btn.Enabled = true;
         }
 
 
@@ -391,6 +407,9 @@ namespace FAFOS
             }
         }
 
+       
+
+
 
         // center markers on start
         private void MainForm_Load(object sender, EventArgs e)
@@ -399,8 +418,11 @@ namespace FAFOS
             Activate();
             TopMost = true;
             TopMost = false;
+            loadMaps.BeginInvoke(loadCallBack, null);
 
         }
+
+
         #endregion
 
         #region -- ui events --
@@ -605,6 +627,7 @@ namespace FAFOS
                     currentMarker.Position = pos.Value;
                 }
             }
+
             AddLocation(order++, startingAddress[0]);
             List<PointLatLng> myWaypoints = new List<PointLatLng>();
 
@@ -854,6 +877,11 @@ namespace FAFOS
             }
             catch(Exception f)
             { }
+        }
+
+        private void HelpBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Click a Work Order or Service and click generate map to display it on the map. \n\nSelect or De-Select multiple Work Orders or Services by Ctrl-Clicking and click generate map to display multiple addresses at once and the route between them.", "Maps Help");
         }
 
     }
