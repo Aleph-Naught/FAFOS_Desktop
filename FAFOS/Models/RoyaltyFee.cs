@@ -41,6 +41,31 @@ namespace FAFOS
             con.Close();
             return dataTable;
         }
+
+        public DataTable getYears()
+        {
+            String connString = FAFOS.Properties.Settings.Default.FAFOS;
+            SqlConnection con = new SqlConnection(connString);
+
+            DataTable dt = new DataTable();
+            con.Open();
+            SqlCommand command = new SqlCommand("SELECT DISTINCT datepart(yyyy,dateIssued) FROM [RoyaltyFee]", con);
+            SqlDataAdapter adap = new SqlDataAdapter(command);
+            try
+            {
+                
+                
+                    adap.Fill(dt);
+                
+                
+
+            }
+            catch (Exception e)
+            { }
+            // d.Tables.Add(dt);
+            con.Close();
+            return dt;
+        }
         public bool check(String id, String date)
         {
              String connString = FAFOS.Properties.Settings.Default.FAFOS;
