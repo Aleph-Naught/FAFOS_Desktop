@@ -88,7 +88,7 @@
             this.recordPurchaseBtn.Name = "recordPurchaseBtn";
             this.recordPurchaseBtn.Size = new System.Drawing.Size(114, 99);
             this.recordPurchaseBtn.TabIndex = 59;
-            this.recordPurchaseBtn.Text = "Record Purchase";
+            this.recordPurchaseBtn.Text = "Record Inventory Purchase";
             this.recordPurchaseBtn.UseVisualStyleBackColor = true;
             this.recordPurchaseBtn.Click += new System.EventHandler(this.recordPurchaseBtn_Click);
             // 
@@ -99,7 +99,7 @@
             this.payInvoiceBtn.Name = "payInvoiceBtn";
             this.payInvoiceBtn.Size = new System.Drawing.Size(114, 99);
             this.payInvoiceBtn.TabIndex = 60;
-            this.payInvoiceBtn.Text = "Pay Invoice";
+            this.payInvoiceBtn.Text = "Receive Invoice Payment";
             this.payInvoiceBtn.UseVisualStyleBackColor = true;
             this.payInvoiceBtn.Click += new System.EventHandler(this.payInvoiceBtn_Click);
             // 

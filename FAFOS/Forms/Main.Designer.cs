@@ -152,36 +152,36 @@ namespace FAFOS.Forms
             // inspectionToolStripMenuItem
             // 
             this.inspectionToolStripMenuItem.Name = "inspectionToolStripMenuItem";
-            this.inspectionToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.inspectionToolStripMenuItem.Text = "Inspection Reports";
+            this.inspectionToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.inspectionToolStripMenuItem.Text = "Create Inspection Reports";
             this.inspectionToolStripMenuItem.Click += new System.EventHandler(this.inspectionToolStripMenuItem_Click);
             // 
             // inventoryToolStripMenuItem
             // 
             this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
-            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.inventoryToolStripMenuItem.Text = "Manage Inventory";
             this.inventoryToolStripMenuItem.Click += new System.EventHandler(this.inventoryToolStripMenuItem_Click);
             // 
             // recordPurchaseToolStripMenuItem
             // 
             this.recordPurchaseToolStripMenuItem.Name = "recordPurchaseToolStripMenuItem";
-            this.recordPurchaseToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.recordPurchaseToolStripMenuItem.Text = "Record Purchases";
+            this.recordPurchaseToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.recordPurchaseToolStripMenuItem.Text = "Record Inventory Purchases";
             this.recordPurchaseToolStripMenuItem.Click += new System.EventHandler(this.recordPurchaseToolStripMenuItem_Click);
             // 
             // paymentToolStripMenuItem
             // 
             this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
-            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.paymentToolStripMenuItem.Text = "Receive Invoice Payments";
             this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
             // 
             // dayItineraryToolStripMenuItem
             // 
             this.dayItineraryToolStripMenuItem.Name = "dayItineraryToolStripMenuItem";
-            this.dayItineraryToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.dayItineraryToolStripMenuItem.Text = "Day Itinerary";
+            this.dayItineraryToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.dayItineraryToolStripMenuItem.Text = "Day Itinerary Maps";
             this.dayItineraryToolStripMenuItem.Click += new System.EventHandler(this.dayItineraryToolStripMenuItem_Click_1);
             // 
             // documentsToolStripMenuItem
@@ -253,28 +253,28 @@ namespace FAFOS.Forms
             // addClientToolStripMenuItem
             // 
             this.addClientToolStripMenuItem.Name = "addClientToolStripMenuItem";
-            this.addClientToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.addClientToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addClientToolStripMenuItem.Text = "Add Client";
             this.addClientToolStripMenuItem.Click += new System.EventHandler(this.addClientToolStripMenuItem_Click);
             // 
             // addContractToolStripMenuItem
             // 
             this.addContractToolStripMenuItem.Name = "addContractToolStripMenuItem";
-            this.addContractToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.addContractToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addContractToolStripMenuItem.Text = "Add Contract";
             this.addContractToolStripMenuItem.Click += new System.EventHandler(this.addContractToolStripMenuItem_Click);
             // 
             // editClientToolStripMenuItem
             // 
             this.editClientToolStripMenuItem.Name = "editClientToolStripMenuItem";
-            this.editClientToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.editClientToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.editClientToolStripMenuItem.Text = "Edit Client";
             this.editClientToolStripMenuItem.Click += new System.EventHandler(this.editClientToolStripMenuItem_Click);
             // 
             // editContractToolStripMenuItem
             // 
             this.editContractToolStripMenuItem.Name = "editContractToolStripMenuItem";
-            this.editContractToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.editContractToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.editContractToolStripMenuItem.Text = "Edit Contract";
             this.editContractToolStripMenuItem.Click += new System.EventHandler(this.editContractToolStripMenuItem_Click);
             // 
