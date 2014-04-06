@@ -27,10 +27,7 @@ namespace FAFOS
              franchiseeBox.DisplayMember = "name";
              franchiseeBox.ValueMember = "ID";
 
-             DataTable years = r.getYears();
-             yearBox.DataSource = years;
-             yearBox.DisplayMember = years.Columns[0].ToString();
-             yearBox.ValueMember = years.Columns[0].ToString();
+             
 
         }
 
@@ -79,6 +76,10 @@ namespace FAFOS
             {
                 MessageBox.Show("Royalty Fee document not found, using data from database", "Warning");
             }
+            DataTable years = r.getYears();
+            yearBox.DataSource = years;
+            yearBox.DisplayMember = years.Columns[0].ToString();
+            yearBox.ValueMember = years.Columns[0].ToString();
 
             
         }
