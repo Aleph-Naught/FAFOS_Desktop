@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.ddlPickReport = new System.Windows.Forms.ComboBox();
@@ -117,37 +117,38 @@
             // 
             this.dgvReport.AllowUserToAddRows = false;
             this.dgvReport.AllowUserToDeleteRows = false;
+            this.dgvReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReport.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvReport.Location = new System.Drawing.Point(0, 0);
             this.dgvReport.Name = "dgvReport";
             this.dgvReport.ReadOnly = true;
-            this.dgvReport.Size = new System.Drawing.Size(399, 440);
+            this.dgvReport.Size = new System.Drawing.Size(315, 440);
             this.dgvReport.TabIndex = 45;
             // 
             // chartReport
             // 
             this.chartReport.BackColor = System.Drawing.Color.Transparent;
             this.chartReport.BorderlineColor = System.Drawing.SystemColors.Control;
-            chartArea2.Name = "ChartArea1";
-            this.chartReport.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chartReport.ChartAreas.Add(chartArea1);
             this.chartReport.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.BackColor = System.Drawing.Color.White;
-            legend2.BorderColor = System.Drawing.Color.Black;
-            legend2.Name = "Legend1";
-            this.chartReport.Legends.Add(legend2);
+            legend1.BackColor = System.Drawing.Color.White;
+            legend1.BorderColor = System.Drawing.Color.Black;
+            legend1.Name = "Legend1";
+            this.chartReport.Legends.Add(legend1);
             this.chartReport.Location = new System.Drawing.Point(0, 0);
             this.chartReport.Name = "chartReport";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Revenue";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Legend = "Legend1";
-            series4.Name = "Threshold";
-            this.chartReport.Series.Add(series3);
-            this.chartReport.Series.Add(series4);
-            this.chartReport.Size = new System.Drawing.Size(584, 440);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Revenue";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Threshold";
+            this.chartReport.Series.Add(series1);
+            this.chartReport.Series.Add(series2);
+            this.chartReport.Size = new System.Drawing.Size(668, 440);
             this.chartReport.TabIndex = 46;
             this.chartReport.Text = "chart1";
             // 
@@ -206,7 +207,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.chartReport);
             this.splitContainer1.Size = new System.Drawing.Size(987, 440);
-            this.splitContainer1.SplitterDistance = 399;
+            this.splitContainer1.SplitterDistance = 315;
             this.splitContainer1.TabIndex = 58;
             // 
             // Reports
