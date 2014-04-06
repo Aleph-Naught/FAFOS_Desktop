@@ -112,19 +112,23 @@ namespace FAFOS
             {
                 dgv.Rows[e.RowIndex].Cells[2].Value = new Item().getDescription(dgv.Rows[e.RowIndex].Cells[1].Value.ToString());
                 dgv.Rows[e.RowIndex].Cells[5].Value = new Item().getPrice(dgv.Rows[e.RowIndex].Cells[1].Value.ToString());
+               // Console.WriteLine(dgv.Rows[e.RowIndex].Cells[5].Value.ToString());
+                dgv.Rows[e.RowIndex].Cells[5].Value = String.Format("{0:#,##0.00}", Math.Round(Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value),2));
+                //Console.WriteLine(dgv.Rows[e.RowIndex].Cells[5].Value.ToString());
             }
             if ((dgv.Rows[e.RowIndex].Cells[4].Value != null && dgv.Rows[e.RowIndex].Cells[5].Value != null && (dgv.Rows[e.RowIndex].Cells[3].Value == null || dgv.Rows[e.RowIndex].Cells[3].Value.ToString() == ""))
                 && (dgv.Rows[e.RowIndex].Cells[4].Value.ToString() != "" && dgv.Rows[e.RowIndex].Cells[5].Value.ToString() != ""))
             {
-                dgv.Rows[e.RowIndex].Cells[6].Value = Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[4].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString());
+                dgv.Rows[e.RowIndex].Cells[6].Value = String.Format("{0:#,##0.00}",Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[4].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString()));
             }
             else if ((dgv.Rows[e.RowIndex].Cells[3].Value != null && dgv.Rows[e.RowIndex].Cells[5].Value != null && (dgv.Rows[e.RowIndex].Cells[4].Value == null || dgv.Rows[e.RowIndex].Cells[4].Value.ToString() == ""))
                 && (dgv.Rows[e.RowIndex].Cells[3].Value.ToString() != "" && dgv.Rows[e.RowIndex].Cells[5].Value.ToString() != ""))
             {
-                dgv.Rows[e.RowIndex].Cells[6].Value = Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[3].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString());
+                dgv.Rows[e.RowIndex].Cells[6].Value = String.Format("{0:#,##0.00}",Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[3].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString()));
             }
             if (dgv.Rows[e.RowIndex].Cells[6].Value != null)
             {
+                //dgv.Rows[e.RowIndex].Cells[6].Value = String.Format("{0:#,##0.00}", Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[3].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString()));
                 double total = 0;
                 for (int i = 0; i < dgv.Rows.Count - 1; i++)
                 {
