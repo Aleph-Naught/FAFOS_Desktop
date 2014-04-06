@@ -46,6 +46,16 @@ namespace FAFOS
             return id;
         }
 
+        public static void delete(String quoteId)
+        {
+            String connString = FAFOS.Properties.Settings.Default.FAFOS;
+            SqlConnection con = new SqlConnection(connString);
+            con.Open();
+            SqlCommand command = new SqlCommand("DELETE FROM [Quote] WHERE quote_id = " + quoteId, con);
+            command.ExecuteNonQuery();
+            con.Close();
+        }
+
         public void update(String quoteId, String franchiseeUserId, String serviceAddress, String tax, String total)
         {
              String connString = FAFOS.Properties.Settings.Default.FAFOS;

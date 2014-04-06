@@ -18,6 +18,7 @@ namespace FAFOS
         private double tax;
         private int[] rowsDeleted = new int[10];
         private int rowsDeletedCounter = 0;
+        private string currId = "";
 
         public SalesOrderController(String franchiseeUserID)
         {
@@ -58,6 +59,7 @@ namespace FAFOS
                 OrderItems items = new OrderItems();
                 string id = new SalesOrder().set(franchiseeUserId, newSalesOrder.getServiceAddressId(),
                     type == 2 ? newSalesOrder.getId() : "NULL", newSalesOrder.getSubtotal(), tax.ToString(), newSalesOrder.getCompleted() == true ? "1" : "NULL");
+                currId = id;
                 DataGridView dt = newSalesOrder.getOrderItems();
                 for (int i = 0; i < dt.Rows.Count - 1; i++)
                 {
@@ -70,7 +72,9 @@ namespace FAFOS
             }
             catch(Exception f)
             {
-                MessageBox.Show("An error occurred, please make sure all forms are filled");
+                // if this catches we need to delete the partially created sales order
+                SalesOrder.delete(currId);
+                MessageBox.Show("An error occurred, please make sure all forms are filled.");
             }
             // _view.Show();
         }

@@ -133,7 +133,7 @@ namespace FAFOS
             if (!DesignMode)
             {
                 // set cache mode only if no internet avaible
-                if (!PingNetwork("www.Bing.ca"))
+                if (!PingNetwork("www.Bing.com"))
         //        if (!Stuff.PingNetwork("www.Bing.ca"))
                 {
                     MainMap.Manager.Mode = AccessMode.CacheOnly;

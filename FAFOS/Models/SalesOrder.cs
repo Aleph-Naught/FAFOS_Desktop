@@ -215,6 +215,17 @@ namespace FAFOS
             con.Close();
             return dt;
         }
+
+        public static void delete(String salesOrderId)
+        {
+            String connString = FAFOS.Properties.Settings.Default.FAFOS;
+            SqlConnection con = new SqlConnection(connString);
+            con.Open();
+            SqlCommand command = new SqlCommand("DELETE FROM Sales_Order WHERE sales_order_id = " + salesOrderId, con);
+            command.ExecuteNonQuery();
+            con.Close();
+        }
+
         public DataTable getInProgress(String userid)
         {
              String connString = FAFOS.Properties.Settings.Default.FAFOS;
