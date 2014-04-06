@@ -76,7 +76,7 @@
             this.Ok_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Ok_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ok_Button.ForeColor = System.Drawing.Color.Black;
-            this.Ok_Button.Location = new System.Drawing.Point(699, 543);
+            this.Ok_Button.Location = new System.Drawing.Point(707, 576);
             this.Ok_Button.Margin = new System.Windows.Forms.Padding(4);
             this.Ok_Button.Name = "Ok_Button";
             this.Ok_Button.Size = new System.Drawing.Size(75, 23);
@@ -89,7 +89,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 74);
+            this.label1.Location = new System.Drawing.Point(20, 111);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
@@ -101,7 +101,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 139);
+            this.label2.Location = new System.Drawing.Point(20, 172);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 13);
@@ -147,7 +147,7 @@
             this.ProvStateBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.ProvStateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProvStateBox.FormattingEnabled = true;
-            this.ProvStateBox.Location = new System.Drawing.Point(390, 46);
+            this.ProvStateBox.Location = new System.Drawing.Point(393, 46);
             this.ProvStateBox.Margin = new System.Windows.Forms.Padding(4);
             this.ProvStateBox.Name = "ProvStateBox";
             this.ProvStateBox.Size = new System.Drawing.Size(139, 21);
@@ -158,7 +158,7 @@
             this.CityBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.CityBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CityBox.FormattingEnabled = true;
-            this.CityBox.Location = new System.Drawing.Point(563, 46);
+            this.CityBox.Location = new System.Drawing.Point(566, 46);
             this.CityBox.Margin = new System.Windows.Forms.Padding(4);
             this.CityBox.Name = "CityBox";
             this.CityBox.Size = new System.Drawing.Size(129, 21);
@@ -183,7 +183,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(387, 25);
+            this.label5.Location = new System.Drawing.Point(390, 25);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 13);
@@ -196,7 +196,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(559, 25);
+            this.label6.Location = new System.Drawing.Point(562, 25);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(27, 13);
@@ -271,14 +271,14 @@
             this.SecondPhoneTextBox.Location = new System.Drawing.Point(261, 124);
             this.SecondPhoneTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.SecondPhoneTextBox.Name = "SecondPhoneTextBox";
-            this.SecondPhoneTextBox.Size = new System.Drawing.Size(176, 20);
+            this.SecondPhoneTextBox.Size = new System.Drawing.Size(179, 20);
             this.SecondPhoneTextBox.TabIndex = 19;
             // 
             // FaxTextBox
             // 
             this.FaxTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.FaxTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FaxTextBox.Location = new System.Drawing.Point(477, 124);
+            this.FaxTextBox.Location = new System.Drawing.Point(480, 124);
             this.FaxTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.FaxTextBox.Name = "FaxTextBox";
             this.FaxTextBox.Size = new System.Drawing.Size(176, 20);
@@ -290,7 +290,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(475, 105);
+            this.label10.Location = new System.Drawing.Point(478, 105);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(27, 13);
@@ -319,7 +319,7 @@
             this.EmailTextBox.Location = new System.Drawing.Point(434, 63);
             this.EmailTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.EmailTextBox.Name = "EmailTextBox";
-            this.EmailTextBox.Size = new System.Drawing.Size(216, 20);
+            this.EmailTextBox.Size = new System.Drawing.Size(219, 20);
             this.EmailTextBox.TabIndex = 23;
             // 
             // label12
@@ -377,7 +377,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(368, 163);
+            this.label14.Location = new System.Drawing.Point(364, 196);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(50, 13);
@@ -397,11 +397,11 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.PrimContactTextBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(22, 366);
+            this.groupBox1.Location = new System.Drawing.Point(15, 399);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(764, 171);
+            this.groupBox1.Size = new System.Drawing.Size(767, 171);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Info";
@@ -421,11 +421,11 @@
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(19, 192);
+            this.groupBox2.Location = new System.Drawing.Point(15, 225);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(764, 170);
+            this.groupBox2.Size = new System.Drawing.Size(767, 170);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Address Information";
@@ -433,7 +433,7 @@
             // nameTxtBox
             // 
             this.nameTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTxtBox.Location = new System.Drawing.Point(22, 91);
+            this.nameTxtBox.Location = new System.Drawing.Point(18, 137);
             this.nameTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameTxtBox.Name = "nameTxtBox";
             this.nameTxtBox.Size = new System.Drawing.Size(217, 20);
@@ -448,7 +448,7 @@
             "Commercial & Industrial",
             "Government (Provincial & Federal)",
             "Municipal"});
-            this.typeTextBox.Location = new System.Drawing.Point(22, 155);
+            this.typeTextBox.Location = new System.Drawing.Point(18, 188);
             this.typeTextBox.Name = "typeTextBox";
             this.typeTextBox.Size = new System.Drawing.Size(312, 21);
             this.typeTextBox.TabIndex = 40;
@@ -456,7 +456,7 @@
             // cancelBtn
             // 
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelBtn.Location = new System.Drawing.Point(617, 543);
+            this.cancelBtn.Location = new System.Drawing.Point(625, 576);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 41;
@@ -478,7 +478,7 @@
             // 
             this.contract_label.AutoSize = true;
             this.contract_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contract_label.Location = new System.Drawing.Point(425, 158);
+            this.contract_label.Location = new System.Drawing.Point(421, 191);
             this.contract_label.Name = "contract_label";
             this.contract_label.Size = new System.Drawing.Size(47, 20);
             this.contract_label.TabIndex = 43;
@@ -491,7 +491,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.cancelBtn;
-            this.ClientSize = new System.Drawing.Size(834, 579);
+            this.ClientSize = new System.Drawing.Size(839, 615);
             this.ControlBox = false;
             this.Controls.Add(this.contract_label);
             this.Controls.Add(this.label15);
