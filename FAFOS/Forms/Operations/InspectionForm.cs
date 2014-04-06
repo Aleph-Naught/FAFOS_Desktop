@@ -480,7 +480,7 @@ namespace FAFOS
                                         table2.rowHeight = 15;
                                         textAndtable.SetParams(table2, cellColor, Align.LeftAlign, 3);
 
-                                        textAndtable.AddRow(true, 8, "T3", alignC1, false, false, element.Attributes["testNote"].InnerText);
+                                        textAndtable.AddRow(true, 8, "T3", alignC1, false, false, element.Attributes["name"].InnerText + ": " + element.Attributes["testNote"].InnerText);
                                         height += table2.rowHeight;
 
                                         content.SetStream(textAndtable.EndTable(lineColor, true));
@@ -535,7 +535,7 @@ namespace FAFOS
                                         table2.rowHeight = 15;
                                         textAndtable.SetParams(table2, cellColor, Align.LeftAlign, 3);
 
-                                        textAndtable.AddRow(true, 8, "T3", alignC1, false, false, element.Attributes["testNote"].InnerText);
+                                        textAndtable.AddRow(true, 8, "T3", alignC1, false, false, element.Attributes["name"].InnerText + ": " + element.Attributes["testNote"].InnerText);
                                         height += table2.rowHeight;
 
                                         content.SetStream(textAndtable.EndTable(lineColor, true));
@@ -589,7 +589,7 @@ namespace FAFOS
                                         table2.rowHeight = 15;
                                         textAndtable.SetParams(table2, cellColor, Align.LeftAlign, 3);
 
-                                        textAndtable.AddRow(true, 8, "T3", alignC1, false, false, element.Attributes["testNote"].InnerText);
+                                        textAndtable.AddRow(true, 8, "T3", alignC1, false, false, element.Attributes["name"].InnerText + ": " + element.Attributes["testNote"].InnerText);
                                         height += table2.rowHeight;
 
                                         content.SetStream(textAndtable.EndTable(lineColor, true));
