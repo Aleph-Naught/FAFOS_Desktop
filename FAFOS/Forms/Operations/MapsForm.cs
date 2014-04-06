@@ -83,7 +83,11 @@ namespace FAFOS
 
         void loadDone(IAsyncResult result)
         {
-            this.Invoke(new enableButtonDelegate(enableButton));
+            try
+            {
+                this.Invoke(new enableButtonDelegate(enableButton));
+            }
+            catch (Exception) { }
         }
 
         public void enableButton()
@@ -612,100 +616,108 @@ namespace FAFOS
 
         private void generate_btn_Click(object sender, EventArgs e)
         {
-            MainMap.Visible = true;
-            int order = 1;
-            routes.Routes.Clear();
-            objects.Markers.Clear();
-            String[] startingAddress = new Franchisee().getAddress(userid);
-
-            PointLatLng? pos;
-            GeoCoderStatusCode status = GeoCoderStatusCode.Unknow;
+            try
             {
-                pos = GMapProviders.BingMap.GetPoint(startingAddress[2] + ", " + startingAddress[0], out status);
-                if (pos != null && status == GeoCoderStatusCode.G_GEO_SUCCESS)
+                MainMap.Visible = true;
+                int order = 1;
+                routes.Routes.Clear();
+                objects.Markers.Clear();
+                String[] startingAddress = new Franchisee().getAddress(userid);
+
+                PointLatLng? pos;
+                GeoCoderStatusCode status = GeoCoderStatusCode.Unknow;
                 {
-                    currentMarker.Position = pos.Value;
-                }
-            }
-
-            AddLocation(order++, startingAddress[0]);
-            List<PointLatLng> myWaypoints = new List<PointLatLng>();
-
-            if (workOrderTable.SelectedRows.Count > 0)
-            {
-                String[] address = new String[workOrderTable.SelectedRows.Count];
-                String[] location = new String[workOrderTable.SelectedRows.Count];
-                String[] country = new String[workOrderTable.SelectedRows.Count];
-                for (int i = 0; i < workOrderTable.SelectedRows.Count; i++)
-                {
-
-                    country[i] = workOrderTable.SelectedRows[i].Cells[6].Value.ToString();
-                    address[i] = workOrderTable.SelectedRows[i].Cells[3].Value.ToString();
-//                    location[i] = workOrderTable.SelectedRows[i].Cells[6].Value.ToString() + ", " + workOrderTable.SelectedRows[i].Cells[4].Value.ToString();
-                    location[i] = workOrderTable.SelectedRows[i].Cells[3].Value.ToString() + ", "
-                        + workOrderTable.SelectedRows[i].Cells[4].Value.ToString() + ", "
-                        + workOrderTable.SelectedRows[i].Cells[5].Value.ToString() + ", "
-                        + workOrderTable.SelectedRows[i].Cells[6].Value.ToString() ;
-
-                }
-
-                for (int i = 0; i < workOrderTable.SelectedRows.Count; i++)
-                {
- // MessageBox.Show(location[i].ToString());
-                    PointLatLng? pos1 = GMapProviders.BingMap.GetPoint(location[i].ToString(), out status);
-                    if (pos1 != null && status == GeoCoderStatusCode.G_GEO_SUCCESS)
+                    pos = GMapProviders.BingMap.GetPoint(startingAddress[2] + ", " + startingAddress[0], out status);
+                    if (pos != null && status == GeoCoderStatusCode.G_GEO_SUCCESS)
                     {
+                        currentMarker.Position = pos.Value;
+                    }
+                }
+
+                AddLocation(order++, startingAddress[0]);
+                List<PointLatLng> myWaypoints = new List<PointLatLng>();
+
+                if (workOrderTable.SelectedRows.Count > 0)
+                {
+                    String[] address = new String[workOrderTable.SelectedRows.Count];
+                    String[] location = new String[workOrderTable.SelectedRows.Count];
+                    String[] country = new String[workOrderTable.SelectedRows.Count];
+                    for (int i = 0; i < workOrderTable.SelectedRows.Count; i++)
+                    {
+
+                        country[i] = workOrderTable.SelectedRows[i].Cells[6].Value.ToString();
+                        address[i] = workOrderTable.SelectedRows[i].Cells[3].Value.ToString();
+                        //                    location[i] = workOrderTable.SelectedRows[i].Cells[6].Value.ToString() + ", " + workOrderTable.SelectedRows[i].Cells[4].Value.ToString();
+                        location[i] = workOrderTable.SelectedRows[i].Cells[3].Value.ToString() + ", "
+                            + workOrderTable.SelectedRows[i].Cells[4].Value.ToString() + ", "
+                            + workOrderTable.SelectedRows[i].Cells[5].Value.ToString() + ", "
+                            + workOrderTable.SelectedRows[i].Cells[6].Value.ToString();
+
+                    }
+
+                    for (int i = 0; i < workOrderTable.SelectedRows.Count; i++)
+                    {
+                        // MessageBox.Show(location[i].ToString());
+                        PointLatLng? pos1 = GMapProviders.BingMap.GetPoint(location[i].ToString(), out status);
+                        if (pos1 != null && status == GeoCoderStatusCode.G_GEO_SUCCESS)
+                        {
+                            myWaypoints.Add(pos1.Value);
+                            AddLocation(order++, location[i]);
+                            currentMarker.Position = pos1.Value;
+                        }
+                        else
+                        {
+                            myWaypoints.Add(new PointLatLng(42.98252, -81.25397));
+                            AddLocation(order++, location[i]);
+                            currentMarker.Position = new PointLatLng(42.98252, -81.25397);
+                        }
+
+
+
+                    }
+
+                }
+                if (servicesTable.SelectedRows.Count > 0)
+                {
+                    String[] address = new String[servicesTable.SelectedRows.Count];
+                    String[] location = new String[servicesTable.SelectedRows.Count];
+                    String[] country = new String[servicesTable.SelectedRows.Count];
+                    for (int i = 0; i < servicesTable.SelectedRows.Count; i++)
+                    {
+
+                        country[i] = servicesTable.SelectedRows[i].Cells[8].Value.ToString();
+                        address[i] = servicesTable.SelectedRows[i].Cells[5].Value.ToString();
+                        location[i] = servicesTable.SelectedRows[i].Cells[8].Value.ToString() + ", " + servicesTable.SelectedRows[i].Cells[6].Value.ToString();
+
+                    }
+
+                    for (int i = 0; i < servicesTable.SelectedRows.Count; i++)
+                    {
+                        PointLatLng? pos1 = GMapProviders.BingMap.GetPoint(country[i] + ", " + address[i], out status);
                         myWaypoints.Add(pos1.Value);
-                        AddLocation(order++, location[i]);
+                        AddLocation(order++, address[i]);
                         currentMarker.Position = pos1.Value;
                     }
-                    else
+                }
+                GMapRoute rte = new GMapRoute("name");
+
+                GDirections _dir;
+                DirectionsStatusCode _code = GMapProviders.GoogleMap.GetDirections(out _dir, pos.Value, myWaypoints, false, false, false, false, true, true);
+                if (_code == DirectionsStatusCode.OK)
+                {
+                    foreach (GDirectionStep _step in _dir.Steps)
                     {
-                        myWaypoints.Add(new PointLatLng(42.98252, -81.25397));
-                        AddLocation(order++, location[i]);
-                        currentMarker.Position = new PointLatLng(42.98252, -81.25397);
+                        rte.Points.AddRange(_step.Points);
                     }
-                    
-                    
-
                 }
 
+                routes.Routes.Add(rte);
             }
-            if (servicesTable.SelectedRows.Count > 0)
+            catch (Exception)
             {
-                String[] address = new String[servicesTable.SelectedRows.Count];
-                String[] location = new String[servicesTable.SelectedRows.Count];
-                String[] country = new String[servicesTable.SelectedRows.Count];
-                for (int i = 0; i < servicesTable.SelectedRows.Count; i++)
-                {
-
-                    country[i] = servicesTable.SelectedRows[i].Cells[8].Value.ToString();
-                    address[i] = servicesTable.SelectedRows[i].Cells[5].Value.ToString();
-                    location[i] = servicesTable.SelectedRows[i].Cells[8].Value.ToString() + ", " + servicesTable.SelectedRows[i].Cells[6].Value.ToString();
-
-                }
-
-                for (int i = 0; i < servicesTable.SelectedRows.Count; i++)
-                {
-                    PointLatLng? pos1 = GMapProviders.BingMap.GetPoint(country[i] + ", " + address[i], out status);
-                    myWaypoints.Add(pos1.Value);
-                    AddLocation(order++, address[i]);
-                    currentMarker.Position = pos1.Value;
-                }
+                MessageBox.Show("An error occured, try reopening the page");
+                this.Close();
             }
-            GMapRoute rte = new GMapRoute("name");
-
-            GDirections _dir;
-            DirectionsStatusCode _code = GMapProviders.GoogleMap.GetDirections(out _dir, pos.Value, myWaypoints, false, false, false, false, true, true);
-            if (_code == DirectionsStatusCode.OK)
-            {
-                foreach (GDirectionStep _step in _dir.Steps)
-                {
-                    rte.Points.AddRange(_step.Points);
-                }
-            }
-
-            routes.Routes.Add(rte);
         }
 
         private void preload()
