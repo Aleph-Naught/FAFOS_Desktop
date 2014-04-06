@@ -57,14 +57,13 @@
             this.label13 = new System.Windows.Forms.Label();
             this.ErrProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.label14 = new System.Windows.Forms.Label();
-            this.delete_Button = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.nameTxtBox = new System.Windows.Forms.TextBox();
-            this.contract_Button = new System.Windows.Forms.Button();
             this.typeTextBox = new System.Windows.Forms.ComboBox();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
+            this.contract_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ErrProvider)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -82,7 +81,7 @@
             this.Ok_Button.Name = "Ok_Button";
             this.Ok_Button.Size = new System.Drawing.Size(75, 23);
             this.Ok_Button.TabIndex = 0;
-            this.Ok_Button.Text = "OK";
+            this.Ok_Button.Text = "Create";
             this.Ok_Button.UseVisualStyleBackColor = false;
             // 
             // label1
@@ -378,27 +377,12 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(287, 60);
+            this.label14.Location = new System.Drawing.Point(368, 163);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(50, 13);
             this.label14.TabIndex = 30;
             this.label14.Text = "Contract:";
-            // 
-            // delete_Button
-            // 
-            this.delete_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.delete_Button.FlatAppearance.BorderSize = 0;
-            this.delete_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
-            this.delete_Button.ForeColor = System.Drawing.Color.White;
-            this.delete_Button.Location = new System.Drawing.Point(485, 77);
-            this.delete_Button.Margin = new System.Windows.Forms.Padding(4);
-            this.delete_Button.Name = "delete_Button";
-            this.delete_Button.Size = new System.Drawing.Size(187, 42);
-            this.delete_Button.TabIndex = 31;
-            this.delete_Button.Text = "Delete";
-            this.delete_Button.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -455,21 +439,6 @@
             this.nameTxtBox.Size = new System.Drawing.Size(217, 20);
             this.nameTxtBox.TabIndex = 38;
             // 
-            // contract_Button
-            // 
-            this.contract_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.contract_Button.FlatAppearance.BorderSize = 0;
-            this.contract_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.contract_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contract_Button.ForeColor = System.Drawing.Color.White;
-            this.contract_Button.Location = new System.Drawing.Point(290, 77);
-            this.contract_Button.Margin = new System.Windows.Forms.Padding(4);
-            this.contract_Button.Name = "contract_Button";
-            this.contract_Button.Size = new System.Drawing.Size(187, 42);
-            this.contract_Button.TabIndex = 39;
-            this.contract_Button.Text = "<Click to Add>";
-            this.contract_Button.UseVisualStyleBackColor = false;
-            // 
             // typeTextBox
             // 
             this.typeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -505,6 +474,16 @@
             this.label15.TabIndex = 42;
             this.label15.Text = "Clients";
             // 
+            // contract_label
+            // 
+            this.contract_label.AutoSize = true;
+            this.contract_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contract_label.Location = new System.Drawing.Point(425, 158);
+            this.contract_label.Name = "contract_label";
+            this.contract_label.Size = new System.Drawing.Size(47, 20);
+            this.contract_label.TabIndex = 43;
+            this.contract_label.Text = "None";
+            // 
             // AddEditClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -514,14 +493,13 @@
             this.CancelButton = this.cancelBtn;
             this.ClientSize = new System.Drawing.Size(834, 579);
             this.ControlBox = false;
+            this.Controls.Add(this.contract_label);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.typeTextBox);
-            this.Controls.Add(this.contract_Button);
             this.Controls.Add(this.nameTxtBox);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.delete_Button);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -568,13 +546,12 @@
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.ErrorProvider ErrProvider;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button delete_Button;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox nameTxtBox;
-        private System.Windows.Forms.Button contract_Button;
         private System.Windows.Forms.ComboBox typeTextBox;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label contract_label;
     }
 }

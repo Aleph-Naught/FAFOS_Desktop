@@ -147,7 +147,7 @@ namespace FAFOS.Forms
         private void MainPrototype_Load(object sender, EventArgs e)
         {
 
-
+            /*
             try
             {
                 SqlConnection con = new SqlConnection(Properties.Settings.Default.FAFOS);
@@ -162,7 +162,7 @@ namespace FAFOS.Forms
             }
             catch(Exception f)
             { }
-             
+             */
             
             
             

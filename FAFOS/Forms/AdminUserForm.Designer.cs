@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminUserForm));
             this.UserGridView = new System.Windows.Forms.DataGridView();
             this.usrName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usrIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -391,6 +392,7 @@
             this.Controls.Add(this.UserGridView);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimizeBox = false;
             this.Name = "AdminUserForm";

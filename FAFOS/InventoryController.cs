@@ -112,17 +112,21 @@ namespace FAFOS
         }
         public void addProduct_btn_Click(object sender, EventArgs e)
         {
-            _view = (InventoryForm)((Button)sender).FindForm();
-            //_view.getCategory().ValueMember = "category_id";
-            String category_id = _view.getCategory().SelectedValue.ToString();
-           // _view.getCategory().DisplayMember = "type";
-          //  _view.getSupplier().ValueMember = "supplier_id";
-            String supplier_id = _view.getSupplier().SelectedValue.ToString();
-            //_view.getSupplier().DisplayMember = "name";
-            franchisee_inventory.insertProduct(user.getFranchiseeId(_view.getUser()), _view.getProductName(), _view.getProductDescription(), _view.getProductPrice(), category_id, supplier_id);
-            productsTable = franchisee_inventory.getProducts(user.getFranchiseeId(_view.getUser()));
-            _view.SetProductsTable(productsTable);
-            fillProductcombo();
+            try
+            {
+                _view = (InventoryForm)((Button)sender).FindForm();
+                //_view.getCategory().ValueMember = "category_id";
+                String category_id = _view.getCategory().SelectedValue.ToString();
+                // _view.getCategory().DisplayMember = "type";
+                //  _view.getSupplier().ValueMember = "supplier_id";
+                String supplier_id = _view.getSupplier().SelectedValue.ToString();
+                //_view.getSupplier().DisplayMember = "name";
+                franchisee_inventory.insertProduct(user.getFranchiseeId(_view.getUser()), _view.getProductName(), _view.getProductDescription(), _view.getProductPrice(), category_id, supplier_id);
+                productsTable = franchisee_inventory.getProducts(user.getFranchiseeId(_view.getUser()));
+                _view.SetProductsTable(productsTable);
+                fillProductcombo();
+            }
+            catch (Exception f) { }
         }
         public void addService_btn_Click(object sender, EventArgs e)
         {
@@ -167,6 +171,7 @@ namespace FAFOS
         /************************************PurchaseRecords*********************************************************/
         public void purchaseLoad(object sender, EventArgs e)
         {
+/*
             _purchaseRecord = (PurchaseRecord)((PurchaseRecord)sender).FindForm();
             supplierTable = supplier.get();
             _purchaseRecord.getSupplier().DataSource = supplierTable;
@@ -183,18 +188,47 @@ namespace FAFOS
               // itemTable.Rows[i][5] = String.Format("{0:#,##0.00}", Convert.ToDouble(itemTable.Rows[i][5]));
            }
             _purchaseRecord.fillItemList(itemTable);
+*/
+            try
+            {
+                _purchaseRecord = (PurchaseRecord)((PurchaseRecord)sender).FindForm();
+                supplierTable = supplier.get();
+                _purchaseRecord.getSupplier().DataSource = supplierTable;
+                _purchaseRecord.getSupplier().ValueMember = "service_id";
+                _purchaseRecord.getSupplier().DisplayMember = "name";
+                String supplier_id = "";
+                //   MessageBox.Show(supplier_id);
+                supplier_id = _purchaseRecord.getSupplier().SelectedValue.ToString();
+
+                DataTable itemTable = franchisee_inventory.getProducts(user.getFranchiseeId(_purchaseRecord.getUser()), supplier_id);
+                for (int i = 0; i < itemTable.Rows.Count; i++)
+           {
+               itemTable.Rows[i][3] = String.Format("{0:#,##0.00}",Convert.ToDouble(itemTable.Rows[i][3]));
+              // itemTable.Rows[i][5] = String.Format("{0:#,##0.00}", Convert.ToDouble(itemTable.Rows[i][5]));
+           }
+                _purchaseRecord.fillItemList(itemTable);
+            }
+            catch(Exception f)
+            {
+
+            }
         }
         public void fillItemList(object sender, EventArgs e)
         {
-            _purchaseRecord.getPurchaseRecords().Rows.Clear();
-            _purchaseRecord.getTotal().Text = "$0";
-            _purchaseRecord.getSupplier().DisplayMember = "name";
-            _purchaseRecord.getSupplier().ValueMember = "service_id";
+            try
+            {
+                _purchaseRecord.getPurchaseRecords().Rows.Clear();
+                _purchaseRecord.getTotal().Text = "$0";
+                _purchaseRecord.getSupplier().DisplayMember = "name";
+                _purchaseRecord.getSupplier().ValueMember = "service_id";
 
-            String supplier_id =  _purchaseRecord.getSupplier().SelectedValue.ToString();
+                String supplier_id = _purchaseRecord.getSupplier().SelectedValue.ToString();
 
-            DataTable itemTable = franchisee_inventory.getProducts(user.getFranchiseeId(_purchaseRecord.getUser()), supplier_id);
-            _purchaseRecord.fillItemList(itemTable);
+                DataTable itemTable = franchisee_inventory.getProducts(user.getFranchiseeId(_purchaseRecord.getUser()), supplier_id);
+                _purchaseRecord.fillItemList(itemTable);
+            }
+            catch(Exception f)
+            { }
         }
         public void PurchaseRecords_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -209,7 +243,8 @@ namespace FAFOS
                 DataGridViewCell currentCell = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex];
                 try
                 {
-                    int cellValue = Convert.ToInt32(currentCell.Value);
+                    double cellValue = Convert.ToDouble(currentCell.Value);
+
                     if (cellValue < 0)
                     {
                         currentCell.Value = "0";
