@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using FAFOS.Forms;
 
 namespace FAFOS
 {
@@ -14,9 +15,13 @@ namespace FAFOS
         private int userid;
         Users user;
         Payment payment;
+        Main mainForm;
+        
 
-        public PaymentForm(int id)
+        public PaymentForm(int id, Main _mainForm)
         {
+
+            mainForm = _mainForm;
 
             InitializeComponent();
 
@@ -170,6 +175,7 @@ namespace FAFOS
                 {
                     MessageBox.Show("Payment has been processed.");
                     txtInvoice_SelectedValueChanged(txtInvoice.SelectedItem, new EventArgs());
+                    mainForm.Notifications();
                 }
                 //this.Close();
             }

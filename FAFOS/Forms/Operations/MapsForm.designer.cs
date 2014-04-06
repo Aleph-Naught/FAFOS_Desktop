@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainMap = new GMap.NET.WindowsForms.GMapControl();
             this.label8 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -176,13 +176,13 @@
             this.OrderProvince,
             this.OrderCountry,
             this.Done});
-            this.workOrderTable.Location = new System.Drawing.Point(14, 37);
+            this.workOrderTable.Location = new System.Drawing.Point(3, 37);
             this.workOrderTable.Margin = new System.Windows.Forms.Padding(2);
             this.workOrderTable.Name = "workOrderTable";
             this.workOrderTable.RowHeadersVisible = false;
             this.workOrderTable.RowTemplate.Height = 24;
             this.workOrderTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.workOrderTable.Size = new System.Drawing.Size(450, 155);
+            this.workOrderTable.Size = new System.Drawing.Size(466, 155);
             this.workOrderTable.TabIndex = 54;
             this.workOrderTable.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_DataBindingComplete);
             // 
@@ -197,9 +197,9 @@
             // issuedDate
             // 
             this.issuedDate.DataPropertyName = "dateIssued";
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.issuedDate.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.issuedDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.issuedDate.HeaderText = "Date Issued";
             this.issuedDate.Name = "issuedDate";
             this.issuedDate.ReadOnly = true;
@@ -270,7 +270,7 @@
             this.servicesTable.RowHeadersVisible = false;
             this.servicesTable.RowTemplate.Height = 24;
             this.servicesTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.servicesTable.Size = new System.Drawing.Size(568, 155);
+            this.servicesTable.Size = new System.Drawing.Size(578, 155);
             this.servicesTable.TabIndex = 55;
             this.servicesTable.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_DataBindingComplete);
             // 
@@ -293,9 +293,9 @@
             // Column2
             // 
             this.Column2.DataPropertyName = "nextDate";
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column2.HeaderText = "Due Date";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -375,8 +375,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.servicesTable);
             this.splitContainer1.Panel2.Controls.Add(this.label15);
-            this.splitContainer1.Size = new System.Drawing.Size(1065, 209);
-            this.splitContainer1.SplitterDistance = 475;
+            this.splitContainer1.Size = new System.Drawing.Size(1077, 209);
+            this.splitContainer1.SplitterDistance = 480;
             this.splitContainer1.TabIndex = 57;
             // 
             // HelpBtn

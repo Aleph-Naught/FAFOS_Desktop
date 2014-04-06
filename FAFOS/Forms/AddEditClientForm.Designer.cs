@@ -129,7 +129,7 @@
             this.addrTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.addrTextBox.Name = "addrTextBox";
             this.addrTextBox.Size = new System.Drawing.Size(183, 20);
-            this.addrTextBox.TabIndex = 7;
+            this.addrTextBox.TabIndex = 3;
             // 
             // CountryBox
             // 
@@ -141,7 +141,7 @@
             this.CountryBox.Margin = new System.Windows.Forms.Padding(4);
             this.CountryBox.Name = "CountryBox";
             this.CountryBox.Size = new System.Drawing.Size(108, 21);
-            this.CountryBox.TabIndex = 8;
+            this.CountryBox.TabIndex = 4;
             // 
             // ProvStateBox
             // 
@@ -238,7 +238,7 @@
             this.mainPhoneTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.mainPhoneTxtBox.Name = "mainPhoneTxtBox";
             this.mainPhoneTxtBox.Size = new System.Drawing.Size(183, 20);
-            this.mainPhoneTxtBox.TabIndex = 16;
+            this.mainPhoneTxtBox.TabIndex = 28;
             // 
             // label8
             // 
@@ -275,7 +275,7 @@
             this.SecondPhoneTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.SecondPhoneTextBox.Name = "SecondPhoneTextBox";
             this.SecondPhoneTextBox.Size = new System.Drawing.Size(179, 20);
-            this.SecondPhoneTextBox.TabIndex = 19;
+            this.SecondPhoneTextBox.TabIndex = 29;
             // 
             // FaxTextBox
             // 
@@ -285,7 +285,7 @@
             this.FaxTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.FaxTextBox.Name = "FaxTextBox";
             this.FaxTextBox.Size = new System.Drawing.Size(176, 20);
-            this.FaxTextBox.TabIndex = 20;
+            this.FaxTextBox.TabIndex = 30;
             // 
             // label10
             // 
@@ -323,7 +323,7 @@
             this.EmailTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(219, 20);
-            this.EmailTextBox.TabIndex = 23;
+            this.EmailTextBox.TabIndex = 27;
             // 
             // label12
             // 
@@ -429,7 +429,7 @@
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Size = new System.Drawing.Size(767, 170);
-            this.groupBox2.TabIndex = 37;
+            this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Address Information";
             // 
@@ -440,7 +440,7 @@
             this.nameTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameTxtBox.Name = "nameTxtBox";
             this.nameTxtBox.Size = new System.Drawing.Size(217, 20);
-            this.nameTxtBox.TabIndex = 38;
+            this.nameTxtBox.TabIndex = 1;
             // 
             // typeTextBox
             // 
@@ -455,7 +455,7 @@
             this.typeTextBox.Location = new System.Drawing.Point(18, 188);
             this.typeTextBox.Name = "typeTextBox";
             this.typeTextBox.Size = new System.Drawing.Size(312, 21);
-            this.typeTextBox.TabIndex = 40;
+            this.typeTextBox.TabIndex = 2;
             // 
             // cancelBtn
             // 

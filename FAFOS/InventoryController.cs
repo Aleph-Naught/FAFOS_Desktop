@@ -72,6 +72,7 @@ namespace FAFOS
         {
             franchisee_inventory.updateServices();
             franchisee_inventory.updateProducts();
+            MessageBox.Show("Inventory has been saved.");
             return;
         }
         public void Delete_Product_btn_Click(object sender, EventArgs e)

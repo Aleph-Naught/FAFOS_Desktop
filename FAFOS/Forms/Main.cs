@@ -220,7 +220,7 @@ namespace FAFOS.Forms
         private void paymentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             currentPage.Close();
-            PaymentForm embeddedForm = new PaymentForm(userid);
+            PaymentForm embeddedForm = new PaymentForm(userid, this);
             currentPage = embeddedForm;
             embeddedForm.TopLevel = false;
             splitContainer1.Panel2.Controls.Add(embeddedForm);
