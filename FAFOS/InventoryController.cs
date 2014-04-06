@@ -270,20 +270,27 @@ namespace FAFOS
         {
             if (MessageBox.Show("Do you want to save this purchase record?", "Save", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                inventory_transaction = new InventoryTransaction();
-                item_transaction = new ItemTransaction();
-                _purchaseRecord = (PurchaseRecord)((Button)sender).FindForm();
-                String supplier_id = _purchaseRecord.getSupplier().SelectedValue.ToString();
-                inventory_transaction.insertInventoryTransaction(user.getFranchiseeId(_purchaseRecord.getUser()), supplier_id, _purchaseRecord.getDate());
-                DataGridView dgv = _purchaseRecord.getPurchaseRecords();
-                for (int i = 0; i < dgv.Rows.Count - 1; i++)
+                try
                 {
-                    franchisee_inventory.updateQuantity(dgv.Rows[i].Cells[1].Value.ToString(), dgv.Rows[i].Cells[4].Value.ToString());
-                    franchisee_inventory.updateCost(dgv.Rows[i].Cells[1].Value.ToString(), dgv.Rows[i].Cells[3].Value.ToString());
-                    item_transaction.insertItemTransaction(inventory_transaction.getTransactions(user.getFranchiseeId(_purchaseRecord.getUser())).Rows.Count.ToString(), dgv.Rows[i].Cells[1].Value.ToString(), dgv.Rows[i].Cells[3].Value.ToString(), dgv.Rows[i].Cells[4].Value.ToString());
+                    inventory_transaction = new InventoryTransaction();
+                    item_transaction = new ItemTransaction();
+                    _purchaseRecord = (PurchaseRecord)((Button)sender).FindForm();
+                    String supplier_id = _purchaseRecord.getSupplier().SelectedValue.ToString();
+                    inventory_transaction.insertInventoryTransaction(user.getFranchiseeId(_purchaseRecord.getUser()), supplier_id, _purchaseRecord.getDate());
+                    DataGridView dgv = _purchaseRecord.getPurchaseRecords();
+                    for (int i = 0; i < dgv.Rows.Count - 1; i++)
+                    {
+                        franchisee_inventory.updateQuantity(dgv.Rows[i].Cells[1].Value.ToString(), dgv.Rows[i].Cells[4].Value.ToString());
+                        franchisee_inventory.updateCost(dgv.Rows[i].Cells[1].Value.ToString(), dgv.Rows[i].Cells[3].Value.ToString());
+                        item_transaction.insertItemTransaction(inventory_transaction.getTransactions(user.getFranchiseeId(_purchaseRecord.getUser())).Rows.Count.ToString(), dgv.Rows[i].Cells[1].Value.ToString(), dgv.Rows[i].Cells[3].Value.ToString(), dgv.Rows[i].Cells[4].Value.ToString());
+                    }
+                    _purchaseRecord.getPurchaseRecords().Rows.Clear();
+                    _purchaseRecord.getTotal().Text = "$0";
                 }
-                _purchaseRecord.getPurchaseRecords().Rows.Clear();
-                _purchaseRecord.getTotal().Text = "$0";
+                catch(Exception)
+                {
+                    MessageBox.Show("An error occured, ensure all field are filled out properly.");
+                }
             }
         }
     }

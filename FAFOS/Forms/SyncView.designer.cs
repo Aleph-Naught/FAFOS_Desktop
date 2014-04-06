@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SyncView));
             this.syncToAndroid = new System.Windows.Forms.Button();
             this.syncFromAndroid = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -80,6 +81,7 @@
             this.Controls.Add(this.syncToAndroid);
             this.Controls.Add(this.syncFromAndroid);
             this.Controls.Add(this.label9);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SyncView";
             this.Text = "FAFOS";
