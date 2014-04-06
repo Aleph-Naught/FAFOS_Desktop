@@ -118,7 +118,7 @@ namespace FAFOS
             if ((dgv.Rows[e.RowIndex].Cells[4].Value != null && dgv.Rows[e.RowIndex].Cells[5].Value != null && (dgv.Rows[e.RowIndex].Cells[3].Value == null || dgv.Rows[e.RowIndex].Cells[3].Value.ToString() == ""))
                 && (dgv.Rows[e.RowIndex].Cells[4].Value.ToString() != "" && dgv.Rows[e.RowIndex].Cells[5].Value.ToString() != ""))
             {
-                dgv.Rows[e.RowIndex].Cells[6].Value = Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[4].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString());
+                dgv.Rows[e.RowIndex].Cells[6].Value = String.Format("{0:#,##0.00}",Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[4].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString()));
             }
             else if ((dgv.Rows[e.RowIndex].Cells[3].Value != null && dgv.Rows[e.RowIndex].Cells[5].Value != null && (dgv.Rows[e.RowIndex].Cells[4].Value == null || dgv.Rows[e.RowIndex].Cells[4].Value.ToString() == ""))
                 && (dgv.Rows[e.RowIndex].Cells[3].Value.ToString() != "" && dgv.Rows[e.RowIndex].Cells[5].Value.ToString() != ""))
