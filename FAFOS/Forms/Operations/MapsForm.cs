@@ -130,7 +130,9 @@ namespace FAFOS
                 MainMap.MapProvider = GMapProviders.BingMap; //.BingMap;
                 GeoCoderStatusCode status = GeoCoderStatusCode.Unknow;
       //          PointLatLng? p = GMapProviders.BingMap.GetPoint(startingAddress[0] + ", " + startingAddress[2] + ", " + startingAddress[1], out status);
+
                 PointLatLng? p = GMapProviders.BingMap.GetPoint("817 Silversmith Street, London, Ontario, N6H 5T4, Canada", out status);
+
                 if (p != null && status == GeoCoderStatusCode.G_GEO_SUCCESS)
                 {
                     MainMap.Position = p.Value;  
