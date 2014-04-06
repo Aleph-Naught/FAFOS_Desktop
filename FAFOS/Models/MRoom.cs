@@ -153,6 +153,14 @@ namespace FAFOS
                 {
                     r = new MRoom();
                     values[i, 0] = r.getNewID("light_id", "Light");
+                    if(values[i, 7] == "True")
+                    {
+                        values[i, 7] = "1";
+                    }
+                    else
+                    {
+                        values[i, 7] = "0";
+                    }
                     command = new SqlCommand("INSERT INTO Light VALUES (" + values[i, 0] +
                                                            ",'" + values[i, 1] +
                                                           "','" + values[i, 2] +
@@ -169,6 +177,14 @@ namespace FAFOS
                 }
                 else
                 {
+                    if (values[i, 7] == "True")
+                    {
+                        values[i, 7] = "1";
+                    }
+                    else
+                    {
+                        values[i, 7] = "0";
+                    }
 
                     command = new SqlCommand("UPDATE Light SET location = '" + values[i, 1] +
                                                           "', model = '" + values[i, 2] +

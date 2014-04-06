@@ -155,7 +155,22 @@ namespace FAFOS
                 AddLight(index);
                 for (int j = 0; j < 12; j++)
                 {
-                    lightViews[index].Rows[i].Cells[j].Value = lights.Rows[i][j];
+                    if(j == 7)
+                    {
+                        if(lights.Rows[i][j].ToString() == "1")
+                        {
+                            lights.Rows[i][j] = "True";
+                        }
+                        else
+                        {
+                            lights.Rows[i][j] = "False";
+                        }
+                        lightViews[index].Rows[i].Cells[j].Value = lights.Rows[i][j];
+                    }
+                    else
+                    { 
+                        lightViews[index].Rows[i].Cells[j].Value = lights.Rows[i][j];
+                    }
                 }
             }
         }
@@ -255,29 +270,29 @@ namespace FAFOS
         public void extView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            if ((e.ColumnIndex == 9) && (e.RowIndex > -1))
-            {
+            //if ((e.ColumnIndex == 9) && (e.RowIndex > -1))
+            //{
                 DecMetric("extinguisher", currentRow);
                 my_controller.ExtinguisherView_CellClick(sender, e);
-            }
+            //}
         }
         public void hoseView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            if ((e.ColumnIndex == 6) && (e.RowIndex > -1))
-            {
+            //if ((e.ColumnIndex == 6) && (e.RowIndex > -1))
+            //{
                 DecMetric("hose", currentRow);
                 my_controller.HoseView_CellClick(sender, e);
-            }
+            //}
         }
         public void lightView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            if ((e.ColumnIndex == 12) && (e.RowIndex > -1))
-            {
+            //if ((e.ColumnIndex == 12) && (e.RowIndex > -1))
+            //{
                 DecMetric("light", currentRow);
                 my_controller.LightView_CellClick(sender, e);
-            }
+            //}
         }
 
 /**************************************** Setup/Manipulation *******************************************/
