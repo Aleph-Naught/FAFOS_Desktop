@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace FAFOS
 {
@@ -224,7 +225,8 @@ namespace FAFOS
             allFeilds[1] = contractNameBox.Text.ToString();
             allFeilds[2] = this.StartDatePicker.Value.ToString();
             allFeilds[3] = this.EndDatePicker.Value.ToString();
-            allFeilds[4] = this.TermsBox.Text.ToString();
+            string strIn = this.TermsBox.Text.ToString();
+            allFeilds[4] = Regex.Replace(strIn, @"[\']", "", RegexOptions.None);
 
             return allFeilds;
         }
