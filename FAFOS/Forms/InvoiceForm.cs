@@ -346,6 +346,7 @@ namespace FAFOS
                 table4.xPos = 50;
                 table4.rowHeight = 15;
                 textAndtable4.SetParams(table4, cell3, Align.CenterAlign, 3);
+
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
                     textAndtable4.AddRow(false, 8, "T3", alignR2, false, dataGridView1.Rows[i].Cells[0].Value.ToString(),

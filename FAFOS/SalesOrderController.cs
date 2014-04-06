@@ -82,7 +82,8 @@ namespace FAFOS
                 Sales_Order newSalesOrder = (Sales_Order)((Button)sender).FindForm();
                 //save
                 OrderItems items = new OrderItems();
-                new SalesOrder().update(newSalesOrder.getId(), franchiseeUserId, newSalesOrder.getServiceAddressId(), newSalesOrder.getTotal(), tax.ToString(), newSalesOrder.getCompleted() == true ? "1" : "NULL");
+
+                new SalesOrder().update(newSalesOrder.getId(), franchiseeUserId, newSalesOrder.getServiceAddressId(), newSalesOrder.getSubtotal(), tax.ToString(), newSalesOrder.getCompleted() == true ? "1" : "NULL");
                 for (int i = 0; i < rowsDeletedCounter; i++)
                 {
                     items.delete(rowsDeleted[i].ToString(), newSalesOrder.getId());
