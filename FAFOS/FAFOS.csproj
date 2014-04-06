@@ -100,20 +100,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FAFOSDataSet.cs">
-      <DependentUpon>FAFOSDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="FAFOSDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FAFOSDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="FAFOSDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FAFOSDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Forms\AddEditClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
