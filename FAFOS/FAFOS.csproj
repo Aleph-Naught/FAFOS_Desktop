@@ -426,18 +426,6 @@
     <None Include="FAFOSDataSet.xss">
       <DependentUpon>FAFOSDataSet.xsd</DependentUpon>
     </None>
-    <None Include="FAFOSDataSet1.xsc">
-      <DependentUpon>FAFOSDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="FAFOSDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FAFOSDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="FAFOSDataSet1.xss">
-      <DependentUpon>FAFOSDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="FAFOS_1_TemporaryKey.pfx" />
     <None Include="FAFOS_TemporaryKey.pfx" />
     <None Include="Maps\DataExp.gmdb" />
     <None Include="Maps\DataExp3.gmdb" />

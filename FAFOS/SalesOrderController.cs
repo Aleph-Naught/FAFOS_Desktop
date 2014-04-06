@@ -57,7 +57,7 @@ namespace FAFOS
                 //save
                 OrderItems items = new OrderItems();
                 string id = new SalesOrder().set(franchiseeUserId, newSalesOrder.getServiceAddressId(),
-                    type == 2 ? newSalesOrder.getId() : "NULL", newSalesOrder.getTotal(), tax.ToString(), newSalesOrder.getCompleted() == true ? "1" : "NULL");
+                    type == 2 ? newSalesOrder.getId() : "NULL", newSalesOrder.getSubtotal(), tax.ToString(), newSalesOrder.getCompleted() == true ? "1" : "NULL");
                 DataGridView dt = newSalesOrder.getOrderItems();
                 for (int i = 0; i < dt.Rows.Count - 1; i++)
                 {
