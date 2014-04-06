@@ -145,16 +145,24 @@ namespace FAFOS
 
                 if (category == "1")
                 {
-                    dgv.Rows[e.RowIndex].Cells[3].Style.BackColor = Color.LightGray;
                     dgv.Rows[e.RowIndex].Cells[3].Style.BackColor = Color.DarkGray;
                     dgv.Rows[e.RowIndex].Cells[3].ReadOnly = true;
+                    dgv.Rows[e.RowIndex].Cells[3].Value = null;
+                    dgv.Rows[e.RowIndex].Cells[6].Value = 0;
+
+                    dgv.Rows[e.RowIndex].Cells[4].Style.BackColor = Color.White;
+                    dgv.Rows[e.RowIndex].Cells[4].ReadOnly = false;
 
                 }
                 else if (category == "2")
                 {
-                    dgv.Rows[e.RowIndex].Cells[4].Style.BackColor = Color.LightGray;
                     dgv.Rows[e.RowIndex].Cells[4].Style.BackColor = Color.DarkGray;
                     dgv.Rows[e.RowIndex].Cells[4].ReadOnly = true;
+                    dgv.Rows[e.RowIndex].Cells[4].Value = null;
+                    dgv.Rows[e.RowIndex].Cells[6].Value = 0;
+
+                    dgv.Rows[e.RowIndex].Cells[3].Style.BackColor = Color.White;
+                    dgv.Rows[e.RowIndex].Cells[3].ReadOnly = false;
                 }
 
             }
@@ -162,15 +170,23 @@ namespace FAFOS
 
                 if (((dgv.Rows[e.RowIndex].Cells[4].Value != null && dgv.Rows[e.RowIndex].Cells[4].Value.ToString() != "") || (dgv.Rows[e.RowIndex].Cells[3].Value != null && dgv.Rows[e.RowIndex].Cells[3].Value.ToString() != "")) && (dgv.Rows[e.RowIndex].Cells[5].Value != null && dgv.Rows[e.RowIndex].Cells[5].Value.ToString() != ""))
                 {
-                    String category = new Item().getCategory(dgv.Rows[e.RowIndex].Cells[1].Value.ToString());
+                    try
+                    {
+                        String category = new Item().getCategory(dgv.Rows[e.RowIndex].Cells[1].Value.ToString());
 
-                    if (category == "1" && dgv.Rows[e.RowIndex].Cells[4].Value != null && dgv.Rows[e.RowIndex].Cells[4].Value.ToString() != "")
-                    {
-                        dgv.Rows[e.RowIndex].Cells[6].Value = String.Format("{0:#,##0.00}", Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[4].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString()));
+                        if (category == "1" && dgv.Rows[e.RowIndex].Cells[4].Value != null && dgv.Rows[e.RowIndex].Cells[4].Value.ToString() != "")
+                        {
+                            dgv.Rows[e.RowIndex].Cells[6].Value = String.Format("{0:#,##0.00}", Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[4].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString()));
+                        }
+                        else if (category == "2" && dgv.Rows[e.RowIndex].Cells[3].Value != null && dgv.Rows[e.RowIndex].Cells[3].Value.ToString() != "")
+                        {
+                            dgv.Rows[e.RowIndex].Cells[6].Value = String.Format("{0:#,##0.00}", Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[3].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString()));
+                        }
                     }
-                    else if (category == "2" && dgv.Rows[e.RowIndex].Cells[3].Value != null && dgv.Rows[e.RowIndex].Cells[3].Value.ToString() != "")
+                    catch(Exception)
                     {
-                        dgv.Rows[e.RowIndex].Cells[6].Value = String.Format("{0:#,##0.00}", Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[3].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString()));
+                        MessageBox.Show("An error occurred, please ensure all forms are filled correctly.");
+                        return;
                     }
 
                 }

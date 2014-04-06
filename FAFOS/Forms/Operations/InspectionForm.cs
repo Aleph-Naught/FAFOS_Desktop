@@ -91,18 +91,33 @@ namespace FAFOS
                 //Open a file specifying the file name as the output pdf file
                 //String FilePath = @"C:\Users\Hassan\Desktop\Preview.pdf";
 
-                FileStream file = new FileStream(FilePath, FileMode.Create);
-                int size = 0;
-                file.Write(pdfUtility.GetHeader("1.5", out size), 0, size);
-                file.Close();
+                //Create a Page Dictionary , this represents a visible page
+                PageDict page = new PageDict();
+                ContentDict content = new ContentDict();
+
+                FileStream file;
+                int size;
+
+                try
+                {
+
+                    file = new FileStream(FilePath, FileMode.Create);
+                    size = 0;
+                    file.Write(pdfUtility.GetHeader("1.5", out size), 0, size);
+                    file.Close();
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("An error occured");
+
+                    return null;
+                }
 
                 //Finished the first step
 
 
 
-                //Create a Page Dictionary , this represents a visible page
-                PageDict page = new PageDict();
-                ContentDict content = new ContentDict();
+               
 
                 //The page size object will hold all the page size information
                 //also holds the dictionary objects for font, images etc.

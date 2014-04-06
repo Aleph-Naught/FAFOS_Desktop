@@ -64,7 +64,7 @@
             this.txtInvoice.Location = new System.Drawing.Point(15, 103);
             this.txtInvoice.Margin = new System.Windows.Forms.Padding(2);
             this.txtInvoice.Name = "txtInvoice";
-            this.txtInvoice.Size = new System.Drawing.Size(162, 25);
+            this.txtInvoice.Size = new System.Drawing.Size(115, 25);
             this.txtInvoice.TabIndex = 34;
             this.txtInvoice.SelectedValueChanged += new System.EventHandler(this.txtInvoice_SelectedValueChanged);
             // 
@@ -100,6 +100,7 @@
             // 
             // txtType
             // 
+            this.txtType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtType.FormattingEnabled = true;
             this.txtType.Items.AddRange(new object[] {
