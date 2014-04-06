@@ -58,15 +58,6 @@ namespace FAFOS
                 DataGridView dt = newQuote.getQuoteItems();
                 for (int i = 0; i < dt.Rows.Count-1; i++)
                 {
-                    /*for (int k = 0; k < dt.Rows[i].Cells.Count; k++)
-                    {
-                        if (dt.Rows[i].Cells[k].Value == null)
-                        {
-                            MessageBox.Show("An error occurred. Make sure all fields are filled out.");
-                            return;
-                        }
-                    }*/
-
                     items.set(dt.Rows[i].Cells[0].Value.ToString(), dt.Rows[i].Cells[4].Value != null ? dt.Rows[i].Cells[4].Value.ToString() : "NULL",
                         dt.Rows[i].Cells[3].Value != null ? dt.Rows[i].Cells[3].Value.ToString() : "NULL",
                         dt.Rows[i].Cells[5].Value.ToString(), dt.Rows[i].Cells[1].Value.ToString(), id);
@@ -78,6 +69,7 @@ namespace FAFOS
             }
             catch (Exception ex)
             {
+                // if this catches we have to clean up the partially created quote
                 Quote.delete(currId);
                 MessageBox.Show("An error occurred. Make sure all fields are filled out.");
             }
