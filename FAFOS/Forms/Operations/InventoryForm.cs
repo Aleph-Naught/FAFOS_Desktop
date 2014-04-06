@@ -56,12 +56,15 @@ namespace FAFOS
         {
             productsdgv.DataSource = dt;
             productsdgv = setNumberColumn(productsdgv);
+            productsdgv.Columns[4].DefaultCellStyle.Format = "N2";
+            productsdgv.Columns[5].DefaultCellStyle.Format = "N2";
             
         }
         public void SetServicesTable(DataTable dt)
         {
             servicesdgv.DataSource = dt;
             servicesdgv = setNumberColumn(servicesdgv);
+            servicesdgv.Columns[5].DefaultCellStyle.Format = "N2";
         }
         public DataGridView getProductdgv()
         {

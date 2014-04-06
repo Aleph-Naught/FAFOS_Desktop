@@ -50,6 +50,8 @@ namespace FAFOS
             _view.getSupplier().DisplayMember = "name";
             _view.getSupplier().ValueMember = "service_id";
 
+            
+
             fillProductcombo();
 
             fillServicecombo();
@@ -62,6 +64,8 @@ namespace FAFOS
             {
                 MessageBox.Show("Incorrect data was loaded in this form.");
             }
+
+
 
         }
         public void Save_btn_Click(object sender, EventArgs e)
