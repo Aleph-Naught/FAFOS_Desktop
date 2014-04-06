@@ -73,12 +73,13 @@ namespace FAFOS
                 {
                     DataGridViewRow row = purchaseRecordsdgv.Rows[e.RowIndex];
                     String valueA = row.Cells[3].Value.ToString();
+                    row.Cells[3].Value = String.Format("{0:#,##0.00}", Convert.ToDouble(row.Cells[3].Value));
                     String valueB = row.Cells[4].Value.ToString();
                     double result;
                     double total = 0;
                     if (Double.TryParse(valueA, out result) && Double.TryParse(valueB, out result))
                     {
-                        row.Cells[5].Value = Convert.ToDouble(valueA) * Convert.ToDouble(valueB);
+                        row.Cells[5].Value = String.Format("{0:#,##0.00}",Convert.ToDouble(valueA) * Convert.ToDouble(valueB));
                     }
                     for (int i = 0; i < purchaseRecordsdgv.Rows.Count - 1; i++)
                     {
