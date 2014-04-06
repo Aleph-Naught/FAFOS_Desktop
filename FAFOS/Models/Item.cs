@@ -77,6 +77,27 @@ namespace FAFOS
             con.Close();
             return description;
         }
+
+
+        public string getCategory(String id)
+        {
+            String connString = FAFOS.Properties.Settings.Default.FAFOS;
+            SqlConnection con = new SqlConnection(connString);
+
+            con.Open();
+            SqlCommand command = new SqlCommand("SELECT category_id FROM Franchisee_Item WHERE item_id = " + id, con);
+            SqlDataReader reader = command.ExecuteReader();
+
+            String category = "";
+            if (reader.Read())
+            {
+                category = reader[0].ToString();
+            }
+            reader.Close();
+            con.Close();
+            return category;
+        }
+
              public string getPrice(String id)
         {
              String connString = FAFOS.Properties.Settings.Default.FAFOS;

@@ -51,42 +51,56 @@ namespace FAFOS
 
         public void createSalesOrder(object sender, EventArgs e)
         {
-            Sales_Order newSalesOrder = (Sales_Order)((Button)sender).FindForm();
-            //save
-            OrderItems items = new OrderItems();
-            string id = new SalesOrder().set(franchiseeUserId, newSalesOrder.getServiceAddressId(),
-                type == 2 ? newSalesOrder.getId() : "NULL", newSalesOrder.getTotal(), tax.ToString(), newSalesOrder.getCompleted() == true ? "1" : "NULL");
-            DataGridView dt = newSalesOrder.getOrderItems();
-            for (int i = 0; i < dt.Rows.Count - 1; i++)
+            try
             {
-                items.set(dt.Rows[i].Cells[0].Value.ToString(), dt.Rows[i].Cells[4].Value != null && dt.Rows[i].Cells[4].Value.ToString() != "" ? dt.Rows[i].Cells[4].Value.ToString() : "NULL",
-                    dt.Rows[i].Cells[3].Value != null && dt.Rows[i].Cells[3].Value.ToString() != "" ? dt.Rows[i].Cells[3].Value.ToString() : "NULL",
-                    dt.Rows[i].Cells[5].Value.ToString(), dt.Rows[i].Cells[1].Value.ToString(), id);
+                Sales_Order newSalesOrder = (Sales_Order)((Button)sender).FindForm();
+                //save
+                OrderItems items = new OrderItems();
+                string id = new SalesOrder().set(franchiseeUserId, newSalesOrder.getServiceAddressId(),
+                    type == 2 ? newSalesOrder.getId() : "NULL", newSalesOrder.getTotal(), tax.ToString(), newSalesOrder.getCompleted() == true ? "1" : "NULL");
+                DataGridView dt = newSalesOrder.getOrderItems();
+                for (int i = 0; i < dt.Rows.Count - 1; i++)
+                {
+                    items.set(dt.Rows[i].Cells[0].Value.ToString(), dt.Rows[i].Cells[4].Value != null && dt.Rows[i].Cells[4].Value.ToString() != "" ? dt.Rows[i].Cells[4].Value.ToString() : "NULL",
+                        dt.Rows[i].Cells[3].Value != null && dt.Rows[i].Cells[3].Value.ToString() != "" ? dt.Rows[i].Cells[3].Value.ToString() : "NULL",
+                        dt.Rows[i].Cells[5].Value.ToString(), dt.Rows[i].Cells[1].Value.ToString(), id);
+                }
+                newSalesOrder.Dispose();
+                MessageBox.Show("The Sales Order ID is " + id + "!");
             }
-            newSalesOrder.Dispose();
-            MessageBox.Show("The Sales Order ID is " + id + "!");
+            catch(Exception f)
+            {
+                MessageBox.Show("An error occurred, please make sure all forms are filled");
+            }
             // _view.Show();
         }
 
         public void saveSalesOrder(object sender, EventArgs e)
         {
-            Sales_Order newSalesOrder = (Sales_Order)((Button)sender).FindForm();
-            //save
-            OrderItems items = new OrderItems();
-            new SalesOrder().update(newSalesOrder.getId(), franchiseeUserId, newSalesOrder.getServiceAddressId(), newSalesOrder.getTotal(), tax.ToString(), newSalesOrder.getCompleted() == true ? "1" : "NULL");
-            for (int i = 0; i < rowsDeletedCounter; i++)
+            try
             {
-                items.delete(rowsDeleted[i].ToString(), newSalesOrder.getId());
+                Sales_Order newSalesOrder = (Sales_Order)((Button)sender).FindForm();
+                //save
+                OrderItems items = new OrderItems();
+                new SalesOrder().update(newSalesOrder.getId(), franchiseeUserId, newSalesOrder.getServiceAddressId(), newSalesOrder.getTotal(), tax.ToString(), newSalesOrder.getCompleted() == true ? "1" : "NULL");
+                for (int i = 0; i < rowsDeletedCounter; i++)
+                {
+                    items.delete(rowsDeleted[i].ToString(), newSalesOrder.getId());
+                }
+                DataGridView dt = newSalesOrder.getOrderItems();
+                for (int i = 0; i < dt.Rows.Count - 1; i++)
+                {
+                    items.setUpdate(dt.Rows[i].Cells[0].Value.ToString(), dt.Rows[i].Cells[4].Value != null && dt.Rows[i].Cells[4].Value.ToString() != "" ? dt.Rows[i].Cells[4].Value.ToString() : "NULL",
+                        dt.Rows[i].Cells[3].Value != null && dt.Rows[i].Cells[3].Value.ToString() != "" ? dt.Rows[i].Cells[3].Value.ToString() : "NULL",
+                        dt.Rows[i].Cells[5].Value.ToString(), dt.Rows[i].Cells[1].Value.ToString(), newSalesOrder.getId());
+                }
+                newSalesOrder.Dispose();
             }
-            DataGridView dt = newSalesOrder.getOrderItems();
-            for (int i = 0; i < dt.Rows.Count - 1; i++)
+            catch(Exception f)
             {
-                items.setUpdate(dt.Rows[i].Cells[0].Value.ToString(), dt.Rows[i].Cells[4].Value != null && dt.Rows[i].Cells[4].Value.ToString() != "" ? dt.Rows[i].Cells[4].Value.ToString() : "NULL",
-                    dt.Rows[i].Cells[3].Value != null && dt.Rows[i].Cells[3].Value.ToString() != "" ? dt.Rows[i].Cells[3].Value.ToString() : "NULL",
-                    dt.Rows[i].Cells[5].Value.ToString(), dt.Rows[i].Cells[1].Value.ToString(), newSalesOrder.getId());
+                MessageBox.Show("An error occurred, please make sure all forms are filled");
             }
-            newSalesOrder.Dispose();
-            // _view.Show();
+
         }
 
         public void DataGridView1_UserDeletedRow(Object sender, DataGridViewRowEventArgs e)
@@ -108,39 +122,52 @@ namespace FAFOS
         {
             Sales_Order newSalesOrder = (Sales_Order)((DataGridView)sender).FindForm();
             DataGridView dgv = (DataGridView)sender;
+
+
+
+
             if (dgv.Rows[e.RowIndex].Cells[1].Value != null && e.ColumnIndex == 1 && e.RowIndex != -1)
             {
                 dgv.Rows[e.RowIndex].Cells[2].Value = new Item().getDescription(dgv.Rows[e.RowIndex].Cells[1].Value.ToString());
                 dgv.Rows[e.RowIndex].Cells[5].Value = new Item().getPrice(dgv.Rows[e.RowIndex].Cells[1].Value.ToString());
-               // Console.WriteLine(dgv.Rows[e.RowIndex].Cells[5].Value.ToString());
-                dgv.Rows[e.RowIndex].Cells[5].Value = String.Format("{0:#,##0.00}", Math.Round(Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value),2));
-                //Console.WriteLine(dgv.Rows[e.RowIndex].Cells[5].Value.ToString());
-            }
-            if ((dgv.Rows[e.RowIndex].Cells[4].Value != null && dgv.Rows[e.RowIndex].Cells[5].Value != null && (dgv.Rows[e.RowIndex].Cells[3].Value == null || dgv.Rows[e.RowIndex].Cells[3].Value.ToString() == ""))
-                && (dgv.Rows[e.RowIndex].Cells[4].Value.ToString() != "" && dgv.Rows[e.RowIndex].Cells[5].Value.ToString() != ""))
-            {
-                dgv.Rows[e.RowIndex].Cells[6].Value = String.Format("{0:#,##0.00}",Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[4].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString()));
-            }
-            else if ((dgv.Rows[e.RowIndex].Cells[3].Value != null && dgv.Rows[e.RowIndex].Cells[5].Value != null && (dgv.Rows[e.RowIndex].Cells[4].Value == null || dgv.Rows[e.RowIndex].Cells[4].Value.ToString() == ""))
-                && (dgv.Rows[e.RowIndex].Cells[3].Value.ToString() != "" && dgv.Rows[e.RowIndex].Cells[5].Value.ToString() != ""))
-            {
-                dgv.Rows[e.RowIndex].Cells[6].Value = String.Format("{0:#,##0.00}",Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[3].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString()));
-            }
-            if (dgv.Rows[e.RowIndex].Cells[6].Value != null)
-            {
-                //dgv.Rows[e.RowIndex].Cells[6].Value = String.Format("{0:#,##0.00}", Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[3].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString()));
-                double total = 0;
-                for (int i = 0; i < dgv.Rows.Count - 1; i++)
+                dgv.Rows[e.RowIndex].Cells[5].Value = String.Format("{0:#,##0.00}", Math.Round(Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value), 2));
+
+
+                if (((dgv.Rows[e.RowIndex].Cells[4].Value != null && dgv.Rows[e.RowIndex].Cells[4].Value.ToString() != "") || (dgv.Rows[e.RowIndex].Cells[3].Value != null && dgv.Rows[e.RowIndex].Cells[3].Value.ToString() != "")) && (dgv.Rows[e.RowIndex].Cells[5].Value != null && dgv.Rows[e.RowIndex].Cells[5].Value.ToString() != ""))
                 {
-                    total += Convert.ToDouble(dgv.Rows[i].Cells[6].Value);
+                    String category = new Item().getCategory(dgv.Rows[e.RowIndex].Cells[1].Value.ToString());
+
+                    if (category == "1" && dgv.Rows[e.RowIndex].Cells[4].Value != null && dgv.Rows[e.RowIndex].Cells[4].Value.ToString() != "")
+                    {
+
+                        Double val1 = Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[4].Value.ToString());
+                        Double val2 = Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString());
+
+                        dgv.Rows[e.RowIndex].Cells[6].Value = String.Format("{0:#,##0.00}", Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[4].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString()));
+                    }
+                    else if (category == "2" && dgv.Rows[e.RowIndex].Cells[3].Value != null && dgv.Rows[e.RowIndex].Cells[3].Value.ToString() != "")
+                    {
+                        dgv.Rows[e.RowIndex].Cells[6].Value = String.Format("{0:#,##0.00}", Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[3].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString()));
+                    }
+
                 }
-                /******************************/
-                if (type == 1 || type == 2)
-                    tax = Convert.ToDouble(new Address().getProvinceTax(new ServiceAddress().getProvinceID(newSalesOrder.getServiceAddressId())));
-                else
-                    tax = Convert.ToDouble(new SalesOrder().getProvinceTax(newSalesOrder.getId()));
-                /******************************/
-                newSalesOrder.setTotal(total, tax);
+
+                if (dgv.Rows[e.RowIndex].Cells[6].Value != null)
+                {
+                    //dgv.Rows[e.RowIndex].Cells[6].Value = String.Format("{0:#,##0.00}", Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[3].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString()));
+                    double total = 0;
+                    for (int i = 0; i < dgv.Rows.Count - 1; i++)
+                    {
+                        total += Convert.ToDouble(dgv.Rows[i].Cells[6].Value);
+                    }
+                    /******************************/
+                    if (type == 1 || type == 2)
+                        tax = Convert.ToDouble(new Address().getProvinceTax(new ServiceAddress().getProvinceID(newSalesOrder.getServiceAddressId())));
+                    else
+                        tax = Convert.ToDouble(new SalesOrder().getProvinceTax(newSalesOrder.getId()));
+                    /******************************/
+                    newSalesOrder.setTotal(total, tax);
+                }
             }
         }
 

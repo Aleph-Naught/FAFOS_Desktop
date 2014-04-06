@@ -100,15 +100,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FAFOSDataSet.cs">
-      <DependentUpon>FAFOSDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="FAFOSDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FAFOSDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Forms\AddEditClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -434,6 +425,17 @@
     </None>
     <None Include="FAFOSDataSet.xss">
       <DependentUpon>FAFOSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FAFOSDataSet1.xsc">
+      <DependentUpon>FAFOSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="FAFOSDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FAFOSDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FAFOSDataSet1.xss">
+      <DependentUpon>FAFOSDataSet1.xsd</DependentUpon>
     </None>
     <None Include="FAFOS_1_TemporaryKey.pfx" />
     <None Include="FAFOS_TemporaryKey.pfx" />
