@@ -43,6 +43,15 @@ namespace FAFOS
             item.ValueMember = ts.Columns[1].ToString();
         }
 
+        public DataGridView setNumberColumn(DataGridView dgv)
+        {
+            for (int i = 0; i < dgv.Rows.Count - 1; i++)
+            {
+                dgv.Rows[i].Cells[0].Value = i + 1;
+            }
+            return dgv;
+        }
+
         public void fillClientList(DataTable ts)
         {
             ddlClient.DataSource = ts;

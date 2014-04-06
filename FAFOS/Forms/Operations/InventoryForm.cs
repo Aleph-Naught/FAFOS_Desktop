@@ -39,6 +39,9 @@ namespace FAFOS
             productsdgv.CellEndEdit += new DataGridViewCellEventHandler(productsdgv_CellEndEdit);
             servicesdgv.CellEndEdit += new DataGridViewCellEventHandler(servicesdgv_CellEndEdit);
 
+            productsdgv.Columns[0].Visible = false;
+            servicesdgv.Columns[0].Visible = false;
+
             //User label
             user = new Users();
             userid = id;

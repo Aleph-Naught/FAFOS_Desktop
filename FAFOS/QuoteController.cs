@@ -7,6 +7,7 @@ using System.Data;
 using System.IO;
 using InvoicePDF;
 using FAFOS.Forms;
+using System.Drawing;
 namespace FAFOS
 {
     public class QuoteController
@@ -120,6 +121,25 @@ namespace FAFOS
                 dgv.Rows[e.RowIndex].Cells[2].Value = new Item().getDescription(dgv.Rows[e.RowIndex].Cells[1].Value.ToString());
                 dgv.Rows[e.RowIndex].Cells[5].Value = new Item().getPrice(dgv.Rows[e.RowIndex].Cells[1].Value.ToString());
                 dgv.Rows[e.RowIndex].Cells[5].Value = String.Format("{0:#,##0.00}", Math.Round(Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value), 2));
+                QuoteForm quoteForm = (QuoteForm)((System.Windows.Forms.DataGridView)sender).FindForm();
+                dgv = quoteForm.setNumberColumn(dgv);
+
+                String category = new Item().getCategory(dgv.Rows[e.RowIndex].Cells[1].Value.ToString());
+
+                if (category == "1")
+                {
+                    dgv.Rows[e.RowIndex].Cells[3].Style.BackColor = Color.LightGray;
+                    dgv.Rows[e.RowIndex].Cells[3].Style.BackColor = Color.DarkGray;
+                    dgv.Rows[e.RowIndex].Cells[3].ReadOnly = true;
+
+                }
+                else if (category == "2")
+                {
+                    dgv.Rows[e.RowIndex].Cells[4].Style.BackColor = Color.LightGray;
+                    dgv.Rows[e.RowIndex].Cells[4].Style.BackColor = Color.DarkGray;
+                    dgv.Rows[e.RowIndex].Cells[4].ReadOnly = true;
+                }
+
             }
 
             if (((dgv.Rows[e.RowIndex].Cells[4].Value != null && dgv.Rows[e.RowIndex].Cells[4].Value.ToString() != "") || (dgv.Rows[e.RowIndex].Cells[3].Value != null && dgv.Rows[e.RowIndex].Cells[3].Value.ToString() != "")) && (dgv.Rows[e.RowIndex].Cells[5].Value != null && dgv.Rows[e.RowIndex].Cells[5].Value.ToString() != ""))
