@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.ddlPickReport = new System.Windows.Forms.ComboBox();
@@ -43,9 +43,14 @@
             this.generate_btn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartReport)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtpStartDate
@@ -112,37 +117,37 @@
             // 
             this.dgvReport.AllowUserToAddRows = false;
             this.dgvReport.AllowUserToDeleteRows = false;
-            this.dgvReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReport.Location = new System.Drawing.Point(15, 149);
+            this.dgvReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvReport.Location = new System.Drawing.Point(0, 0);
             this.dgvReport.Name = "dgvReport";
             this.dgvReport.ReadOnly = true;
-            this.dgvReport.Size = new System.Drawing.Size(345, 451);
+            this.dgvReport.Size = new System.Drawing.Size(399, 440);
             this.dgvReport.TabIndex = 45;
             // 
             // chartReport
             // 
-            this.chartReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.chartReport.BackColor = System.Drawing.Color.Transparent;
             this.chartReport.BorderlineColor = System.Drawing.SystemColors.Control;
-            chartArea3.Name = "ChartArea1";
-            this.chartReport.ChartAreas.Add(chartArea3);
-            legend3.BackColor = System.Drawing.Color.White;
-            legend3.BorderColor = System.Drawing.Color.Black;
-            legend3.Name = "Legend1";
-            this.chartReport.Legends.Add(legend3);
-            this.chartReport.Location = new System.Drawing.Point(390, 149);
+            chartArea2.Name = "ChartArea1";
+            this.chartReport.ChartAreas.Add(chartArea2);
+            this.chartReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.BackColor = System.Drawing.Color.White;
+            legend2.BorderColor = System.Drawing.Color.Black;
+            legend2.Name = "Legend1";
+            this.chartReport.Legends.Add(legend2);
+            this.chartReport.Location = new System.Drawing.Point(0, 0);
             this.chartReport.Name = "chartReport";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Revenue";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Legend = "Legend1";
-            series6.Name = "Threshold";
-            this.chartReport.Series.Add(series5);
-            this.chartReport.Series.Add(series6);
-            this.chartReport.Size = new System.Drawing.Size(600, 451);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Revenue";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Legend = "Legend1";
+            series4.Name = "Threshold";
+            this.chartReport.Series.Add(series3);
+            this.chartReport.Series.Add(series4);
+            this.chartReport.Size = new System.Drawing.Size(584, 440);
             this.chartReport.TabIndex = 46;
             this.chartReport.Text = "chart1";
             // 
@@ -153,9 +158,9 @@
             this.generate_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.generate_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.generate_btn.ForeColor = System.Drawing.Color.White;
-            this.generate_btn.Location = new System.Drawing.Point(721, 79);
+            this.generate_btn.Location = new System.Drawing.Point(673, 79);
             this.generate_btn.Name = "generate_btn";
-            this.generate_btn.Size = new System.Drawing.Size(103, 56);
+            this.generate_btn.Size = new System.Drawing.Size(151, 52);
             this.generate_btn.TabIndex = 53;
             this.generate_btn.Text = "Generate Royalty Fee for Month";
             this.generate_btn.UseVisualStyleBackColor = false;
@@ -185,17 +190,35 @@
             this.panel1.Size = new System.Drawing.Size(635, 54);
             this.panel1.TabIndex = 57;
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.Location = new System.Drawing.Point(12, 139);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.dgvReport);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.chartReport);
+            this.splitContainer1.Size = new System.Drawing.Size(987, 440);
+            this.splitContainer1.SplitterDistance = 399;
+            this.splitContainer1.TabIndex = 58;
+            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1022, 602);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.generate_btn);
-            this.Controls.Add(this.chartReport);
-            this.Controls.Add(this.dgvReport);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Reports";
@@ -204,6 +227,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartReport)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +249,6 @@
         private System.Windows.Forms.Button generate_btn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }
