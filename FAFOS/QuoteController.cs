@@ -114,6 +114,7 @@ namespace FAFOS
             {
                 dgv.Rows[e.RowIndex].Cells[2].Value = new Item().getDescription(dgv.Rows[e.RowIndex].Cells[1].Value.ToString());
                 dgv.Rows[e.RowIndex].Cells[5].Value = new Item().getPrice(dgv.Rows[e.RowIndex].Cells[1].Value.ToString());
+                dgv.Rows[e.RowIndex].Cells[5].Value = String.Format("{0:#,##0.00}", Math.Round(Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value), 2));
             }
 
             if (((dgv.Rows[e.RowIndex].Cells[4].Value != null && dgv.Rows[e.RowIndex].Cells[4].Value.ToString() != "") || (dgv.Rows[e.RowIndex].Cells[3].Value != null && dgv.Rows[e.RowIndex].Cells[3].Value.ToString() != "")) && (dgv.Rows[e.RowIndex].Cells[5].Value != null && dgv.Rows[e.RowIndex].Cells[5].Value.ToString() != ""))
