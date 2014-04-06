@@ -259,7 +259,6 @@ namespace FAFOS
                 catch(Exception e)
                 {
                     MessageBox.Show("An error occured finding the client");
-                    MessageBox.Show(e.ToString());
                     return null;
                 }
 

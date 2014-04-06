@@ -343,6 +343,7 @@
             // 
             // txtType
             // 
+            this.txtType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtType.FormattingEnabled = true;
             this.txtType.Items.AddRange(new object[] {
@@ -409,6 +410,7 @@
             // 
             // txtTerm
             // 
+            this.txtTerm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtTerm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTerm.FormattingEnabled = true;
             this.txtTerm.Location = new System.Drawing.Point(272, 180);
@@ -418,6 +420,7 @@
             // 
             // txtSalesOrder
             // 
+            this.txtSalesOrder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtSalesOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalesOrder.FormattingEnabled = true;
             this.txtSalesOrder.Location = new System.Drawing.Point(12, 103);

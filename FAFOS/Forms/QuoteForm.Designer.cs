@@ -180,6 +180,7 @@
             // 
             // ddlClient
             // 
+            this.ddlClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlClient.FormattingEnabled = true;
             this.ddlClient.Location = new System.Drawing.Point(21, 137);
@@ -276,6 +277,7 @@
             // 
             // txtGetID
             // 
+            this.txtGetID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtGetID.FormattingEnabled = true;
             this.txtGetID.Location = new System.Drawing.Point(21, 91);
             this.txtGetID.Margin = new System.Windows.Forms.Padding(4);

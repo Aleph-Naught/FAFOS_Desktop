@@ -41,6 +41,7 @@
             // 
             // inspectionType
             // 
+            this.inspectionType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inspectionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inspectionType.FormattingEnabled = true;
             this.inspectionType.Items.AddRange(new object[] {
@@ -93,6 +94,7 @@
             // 
             // addressBox
             // 
+            this.addressBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.addressBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addressBox.FormattingEnabled = true;
             this.addressBox.Items.AddRange(new object[] {

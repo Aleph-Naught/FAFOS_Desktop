@@ -172,6 +172,7 @@
             // 
             // ddlClient
             // 
+            this.ddlClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlClient.FormattingEnabled = true;
             this.ddlClient.Location = new System.Drawing.Point(12, 153);
@@ -277,6 +278,7 @@
             // 
             // txtGetID
             // 
+            this.txtGetID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtGetID.FormattingEnabled = true;
             this.txtGetID.Location = new System.Drawing.Point(12, 99);
             this.txtGetID.Name = "txtGetID";

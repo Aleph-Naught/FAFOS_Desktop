@@ -134,6 +134,7 @@
             // CountryBox
             // 
             this.CountryBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.CountryBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CountryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CountryBox.FormattingEnabled = true;
             this.CountryBox.Location = new System.Drawing.Point(245, 46);
@@ -145,6 +146,7 @@
             // ProvStateBox
             // 
             this.ProvStateBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ProvStateBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProvStateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProvStateBox.FormattingEnabled = true;
             this.ProvStateBox.Location = new System.Drawing.Point(393, 46);
@@ -156,6 +158,7 @@
             // CityBox
             // 
             this.CityBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.CityBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CityBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CityBox.FormattingEnabled = true;
             this.CityBox.Location = new System.Drawing.Point(566, 46);
@@ -441,6 +444,7 @@
             // 
             // typeTextBox
             // 
+            this.typeTextBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.typeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.typeTextBox.FormattingEnabled = true;
             this.typeTextBox.Items.AddRange(new object[] {

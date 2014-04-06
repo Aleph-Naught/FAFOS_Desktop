@@ -58,6 +58,7 @@
             // 
             // txtInvoice
             // 
+            this.txtInvoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInvoice.FormattingEnabled = true;
             this.txtInvoice.Location = new System.Drawing.Point(15, 103);

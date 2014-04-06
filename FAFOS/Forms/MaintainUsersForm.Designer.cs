@@ -308,6 +308,7 @@
             // 
             // CountryBox
             // 
+            this.CountryBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CountryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CountryBox.FormattingEnabled = true;
             this.CountryBox.Location = new System.Drawing.Point(5, 83);
@@ -317,6 +318,7 @@
             // 
             // ProvStateBox
             // 
+            this.ProvStateBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProvStateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProvStateBox.FormattingEnabled = true;
             this.ProvStateBox.Location = new System.Drawing.Point(110, 83);
@@ -326,6 +328,7 @@
             // 
             // CityBox
             // 
+            this.CityBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CityBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CityBox.FormattingEnabled = true;
             this.CityBox.Location = new System.Drawing.Point(236, 83);

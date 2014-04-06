@@ -45,6 +45,7 @@
             // 
             // franchiseeBox
             // 
+            this.franchiseeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.franchiseeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.franchiseeBox.FormattingEnabled = true;
             this.franchiseeBox.Location = new System.Drawing.Point(15, 111);
@@ -135,6 +136,7 @@
             // 
             // yearBox
             // 
+            this.yearBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.yearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.yearBox.FormattingEnabled = true;
             this.yearBox.Items.AddRange(new object[] {

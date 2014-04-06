@@ -39,6 +39,7 @@
             // 
             // cbClients
             // 
+            this.cbClients.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbClients.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbClients.FormattingEnabled = true;
             this.cbClients.Location = new System.Drawing.Point(10, 38);

@@ -165,6 +165,7 @@
             // linkableClientBox
             // 
             this.linkableClientBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkableClientBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.linkableClientBox.FormattingEnabled = true;
             this.linkableClientBox.Location = new System.Drawing.Point(434, 108);
             this.linkableClientBox.Name = "linkableClientBox";
