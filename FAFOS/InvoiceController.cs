@@ -90,9 +90,13 @@ namespace FAFOS
             double total;
             double tax;
             DataTable dtSales = sales_order.get(_view.GetText());
+
             total = Convert.ToDouble(String.Format("{0:#,##0.00}", Math.Round((double)dtSales.Rows[0].ItemArray[2],2)));
+
             tax =  (double)dtSales.Rows[0].ItemArray[3];
+
             _view.SetTotal(total,tax);
+
             }
             catch (Exception ef)
             {
