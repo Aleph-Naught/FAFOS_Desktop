@@ -115,16 +115,26 @@ namespace FAFOS
                 dgv.Rows[e.RowIndex].Cells[2].Value = new Item().getDescription(dgv.Rows[e.RowIndex].Cells[1].Value.ToString());
                 dgv.Rows[e.RowIndex].Cells[5].Value = new Item().getPrice(dgv.Rows[e.RowIndex].Cells[1].Value.ToString());
             }
-            if ((dgv.Rows[e.RowIndex].Cells[4].Value != null && dgv.Rows[e.RowIndex].Cells[5].Value != null && (dgv.Rows[e.RowIndex].Cells[3].Value == null || dgv.Rows[e.RowIndex].Cells[3].Value.ToString() == ""))
-                && (dgv.Rows[e.RowIndex].Cells[4].Value.ToString() != "" && dgv.Rows[e.RowIndex].Cells[5].Value.ToString() != ""))
+
+            if (((dgv.Rows[e.RowIndex].Cells[4].Value != null && dgv.Rows[e.RowIndex].Cells[4].Value.ToString() != "") || (dgv.Rows[e.RowIndex].Cells[3].Value != null && dgv.Rows[e.RowIndex].Cells[3].Value.ToString() != "")) && (dgv.Rows[e.RowIndex].Cells[5].Value != null && dgv.Rows[e.RowIndex].Cells[5].Value.ToString() != ""))
             {
-                dgv.Rows[e.RowIndex].Cells[6].Value = Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[4].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString());
+                String category = new Item().getCategory(dgv.Rows[e.RowIndex].Cells[1].Value.ToString());
+
+                if (category == "1" && dgv.Rows[e.RowIndex].Cells[4].Value != null && dgv.Rows[e.RowIndex].Cells[4].Value.ToString() != "")
+                {
+
+                    Double val1 = Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[4].Value.ToString());
+                    Double val2 = Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString());
+
+                    dgv.Rows[e.RowIndex].Cells[6].Value = Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[4].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString());
+                }
+                else if (category == "2" && dgv.Rows[e.RowIndex].Cells[3].Value != null && dgv.Rows[e.RowIndex].Cells[3].Value.ToString() != "")
+                {
+                    dgv.Rows[e.RowIndex].Cells[6].Value = Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[3].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString());
+                }
+
             }
-            else if ((dgv.Rows[e.RowIndex].Cells[3].Value != null && dgv.Rows[e.RowIndex].Cells[5].Value != null && (dgv.Rows[e.RowIndex].Cells[4].Value == null || dgv.Rows[e.RowIndex].Cells[4].Value.ToString() == ""))
-                && (dgv.Rows[e.RowIndex].Cells[3].Value.ToString() != "" && dgv.Rows[e.RowIndex].Cells[5].Value.ToString() != ""))
-            {
-                dgv.Rows[e.RowIndex].Cells[6].Value = Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[3].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString());
-            }
+
             if (dgv.Rows[e.RowIndex].Cells[6].Value != null)
             {
                 double total = 0;
