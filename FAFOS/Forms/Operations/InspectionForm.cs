@@ -146,10 +146,36 @@ namespace FAFOS
                 try
                 {
                     address = new ServiceAddress().get(addressBox.SelectedValue.ToString());
+
+                    
                 }
                 catch(Exception e)
                 {
                     MessageBox.Show("An error occured, or no service addresses exist");
+
+                    size = 0;
+                    file = new FileStream(FilePath, FileMode.Append);
+                    file.Write(page.GetPageDict(file.Length, out size), 0, size);
+                    file.Write(content.GetContentDict(file.Length, out size), 0, size);
+                    file.Close();
+
+                    file = new FileStream(FilePath, FileMode.Append);
+                    file.Write(catalogDict.GetCatalogDict(pageTreeDict.objectNum, file.Length, out size), 0, size);
+                    file.Write(pageTreeDict.GetPageTree(file.Length, out size), 0, size);
+                    file.Write(TimesRoman.GetFontDict(file.Length, out size), 0, size);
+                    file.Write(TimesItalic.GetFontDict(file.Length, out size), 0, size);
+                    file.Write(TimesBold.GetFontDict(file.Length, out size), 0, size);
+                    file.Write(Courier.GetFontDict(file.Length, out size), 0, size);
+
+                    //write image dict
+                    // file.Write(I1.GetImageDict(file.Length, out size), 0, size);
+                    file.Write(I2.GetImageDict(file.Length, out size), 0, size);
+
+                    file.Write(infoDict.GetInfoDict(file.Length, out size), 0, size);
+                    file.Write(pdfUtility.CreateXrefTable(file.Length, out size), 0, size);
+                    file.Write(pdfUtility.GetTrailer(catalogDict.objectNum, infoDict.objectNum, out size), 0, size);
+                    file.Close();
+
                     return null;
                 }
 
@@ -258,7 +284,31 @@ namespace FAFOS
                 }
                 catch(Exception e)
                 {
-                    MessageBox.Show("An error occured finding the client");
+                    MessageBox.Show("An error occured finding the client or service address in the inspection data.");
+
+                    size = 0;
+                    file = new FileStream(FilePath, FileMode.Append);
+                    file.Write(page.GetPageDict(file.Length, out size), 0, size);
+                    file.Write(content.GetContentDict(file.Length, out size), 0, size);
+                    file.Close();
+
+                    file = new FileStream(FilePath, FileMode.Append);
+                    file.Write(catalogDict.GetCatalogDict(pageTreeDict.objectNum, file.Length, out size), 0, size);
+                    file.Write(pageTreeDict.GetPageTree(file.Length, out size), 0, size);
+                    file.Write(TimesRoman.GetFontDict(file.Length, out size), 0, size);
+                    file.Write(TimesItalic.GetFontDict(file.Length, out size), 0, size);
+                    file.Write(TimesBold.GetFontDict(file.Length, out size), 0, size);
+                    file.Write(Courier.GetFontDict(file.Length, out size), 0, size);
+
+                    //write image dict
+                    // file.Write(I1.GetImageDict(file.Length, out size), 0, size);
+                    file.Write(I2.GetImageDict(file.Length, out size), 0, size);
+
+                    file.Write(infoDict.GetInfoDict(file.Length, out size), 0, size);
+                    file.Write(pdfUtility.CreateXrefTable(file.Length, out size), 0, size);
+                    file.Write(pdfUtility.GetTrailer(catalogDict.objectNum, infoDict.objectNum, out size), 0, size);
+                    file.Close();
+
                     return null;
                 }
 
@@ -315,6 +365,30 @@ namespace FAFOS
                 catch (Exception e)
                 {
                     MessageBox.Show("An error occurred or no inspection data exists");
+
+                    size = 0;
+                    file = new FileStream(FilePath, FileMode.Append);
+                    file.Write(page.GetPageDict(file.Length, out size), 0, size);
+                    file.Write(content.GetContentDict(file.Length, out size), 0, size);
+                    file.Close();
+
+                    file = new FileStream(FilePath, FileMode.Append);
+                    file.Write(catalogDict.GetCatalogDict(pageTreeDict.objectNum, file.Length, out size), 0, size);
+                    file.Write(pageTreeDict.GetPageTree(file.Length, out size), 0, size);
+                    file.Write(TimesRoman.GetFontDict(file.Length, out size), 0, size);
+                    file.Write(TimesItalic.GetFontDict(file.Length, out size), 0, size);
+                    file.Write(TimesBold.GetFontDict(file.Length, out size), 0, size);
+                    file.Write(Courier.GetFontDict(file.Length, out size), 0, size);
+
+                    //write image dict
+                    // file.Write(I1.GetImageDict(file.Length, out size), 0, size);
+                    file.Write(I2.GetImageDict(file.Length, out size), 0, size);
+
+                    file.Write(infoDict.GetInfoDict(file.Length, out size), 0, size);
+                    file.Write(pdfUtility.CreateXrefTable(file.Length, out size), 0, size);
+                    file.Write(pdfUtility.GetTrailer(catalogDict.objectNum, infoDict.objectNum, out size), 0, size);
+                    file.Close();
+
                     return null;
                 }
                 
@@ -336,12 +410,60 @@ namespace FAFOS
                 catch(Exception e)
                 {
                     MessageBox.Show("An error occursed or the service address does not exist in the inspection data");
+
+                    size = 0;
+                    file = new FileStream(FilePath, FileMode.Append);
+                    file.Write(page.GetPageDict(file.Length, out size), 0, size);
+                    file.Write(content.GetContentDict(file.Length, out size), 0, size);
+                    file.Close();
+
+                    file = new FileStream(FilePath, FileMode.Append);
+                    file.Write(catalogDict.GetCatalogDict(pageTreeDict.objectNum, file.Length, out size), 0, size);
+                    file.Write(pageTreeDict.GetPageTree(file.Length, out size), 0, size);
+                    file.Write(TimesRoman.GetFontDict(file.Length, out size), 0, size);
+                    file.Write(TimesItalic.GetFontDict(file.Length, out size), 0, size);
+                    file.Write(TimesBold.GetFontDict(file.Length, out size), 0, size);
+                    file.Write(Courier.GetFontDict(file.Length, out size), 0, size);
+
+                    //write image dict
+                    // file.Write(I1.GetImageDict(file.Length, out size), 0, size);
+                    file.Write(I2.GetImageDict(file.Length, out size), 0, size);
+
+                    file.Write(infoDict.GetInfoDict(file.Length, out size), 0, size);
+                    file.Write(pdfUtility.CreateXrefTable(file.Length, out size), 0, size);
+                    file.Write(pdfUtility.GetTrailer(catalogDict.objectNum, infoDict.objectNum, out size), 0, size);
+                    file.Close();
+
                     return null;
                 }
 
                 if(serviceAddress == null)
                 {
                     MessageBox.Show("An error occursed or the service address does not exist in the inspection data");
+
+                    size = 0;
+                    file = new FileStream(FilePath, FileMode.Append);
+                    file.Write(page.GetPageDict(file.Length, out size), 0, size);
+                    file.Write(content.GetContentDict(file.Length, out size), 0, size);
+                    file.Close();
+
+                    file = new FileStream(FilePath, FileMode.Append);
+                    file.Write(catalogDict.GetCatalogDict(pageTreeDict.objectNum, file.Length, out size), 0, size);
+                    file.Write(pageTreeDict.GetPageTree(file.Length, out size), 0, size);
+                    file.Write(TimesRoman.GetFontDict(file.Length, out size), 0, size);
+                    file.Write(TimesItalic.GetFontDict(file.Length, out size), 0, size);
+                    file.Write(TimesBold.GetFontDict(file.Length, out size), 0, size);
+                    file.Write(Courier.GetFontDict(file.Length, out size), 0, size);
+
+                    //write image dict
+                    // file.Write(I1.GetImageDict(file.Length, out size), 0, size);
+                    file.Write(I2.GetImageDict(file.Length, out size), 0, size);
+
+                    file.Write(infoDict.GetInfoDict(file.Length, out size), 0, size);
+                    file.Write(pdfUtility.CreateXrefTable(file.Length, out size), 0, size);
+                    file.Write(pdfUtility.GetTrailer(catalogDict.objectNum, infoDict.objectNum, out size), 0, size);
+                    file.Close();
+
                     return null;
                 }
                 

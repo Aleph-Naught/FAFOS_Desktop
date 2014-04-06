@@ -188,49 +188,56 @@ namespace FAFOS
         public void preview(object sender, EventArgs e)
         {
             Sales_Order createSalesOrder = (Sales_Order)((Button)sender).FindForm();
+
+            //start creating the PDF
+
+            //Create a Catalog Dictionary
+            CatalogDict catalogDict = new CatalogDict();
+
+            //Create a Page Tree Dictionary
+            PageTreeDict pageTreeDict = new PageTreeDict();
+
+            //Create a Font Dictionary - Only the standard fonts Time, Helvetica and courier etc can be created by this method.
+            //See Adobe doco for more info on other fonts
+            FontDict TimesRoman = new FontDict();
+            FontDict TimesItalic = new FontDict();
+            FontDict TimesBold = new FontDict();
+            FontDict Courier = new FontDict();
+
+            //Create the info Dictionary
+            InfoDict infoDict = new InfoDict();
+
+            //Create the font called Times Roman
+            TimesRoman.CreateFontDict("T1", "Times-Roman");
+
+            //Create the font called Times Italic
+            TimesItalic.CreateFontDict("T2", "Times-Italic");
+
+            //Create the font called Times Bold
+            TimesBold.CreateFontDict("T3", "Times-Bold");
+
+            //Create the font called Courier
+            Courier.CreateFontDict("T4", "Courier");
+
+            //Set the info Dictionary. xxx will be the invoice number
+            infoDict.SetInfo("Sales Order xxx", "System Generated", "My Company Name");
+
+            //Create a utility object
+            Utility pdfUtility = new Utility();
+
+            //Open a file specifying the file name as the output pdf file
+            String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "Resources\\SalesOrder.pdf";
+
+            FileStream file = new FileStream(FilePath, FileMode.Create);
+            int size = 0;
+
+            //Create a Page Dictionary , this represents a visible page
+            PageDict page = new PageDict();
+            ContentDict content = new ContentDict();
+
             try
             {
-                //start creating the PDF
-
-                //Create a Catalog Dictionary
-                CatalogDict catalogDict = new CatalogDict();
-
-                //Create a Page Tree Dictionary
-                PageTreeDict pageTreeDict = new PageTreeDict();
-
-                //Create a Font Dictionary - Only the standard fonts Time, Helvetica and courier etc can be created by this method.
-                //See Adobe doco for more info on other fonts
-                FontDict TimesRoman = new FontDict();
-                FontDict TimesItalic = new FontDict();
-                FontDict TimesBold = new FontDict();
-                FontDict Courier = new FontDict();
-
-                //Create the info Dictionary
-                InfoDict infoDict = new InfoDict();
-
-                //Create the font called Times Roman
-                TimesRoman.CreateFontDict("T1", "Times-Roman");
-
-                //Create the font called Times Italic
-                TimesItalic.CreateFontDict("T2", "Times-Italic");
-
-                //Create the font called Times Bold
-                TimesBold.CreateFontDict("T3", "Times-Bold");
-
-                //Create the font called Courier
-                Courier.CreateFontDict("T4", "Courier");
-
-                //Set the info Dictionary. xxx will be the invoice number
-                infoDict.SetInfo("Sales Order xxx", "System Generated", "My Company Name");
-
-                //Create a utility object
-                Utility pdfUtility = new Utility();
-
-                //Open a file specifying the file name as the output pdf file
-                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "Resources\\SalesOrder.pdf";
-
-                FileStream file = new FileStream(FilePath, FileMode.Create);
-                int size = 0;
+                
                 file.Write(pdfUtility.GetHeader("1.5", out size), 0, size);
                 file.Close();
 
@@ -238,9 +245,7 @@ namespace FAFOS
 
 
 
-                //Create a Page Dictionary , this represents a visible page
-                PageDict page = new PageDict();
-                ContentDict content = new ContentDict();
+               
 
                 //The page size object will hold all the page size information
                 //also holds the dictionary objects for font, images etc.
@@ -449,7 +454,32 @@ namespace FAFOS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Could not display the document because " + ex.ToString());
+                MessageBox.Show("An error occurred, please ensure all fields are filled.");
+
+                //All done - send the information to the PDF file
+
+                size = 0;
+                file = new FileStream(FilePath, FileMode.Append);
+                file.Write(page.GetPageDict(file.Length, out size), 0, size);
+                file.Write(content.GetContentDict(file.Length, out size), 0, size);
+                file.Close();
+
+                file = new FileStream(FilePath, FileMode.Append);
+                file.Write(catalogDict.GetCatalogDict(pageTreeDict.objectNum, file.Length, out size), 0, size);
+                file.Write(pageTreeDict.GetPageTree(file.Length, out size), 0, size);
+                file.Write(TimesRoman.GetFontDict(file.Length, out size), 0, size);
+                file.Write(TimesItalic.GetFontDict(file.Length, out size), 0, size);
+                file.Write(TimesBold.GetFontDict(file.Length, out size), 0, size);
+                file.Write(Courier.GetFontDict(file.Length, out size), 0, size);
+
+                //write image dict
+                //file.Write(I1.GetImageDict(file.Length, out size), 0, size);
+
+                file.Write(infoDict.GetInfoDict(file.Length, out size), 0, size);
+                file.Write(pdfUtility.CreateXrefTable(file.Length, out size), 0, size);
+                file.Write(pdfUtility.GetTrailer(catalogDict.objectNum, infoDict.objectNum, out size), 0, size);
+                file.Close();
+
             }
 
         }
