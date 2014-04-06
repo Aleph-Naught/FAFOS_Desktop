@@ -139,7 +139,7 @@ namespace FAFOS
                         paid += Convert.ToDouble(dt.Rows[i][2]);
                         dt.Rows[i][2] = String.Format("{0:#,##0.00}",Convert.ToDouble(dt.Rows[i][2]));
                     }
-                    txtBalance.Text = String.Format("{0:#,##0.00}",(Convert.ToDouble(drv["Total"].ToString()) - paid).ToString());
+                    txtBalance.Text = String.Format("{0:#,##0.00}",(Convert.ToDouble(drv["Total"].ToString()) - paid));
                 }
             }
             
