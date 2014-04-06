@@ -18,6 +18,7 @@ namespace FAFOS
         private double tax;
         private int[] rowsDeleted = new int[10];
         private int rowsDeletedCounter = 0;
+        private string currId = "";
 
         public QuoteController(String franchiseeUserID)
         {
@@ -52,20 +53,32 @@ namespace FAFOS
             try
             {
                 string id = new Quote().set(franchiseeUserId, newQuote.getServiceAddressId(), tax.ToString(), newQuote.getTotal());
+                currId = id;
             
                 DataGridView dt = newQuote.getQuoteItems();
                 for (int i = 0; i < dt.Rows.Count-1; i++)
                 {
-                   items.set(dt.Rows[i].Cells[0].Value.ToString(), dt.Rows[i].Cells[4].Value != null ? dt.Rows[i].Cells[4].Value.ToString() : "NULL",
+                    /*for (int k = 0; k < dt.Rows[i].Cells.Count; k++)
+                    {
+                        if (dt.Rows[i].Cells[k].Value == null)
+                        {
+                            MessageBox.Show("An error occurred. Make sure all fields are filled out.");
+                            return;
+                        }
+                    }*/
+
+                    items.set(dt.Rows[i].Cells[0].Value.ToString(), dt.Rows[i].Cells[4].Value != null ? dt.Rows[i].Cells[4].Value.ToString() : "NULL",
                         dt.Rows[i].Cells[3].Value != null ? dt.Rows[i].Cells[3].Value.ToString() : "NULL",
                         dt.Rows[i].Cells[5].Value.ToString(), dt.Rows[i].Cells[1].Value.ToString(), id);
+                    Console.WriteLine(dt.Rows[i].Cells[0].Value.ToString());
                 }
                 newQuote.Dispose();
-                MessageBox.Show("The Quote ID is " + id + "!");
+                MessageBox.Show("Created a new quote with ID " + id + ".");
                // _view.Show();
             }
             catch (Exception ex)
             {
+                Quote.delete(currId);
                 MessageBox.Show("An error occurred. Make sure all fields are filled out.");
             }
         }
