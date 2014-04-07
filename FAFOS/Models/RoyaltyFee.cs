@@ -21,7 +21,6 @@ namespace FAFOS
             dataTable.Columns.Add("id", typeof(String));
             dataTable.Columns.Add("dateIssued", typeof(String));
             dataTable.Columns.Add("month", typeof(String));
-            dataTable.Columns.Add("percentage", typeof(String));
             dataTable.Columns.Add("amount", typeof(String));
 
             con.Open();
@@ -36,15 +35,15 @@ namespace FAFOS
              */
 
             
-            SqlCommand command = new SqlCommand("SELECT royalty_fee_id,dateIssued,monthFor,franchisee_id,balance " +
-  "FROM RoyaltyFee", con);
+            SqlCommand command = new SqlCommand("SELECT royalty_fee_id,dateIssued,monthFor,balance " +
+  "FROM RoyaltyFee WHERE franchisee_id =" + id, con);
              
 
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 dataTable.Rows.Add(new String[] { reader[0].ToString(), ((DateTime)reader[1]).ToShortDateString(), reader[2].ToString(), 
-                    reader[3].ToString(), reader[4].ToString()});
+                    reader[3].ToString()});
             }
             con.Close();
             return dataTable;

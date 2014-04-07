@@ -31,15 +31,14 @@
             this.franchiseeBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.royalteeFees = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Month = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Percentage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BalanceOwed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.yearBox = new System.Windows.Forms.ComboBox();
             this.show_btn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Month = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BalanceOwed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.royalteeFees)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +77,6 @@
             this.ID,
             this.Date,
             this.Month,
-            this.Percentage,
             this.BalanceOwed});
             this.royalteeFees.Location = new System.Drawing.Point(11, 152);
             this.royalteeFees.Margin = new System.Windows.Forms.Padding(2);
@@ -88,41 +86,6 @@
             this.royalteeFees.Size = new System.Drawing.Size(980, 422);
             this.royalteeFees.TabIndex = 48;
             this.royalteeFees.Visible = false;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Date
-            // 
-            this.Date.DataPropertyName = "dateIssued";
-            this.Date.HeaderText = "Issued Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            // 
-            // Month
-            // 
-            this.Month.DataPropertyName = "month";
-            this.Month.HeaderText = "Month";
-            this.Month.Name = "Month";
-            this.Month.ReadOnly = true;
-            // 
-            // Percentage
-            // 
-            this.Percentage.DataPropertyName = "percentage";
-            this.Percentage.HeaderText = "Royalty Fee %";
-            this.Percentage.Name = "Percentage";
-            this.Percentage.ReadOnly = true;
-            // 
-            // BalanceOwed
-            // 
-            this.BalanceOwed.DataPropertyName = "amount";
-            this.BalanceOwed.HeaderText = "Balance Owed";
-            this.BalanceOwed.Name = "BalanceOwed";
-            this.BalanceOwed.ReadOnly = true;
             // 
             // label1
             // 
@@ -173,6 +136,34 @@
             this.label5.TabIndex = 52;
             this.label5.Text = "Royalty Fees";
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "dateIssued";
+            this.Date.HeaderText = "Issued Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // Month
+            // 
+            this.Month.DataPropertyName = "month";
+            this.Month.HeaderText = "Month";
+            this.Month.Name = "Month";
+            this.Month.ReadOnly = true;
+            // 
+            // BalanceOwed
+            // 
+            this.BalanceOwed.DataPropertyName = "amount";
+            this.BalanceOwed.HeaderText = "Balance Owed";
+            this.BalanceOwed.Name = "BalanceOwed";
+            this.BalanceOwed.ReadOnly = true;
+            // 
             // RoyaltyFeeCollection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,11 +196,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox yearBox;
         private System.Windows.Forms.Button show_btn;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Month;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Percentage;
         private System.Windows.Forms.DataGridViewTextBoxColumn BalanceOwed;
-        private System.Windows.Forms.Label label5;
     }
 }
