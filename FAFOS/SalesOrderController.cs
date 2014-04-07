@@ -191,21 +191,28 @@ namespace FAFOS
 
                 }
 
-                if (dgv.Rows[e.RowIndex].Cells[6].Value != null)
+                try
                 {
-                    //dgv.Rows[e.RowIndex].Cells[6].Value = String.Format("{0:#,##0.00}", Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[3].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString()));
-                    double total = 0;
-                    for (int i = 0; i < dgv.Rows.Count - 1; i++)
+                    if (dgv.Rows[e.RowIndex].Cells[6].Value != null)
                     {
-                        total += Convert.ToDouble(dgv.Rows[i].Cells[6].Value);
+                        //dgv.Rows[e.RowIndex].Cells[6].Value = String.Format("{0:#,##0.00}", Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[3].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString()));
+                        double total = 0;
+                        for (int i = 0; i < dgv.Rows.Count - 1; i++)
+                        {
+                            total += Convert.ToDouble(dgv.Rows[i].Cells[6].Value);
+                        }
+                        /******************************/
+                        if (type == 1 || type == 2)
+                            tax = Convert.ToDouble(new Address().getProvinceTax(new ServiceAddress().getProvinceID(newSalesOrder.getServiceAddressId())));
+                        else
+                            tax = Convert.ToDouble(new SalesOrder().getProvinceTax(newSalesOrder.getId()));
+                        /******************************/
+                        newSalesOrder.setTotal(total, tax);
                     }
-                    /******************************/
-                    if (type == 1 || type == 2)
-                        tax = Convert.ToDouble(new Address().getProvinceTax(new ServiceAddress().getProvinceID(newSalesOrder.getServiceAddressId())));
-                    else
-                        tax = Convert.ToDouble(new SalesOrder().getProvinceTax(newSalesOrder.getId()));
-                    /******************************/
-                    newSalesOrder.setTotal(total, tax);
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("An error occurred, make sure all fields are filled.");
                 }
             }
         

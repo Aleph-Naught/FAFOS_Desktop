@@ -26,12 +26,18 @@ namespace FAFOS
 
             con.Open();
 
+            /*
             SqlCommand command = new SqlCommand("SELECT royalty_fee_id,dateIssued,monthFor,royaltyFeePercentage,balance "+
   "FROM [RoyaltyFee],Franchisee_Contract "+
   "WhERE RoyaltyFee.franchisee_id=Franchisee_Contract.franchisee_id "+
  " AND RoyaltyFee.franchisee_id="+id +" "+
   "AND  datepart(yyyy,dateIssued) = "+year+" "+
   "ORDER BY dateIssued desc", con);
+             */
+
+            SqlCommand command = new SqlCommand("SELECT royalty_fee_id,dateIssued,monthFor,royaltyFeePercentage,balance " +
+  "FROM RoyaltyFee, Franchisee_Contract WHERE RoyaltyFee.franchisee_id = Franchisee ", con);
+
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {

@@ -414,17 +414,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="app.config" />
-    <None Include="FAFOSDataSet.xsc">
-      <DependentUpon>FAFOSDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="FAFOSDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FAFOSDataSet.Designer.cs</LastGenOutput>
+    <None Include="app.config">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="FAFOSDataSet.xss">
-      <DependentUpon>FAFOSDataSet.xsd</DependentUpon>
     </None>
     <None Include="FAFOS_TemporaryKey.pfx" />
     <None Include="Maps\DataExp.gmdb" />
