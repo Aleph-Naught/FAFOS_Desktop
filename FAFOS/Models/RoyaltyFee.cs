@@ -35,8 +35,10 @@ namespace FAFOS
   "ORDER BY dateIssued desc", con);
              */
 
-            SqlCommand command = new SqlCommand("SELECT royalty_fee_id,dateIssued,monthFor,royaltyFeePercentage,balance " +
-  "FROM RoyaltyFee, Franchisee_Contract WHERE RoyaltyFee.franchisee_id = Franchisee ", con);
+            
+            SqlCommand command = new SqlCommand("SELECT royalty_fee_id,dateIssued,monthFor,franchisee_id,balance " +
+  "FROM RoyaltyFee", con);
+             
 
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
