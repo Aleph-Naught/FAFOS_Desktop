@@ -270,29 +270,29 @@ namespace FAFOS
         public void extView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            //if ((e.ColumnIndex == 9) && (e.RowIndex > -1))
-            //{
+            if ((e.ColumnIndex == 9) && (e.RowIndex > -1))
+            {
                 DecMetric("extinguisher", currentRow);
-                my_controller.ExtinguisherView_CellClick(sender, e);
-            //}
+            }
+            my_controller.ExtinguisherView_CellClick(sender, e);
         }
         public void hoseView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            //if ((e.ColumnIndex == 6) && (e.RowIndex > -1))
-            //{
+            if ((e.ColumnIndex == 6) && (e.RowIndex > -1))
+            {
                 DecMetric("hose", currentRow);
-                my_controller.HoseView_CellClick(sender, e);
-            //}
+            }
+            my_controller.HoseView_CellClick(sender, e);
         }
         public void lightView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            //if ((e.ColumnIndex == 12) && (e.RowIndex > -1))
-            //{
+            if ((e.ColumnIndex == 12) && (e.RowIndex > -1))
+            {
                 DecMetric("light", currentRow);
-                my_controller.LightView_CellClick(sender, e);
-            //}
+            }
+            my_controller.LightView_CellClick(sender, e);
         }
 
 /**************************************** Setup/Manipulation *******************************************/
