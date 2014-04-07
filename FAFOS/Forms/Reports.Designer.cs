@@ -44,6 +44,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.percentBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartReport)).BeginInit();
             this.panel1.SuspendLayout();
@@ -159,7 +161,7 @@
             this.generate_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.generate_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.generate_btn.ForeColor = System.Drawing.Color.White;
-            this.generate_btn.Location = new System.Drawing.Point(673, 79);
+            this.generate_btn.Location = new System.Drawing.Point(829, 79);
             this.generate_btn.Name = "generate_btn";
             this.generate_btn.Size = new System.Drawing.Size(151, 52);
             this.generate_btn.TabIndex = 53;
@@ -180,6 +182,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.percentBox);
             this.panel1.Controls.Add(this.lblEndDate);
             this.panel1.Controls.Add(this.lblStartDate);
             this.panel1.Controls.Add(this.lblPickReport);
@@ -188,7 +192,7 @@
             this.panel1.Controls.Add(this.dtpStartDate);
             this.panel1.Location = new System.Drawing.Point(12, 79);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(635, 54);
+            this.panel1.Size = new System.Drawing.Size(811, 54);
             this.panel1.TabIndex = 57;
             // 
             // splitContainer1
@@ -209,6 +213,22 @@
             this.splitContainer1.Size = new System.Drawing.Size(987, 440);
             this.splitContainer1.SplitterDistance = 315;
             this.splitContainer1.TabIndex = 58;
+            // 
+            // percentBox
+            // 
+            this.percentBox.Location = new System.Drawing.Point(666, 23);
+            this.percentBox.Name = "percentBox";
+            this.percentBox.Size = new System.Drawing.Size(100, 20);
+            this.percentBox.TabIndex = 45;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(666, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "Royalty Fee %";
             // 
             // Reports
             // 
@@ -251,5 +271,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox percentBox;
     }
 }

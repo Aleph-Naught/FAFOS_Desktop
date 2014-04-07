@@ -41,6 +41,7 @@ namespace FAFOS.Forms
                 balanceS = "0";
             }
             dgvReport.DataSource = dt;
+            dgvReport.Columns[1].DefaultCellStyle.Format = "N2";
             chartReport.DataSource = dt;
             chartReport.Series[0].YValueMembers = "Revenue";
             //chartReport.Series[0].ChartType = SeriesChartType.Line;
@@ -118,6 +119,20 @@ namespace FAFOS.Forms
 
         private void generate_btn_Click(object sender, EventArgs e)
         {
+            double percentRoyalty;
+            try
+            {
+                percentRoyalty = Double.Parse(percentBox.Text);
+                if (percentRoyalty < 0)
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please enter a valid Royalty Fee %.");
+                return;
+            }
             XmlDocument xmldoc;// = new XmlDocument();
             xmldoc=new XmlDocument();
             //let's add the XML declaration section
@@ -155,7 +170,7 @@ namespace FAFOS.Forms
             monthFor.AppendChild(monthFortext);
 
             XmlElement balance=xmldoc.CreateElement("","balance","");
-            double royaltyFee = Convert.ToDouble(balanceS) > 10000 ? 500 + Convert.ToDouble(balanceS) * 0.12 : 500;
+            double royaltyFee = Convert.ToDouble(balanceS) > 10000 ? 500 + Convert.ToDouble(balanceS) * (percentRoyalty / 100) : 500;
             XmlText balancetext = xmldoc.CreateTextNode(royaltyFee.ToString());
             balance.AppendChild(balancetext);
             xmldoc.ChildNodes.Item(0).AppendChild(xmlelem2);

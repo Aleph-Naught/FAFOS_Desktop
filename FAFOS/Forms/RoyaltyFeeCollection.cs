@@ -67,8 +67,7 @@ namespace FAFOS
                     }
 
 
-                    if (!r.check(data[0], data[3] + "-" + data[2] + "-" + data[1]))
-                        r.set(data);
+                     r.set(data);
 
                 }
             }
@@ -90,7 +89,13 @@ namespace FAFOS
                 && yearBox.Text != null && yearBox.Text != "")
             {
                 DataTable dt = r.get(franchiseeBox.SelectedValue.ToString(), yearBox.Text);
+                
                 royalteeFees.DataSource = dt;
+                for (int i = 0; i < royalteeFees.Rows.Count; i++)
+                {
+                    royalteeFees.Rows[i].Cells[3].Value = String.Format("{0:#,##0.00}", Convert.ToDouble(royalteeFees.Rows[i].Cells[3].Value));
+                }
+                
                 royalteeFees.Visible = true;
             }
             else
